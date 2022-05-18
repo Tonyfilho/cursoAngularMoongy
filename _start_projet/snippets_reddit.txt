@@ -1,0 +1,75 @@
+0 - INDEX.html dentro da Tag BODY
+
+<div class="ui menu">
+    <div class="ui container">
+      <div class="header item borderless">
+        <h1 class="ui header">
+          Angular  Simple Reddit
+        </h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui main text container">
+    <app-root>Loading </app-root> <!-- Our app loads here! -->
+  </div>
+
+
+/// instalar semantic-ui-css
+npm install semantic-ui-css –save ouyarn add semantic-ui-css
+
+/// acrescentar ao angular.json, nos styles:
+ "node_modules/semantic-ui-css/semantic.min.css",
+
+
+1 - FORMULARIO A ACRESCENTAR A app.component.html:
+
+ <form class="ui large form segment">
+        <h3 class="ui header">Add a Link</h3>
+
+        <div class="field">
+            <label for="title">Title:</label>
+            <input name="title">
+        </div>
+        <div class="field">
+            <label for="link">Link:</label>
+            <input name="link">
+        </div>
+    </form>
+
+
+2 - template para o article.component.html:
+
+<div class="four wide column center aligned votes">
+
+ <div class="ui statistic">
+      <div class="value">
+        
+      </div>
+      <div class="label">
+        Points
+      </div>
+    </div>
+ </div>
+ <div class="twelve wide column">
+   <a class="ui large header">
+     
+   </a>
+   <ul class="ui big horizontal list voters">
+     <li class="item">
+       <a>
+         <i class="arrow up icon"></i>
+           upvote 
+         </a>
+     </li>
+     <li class="item"> 
+       <a>
+         <i class="arrow down icon"></i>
+         downvote
+       </a>
+     </li>
+   </ul>
+ </div>
+
+
+
