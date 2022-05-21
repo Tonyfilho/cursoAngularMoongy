@@ -2,21 +2,21 @@
   <input
     class="form-control form-control-lg"
     type="text"
-    placeholder="Tecnologia"
-    aria-label=".form-control-lg example"
+    placeholder="Title"
+    aria-label=".form-control-lg example" #title
   />
   <input
     class="form-control form-control-lg"
     type="text"
     placeholder="Link"
-    aria-label=".form-control-lg example"
+    aria-label=".form-control-lg example" #link
   />
 
   <div >
-    <button type="submit" class="btn btn-primary mb-3 buttonSave">Save</button>
+    <button type="submit" class="btn btn-primary mb-3 buttonSave" (click)="addArticles(title, link)">Add a Link</button>
   </div>
 </div>
 
 <div class="container">
-    <app-son></app-son>
+    <app-son *ngFor="let item of sortArticle()" [article]="item"></app-son>
 </div>
