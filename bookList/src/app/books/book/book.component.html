@@ -1,1 +1,14 @@
-<p>book works!</p>
+<div class="container">
+  <div  class="card-list">
+    <div class="card" style="width: 50rem">
+      <img src="src/assets/livros/ + {{ book.imageUrlGr }}" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{{ book.title }}</h5>
+        <p class="card-text">
+          {{ book.description }}
+        </p>
+        <a  class="btn btn-primary" routerLink="/books">go back</a>
+      </div>
+    </div>
+  </div>
+</div>
