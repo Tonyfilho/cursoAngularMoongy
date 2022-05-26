@@ -11,6 +11,7 @@ export class BooksService {
         new Book(
           b.id,
           b.title,
+          b.author,
           b.alreadyRead,
           b.imageUrl,
           b.imageUrlGr,
