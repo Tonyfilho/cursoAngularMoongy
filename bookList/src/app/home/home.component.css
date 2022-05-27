@@ -1,15 +1,10 @@
 
 .home {
+    width: 100%;
+    height: 55rem;
     background-color: 151515;
-    margin: 0%;
-    /* width: 800px;
-    background: url(http://st.depositphotos.com/2937983/4613/i/950/depositphotos_46132355-stock-photo-wave-hollow-crashing-black-white.jpg) no-repeat center;
-    background-size: contain;
-    -webkit-background-clip: text;
-    color: transparent; */
-   width: 100%;
-   /* background: url('/bookList/src/assets/background/moinho-preto.jpg'); */
+    margin: 0%;    
    background: url('https://3.bp.blogspot.com/-Q2YNP4xJvpo/Tr-LgcpcV_I/AAAAAAAAA4c/9DDHWDOnXvI/s1600/moinho-preto-e-branco-7b0aa1.jpg');
    background-repeat: no-repeat;
-   background-size: contain;
+   background-size: cover;
 }
