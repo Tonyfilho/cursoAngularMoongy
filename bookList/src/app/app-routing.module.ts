@@ -13,7 +13,8 @@ const routes: Routes = [
     path: 'books/:id',
     component: BookComponent,
   },
-  { path: 'about'},
+  /*************************************************Carregando LAZYLOAD ROUTE*/
+  { path: 'about', loadChildren: () => import('./about/about.module').then(module => module.AboutModule)},
   {
     path: '**',
     component: NotFoundComponent,
