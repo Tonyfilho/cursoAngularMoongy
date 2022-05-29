@@ -13,7 +13,7 @@ import { HomeComponent } from '../home/home.component';
   imports: [
     CommonModule,
     RouterModule.forChild([
-      {path: 'about', component: AboutComponent}
+      {path: '', component: AboutComponent}
     ])
   ]
 })
