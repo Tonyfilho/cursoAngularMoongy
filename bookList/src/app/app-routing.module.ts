@@ -3,13 +3,21 @@ import { RouterModule, Routes } from '@angular/router';
 import { BookComponent } from './books/book/book.component';
 import { BooksComponent } from './books/books/books.component';
 import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'books', component: BooksComponent },  {
-    path: 'books/:id',component: BookComponent },  {
-    path: '**', component: HomeComponent },
+  { path: 'books', component: BooksComponent },
+  {
+    path: 'books/:id',
+    component: BookComponent,
+  },
+  { path: 'about'},
+  {
+    path: '**',
+    component: NotFoundComponent,
+  },
 ];
 
 @NgModule({
