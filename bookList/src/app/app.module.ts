@@ -8,6 +8,8 @@ import { BookComponent } from './books/book/book.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AboutComponent } from './about/about.component';
 import { ForecastComponent } from './forecast/forecast.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,10 @@ import { ForecastComponent } from './forecast/forecast.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
