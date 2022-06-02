@@ -1,3 +1,4 @@
+import { ForecastComponent } from './forecast/forecast.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BookComponent } from './books/book/book.component';
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'books/:id',
     component: BookComponent,
+  },
+  {
+    path: 'forecasting',
+    component: ForecastComponent,
   },
   /*************************************************Carregando LAZYLOAD ROUTE*/
   { path: 'about', loadChildren: () => import('./about/about.module').then(module => module.AboutModule)},

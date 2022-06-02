@@ -10,16 +10,19 @@ import { BooksService } from '../books.service';
 })
 export class BookComponent implements OnInit {
 book!: Book;
-bookId!: number;
+bookId: number | any; /** */
   constructor(private bookService: BooksService, private route: ActivatedRoute) {
-  // this.bookId = parseInt(route.snapshot.params["book.id"]);
+  /** Recebendo da forma normal por snapshot , onde ID é a var la do da ROTA*/
   this.bookId = parseInt(route.snapshot.params["id"]);
+
+  /**Recebendo de forma REATIVA via Observable os paramentros  */
+  route.paramMap.subscribe(parans =>{ console.log(typeof parans.get('id')), this.bookId = parans.get('id') })
 
   console.log(this.bookId);
   }
     
   ngOnInit(): void {
-    this.book = this.bookService.getBookById(this.bookId);
+    this.book = this.bookService.getBookById(parseInt(this.bookId));
   }
 
 }
