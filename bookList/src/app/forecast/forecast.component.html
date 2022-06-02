@@ -1,39 +1,38 @@
-<nav class="navbar bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" style="color: rgb(252, 249, 249)">
-      <img src="https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png" alt="" width="70"
-        height="30" class="d-inline-block align-text-top" />
-      OpenWeather
-    </a>
-    <form class="d-flex" role="search">
-      <input class="form-control me-2" [formControl]="searchCity" type="search" placeholder="Search City"
-        aria-label="Search" />
-      <button class="btn btn-outline-success" (click)="findWeather()" data-toggle="modal" data-target="#modalErro" type="button">
-        Search
-      </button>
-    </form>
-  </div>
-</nav>
-
-<!-- Full screen modal -->
-<!-- <div class="modal-dialog modal-lg" *ngIf="isNotExist">  -->
-<!-- Modal class="modal-open"  overflow: hidden; padding-right: 17px; -->
-<div class="modal fade" id="modalErro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">...</div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Close
+<div class="center">
+  <nav class="navbar bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" style="color: rgb(252, 249, 249)">
+        <img src="https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png" alt="" width="70"
+          height="30" class="d-inline-block align-text-top" />
+        OpenWeather
+      </a>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" [formControl]="searchCity" type="search" placeholder="Search City"
+          aria-label="Search" />        
+        <button class="btn btn-outline-success" type="button" >
+          Search
         </button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+      </form>
+    </div>
+  </nav>
+
+  <!-- Full screen modal usando data-toggle="modal" data-target="#modalErro" Não funciona, tem q usar [ngStyle] -->
+  <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Not Found</h4>
+        </div>
+        <div class="modal-body">
+          <p>Not found the name of this city in our database</p>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" (click)="closePopup()">
+            Close
+          </button>
+        </div>
       </div>
     </div>
   </div>
-  <!-- <div class="modal-backdrop fade show"></div></div> -->
-  <!-- </div> -->
 </div>

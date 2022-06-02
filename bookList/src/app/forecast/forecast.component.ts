@@ -7,7 +7,7 @@ import {
   ElementRef,
   AfterViewInit,
 } from '@angular/core';
-import { debounceTime, switchMap } from 'rxjs';
+import { debounceTime, switchMap, catchError, EMPTY } from 'rxjs';
 
 
 @Component({
@@ -15,12 +15,11 @@ import { debounceTime, switchMap } from 'rxjs';
   templateUrl: './forecast.component.html',
   styleUrls: ['./forecast.component.css'],
 })
-export class ForecastComponent implements OnInit, AfterViewInit {
-  // @ViewChild('modalErro') modalErro!: ElementRef;
+export class ForecastComponent implements OnInit {  
   searchCity: FormControl = new FormControl();
   forecastWithoutSwitch = {};
-  forecastWithSwitch = {};
-  isNotExist!: boolean;
+  forecastWithSwitch = {}; 
+  displayStyle = "none";
   constructor(private fs: ForecastingService) {
     /**usando o serviço sem SWITCHMAP somente o Subscribe para cada stream */
     // this.searchCity.valueChanges.subscribe(values => {
@@ -43,7 +42,7 @@ export class ForecastComponent implements OnInit, AfterViewInit {
       .pipe(
         debounceTime(1000),
         switchMap((city: any) => {
-          return fs.getWeather(city);
+          return fs.getWeather(city)
         })
       )
       .subscribe({
@@ -52,30 +51,25 @@ export class ForecastComponent implements OnInit, AfterViewInit {
             console.log('Com SwiftMap', this.forecastWithSwitch);
         },
         error: (err) => {
-          console.error(`error no request: ${err}`), (this.isNotExist = true);
+          console.error(`error no request: ${err}`);
         },
         complete: () => {},
       });
+
+
   }
 
   ngOnInit(): void {}
 
-  ngAfterViewInit(): void {}
+  
 
-  findWeather() {
-   
+  
+  openPopup() {
+    this.displayStyle = "block";
     
-    return false;
+  }
+  closePopup() {
+    this.displayStyle = "none";
   }
 
-  //   constructor(private elementRef:ElementRef) {}
-
-  // ngAfterViewInit() {
-  //   this.elementRef.nativeElement.querySelector('my-element')
-  //                                 .addEventListener('click', this.onClick.bind(this));
-  // }
-
-  // onClick(event) {
-  //   console.log(event);
-  // }
 }
