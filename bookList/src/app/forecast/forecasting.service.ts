@@ -1,4 +1,4 @@
-import { Observable, EMPTY, catchError } from 'rxjs';
+import { Observable, EMPTY, catchError, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -18,6 +18,7 @@ export class ForecastingService {
       catchError((err: any) => {
         if (err.status === 404) {
           console.error('Cidade não encontrada');
+          return of(err);
         }
         return EMPTY;
       })

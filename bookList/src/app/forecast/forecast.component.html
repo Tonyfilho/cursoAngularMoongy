@@ -8,13 +8,19 @@
       </a>
       <form class="d-flex" role="search">
         <input class="form-control me-2" [formControl]="searchCity" type="search" placeholder="Search City"
-          aria-label="Search" />        
+         id="searchCity" aria-label="Search" />        
         <button class="btn btn-outline-success" type="button" >
           Search
         </button>
       </form>
     </div>
   </nav>
+  <body class="weather" [style.background-image]="'url('+ image +')'">
+    
+   
+
+
+  </body>
 
   <!-- Full screen modal usando data-toggle="modal" data-target="#modalErro" Não funciona, tem q usar [ngStyle] -->
   <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
@@ -24,11 +30,11 @@
           <h4 class="modal-title">Not Found</h4>
         </div>
         <div class="modal-body">
-          <p>Not found the name of this city in our database</p>
+          <p>Not found the  this city in our database</p>
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" (click)="closePopup()">
+          <button type="button" class="btn btn-danger" (click)="closeModalError()">
             Close
           </button>
         </div>
