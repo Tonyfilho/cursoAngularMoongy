@@ -5,7 +5,7 @@ import {
   Component,
   OnInit  
 } from '@angular/core';
-import { debounceTime, switchMap, catchError, EMPTY } from 'rxjs';
+import { debounceTime, switchMap, EMPTY } from 'rxjs';
 
 
 @Component({
@@ -18,6 +18,7 @@ export class ForecastComponent implements OnInit, AfterViewInit {
   forecastWithSwitch = {}; 
   displayStyle = "none";
   image = './assets/background/built_day.jpg';
+  isOpenforecasting = false;
   constructor(private fs: ForecastingService) {
     /**usando o serviço sem SWITCHMAP somente o Subscribe para cada stream */
     // this.searchCity.valueChanges.subscribe(values => {
@@ -113,6 +114,10 @@ export class ForecastComponent implements OnInit, AfterViewInit {
         this.image = './assets/background/built_day.jpg';
         break;
     }
+  }
+
+  openForecasting(){
+    this.isOpenforecasting = !this.isOpenforecasting;
   }
 
 }

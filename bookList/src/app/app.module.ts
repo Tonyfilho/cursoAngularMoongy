@@ -10,6 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { ForecastComponent } from './forecast/forecast.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ForecastingCityComponent } from './forecast/forecasting-city/forecasting-city.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     BookComponent,    
     NotFoundComponent,
     AboutComponent,
-    ForecastComponent
+    ForecastComponent,
+    ForecastingCityComponent
   ],
   imports: [
     BrowserModule,
