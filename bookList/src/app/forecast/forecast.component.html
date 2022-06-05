@@ -18,15 +18,15 @@
   <body class="weather" [style.background-image]="'url('+ image +')'">
   </body>
   <div class="forecast-city" *ngIf="isOpenforecasting">
-    <app-forecasting-city></app-forecasting-city>
+    <app-forecasting-city  [forecastWithSwitch]="forecastWithSwitch" ></app-forecasting-city>
   </div>
 
   <!-- Full screen modal usando data-toggle="modal" data-target="#modalErro" Não funciona, tem q usar [ngStyle] -->
-  <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+  <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':modalDisplayStyle}">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h3 class="modal-title">OPS!!!!!! City Not Found</h3>
+          <h3 class="modal-title">OPS!!!!!! {{' ' +  wheatherCity + ' ' | uppercase }} City Not Found</h3>
         </div>
         <div class="modal-body">
           <h4 class="modal-title">Try Again!!</h4>

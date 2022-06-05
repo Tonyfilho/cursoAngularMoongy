@@ -12,11 +12,19 @@
     background-repeat: no-repeat !important;
     background-position: center !important;
     background-size: cover !important;
-    color: aliceblue;
-    text-align: center;
+    color: aliceblue !important;
+    text-align: center !important;
     
     
 }
-.modal-header{
-    text-align: center;
+
+.modal-header {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    padding: var(--bs-modal-header-padding);
+    border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);
+    border-top-left-radius: var(--bs-modal-inner-border-radius);
+    border-top-right-radius: var(--bs-modal-inner-border-radius);
 }
