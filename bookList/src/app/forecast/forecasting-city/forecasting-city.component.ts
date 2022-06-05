@@ -8,7 +8,8 @@ import { AfterContentInit, Component, Input, OnDestroy,  } from '@angular/core';
 export class ForecastingCityComponent implements  AfterContentInit{
   @Input() forecastWithSwitch: any = {}
    openOrCloseModal = 'block'
-   wheatherCity = '';
+   wheatherCity = '';   
+   firstBlock: any = {};
    image = ''
   constructor() {
     console.log('Forcaste no construtor, vem Undefined: ', this.forecastWithSwitch)
@@ -17,7 +18,20 @@ export class ForecastingCityComponent implements  AfterContentInit{
    * que manda um OBSERVABLE q recebemos ele via INPUT()
    */
   ngAfterContentInit(): void {
-    console.log('Forcaste dentro do COntent: ', this.forecastWithSwitch);
+   // console.log('Forcaste dentro do COntent: ', this.forecastWithSwitch);
+   /**EX:  Destructions a Var é o que esta dentro , ou seja a ultima {sys:{country: country}  */
+  // let {sys:{country: country, sunrise: sunrise, sunset: sunset},   } = this.forecastWithSwitch[0];
+  // console.log(country, sunrise, sunset);
+     this.firstBlock = {
+       name:  this.forecastWithSwitch[0]['name'],
+       country: this.forecastWithSwitch[0]?.sys['country'],
+       sunrise: this.forecastWithSwitch[0]?.sys['sunrise'],
+       sunset : this.forecastWithSwitch[0]?.sys['sunset'],
+       weather: this.forecastWithSwitch[0]?.weather[0]['description'],
+       main: this.forecastWithSwitch[0]?.weather[0]['main'],
+       totalClouds: this.forecastWithSwitch[0].clouds['all']
+     };
+     console.log(this.firstBlock);
     this.wheatherCity = this.forecastWithSwitch[0]['name'];
     this.image = this.forecastWithSwitch[1];
   }

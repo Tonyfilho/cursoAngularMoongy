@@ -1,8 +1,9 @@
 
-.modal-content {
+.modal-content {    
+    background-color: #2e2e08;
     margin: 0%;
     width: 100%;
-    height: 30rem; 
+    height: 31rem; 
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -19,4 +20,10 @@
     border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);
     border-top-left-radius: var(--bs-modal-inner-border-radius);
     border-top-right-radius: var(--bs-modal-inner-border-radius);
+}
+
+
+.modal-footer {   
+    border-top: var(--bs-modal-footer-border-width) solid var solid rgb(13 110 253 / 25%);   
+    
 }

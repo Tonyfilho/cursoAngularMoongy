@@ -1,50 +1,61 @@
-
-  <!-- Full screen modal usando data-toggle="modal" data-target="#modalErro" Não funciona, tem q usar [ngStyle] -->
-   <div class="container modal-dialog modal-xl" >
-    <div class="modal modal-xl" tabindex="-1" role="dialog" [ngStyle]="{'display':openOrCloseModal}">
-      <div class="modal-dialog" role="document"  >
-        <div class="modal-content" [style.background-image]="'url('+ image +')'">
-          <div class="modal-header">
-            <h3 class="modal-title">The forecasting from {{' ' + formtTheFirstLetter(wheatherCity) + ' ' }}  city</h3>
-          </div>
-          <div class="modal-body">
-            <h4 class="modal-title">{{ wheatherCity | uppercase }}</h4>
-            <!-- -----------------Carousel------------------------------------------------- -->
-            <div id="carouselExampleInterval" class="carousel carousel-dark slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="10000">
-                  <!-- <img src="..." class="d-block w-100" alt="..."> -->
-                  <p>Are you sure that you living in the EARTH ?</p>
-
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                  <!-- <img src="..." class="d-block w-100" alt="..."> -->
-                  <p>Are you sure that you living in the EARTH 2 ?</p>
-
-                </div>
-                <div class="carousel-item">
-                  <!-- <img src="..." class="d-block w-100" alt="..."> -->
-                  <p>Are you sure that you living in the EARTH 3 ?</p>
-
-                </div>
+<!-- Full screen modal usando data-toggle="modal" data-target="#modalErro" Não funciona, tem q usar [ngStyle] -->
+<div class="container modal-dialog modal-xl">
+  <div class="modal modal-xl" tabindex="-1" role="dialog" [ngStyle]="{ display: openOrCloseModal }">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" [style.background-image]="'url(' + image + ')'">
+        <div class="modal-header">
+          <h3 class="modal-title">
+            The forecasting from
+            {{ " " + formtTheFirstLetter(this.firstBlock?.name) + " " }} city
+          </h3>
+        </div>
+        <div class="modal-body">
+          <h4 class="modal-title">
+            {{ this.firstBlock?.name | uppercase }} -
+            {{ this.firstBlock?.country | uppercase }}
+          </h4>
+          <!-- -----------------Carousel------------------------------------------------- -->
+          <div id="carouselExampleInterval" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <!-- <img src="..." class="d-block w-100" alt="
+                    | date [ : format [ : timezone [ : locale ] ] ] 
+                    ..."> -->
+                <p>Sunrise: {{ this.firstBlock?.sunrise | date }}</p>
+                <p>Sunset: {{ this.firstBlock?.sunset | date }}</p>
+                <p>Visibility: {{ this.firstBlock?.main }}</p>
+                <p>Sky: {{ this.firstBlock?.weather }}</p>
+                <p>
+                  Number Of Clouds: {{ this.firstBlock?.totalClouds + " %" }}
+                </p>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
+              <div class="carousel-item" data-bs-interval="2000">
+                <!-- <img src="..." class="d-block w-100" alt="..."> -->
+                <p>Are you sure that you living in the EARTH 2 ?</p>
+              </div>
+              <div class="carousel-item">
+                <!-- <img src="..." class="d-block w-100" alt="..."> -->
+                <p>Are you sure that you living in the EARTH 3 ?</p>
+              </div>
             </div>
-  
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" (click)="closeModal()">
-              Close
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
             </button>
           </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" (click)="closeModal()">
+            Close
+          </button>
         </div>
       </div>
     </div>
   </div>
+</div>
