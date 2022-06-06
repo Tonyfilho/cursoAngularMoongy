@@ -1,72 +1,87 @@
+import { FirstBlock } from './../../../assets/classes/fistBlock.model';
 import { AfterContentInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ForecastingService } from '../forecasting.service';
 
 @Component({
   selector: 'app-forecasting-city',
   templateUrl: './forecasting-city.component.html',
   styleUrls: ['./forecasting-city.component.css']
 })
-export class ForecastingCityComponent implements OnInit,  AfterContentInit{
+export class ForecastingCityComponent implements OnInit, AfterContentInit {
   @Input() forecastWithSwitch: any = {}
+  // @Input() image: any = '';
+   image: any = '';
   @Output() closeModalEvent = new EventEmitter<any>();
-   openOrCloseModal = 'block'  
-   wheatherCity = '';   
-   firstBlock: any = {};
-   image = ''
-  constructor() {
-    console.log('Forcaste no construtor, vem Undefined: ', this.forecastWithSwitch)
+
+  openOrCloseModal = 'block'
+  wheatherCity = ''; 
+  firstBlock!: FirstBlock;
+  FirstBlockObject: FirstBlock = {
+    name: '',
+    country: '',
+    sunrise: new Date(),
+    sunset: new Date(),
+    weather: '',
+    main: '',
+    totalClouds: 0
+  };
+ 
+  constructor(private fs: ForecastingService) {
+   // console.log('Forcaste no construtor, vem Undefined: ', this.forecastWithSwitch)
   }
   ngOnInit(): void {
-    
+    this.fs.imageResponse.subscribe(data => this.image = data);
   }
   /**Permite ter acesso aos dados depois q o conteudo foi iniciado, pois foi Recebido do componente PAI 
    * que manda um OBSERVABLE q recebemos ele via INPUT()
    */
   ngAfterContentInit(): void {
-   // console.log('Forcaste dentro do COntent: ', this.forecastWithSwitch);
-   /**EX:  Destructions a Var é o que esta dentro , ou seja a ultima {sys:{country: country}  */
-  // let {sys:{country: country, sunrise: sunrise, sunset: sunset},   } = this.forecastWithSwitch[0];
-  // console.log(country, sunrise, sunset);
-     this.firstBlock = {
-       name:  this.forecastWithSwitch[0]['name'],
-       country: this.forecastWithSwitch[0]?.sys['country'],
-       sunrise: this.forecastWithSwitch[0]?.sys['sunrise'],
-       sunset : this.forecastWithSwitch[0]?.sys['sunset'],
-       weather: this.forecastWithSwitch[0]?.weather[0]['description'],
-       main: this.forecastWithSwitch[0]?.weather[0]['main'],
-       totalClouds: this.forecastWithSwitch[0].clouds['all']
-     };
-     console.log(this.firstBlock);
-    this.wheatherCity = this.forecastWithSwitch[0]['name'];
-    this.image = this.forecastWithSwitch[1];
+    /**EX:  Destructions a Var é o que esta dentro , ou seja a ultima {sys:{country: country}  */
+    // let {sys:{country: country, sunrise: sunrise, sunset: sunset},   } = this.forecastWithSwitch[0];
+    // console.log(country, sunrise, sunset);
+
+    /**
+     * atribuindo valores ao Objeto de forma imperativa  */
+     this.FirstBlockObject = {
+       name: this.forecastWithSwitch['name'],
+       country: this.forecastWithSwitch?.sys['country'],
+       sunrise: this.forecastWithSwitch?.sys['sunrise'],
+       sunset: this.forecastWithSwitch?.sys['sunset'],
+       weather: this.forecastWithSwitch?.weather[0]['description'],
+       main: this.forecastWithSwitch?.weather[0]['main'],
+       totalClouds: this.forecastWithSwitch.clouds['all']
+      };
+      this.firstBlock = new FirstBlock(this.FirstBlockObject)
+ 
   }
-  
-  
-  
+
+
+
   /**
    * Close the modal
    */
-  closeModal(){
+  closeModal() {
     this.openOrCloseModal = 'none';
-    this.closeModalEvent.emit({openOrCloseModal: this.openOrCloseModal, isOpen: false});
-    
+    this.closeModalEvent.emit({ openOrCloseModal: this.openOrCloseModal, isOpen: false });
+
   }
-  
+
   /**
    * 
    * @param text Format the 1º lettle of word to upcase()
    * @returns 
    */
-  formtTheFirstLetter(text : string) {
+  formtTheFirstLetter(text: string) {
     let loweredText = text?.toLowerCase();
     let words = loweredText?.split(" ");
     for (let a = 0; a < words?.length; a++) {
       let w = words[a];
-      let firstLetter = w[0];        
+      let firstLetter = w[0];
       w = firstLetter?.toUpperCase() + w.slice(1);
       words[a] = w;
     }
     return words?.join(" ");
   }
-  
-  
+
+
 }
