@@ -18,7 +18,7 @@
   <body class="weather" [style.background-image]="'url('+ image +')'">
   </body>
   <div class="forecast-city" *ngIf="isOpenforecasting">
-    <app-forecasting-city  [forecastWithSwitch]="forecastWithSwitch" ></app-forecasting-city>
+    <app-forecasting-city  (closeModalEvent)="closeModalCasting($event)" [forecastWithSwitch]="forecastWithSwitch" ></app-forecasting-city>
   </div>
 
   <!-- Full screen modal usando data-toggle="modal" data-target="#modalErro" Não funciona, tem q usar [ngStyle] -->

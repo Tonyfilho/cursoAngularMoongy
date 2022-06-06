@@ -1,4 +1,4 @@
-import { Observable, EMPTY, catchError, of } from 'rxjs';
+import { Observable, EMPTY, catchError, of, take } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -22,6 +22,6 @@ export class ForecastingService {
         }
         return EMPTY;
       })
-    );
+    ).pipe(take(1));
   }
 } // end class

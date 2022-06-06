@@ -1,6 +1,6 @@
 import { FormControl } from '@angular/forms';
 import { ForecastingService } from './forecasting.service';
-import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { debounceTime, switchMap, EMPTY } from 'rxjs';
 
 @Component({
@@ -8,14 +8,14 @@ import { debounceTime, switchMap, EMPTY } from 'rxjs';
   templateUrl: './forecast.component.html',
   styleUrls: ['./forecast.component.css'],
 })
-export class ForecastComponent implements OnDestroy, AfterViewInit {
+export class ForecastComponent implements  AfterViewInit, OnDestroy {
   searchCity: FormControl = new FormControl();
   forecastWithSwitch = [{}];  
   wheatherCity = '';
   modalDisplayStyle = 'none';
   openOrCloseModal = 'none';
   image = './assets/background/built_day.jpg';
-  isOpenforecasting = false;
+  isOpenforecasting! :boolean;
   constructor(private fs: ForecastingService) {
     /**usando o serviço sem SWITCHMAP somente o Subscribe para cada stream */
     // this.searchCity.valueChanges
@@ -31,7 +31,7 @@ export class ForecastComponent implements OnDestroy, AfterViewInit {
   /** com SwitchMap, basta ter 1 subscrição para as 2 streams, o Switchmap pega os valores q estão na STREAM do FormControl
    * e manda para dentro da Stream de TEMPO q temos no Serviço ForecastingService, fazendo somente uam Subscrição.
    */
-  ngAfterViewInit(): void {
+  ngAfterViewInit(): void {   
     this.searchCity.valueChanges
       .pipe(
         debounceTime(1000),
@@ -40,7 +40,6 @@ export class ForecastComponent implements OnDestroy, AfterViewInit {
             this.wheatherCity = city;
             return this.fs.getWeather(city);
           }
-
           return EMPTY;
         })
       )
@@ -58,6 +57,16 @@ export class ForecastComponent implements OnDestroy, AfterViewInit {
         },
         complete: () => {},
       });
+  }
+  /**
+   * 
+   * @param event Received data from child compoment and change local Variable 
+   */
+  closeModalCasting(event:any){
+    this.modalDisplayStyle = event.openOrCloseModal;
+    this.isOpenforecasting = event.isOpen;
+    
+
   }
 
   /**
@@ -106,8 +115,9 @@ export class ForecastComponent implements OnDestroy, AfterViewInit {
   }
 
   openForecasting() {
-    this.isOpenforecasting = !this.isOpenforecasting;
+    this.isOpenforecasting = true;
     this.openOrCloseModal = 'block';
+    this.closeModalError();
   }
 
   ngOnDestroy(): void {

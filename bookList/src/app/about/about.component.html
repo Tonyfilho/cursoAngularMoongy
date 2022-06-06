@@ -1,19 +1,44 @@
-<div class="container">
+<!-- <div class="container">
   <p class="muted"> ``
-    Implementando Lazy Loading no Angular
-
-    Para outros posts sobre React, JavaScript, .Net entre outras tecnologias confira meu site pessoal: thiagoreis.dev.
-    
-    No contexto do Angular um módulo é a forma de agrupar componentes, diretivas, pipes e serviços que são relacionados. Esse conjunto de módulo são “encaixados” para formar a aplicação, isso mesmo como se fosse peças de Lego. Um módulo pode esconder ou exportar um componente, diretiva, serviço ou pipe. Componentes exportados podem ser usados por outros módulos, já aqueles que são escondidos pelo módulo só podem ser usados por ele mesmo.
-    
-    Módulos Angular
-    Essa modularidade no Angular é chamada de NgModules, cada aplicação é composta por pelo menos uma classe NgModule que é o módulo root da aplicação. Esse módulo root por padrão é chamado de AppModule e fica no arquivo src/app/app.module.ts. A aplicação é executada através do processo de Bootstraping do módulo root.
-    
-    Não confundir os módulos Angular com módulos JavaScript
-    
-    
+  In this link  I am implement the Lazyload in the router
    
   </p>
 
+</div> -->
+<nav id="navbar-example2" class="navbar bg-light px-3">
+  <a class="navbar-brand" routerLink="/about">About the Tecnicle CV</a>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" href="#scrollspyHeading1">Lazyload</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#scrollspyHeading2">Second</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#scrollspyHeading3">Second</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#scrollspyHeading3">Third</a></li>
+        <li><a class="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+  <h4 id="scrollspyHeading1">Routes with Lazyload</h4>
+  <p>In this compoment called the About compoment was implemented the LazyLoad routes</p>
+  <h4 id="scrollspyHeading2">Second heading</h4>
+  <p>...</p>
+  <h4 id="scrollspyHeading3">Third heading</h4>
+  <p>...</p>
+  <h4 id="scrollspyHeading4">Fourth heading</h4>
+  <p>...</p>
+  <h4 id="scrollspyHeading5">Fifth heading</h4>
+  <p>...</p>
 </div>
+
 <router-outlet></router-outlet>

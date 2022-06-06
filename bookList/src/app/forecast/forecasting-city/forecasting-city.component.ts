@@ -1,18 +1,22 @@
-import { AfterContentInit, Component, Input, OnDestroy,  } from '@angular/core';
+import { AfterContentInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-forecasting-city',
   templateUrl: './forecasting-city.component.html',
   styleUrls: ['./forecasting-city.component.css']
 })
-export class ForecastingCityComponent implements  AfterContentInit{
+export class ForecastingCityComponent implements OnInit,  AfterContentInit{
   @Input() forecastWithSwitch: any = {}
-   openOrCloseModal = 'block'
+  @Output() closeModalEvent = new EventEmitter<any>();
+   openOrCloseModal = 'block'  
    wheatherCity = '';   
    firstBlock: any = {};
    image = ''
   constructor() {
     console.log('Forcaste no construtor, vem Undefined: ', this.forecastWithSwitch)
+  }
+  ngOnInit(): void {
+    
   }
   /**Permite ter acesso aos dados depois q o conteudo foi iniciado, pois foi Recebido do componente PAI 
    * que manda um OBSERVABLE q recebemos ele via INPUT()
@@ -43,6 +47,7 @@ export class ForecastingCityComponent implements  AfterContentInit{
    */
   closeModal(){
     this.openOrCloseModal = 'none';
+    this.closeModalEvent.emit({openOrCloseModal: this.openOrCloseModal, isOpen: false});
     
   }
   
