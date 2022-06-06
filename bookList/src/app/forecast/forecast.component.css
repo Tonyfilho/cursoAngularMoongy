@@ -11,8 +11,8 @@
     background-image: url('../../assets/background/espaco.jpg') !important; 
     background-repeat: no-repeat !important;
     background-position: center !important;
-    background-size: cover !important;
-    color: aliceblue !important;
+    background-size: cover !important;    
+    font-size: larger;
     text-align: center !important;
     
     
@@ -28,3 +28,10 @@
     border-top-left-radius: var(--bs-modal-inner-border-radius);
     border-top-right-radius: var(--bs-modal-inner-border-radius);
 }
+
+.carousel {
+    font-size: x-large !important;
+    font-family: auto !important;
+    color: rgb(15, 15, 15,) !important;
+}
+
