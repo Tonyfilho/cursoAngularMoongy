@@ -1,3 +1,4 @@
+import { SecundBlock } from './../../../assets/classes/secundBlock.model';
 import { FirstBlock } from './../../../assets/classes/fistBlock.model';
 import { AfterContentInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ForecastingService } from '../forecasting.service';
@@ -16,15 +17,7 @@ export class ForecastingCityComponent implements OnInit, AfterContentInit {
   openOrCloseModal = 'block'
   wheatherCity = ''; 
   firstBlock!: FirstBlock;
-  FirstBlockObject: FirstBlock = {
-    name: '',
-    country: '',
-    sunrise: new Date(),
-    sunset: new Date(),
-    weather: '',
-    main: '',
-    totalClouds: 0
-  };
+  secundBlock!: SecundBlock;
  
   constructor(private fs: ForecastingService) {
    // console.log('Forcaste no construtor, vem Undefined: ', this.forecastWithSwitch)
@@ -42,19 +35,31 @@ export class ForecastingCityComponent implements OnInit, AfterContentInit {
 
     /**
      * atribuindo valores ao Objeto de forma imperativa  */
-     this.FirstBlockObject = {
-       name: this.forecastWithSwitch['name'],
-       country: this.forecastWithSwitch?.sys['country'],
-       sunrise: this.forecastWithSwitch?.sys['sunrise'],
-       sunset: this.forecastWithSwitch?.sys['sunset'],
-       weather: this.forecastWithSwitch?.weather[0]['description'],
-       main: this.forecastWithSwitch?.weather[0]['main'],
-       totalClouds: this.forecastWithSwitch.clouds['all']
-      };
-      this.firstBlock = new FirstBlock(this.FirstBlockObject)
- 
-  }
+     const firstBlockObj: FirstBlock = {
+      name: this.forecastWithSwitch['name'],
+      country: this.forecastWithSwitch?.sys['country'],
+      sunrise: this.forecastWithSwitch?.sys['sunrise'],
+      sunset: this.forecastWithSwitch?.sys['sunset'],
+      weather: this.forecastWithSwitch?.weather[0]['description'],
+      main: this.forecastWithSwitch?.weather[0]['main'],
+      totalClouds: this.forecastWithSwitch.clouds['all']
+     };     
+      this.firstBlock = new FirstBlock(firstBlockObj);
 
+
+      const secundBockObj: SecundBlock  = {
+        speed: this.forecastWithSwitch['wind']?.speed,
+        temp_min: this.forecastWithSwitch?.main['temp_min'],
+        temp_max: this.forecastWithSwitch?.main['temp_max'],
+        temperature: this.forecastWithSwitch?.main['temp'],
+        pressure: this.forecastWithSwitch?.main['pressure'],
+        humidity:this.forecastWithSwitch?.main['humidity'],
+        timezone: this.forecastWithSwitch['timezone']
+  
+      }
+
+      this.secundBlock = new SecundBlock(secundBockObj);
+    }
 
 
   /**

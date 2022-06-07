@@ -18,24 +18,77 @@
           <div id="carouselExampleInterval" class="carousel carousel-dark slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active" data-bs-interval="10000">
-                <!-- <img src="..." class="d-block w-100" alt="
-                    | date [ : format [ : timezone [ : locale ] ] ] 
-                    ..."> -->
-                <p>Sunrise: {{ this.firstBlock?.sunrise | date }}</p>
-                <p>Sunset: {{ this.firstBlock?.sunset | date }}</p>
-                <p>Visibility: {{ this.firstBlock?.main }}</p>
-                <p>Sky: {{ this.firstBlock?.weather }}</p>
-                <p>
-                  Number Of Clouds: {{ this.firstBlock?.totalClouds + " %" }}
-                </p>
+                <div class="container" style="width: 50%;">
+                  <!-- --------------------------ListGroup----------------------------------- -->
+                  <ol class="list-group list-group-numbered">
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                      <div class="ms-2 me-auto">
+                        <div class="fw-bold">Sunrise</div>
+                        Sunrise: {{ this.firstBlock?.sunrise | date }}
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                      <div class="ms-2 me-auto">
+                        <div class="fw-bold">Sunset</div>
+                        Sunset: {{ this.firstBlock?.sunset | date }}
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                      <div class="ms-2 me-auto">
+                        <div class="fw-bold">Visibility</div>
+                        Visibility: {{ this.firstBlock?.main }}
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                      <div class="ms-2 me-auto">
+                        <div class="fw-bold">Sky</div>
+                        Sky: {{ this.firstBlock?.weather }}
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                      <div class="ms-2 me-auto">
+                        <div class="fw-bold">Number Of Clouds</div>
+                        Number Of Clouds: {{ this.firstBlock?.totalClouds + " %" }}
+                      </div>
+                    </li>
+                  </ol>
+                </div>
               </div>
               <div class="carousel-item" data-bs-interval="2000">
-                <!-- <img src="..." class="d-block w-100" alt="..."> -->
-                <p>Are you sure that you living in the EARTH 2 ?</p>
-              </div>
-              <div class="carousel-item">
-                <!-- <img src="..." class="d-block w-100" alt="..."> -->
-                <p>Are you sure that you living in the EARTH 3 ?</p>
+                <div class="container" style="width: 50%;">
+                  <ol class="list-group list-group-numbered">
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                      <div class="ms-2 me-auto">
+                        <div class="fw-bold">Wind Speed</div>
+                        Wind Speed: {{ this.secundBlock?.speed | date }}
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                      <div class="ms-2 me-auto">
+                        <div class="fw-bold">Temperature</div>
+                        Temperature: {{ this.secundBlock?.temperature | date }}
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                      <div class="ms-2 me-auto">
+                        <div class="fw-bold">Min-Temperature</div>
+                        Min-Temperature: {{ this.secundBlock?.temp_min }}
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                      <div class="ms-2 me-auto">
+                        <div class="fw-bold">Max-Temperature</div>
+                        Max-Temperature: {{ this.secundBlock?.temp_max }}
+                      </div>
+                    </li>              
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                      <div class="ms-2 me-auto">
+                        <div class="fw-bold">Humidity</div>
+                        Humidity: {{ this.secundBlock?.humidity  }}
+                      </div>
+                    </li>
+                  </ol>
+                </div>
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
