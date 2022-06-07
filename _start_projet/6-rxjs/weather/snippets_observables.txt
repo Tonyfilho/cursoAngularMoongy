@@ -1,0 +1,9 @@
+
+
+/////////////////// . WEATHER ///////////////////
+
+// para a chamada a api do tempo
+private baseWeatherURL = 'http://api.openweathermap.org/data/2.5/weather?q=';
+private urlSuffix: = "&units=metric&appid=f78fb4c7fe94d411d8a24639b4f69366";
+
+
