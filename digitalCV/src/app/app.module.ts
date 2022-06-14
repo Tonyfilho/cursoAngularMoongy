@@ -11,6 +11,7 @@ import { ForecastComponent } from './forecast/forecast.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ForecastingCityComponent } from './forecast/forecasting-city/forecasting-city.component';
+import { FormsComponent } from './forms/forms.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ForecastingCityComponent } from './forecast/forecasting-city/forecastin
     NotFoundComponent,
     AboutComponent,
     ForecastComponent,
-    ForecastingCityComponent
+    ForecastingCityComponent,
+    FormsComponent
   ],
   imports: [
     BrowserModule,
