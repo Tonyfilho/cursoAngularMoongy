@@ -1,3 +1,113 @@
-main {
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Lexend+Peta&family=Roboto:ital,wght@1,300&family=Sansita+Swashed:wght@300&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 20px;
+    color: #FFF2E7;
+
+}
+
+.navbar {
+
+    /* background: linear-gradient(68.15deg, #040013 16.62%, #2e2e30 85.61%); */
+    background: linear-gradient(68.15deg, #2e2e30 16.62%, #040013 85.61%);
+
+}
+
+.forms {
     background: linear-gradient(68.15deg, #3906f3 16.62%, #2b336b 85.61%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: space-around;
+    gap: 2%;
+
+}
+
+.section {
+    width: 50%;
+    padding: 2%;
+
+}
+
+/**Reaticve Forms CSS*/
+
+/**Template Driven CSS*/
+.section-template-driven {
+    display: block;
+    margin: 0 auto;
+}
+
+.section-template-driven-first {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.div-template-driven-first {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    padding: 5%;
+}
+
+.div-template-title-first {
+    display: block;
+    margin: 0 auto;
+}
+
+.h2-template-subtitle-first {
+    display: block;
+    margin: 0 auto;
+}
+
+.section-template-driven-second {
+    display: flex;
+    justify-items: center;
+    flex-direction: row;
+    gap: 1rem;
+    margin-bottom: 2%;
+
+
+}
+
+.section-template-driven-second-img {    
+    height: 33rem;    
+}
+
+.section-template-driven-second-title {
+    width: 100%;
+    display: block;
+    margin: 0 30%;
+}
+
+.section-template-driven-third {
+    display: flex;
+    justify-items: center;
+    flex-direction: row-reverse;
+    gap: 1rem;
+    margin-bottom: 2%;
+}
+.section-template-driven-third-img {    
+    height: 35rem;    
+}
+
+.section-template-driven-fourth {
+    display: flex;
+    justify-items: center;
+    flex-direction: row;
+    gap: 1rem;
+    margin-bottom: 2%;
+}
+.section-template-driven-fourth-img {
+    height: 6rem;
 }

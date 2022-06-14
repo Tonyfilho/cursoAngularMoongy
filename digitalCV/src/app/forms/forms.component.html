@@ -1,19 +1,105 @@
-<main>
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" routerLink="/forms">Forms</a>        
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" routerLink="/reactive">Reactive Forms</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="/driven">Template Driven</a>
-              </li>
-          
-            </ul>
-           
-          </div>
+<body>
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/forms">Forms</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/forms/reactive">Reactive Forms</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/forms/driven">Template Driven</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main class="forms">
+    <section class=" section section-reactive-forms ">
+      <h1></h1>
+    </section>
+    <section class="section section-template-driven">
+      <section class="section-template-driven-first">
+        <div class="div-template-driven-first">
+          <h1 class="div-template-title-first">
+            What is Template-driven form?
+          </h1>
+          <p class="template-driven-information">
+            In Template Driven Forms we specify behaviors/validations using directives and attributes in our template
+            and
+            let
+            it work behind the scenes. All things happen in Templates hence very little code is required in the
+            component
+            class. This is different from the reactive forms, where we define the logic and controls in the component
+            class.
+          </p>
+          <h2 class="h2-template-subtitle-first">The Template-driven forms </h2>
+          <p class="template-subtitle-item">The form is set up using ngForm directive, controls are set up using the
+            ngModel directive, ngModel also provides the two-way data binding. The Validations are configured in the
+            template via directives</p>
+          <h2 class="h2-template-subtitle-first">Template-driven forms are</h2>
+          <p class="template-subtitle-item">Difficult to add controls dynamically</p>
+          <p class="template-subtitle-item">Unit testing is a challenge</p>
         </div>
-      </nav>
-</main>
+      </section>
+      <h2 class="section-template-driven-second-title">
+        Import FormsModule
+      </h2>
+      <section class="section-template-driven-second">
+        <div class="div-template-drive-second">
+          <p class="tamplate-drive-information">
+            To work with Template-driven forms, we must import the FormsModule. We usually import it in root module or
+            in a shared module.
+            The FormsModule contains all the form directives and constructs for working with forms
+          </p>
+          <p class="template-subtitle-item">Open the app.module.ts and add the "import FormsModule from
+            '@angular/forms'" to it.</p>
+          <p class="template-subtitle-item"> And also add the FormsModule to the imports metadata property array
+          </p>
+        </div>
+        <img class="section-template-driven-second-img" src="../../assets/img/template-driven01.png"
+          alt="template driven how to create">
+      </section>
+      <h2 class="section-template-driven-second-title">
+        Html Form
+      </h2>
+      <section class="section-template-driven-third">
+        <div class="div-template-drive-third">
+          <p class="tamplate-drive-information">
+            The first task is to build the template. The following is a regular HTML form. We enclose it in a
+            form tag. We have included two text input (FirstName & LastName), a email (email), a radio button (gender),
+            a checkbox (isMarried), and a select list (country). These are form elements.
+          </p>
+        </div>
+        <img class="section-template-driven-third-img" src="../../assets/img/template-driven03.png"
+          alt="template driven how to use a form">
+      </section>
+      <h2 class="section-template-driven-second-title">
+        Receive Form Data
+      </h2>
+      <section class="section-template-driven-fourth">
+        <div class="div-template-drive-fourth">
+          <p class="tamplate-drive-information">
+            We need to receive the data in component class from our form. To do this we need to create the onSubmit
+            method in our component class. The submit method receives the reference to the ngForm directive, which we
+            named is as contactForm. The contactForm exposes the value method which returns the form fields as a Json
+            object.
+          </p>
+
+        </div>
+          <img class="section-template-driven-fourth-img" src="../../assets/img/template-driven04.png" alt="template driven how to use a form">
+
+      </section>
+      <section class="section-template-driven-fiveth">
+        <p class="tamplate-drive-information">
+          You can print the value to the console using the console.log(contactForm.value).
+          Run the code now and enter some data into the form. Open the Developer Console in your browser and check the
+          output, when you submit the data.
+        </p>
+        <img src="../../assets/img/template-driven06.png" alt="template driven how to use a form">
+        <br>
+        <img src="../../assets/img/template-driven05.png" alt="template driven how to use a form">
+      </section>
+    </section>
+  </main>
+</body>
