@@ -19,7 +19,7 @@ const routes: Routes = [
     component: ForecastComponent,
   },
   /*************************************************Carregando LAZYLOAD ROUTE*/
-  { path: 'forms', loadChildren: () => import('./about/about.module').then(module => module.AboutModule)},
+  { path: 'forms', loadChildren: () => import('./forms/forms.module').then(module => module.FormsModule)},
   { path: 'about', loadChildren: () => import('./about/about.module').then(module => module.AboutModule)},
   {
     path: '**',
