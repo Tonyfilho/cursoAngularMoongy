@@ -252,13 +252,68 @@ a {
    
 }
 .img-section-reactive-forms-seventh {
-    width: 65%;
+    width: 68%;
     height: 6em;    
     object-fit: contain; 
 }
 .img-section-reactive-forms-seventh2 {
-    width: 65%;
-    height: 6.4em;    
+    width: 68%;
+    height: 7em;    
+    object-fit: contain; 
+}
+.section-reactive-forms-eighth {
+    display: flex;
+    flex-direction: row;
+    align-content: center;    
+    column-gap: 2%;
+    margin-bottom: 2%;
+
+}
+.img-section-reactive-forms-eighth {
+    width: 60%;
+    height: 5em;    
+    object-fit: contain; 
+}
+.section-reactive-forms-nineth {
+    display: flex;
+    flex-direction: row-reverse;
+    align-content: center;    
+    column-gap: 2%;
+    margin-bottom: 2%;
+
+}
+.img-section-reactive-forms-nineth {
+    width: 60%;
+    height: 41.5em;    
     object-fit: contain; 
 }
 
+.img-section-reactive-forms-tenth {
+    width: 60%;
+    height: 7em;    
+    object-fit: contain;
+}
+.section-reactive-forms-eleventh {
+    display: flex;
+    flex-direction: row-reverse;
+    align-content: center;    
+    column-gap: 2%;
+    margin-bottom: 2%
+}
+.img-section-reactive-forms-eleventh {
+    width: 60%;
+    height: 13em;    
+    object-fit: contain;
+}
+.section-reactive-forms-twelfth {
+    display: flex;
+    flex-direction: row;
+    align-content: center;    
+    column-gap: 2%;
+    margin-bottom: 2%
+}
+.img-section-reactive-forms-twelfth {
+    width: 60%;
+    height: 5em;    
+    object-fit: contain;
+}
