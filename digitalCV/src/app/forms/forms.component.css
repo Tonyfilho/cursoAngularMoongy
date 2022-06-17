@@ -94,7 +94,7 @@ a {
 
 .img-section-template-driven-second {
     width: 60%;
-    height: 40em;    
+    height: 34em;    
     object-fit: contain;
    
 }
@@ -135,27 +135,36 @@ a {
 
 .img-section-template-driven-fourth {
     height: 9rem;
-    width: 73%;        
+    width: 70%;        
     object-fit: contain;
 }
 
 .img-section-template-driven-fourth2 {
-    height: 10rem;
-    width: 73%;        
+    height: 12rem;
+    width: 80%;        
     object-fit: contain;
 }
-/**Falta daqui para baixo*/
-.section-template-driven-fifth {
+/******************************************Falta daqui para baixo*/
+.section-template-driven-fifth {  
     display: flex;
-    justify-items: center;
-    justify-content: center;
     flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center; 
+    column-gap: 2%;
+    margin-bottom: 2%; 
 }
 
-.section-template-driven-fifth-img {
-    height: 30rem;
-    margin-bottom: 2%;
+.img-section-template-driven-fifth {
+    height: 30rem;    
+    width: 60%;        
+    object-fit: contain;
 }
+.img-section-template-driven-fifth2 {
+    height: 29rem;    
+    width: 72%;        
+    object-fit: contain;
+}
+
 
 /************************************Reaticve Forms CSS*/
 
