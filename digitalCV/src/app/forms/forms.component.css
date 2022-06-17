@@ -317,3 +317,25 @@ a {
     height: 5em;    
     object-fit: contain;
 }
+
+.section-reactive-forms-thirtheen {
+    display: flex;
+    flex-direction: row-reverse;
+    align-content: center;    
+    flex-wrap: wrap;
+    column-gap: 2%;
+    margin-bottom: 2%
+}
+.div-section-reactive-forms-thirtheen{
+    width: 15%;
+}
+.img-section-reactive-forms-thirtheen {
+    width: 83%;
+    height: 23.5em;    
+    object-fit: contain;
+}
+.img-section-reactive-forms-thirtheen2 {
+    width: 83%;
+    height: 30em;    
+    object-fit: contain;
+}
