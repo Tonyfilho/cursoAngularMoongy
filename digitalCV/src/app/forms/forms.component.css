@@ -56,6 +56,9 @@ a {
     margin: 0 auto;
 }
 
+.div-template-drive {
+    width: 40%;
+}
 .section-template-driven-first {
     display: block;
     margin: 0 auto;
@@ -79,18 +82,21 @@ a {
     display: block;
     margin: 0 auto;
 }
-
-.section-template-driven-second {
+/** *************************************************************Aqui*/
+.section-template-driven-second {  
     display: flex;
-    justify-items: center;
-    flex-direction: row;
+    flex-direction: row-reverse;
+    align-content: center; 
+    column-gap: 2%;
     margin-bottom: 2%;
-
 
 }
 
-.section-template-driven-second-img {
-    height: 33rem;
+.img-section-template-driven-second {
+    width: 60%;
+    height: 40em;    
+    object-fit: contain;
+   
 }
 
 .section-template-driven-second-title {
@@ -103,33 +109,42 @@ a {
 
 .section-template-driven-third {
     display: flex;
-    justify-items: center;
-    flex-direction: row-reverse;
-    gap: 1rem;
-    margin-bottom: 2%;
-}
-
-.section-template-driven-third-img {
-    height: 35rem;
-}
-
-.section-template-driven-fourth {
-    display: flex;
-    justify-items: center;
     flex-direction: row;
-    gap: 1rem;
-    margin-bottom: 2%;
+    align-content: center; 
+    column-gap: 2%;
+    margin-bottom: 2%;   
+}
+
+.img-section-template-driven-third {
+    width: 60%;
+    height: 38em;    
+    object-fit: contain;
+}
+
+.section-template-driven-fourth {   
+    display: flex;
+    flex-direction: row-reverse;
     flex-wrap: wrap;
+    align-content: center; 
+    column-gap: 2%;
+    margin-bottom: 2%; 
+}
+.div-template-drive-fourth {
+    width: 25%;
 }
 
-.section-template-driven-fourth-img {
-    height: 6.1rem;
+.img-section-template-driven-fourth {
+    height: 9rem;
+    width: 73%;        
+    object-fit: contain;
 }
 
-.section-template-driven-fourth-img2 {
-    height: 7.3rem;
+.img-section-template-driven-fourth2 {
+    height: 10rem;
+    width: 73%;        
+    object-fit: contain;
 }
-
+/**Falta daqui para baixo*/
 .section-template-driven-fifth {
     display: flex;
     justify-items: center;
