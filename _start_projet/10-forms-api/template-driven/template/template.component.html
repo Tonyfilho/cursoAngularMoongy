@@ -1,0 +1,33 @@
+<h2>Template Driven Form</h2>
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" autocomplete="off">
+
+  <div>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" ngModel >
+  </div>
+
+  <div>
+    <label for="ssn">SSN:</label>
+    <input type="text" id="ssn" name="ssn" ngModel >
+  </div>
+
+ <div ngModelGroup="passwordsGroup">
+    <div>
+      <label for="pwd">Password:</label>
+      <input type="text" id="pwd" name="pwd" ngModel >
+    </div>
+
+    <div>
+      <label for="pconfirm">Confirm:</label>
+      <input type="text" id="pconfirm" name="pconfirm" ngModel >
+    </div>
+ </div>
+
+  <button type="submit">Submit</button>
+</form>
+
+<h3>Previsualizar o FormModel:</h3>
+<pre>
+{{f.value | json}}
+</pre>
