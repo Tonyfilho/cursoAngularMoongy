@@ -52,8 +52,14 @@ a {
 
 /***************************************************Template Driven CSS*/
 .section-template-driven {
+    /* background: linear-gradient(68.15deg, #3906f3 16.62%, #2b336b 85.61%); */
     display: block;
     margin: 0 auto;
+}
+.section-template-driven:hover {
+    background: linear-gradient(68.15deg, #3906f3 16.62%, #0d0e14 85.61%);
+    padding: 0.5%;
+   
 }
 
 .div-template-drive {
@@ -84,7 +90,7 @@ a {
     margin: 0 auto;
 }
 
-/** *************************************************************Aqui*/
+
 .div-template-drive {
     width: 40%;
 }
@@ -262,7 +268,7 @@ a {
 }
 
 
-/******************************************Falta daqui para baixo*/
+
 
 
 /************************************Reaticve Forms CSS*/
@@ -270,6 +276,11 @@ a {
 .section-reactive-forms {
     display: block;
     margin: 0 auto;
+
+}
+.section-reactive-forms:hover {
+    background: linear-gradient(68.15deg, #3906f3 16.62%, #0d0e14 85.61%);
+    padding: 0.5%;
 
 }
 
