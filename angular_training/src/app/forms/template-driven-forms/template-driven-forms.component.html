@@ -1,7 +1,42 @@
-<body>
-    <main >
-    
-    </main>    
+<body> 
+    <main>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button type="button" class="btn btn-outline-primary" routerLink="/forms">Back</button>
+        </div>
+        <section class="container">
+            <form  class="form">
+                <label for="name" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="name">
+                </div>
+                <label for="address" class="col-sm-2 col-form-label">Address</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="address">
+                </div>
+                <label for="email" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="staticEmail">
+                </div>
+                <label for="ssn" class="col-sm-2 col-form-label">SSN</label>
+                <div class="col-sm-6">
+                    <input type="number" class="form-control" id="ssn">
+                </div>
+                <div class="passwordGroup">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                    <div class="col-sm-4">
+                        <input type="password" class="form-control" id="inputPassword">
+                    </div>
+                    <label for="confirmPassword" class="col-sm-2 col-form-label">Confirm Password</label>
+                    <div class="col-sm-4">
+                        <input type="confirmPassword" class="form-control" id="confirmPassword">
+                    </div>
+                    <div class="col-sm-6 d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button type="submit" class="btn btn-outline-primary mb-3">Send</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+      
+
+    </main>
 </body>
-
-

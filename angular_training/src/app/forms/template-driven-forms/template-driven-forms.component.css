@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+main {
+    background: linear-gradient(68.15deg, #3906f3 16.62%, #0d0e14 85.61%);
+    padding: 1%;
+    min-height: fit-content;
+    height: 55em;
+
+
+}
+
+.form {
+    margin-left: 25%;
+}
+
+label {
+    color: #FFF2E7;
+}
