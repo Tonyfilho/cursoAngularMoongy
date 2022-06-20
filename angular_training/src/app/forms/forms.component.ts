@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./forms.component.css']
 })
 export class FormsComponent implements OnInit {
-
+  forms: string = 'Forms Training'
   constructor() { }
 
   ngOnInit(): void {

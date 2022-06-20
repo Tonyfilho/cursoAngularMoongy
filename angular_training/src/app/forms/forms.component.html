@@ -1,7 +1,7 @@
 <body>
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" routerLink="/forms">Forms</a>
+      <a class="navbar-brand" routerLink="/forms">{{ forms }}</a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
@@ -317,31 +317,28 @@
       <h2 class="section-template-driven-second-title">
         Local Variable
       </h2>
-      <section class="section-template-driven-sexteenth">
-        <div class="div-template-drive">
+      <section class="section-template-driven-sixth">
+        <div class="div-template-drive-sixth">
           <p class="tamplate-drive-information">
             We can assign the ngForm,FormControl or FormGroup instance to a template local variable. This allows us to
             check the status of the form like whether the form is valid, submitted, and value of the form elements, etc
           </p>
         </div>
-        <!-- <img class="img-section-template-driven-sexteenth" src="../../assets/img/template-driven06.png"
-          alt="template driven how to use a form">
-        <br> -->
       </section>
       <h2 class="section-template-driven-second-title">
         ngForm
       </h2>
-      <section class="section-template-driven-sexteenth">
+      <section class="section-template-driven-seventh">
         <div class="div-template-drive">
           <p class="tamplate-drive-information">
             We have access to the ngForm instance via the local template variable #contactForm.
           </p>
         </div>
-        <img class="img-section-template-driven-sexteenth" src="../../assets/img/template-driven07.png"
+        <img class="img-section-template-driven-seventh" src="../../assets/img/template-driven07.png"
           alt="template driven how to use a form">
         <br>
       </section>
-      <section class="section-template-driven-sexteenth">
+      <section class="section-template-driven-eighth">
         <div class="div-template-drive">
           <p class="tamplate-drive-information">
             value: The value property returns the object containing the value of every FormControl
@@ -350,30 +347,26 @@
             submitted: Returns true if the form is submitted. else false.
           </p>
         </div>
-        <img class="img-section-template-driven-sexteenth" src="../../assets/img/template-driven07B.png"
+        <img class="img-section-template-driven-eighth" src="../../assets/img/template-driven07B.png"
           alt="template driven how to use a form">
       </section>
       <h2 class="section-template-driven-second-title">
         FormControl
       </h2>
-      <section class="section-template-driven-sexteenth">
-        <div class="div-template-drive">
+      <section class="section-template-driven-nineth">
+        <div class="div-template-drive-nineth">
           <p class="tamplate-drive-information">
             Similarly, we can also get access to the FormControl instance by assigning the ngModel to a local variable
             as shown below.
           </p>
         </div>
-        <img class="img-section-template-driven-sexteenth" src="../../assets/img/template-driven08.png"
+        <img class="img-section-template-driven-nineth" src="../../assets/img/template-driven08.png"
           alt="template driven how to use a form">
-        <div class="div-template-drive">
+        <div class="div-template-drive-nineth">
           <p class="tamplate-drive-information">
             Now, the variable #fname holds the reference to the firstname FormControl. We can then access the properties
             of FormControl like value, valid, isvalid, tocuhed etc
           </p>
-        </div>
-        <img class="img-section-template-driven-sexteenth" src="../../assets/img/template-driven08B.png"
-          alt="template driven how to use a form">
-        <div class="div-template-drive">
           <p class="tamplate-drive-information">
             value: Returns the current value of the control
             valid: Returns true if the value is Valid else false
@@ -381,20 +374,22 @@
             touched: Returns true if the value is entered in the element
           </p>
         </div>
+        <img class="img-section-template-driven-nineth2" src="../../assets/img/template-driven08B.png"
+          alt="template driven how to use a form">
       </section>
       <h2 class="section-template-driven-second-title">
         Nested FormGroup
       </h2>
-      <section class="section-template-driven-seventeenth">
-        <div class="div-template-drive">
+      <section class="section-template-driven-tenth">
+        <div class="div-template-drive-tenth">
           <p class="tamplate-drive-information">
             The FormGroup is a collection of FormControl. It can also contain other FormGroup's.
             The ngForm directive creates the top Level FormGroup behind the scene, when we use the Form directive.
           </p>
         </div>
-        <img class="img-section-template-driven-seventeenth" src="../../assets/img/template-driven09.png"
+        <img class="img-section-template-driven-tenth" src="../../assets/img/template-driven09.png"
           alt="template driven how to use a form">
-        <div class="div-template-drive">
+        <div class="div-template-drive-tenth">
           <p class="tamplate-drive-information">
             We can add new FormGroup using the ngModelGroup directive. Let us add street, city & Pincode form controls
             and group them under the address FormGroup
@@ -402,31 +397,37 @@
             as shown below
           </p>
         </div>
-        <img class="img-section-template-driven-seventeenth" src="../../assets/img/template-driven09B.png"
+        <img class="img-section-template-driven-tenth2" src="../../assets/img/template-driven09B.png"
           alt="template driven how to use a form">
-        <div class="div-template-drive">
+        <div class="div-template-drive-tenth">
           <p class="tamplate-drive-information">
             Run the App and submit. The resultant object is as shown below.
           </p>
         </div>
-        <img class="img-section-template-driven-seventeenth" src="../../assets/img/template-driven09C.png"
+        <img class="img-section-template-driven-tenth3" src="../../assets/img/template-driven09C.png"
           alt="template driven how to use a form">
       </section>
 
-      <section class="section-template-driven-eightteenth">
-        <div class="div-template-driven-eightteenth">
-          <h2 class="div-template-title-eightteenth">
-            Setting the Initial Value
-
-          </h2>
+      <h2 class="section-template-driven-second-title">Setting the Initial Value
+      </h2>
+      <section class="section-template-driven-eleventh">
+        <div class="div-template-driven-eleventh">
           <p class="template-driven-information">
             The form is usually pre-filled with some default data. In the case of editing, we have to show the user the
             current data. You can refer to the next tutorial on How to set value in the template-driven form.
           </p>
-          <h2 class="h2-template-subtitle-eightteenth">Validating the Form </h2>
+        </div>
+      </section>
+      <h2 class="section-template-driven-second-title">Validating the Form </h2>
+      <section class="section-template-driven-eleventh">
+        <div class="div-template-driven-eleventh">
           <p class="template-subtitle-item">Validating the form is another important task. We have covered it in
             Validation in template-driven form tutorial.</p>
-          <h2 class="h2-template-subtitle-eightteenth">Summary</h2>
+        </div>
+      </section>
+      <h2 class="section-template-driven-second-title">Summary</h2>
+      <section class="section-template-driven-eleventh">
+        <div class="div-template-driven-eleventh">
           <p class="template-subtitle-item">
             Angular Template-driven Forms is simpler compared to the reactive forms. The FormsModule is imported first.
             Then we create the HTML form. The Angular detects the form tag and converts the form to the Angular Form.
