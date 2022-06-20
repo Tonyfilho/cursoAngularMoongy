@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -14,6 +15,7 @@ import { TemplateDrivenFormsComponent } from './template-driven-forms/template-d
   ],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild([
       {path: '', component: FormsComponent},
       {path:'reactive', component: ReactiveFormsComponent},
@@ -22,4 +24,4 @@ import { TemplateDrivenFormsComponent } from './template-driven-forms/template-d
     ])
   ]
 })
-export class FormsModule { }
+export class FormsLocalModule { }

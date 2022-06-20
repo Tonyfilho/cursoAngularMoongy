@@ -29,7 +29,6 @@ import { FormsComponent } from './forms/forms.component';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-
     HttpClientModule
 
   ],

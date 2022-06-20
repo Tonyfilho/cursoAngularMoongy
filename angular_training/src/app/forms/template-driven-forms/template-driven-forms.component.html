@@ -4,34 +4,35 @@
             <button type="button" class="btn btn-outline-primary" routerLink="/forms">Back</button>
         </div>
         <section class="container">
-            <form  class="form">
+            <form  class="form" #f="ngForm">
                 <label for="name" class="col-sm-2 col-form-label">Name</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="name">
+                    <input type="text" class="form-control" id="name" ngModel>
+                    <!-- <input type="text" class="form-control" id="name" [(ngModel)]="f.name"> -->
                 </div>
                 <label for="address" class="col-sm-2 col-form-label">Address</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="address">
+                    <input type="text" class="form-control" id="address" ngModel>
                 </div>
                 <label for="email" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="staticEmail">
+                    <input type="text" class="form-control" id="staticEmail" ngModel>
                 </div>
                 <label for="ssn" class="col-sm-2 col-form-label">SSN</label>
                 <div class="col-sm-6">
-                    <input type="number" class="form-control" id="ssn">
+                    <input type="number" class="form-control" id="ssn" ngModel>
                 </div>
-                <div class="passwordGroup">
+                <div class="passwordGroup" ngModelGroup="passwordGroup">
                     <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
                     <div class="col-sm-4">
-                        <input type="password" class="form-control" id="inputPassword">
+                        <input type="password" class="form-control" id="inputPassword" ngModel>
                     </div>
                     <label for="confirmPassword" class="col-sm-2 col-form-label">Confirm Password</label>
                     <div class="col-sm-4">
-                        <input type="confirmPassword" class="form-control" id="confirmPassword">
+                        <input type="confirmPassword" class="form-control" id="confirmPassword" ngModel>
                     </div>
                     <div class="col-sm-6 d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button type="submit" class="btn btn-outline-primary mb-3">Send</button>
+                        <button type="button" class="btn btn-outline-primary mb-3" (click)="submitForms(f)" >Send</button>
                     </div>
                 </div>
             </form>
