@@ -1,0 +1,25 @@
+<h2>update forms</h2>
+
+<form [formGroup]="myFormModel">
+  <div>
+    product ID: <input type="text" formControlName="id" >
+  </div>
+
+  <div>
+    product description: <input type="text" formControlName="description" >
+  </div>
+
+  <div>
+    product seller: <input type="text" formControlName="seller" >
+  </div>
+
+  <button (click)="updateEntireForm()">populate</button>
+  <button (click)="updatePartOfForm()">update description</button>
+  <button (click)="myFormModel.reset()">reset</button>
+
+</form>
+
+<pre>
+ ID pristine: {{myFormModel.get('id')?.pristine}}
+  touched: {{myFormModel.touched}}
+</pre>

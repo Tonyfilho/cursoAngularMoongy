@@ -1,0 +1,32 @@
+<h1> Form Validations</h1>
+<hr>
+
+<form #f="ngForm">
+  <div>
+    Phone: <input type="text"
+                  name="phone"
+                  ngModel
+                  #phone="ngModel"
+                  required
+                  minlength="9"
+                  pattern="[0-9]*"
+                  autocomplete="off"
+           >
+  </div>
+  <section class="error" [hidden]="phone.valid || phone.pristine">
+
+    <p [hidden]="!phone.hasError('required')">Preenchimento obrigatorio!!!</p>
+
+    <p [hidden]="!phone.hasError('minlength')">tem que ter pelo menos 9 digitos</p>
+
+    <p [hidden]="!phone.hasError('pattern')">so sao permitidos numeros</p>
+
+  </section>
+</form>
+
+<hr>
+<div>
+  <pre>
+{{f.value | json}}
+  </pre>
+</div>

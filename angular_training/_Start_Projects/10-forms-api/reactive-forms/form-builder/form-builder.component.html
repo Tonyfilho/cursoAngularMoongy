@@ -1,0 +1,36 @@
+<h2>form builder </h2>
+
+
+<form [formGroup]="myFormModel" (ngSubmit)="onSubmit()" autocomplete="off">
+
+  <div>
+    <label for="username">Username:</label>
+    <input type="text" id="username" formControlName="username">
+  </div>
+
+  <div>
+    <label for="ssn">SSN:</label>
+    <input type="text" id="ssn" formControlName="ssn">
+  </div>
+
+ <div formGroupName="passwordsGroup">
+    <div>
+      <label for="pwd">Password:</label>
+      <input type="password" id="pwd" formControlName="password" >
+    </div>
+
+    <div>
+      <label for="pconfirm">Confirm:</label>
+      <input type="password" id="pconfirm" formControlName="pconfirm" >
+    </div>
+ </div>
+
+  <button type="submit">Submit</button>
+</form>
+
+<h3>Previsualizar o FormModel:</h3>
+<pre>
+{{myFormModel.value | json}}
+{{myFormModel.status}}
+</pre>
+
