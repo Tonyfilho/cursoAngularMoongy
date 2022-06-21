@@ -13,7 +13,13 @@ export class TemplateDrivenFormsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  submitForms(f: NgForm) {
-    console.log(f)
+  submitForms(f: NgForm ) {
+    const {name, address, email, ssn, passwordGroup: {password, confirmPassword} } = f.value ;
+    console.group();
+    console.log('Destructions', name, address, email, ssn, password, confirmPassword);
+    console.groupEnd();
+    console.log('FORM',f);
+    console.log(f.value);
+    f.reset();
   }
 }

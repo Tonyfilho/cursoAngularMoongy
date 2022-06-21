@@ -22,7 +22,7 @@ import { TemplateDrivenFormsComponent } from './template-driven/template-driven-
       {path: '', component: FormsComponent},
       {path:'reactive', component: ReactiveFormsComponent},
       {path:'driven', component: TemplateDrivenComponent},
-      {path:'driven/template-driven-forms-basics', component: TemplateDrivenFormsComponent},
+      {path:'driven/template-driven-forms-basics', component: TemplateDrivenFormsComponent, },
       {path:'driven/template-driven-validators-forms-basics', component: TemplateDrivenFormsComponent},
       
     ])
