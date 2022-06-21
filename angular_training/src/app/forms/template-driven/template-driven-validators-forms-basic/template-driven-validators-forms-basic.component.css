@@ -10,7 +10,8 @@ body {
     font-size: 1rem;
     line-height: 20px;
     color: #FFF2E7;
-    height: 54em;
+    min-height: 54em;
+    height: max-content;
 
 }
 

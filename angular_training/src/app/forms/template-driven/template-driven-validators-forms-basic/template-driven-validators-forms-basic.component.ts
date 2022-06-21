@@ -7,7 +7,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./template-driven-validators-forms-basic.component.css']
 })
 export class TemplateDrivenValidatorsFormsBasicComponent implements OnInit, AfterViewInit {
-  hasErrorNome!: boolean;
+  hasError!: boolean;
   constructor() { }
   ngAfterViewInit(): void {
   
@@ -24,18 +24,19 @@ export class TemplateDrivenValidatorsFormsBasicComponent implements OnInit, Afte
      * 3º usando o destruinction const  { required } = f.controls['nome'].errors as any
      * Obs: Temos q converter para ANY usando As ANY.
     */
-    this.hasErrorNome = f.controls['nome'].errors?.['required'];
+    this.hasError = f.errors as any;
     const {name, address, email, ssn, passwordGroup: {password, confirmPassword} } = f.value ;
     const  requiredSemDestruition = f?.controls['nome']?.errors as any;
     const  { required } = f.controls['nome'].errors as any ;
     console.log('Destructions', name, address, email, ssn, password, confirmPassword, required );
     console.groupEnd();
-    console.log('required', requiredSemDestruition['required'], this.hasErrorNome);
+    console.log('required', requiredSemDestruition['required'], f.hasError('nome'));
     console.log('Objeto_de_Validator',f.controls['nome']?.errors );
     console.log('dirty',f.controls['nome'].dirty);
     console.log('pristine',f.controls['nome'].pristine);
     console.log(f.value);
     f.reset();
+    // this.hasError = !this.hasError;
   }
 
 }

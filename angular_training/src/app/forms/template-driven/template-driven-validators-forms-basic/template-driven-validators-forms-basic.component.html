@@ -13,13 +13,13 @@
                     <ng-container *ngIf="!nome.hasError('required') || !nome.dirty; else nomeError"></ng-container> -->
                     <input type="text" class="form-control" id="nome" name="nome" ngModel   
                     required minlength="3" maxlength="30" >
-                    <ng-container *ngIf="!f.controls['nome']?.dirty && f.controls['nome']?.pristine  ;  else nomeError"></ng-container>
-                    <ng-template #nomeError>
+                    <!-- <div *ngIf="!f.controls['nome']?.dirty && f.controls['nome']?.pristine || hasErrorNome"> -->
+                    <div *ngIf="!f.controls['nome']?.dirty && !f.controls['nome']?.pristine ">
                         <small class="warning" style="color: red; padding:1%;">
-                           <p>The Field is mandatory</p>
-                        </small>
-                    </ng-template>
-                    <!--  *ngIf="f.hasError('required').get('name')" -->
+                            <p>The Field is mandatory</p>
+                         </small>
+                    </div>
+                   
                 </div>
 
                 
@@ -54,8 +54,9 @@
                 <ng-template  #hasdirty >
                     <pre>
                         {{ f.value | json }}
-                        <!-- {{nome.hasError('required')  }}
-                        {{nome.dirty  }} -->
+                     {{ 'Prestine ' + f.controls['nome']?.pristine }}
+                     {{ 'dirty ' + f.controls['nome']?.dirty }}
+                     {{ 'Error' + hasError}}
                     </pre>
                     
                 </ng-template>
