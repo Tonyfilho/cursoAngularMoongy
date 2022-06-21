@@ -2,7 +2,7 @@
     <main>
         <section class="container">
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button type="button" class="btn btn-outline-primary" routerLink="/forms">Back</button>
+                <button type="button" class="btn btn-outline-primary" routerLink="/forms/driven/">Back</button>
             </div>
             <form  class="form" #f="ngForm" (ngSubmit)="submitForms(f)">
                 <h2>Template-driven-forms Basics</h2>
@@ -24,17 +24,23 @@
                 </div>
                 <div class="passwordGroup" ngModelGroup="passwordGroup">
                     <label for="password" class="col-sm-2 col-form-label">Password</label>
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <input type="password" class="form-control" id="password" name="password" ngModel>
                     </div>
                     <label for="confirmPassword" class="col-sm-2 col-form-label">Confirm Password</label>
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" ngModel>
                     </div>
-                    <div class="col-sm-6 d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button type="submit" class="btn btn-outline-primary mb-3"  >Send</button>
-                    </div>
                 </div>
+                <div class="col-sm-6 d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: 1%;">
+                    <button type="submit" class="btn btn-outline-primary mb-3"  >Send</button>
+                </div>
+                <ng-container *ngIf="!f.dirty; else hasdirty"></ng-container>
+                <ng-template #hasdirty>
+                    <pre>
+                        {{ f.value | json }}
+                    </pre>
+                </ng-template>
             </form>
         </section>
     </main>

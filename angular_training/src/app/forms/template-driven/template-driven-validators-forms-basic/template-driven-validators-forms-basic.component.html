@@ -2,14 +2,28 @@
     <main>
         <section class="container">
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button type="button" class="btn btn-outline-primary" routerLink="/forms">Back</button>
+                <button type="button" class="btn btn-outline-primary" routerLink="/forms/driven">Back</button>
             </div>
             <form  class="form" #f="ngForm" (ngSubmit)="submitForms(f)">
-                <h2>Ttemplate-driven-validators-forms-basic</h2>
-                <label for="name" class="col-sm-2 col-form-label">Name</label>
+                <h2>Template-driven-validators-forms-basic</h2>
+                <label for="nome" class="col-sm-2 col-form-label">Name</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="name" name="name" ngModel >
+                    <!-- <input type="text" class="form-control" id="nome" name="nome" ngModel #nome="ngModel"  
+                    required minlength="3" maxlength="30" >
+                    <ng-container *ngIf="!nome.hasError('required') || !nome.dirty; else nomeError"></ng-container> -->
+                    <input type="text" class="form-control" id="nome" name="nome" ngModel   
+                    required minlength="3" maxlength="30" >
+                    <ng-container *ngIf="!f.controls['nome']?.dirty && f.controls['nome']?.pristine  ;  else nomeError"></ng-container>
+                    <ng-template #nomeError>
+                        <small class="warning" style="color: red; padding:1%;">
+                           <p>The Field is mandatory</p>
+                        </small>
+                    </ng-template>
+                    <!--  *ngIf="f.hasError('required').get('name')" -->
                 </div>
+
+                
+
                 <label for="address" class="col-sm-2 col-form-label">Address</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" id="address" name="address" ngModel>
@@ -24,17 +38,27 @@
                 </div>
                 <div class="passwordGroup" ngModelGroup="passwordGroup">
                     <label for="password" class="col-sm-2 col-form-label">Password</label>
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <input type="password" class="form-control" id="password" name="password" ngModel>
                     </div>
                     <label for="confirmPassword" class="col-sm-2 col-form-label">Confirm Password</label>
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" ngModel>
                     </div>
-                    <div class="col-sm-6 d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button type="submit" class="btn btn-outline-primary mb-3"  >Send</button>
-                    </div>
+                    
                 </div>
+                <div class="col-sm-6 d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: 1%;">
+                    <button type="submit" class="btn btn-outline-primary mb-3"  >Send</button>
+                </div>
+                <ng-content *ngIf="!f.dirty; else hasdirty" ></ng-content>
+                <ng-template  #hasdirty >
+                    <pre>
+                        {{ f.value | json }}
+                        <!-- {{nome.hasError('required')  }}
+                        {{nome.dirty  }} -->
+                    </pre>
+                    
+                </ng-template>
             </form>
         </section>
     </main>
