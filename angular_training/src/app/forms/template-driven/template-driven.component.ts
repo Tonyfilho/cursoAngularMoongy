@@ -7,7 +7,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./template-driven.component.css']
 })
 export class TemplateDrivenComponent implements OnInit {
-
+  forms: string = 'Template Drives Forms Examples';
   constructor() { }
 
   ngOnInit(): void {
