@@ -1,0 +1,41 @@
+<body>
+    <main>
+        <section class="container">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button type="button" class="btn btn-outline-primary" routerLink="/forms">Back</button>
+            </div>
+            <form  class="form" #f="ngForm" (ngSubmit)="submitForms(f)">
+                <h2>Ttemplate-driven-validators-forms-basic</h2>
+                <label for="name" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="name" name="name" ngModel >
+                </div>
+                <label for="address" class="col-sm-2 col-form-label">Address</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="address" name="address" ngModel>
+                </div>
+                <label for="email" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="email" name="email" ngModel>
+                </div>
+                <label for="ssn" class="col-sm-2 col-form-label">SSN</label>
+                <div class="col-sm-6">
+                    <input type="number" class="form-control" id="ssn" name="ssn" ngModel>
+                </div>
+                <div class="passwordGroup" ngModelGroup="passwordGroup">
+                    <label for="password" class="col-sm-2 col-form-label">Password</label>
+                    <div class="col-sm-4">
+                        <input type="password" class="form-control" id="password" name="password" ngModel>
+                    </div>
+                    <label for="confirmPassword" class="col-sm-2 col-form-label">Confirm Password</label>
+                    <div class="col-sm-4">
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" ngModel>
+                    </div>
+                    <div class="col-sm-6 d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button type="submit" class="btn btn-outline-primary mb-3"  >Send</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>

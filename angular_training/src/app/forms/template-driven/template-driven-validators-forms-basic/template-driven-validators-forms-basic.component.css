@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Lexend+Peta&family=Roboto:ital,wght@1,300&family=Sansita+Swashed:wght@300&display=swap');
+
+body {
+    background: linear-gradient(68.15deg, #0a041f 16.62%, #03137e 85.61%);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 20px;
+    color: #FFF2E7;
+    height: 54em;
+
+}
+
+
+.container {
+    padding: 1%;
+}
+
+
+.form {
+    margin-left: 25%;
+}
+
+label {
+    color: #FFF2E7;
+}
