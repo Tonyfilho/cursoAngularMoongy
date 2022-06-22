@@ -4,25 +4,33 @@
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <button type="button" class="btn btn-outline-primary" routerLink="/forms/driven">Back</button>
             </div>
-            <form  class="form" #f="ngForm" (ngSubmit)="submitForms(f)">
+            <form class="form" #f="ngForm" (ngSubmit)="submitForms(f)">
                 <h2>Template-driven-validators-forms-basic</h2>
                 <label for="nome" class="col-sm-2 col-form-label">Name</label>
                 <div class="col-sm-6">
                     <!-- <input type="text" class="form-control" id="nome" name="nome" ngModel #nome="ngModel"  
                     required minlength="3" maxlength="30" >
                     <ng-container *ngIf="!nome.hasError('required') || !nome.dirty; else nomeError"></ng-container> -->
-                    <input type="text" class="form-control" id="nome" name="nome" ngModel   
-                    required minlength="3" maxlength="30" >
-                    <!-- <div *ngIf="!f.controls['nome']?.dirty && f.controls['nome']?.pristine || hasErrorNome"> -->
-                    <div *ngIf="!f.controls['nome']?.dirty && !f.controls['nome']?.pristine ">
+                    <input type="text" class="form-control" id="nome" name="nome" ngModel required minlength="3"
+                        maxlength="30" autofocus>
+                    <!-- Validators------------------------------------------- -->
+                    <div
+                        *ngIf="f.controls['nome']?.hasError('required') && f.controls['nome'].dirty ||
+                         f.controls['nome']?.hasError('required') && f.controls['nome'].touched ||
+                          f.controls['nome']?.pristine && f.controls['nome']?.touched || f.controls['nome']?.hasError('minlength') || f.controls['nome']?.hasError('maxlength') ">
                         <small class="warning" style="color: red; padding:1%;">
                             <p>The Field is mandatory</p>
-                         </small>
+                        </small>
+                        <small class="warning" style="color: red; padding:1%;"
+                            [hidden]="!f.controls['nome'].hasError('minlength')">
+                            <p>Min size are 3 lettlers</p>
+                        </small>
+                        <small class="warning" style="color: red; padding:1%;"
+                            [hidden]="!f.controls['nome'].hasError('maxlength')">
+                            <p>Max Field are 30 lettlers</p>
+                        </small>
                     </div>
-                   
                 </div>
-
-                
 
                 <label for="address" class="col-sm-2 col-form-label">Address</label>
                 <div class="col-sm-6">
@@ -30,35 +38,99 @@
                 </div>
                 <label for="email" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="email" name="email" ngModel>
+                    <input type="text" class="form-control" id="email" name="email" ngModel required minlength="3"
+                        maxlength="30">
+                    <!-- Validators------------------------------------------- -->
+                    <div
+                        *ngIf="f.controls['email']?.hasError('required') && f.controls['email'].dirty ||
+                              f.controls['email']?.hasError('required') && f.controls['email'].touched ||
+                               f.controls['email']?.pristine && f.controls['email']?.touched || f.controls['email']?.hasError('minlength') || f.controls['email']?.hasError('maxlength') ">
+                        <small class="warning" style="color: red; padding:1%;">
+                            <p>The Field is mandatory</p>
+                        </small>
+                        <small class="warning" style="color: red; padding:1%;"
+                            [hidden]="!f.controls['email'].hasError('minlength')">
+                            <p>Min size are 3 lettlers</p>
+                        </small>
+                        <small class="warning" style="color: red; padding:1%;"
+                            [hidden]="!f.controls['email'].hasError('maxlength')">
+                            <p>Max Field are 30 lettlers</p>
+                        </small>
+                    </div>
                 </div>
+
                 <label for="ssn" class="col-sm-2 col-form-label">SSN</label>
                 <div class="col-sm-6">
-                    <input type="number" class="form-control" id="ssn" name="ssn" ngModel>
+                    <input type="number" class="form-control" id="ssn" name="ssn" ngModel required minlength="3"
+                        maxlength="30"  pattern="[0-9]*">
+                    <!-- Validators------------------------------------------------- -->
+                    <div
+                        *ngIf="f.controls['ssn']?.hasError('required') && f.controls['ssn'].dirty ||
+                           f.controls['ssn']?.hasError('required') && f.controls['ssn'].touched ||
+                            f.controls['ssn']?.pristine && f.controls['ssn']?.touched || f.controls['ssn']?.hasError('minlength') || f.controls['ssn']?.hasError('maxlength') ">
+                        <small class="warning" style="color: red; padding:1%;">
+                            <p>The Field is mandatory</p>
+                        </small>
+                        <small class="warning" style="color: red; padding:1%;"
+                            [hidden]="!f.controls['ssn'].hasError('minlength')">
+                            <p>Min size are 3 lettlers</p>
+                        </small>
+                        <small class="warning" style="color: red; padding:1%;"
+                            [hidden]="!f.controls['ssn'].hasError('maxlength')">
+                            <p>Max Field are 30 lettlers</p>
+                        </small>
+                    </div>
                 </div>
                 <div class="passwordGroup" ngModelGroup="passwordGroup">
                     <label for="password" class="col-sm-2 col-form-label">Password</label>
                     <div class="col-sm-6">
-                        <input type="password" class="form-control" id="password" name="password" ngModel>
+                        <input type="password" class="form-control" id="password" name="password" ngModel required [pattern]="localPattern"      >
+                        <!-- Validators--------------------------------------- -->
+                        <div
+                            *ngIf="f.controls['password']?.hasError('required') && f.controls['password'].dirty ||
+                          f.controls['password']?.hasError('required') && f.controls['password'].touched ||
+                           f.controls['password']?.pristine && f.controls['password']?.touched || f.controls['passwordGroup']?.hasError('pattern') ">
+                            <small class="warning" style="color: red; padding:1%;">
+                                <p>The Field is mandatory</p>
+                            </small>
+                            <small class="warning" style="color: red; padding:1%;"
+                                [hidden]="!f.controls['passwordGroup']?.hasError('pattern')">
+                                <p>Require a lowercase letter,  require an uppercase letter, require a digit, require a special character, Any character (but a newline), 6 to 64 occurrences</p>
+                            </small>
+                           
+                        </div>
                     </div>
                     <label for="confirmPassword" class="col-sm-2 col-form-label">Confirm Password</label>
                     <div class="col-sm-6">
-                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" ngModel>
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" ngModel [pattern]="localPattern">
+                        <div
+                            *ngIf="f.controls['confirmPassword']?.hasError('required') && f.controls['confirmPassword'].dirty ||
+                              f.controls['confirmPassword']?.hasError('required') && f.controls['confirmPassword'].touched ||
+                               f.controls['confirmPassword']?.pristine && f.controls['confirmPassword']?.touched || f.controls['passwordGroup']?.hasError('pattern') ">
+                            <small class="warning" style="color: red; padding:1%;">
+                                <p>The Field is mandatory</p>
+                            </small>
+                            <small class="warning" style="color: red; padding:1%;"
+                                [hidden]="!f.controls['passwordGroup']?.hasError('pattern')">
+                                <p>Require a min 2 lowercase letter,  require a min 2 uppercase letter, require a digit, require a min 1 special character, Any character (but a newline), 6 to 64 occurrences </p>
+                            </small>
+                        
+                        </div>
+
                     </div>
-                    
                 </div>
+
                 <div class="col-sm-6 d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: 1%;">
-                    <button type="submit" class="btn btn-outline-primary mb-3"  >Send</button>
+                    <button type="submit" class="btn btn-outline-primary mb-3" [disabled]="f.invalid">Send</button>
                 </div>
-                <ng-content *ngIf="!f.dirty; else hasdirty" ></ng-content>
-                <ng-template  #hasdirty >
+                <ng-content *ngIf="!f.dirty; else hasdirty"></ng-content>
+                <ng-template #hasdirty>
                     <pre>
-                        {{ f.value | json }}
-                     {{ 'Prestine ' + f.controls['nome']?.pristine }}
-                     {{ 'dirty ' + f.controls['nome']?.dirty }}
-                     {{ 'Error' + hasError}}
+                        {{ f?.value | json }}
+                        {{ 'hasError pattern' + ' ' + f.controls['passwordGroup.controls.password'].hasError('pattern') }}
+                        {{ 'hasError pattern confirmPassword' + ' ' + f.controls['passwordGroup'].get('confirmPassword')?.hasError('pattern')}}
+                        {{ 'hasError pattern Password' + ' ' + f.controls['passwordGroup'].get('password')?.hasError('pattern')}}                                  
                     </pre>
-                    
                 </ng-template>
             </form>
         </section>
