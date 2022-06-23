@@ -28,3 +28,21 @@ body {
 label {
     color: #FFF2E7;
 }
+/** Class do Ng-Class do Angular, que são redenrisadas automaticamente  */
+/* ng-untouched ng-pristine ng-invalid */
+
+.nome.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+.form-control.address.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+.form-control.ssn.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+.form-control.password.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+.form-control.confirmPassword.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
