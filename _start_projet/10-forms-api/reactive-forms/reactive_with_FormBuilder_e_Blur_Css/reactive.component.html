@@ -1,0 +1,28 @@
+<h2>reactive form validation</h2>
+
+<form [formGroup]="myFormModel">
+  <div>
+    Phone: <input type="text"
+                  formControlName="phone"
+                  autocomplete="off"
+           >
+  </div>
+
+  <section class="error" [hidden]="phone?.valid || phone?.pristine">
+
+    <p [hidden]="!phone?.hasError('required')">Preenchimento obrigatorio!!!</p>
+
+    <p [hidden]="!phone?.hasError('minlength')">tem que ter pelo menos 9 digitos</p>
+
+    <p [hidden]="!phone?.hasError('pattern')">so sao permitidos numeros</p>
+
+  </section>
+</form>
+
+<hr>
+<div>
+  <pre>
+{{myFormModel.value | json}}
+{{myFormModel.status}}
+  </pre>
+</div>

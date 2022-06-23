@@ -1,0 +1,13 @@
+<h2>custom validator</h2>
+
+<form [formGroup]="myFormModel">
+  SSN: <input type="text" formControlName="segSocial" class="social">
+
+ <section class="error" [hidden]="myFormModel.valid || myFormModel.pristine">
+    <span [hidden]="!myFormModel.hasError('ssn', 'segSocial')">
+      <!-- SS Invalido... -->
+      {{myFormModel.getError('ssn', 'segSocial').description}}
+    </span>
+ </section>
+
+</form>

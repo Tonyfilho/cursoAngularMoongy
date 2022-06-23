@@ -1,0 +1,49 @@
+<p>group validation</p>
+
+
+<form [formGroup]="myFormModel" (ngSubmit)="onSubmit()" autocomplete="off">
+
+  <div>
+    <label for="username">Username:</label>
+    <input type="text" id="username" formControlName="username">
+    <span class="error" [hidden]="!myFormModel.hasError('required', 'username')">
+      Campo obrigatorio!
+    </span>
+  </div>
+
+  <div>
+    <label for="ssn">SSN:</label>
+    <input type="text" id="ssn" formControlName="ssn">
+    <span class="error" [hidden]="!myFormModel.hasError('ssn', 'ssn')">
+      9 digitos numéricos!!
+    </span>
+  </div>
+
+ <div formGroupName="passwordsGroup">
+    <div>
+      <label for="pwd">Password:</label>
+      <input type="password" id="pwd" formControlName="password" >
+      <span class="error" [hidden]="!myFormModel.hasError('minlength',['passwordsGroup','password'])">
+        minimo de 6 caracteres
+      </span>
+    </div>
+
+    <div>
+      <label for="pconfirm">Confirm:</label>
+      <input type="password" id="pconfirm" formControlName="pconfirm" >
+      <span class="error" [hidden]="!myFormModel.hasError('equal', 'passwordsGroup')">
+       campos iguais
+      </span>
+    </div>
+ </div>
+
+  <button type="submit" [disabled]="myFormModel.invalid">submit</button>
+</form>
+
+<h3>Previsualizar o FormModel:</h3>
+<pre>
+{{myFormModel.value | json}}
+{{myFormModel.status}}
+</pre>
+
+

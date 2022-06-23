@@ -1,0 +1,17 @@
+<h2>dynamic works!</h2>
+
+<form [formGroup]="myFormModel">
+
+  <div>
+    Country: <input type="text" formControlName="country">
+  </div>
+
+  <div>
+    Phone: <input type="text" formControlName="phone">
+  </div>
+
+  <div class="error" *ngIf="myFormModel.controls['phone'].invalid && myFormModel.get('phone')?.dirty">
+    Min Length: {{this.myFormModel.get('phone')?.getError('minlength').requiredLength}}
+  </div>
+
+</form>
