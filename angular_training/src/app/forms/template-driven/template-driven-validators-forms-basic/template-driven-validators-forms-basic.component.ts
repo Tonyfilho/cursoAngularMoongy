@@ -6,13 +6,11 @@ import { NgForm } from '@angular/forms';
   templateUrl: './template-driven-validators-forms-basic.component.html',
   styleUrls: ['./template-driven-validators-forms-basic.component.css']
 })
-export class TemplateDrivenValidatorsFormsBasicComponent implements OnInit, AfterViewInit {
+export class TemplateDrivenValidatorsFormsBasicComponent implements OnInit {
   hasError!: boolean;
   localPattern =  '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[ -/:-@\[-`{-~]).{6,64}$';
   constructor() { }
-  ngAfterViewInit(): void {
   
-  }
   
 
   ngOnInit(): void {
