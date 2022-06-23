@@ -39,7 +39,7 @@
                 <label for="email" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" id="email" name="email" ngModel required minlength="3"
-                        maxlength="30">
+                        maxlength="30" email>
                     <!-- Validators------------------------------------------- -->
                     <div
                         *ngIf="f.controls['email']?.hasError('required') && f.controls['email'].dirty ||
@@ -84,37 +84,36 @@
                 <div class="passwordGroup" ngModelGroup="passwordGroup">
                     <label for="password" class="col-sm-2 col-form-label">Password</label>
                     <div class="col-sm-6">
-                        <input type="password" class="form-control" id="password" name="password" ngModel required [pattern]="localPattern"      >
-                        <!-- Validators--------------------------------------- -->
+                        <input type="password" class="form-control" id="password" name="password" ngModel required [pattern]="localPattern"  required  >
+                        <!-- Validators--------------------------------------- -->               
                         <div
-                            *ngIf="f.controls['password']?.hasError('required') && f.controls['password'].dirty ||
-                          f.controls['password']?.hasError('required') && f.controls['password'].touched ||
-                           f.controls['password']?.pristine && f.controls['password']?.touched || f.controls['passwordGroup']?.hasError('pattern') ">
+                            *ngIf="f.controls['passwordGroup']?.get('password')?.hasError('required') && f.controls['passwordGroup']?.get('password')?.dirty ||
+                            f.controls['passwordGroup']?.get('password')?.hasError('required') && f.controls['passwordGroup']?.get('password')?.touched ||
+                            f.controls['passwordGroup']?.get('password')?.pristine && f.controls['passwordGroup']?.get('password')?.touched || f.controls['passwordGroup']?.get('password')?.hasError('pattern')">
                             <small class="warning" style="color: red; padding:1%;">
                                 <p>The Field is mandatory</p>
                             </small>
                             <small class="warning" style="color: red; padding:1%;"
-                                [hidden]="!f.controls['passwordGroup']?.hasError('pattern')">
+                                [hidden]="!f.controls['passwordGroup']?.get('password')?.hasError('pattern')">
                                 <p>Require a lowercase letter,  require an uppercase letter, require a digit, require a special character, Any character (but a newline), 6 to 64 occurrences</p>
-                            </small>
-                           
+                            </small>                           
                         </div>
                     </div>
                     <label for="confirmPassword" class="col-sm-2 col-form-label">Confirm Password</label>
                     <div class="col-sm-6">
-                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" ngModel [pattern]="localPattern">
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" ngModel [pattern]="localPattern" required>                  
                         <div
-                            *ngIf="f.controls['confirmPassword']?.hasError('required') && f.controls['confirmPassword'].dirty ||
-                              f.controls['confirmPassword']?.hasError('required') && f.controls['confirmPassword'].touched ||
-                               f.controls['confirmPassword']?.pristine && f.controls['confirmPassword']?.touched || f.controls['passwordGroup']?.hasError('pattern') ">
+                            *ngIf="f.controls['passwordGroup']?.get('confirmPassword')?.hasError('required') && f.controls['passwordGroup']?.get('confirmPassword')?.dirty ||
+                            f.controls['passwordGroup']?.get('confirmPassword')?.hasError('required') && f.controls['passwordGroup']?.get('confirmPassword')?.touched ||
+                            f.controls['passwordGroup']?.get('confirmPassword')?.pristine && f.controls['passwordGroup']?.get('confirmPassword')?.touched
+                                ||  f.controls['passwordGroup']?.get('confirmPassword')?.hasError('pattern') ">
                             <small class="warning" style="color: red; padding:1%;">
                                 <p>The Field is mandatory</p>
                             </small>
                             <small class="warning" style="color: red; padding:1%;"
-                                [hidden]="!f.controls['passwordGroup']?.hasError('pattern')">
+                                [hidden]="!f.controls['passwordGroup']?.get('confirmPassword')?.hasError('pattern')">
                                 <p>Require a min 2 lowercase letter,  require a min 2 uppercase letter, require a digit, require a min 1 special character, Any character (but a newline), 6 to 64 occurrences </p>
-                            </small>
-                        
+                            </small>                        
                         </div>
 
                     </div>
@@ -127,9 +126,9 @@
                 <ng-template #hasdirty>
                     <pre>
                         {{ f?.value | json }}
-                        {{ 'hasError pattern' + ' ' + f.controls['passwordGroup.controls.password'].hasError('pattern') }}
-                        {{ 'hasError pattern confirmPassword' + ' ' + f.controls['passwordGroup'].get('confirmPassword')?.hasError('pattern')}}
-                        {{ 'hasError pattern Password' + ' ' + f.controls['passwordGroup'].get('password')?.hasError('pattern')}}                                  
+                        {{ 'hasError pattern' + ' ' + f.controls['passwordGroup.controls.password']?.hasError('pattern') }}
+                        {{ 'hasError pattern confirmPassword' + ' ' + f.controls['passwordGroup']?.get('confirmPassword')?.hasError('pattern')}}
+                        {{ 'hasError pattern Password' + ' ' + f.controls['passwordGroup']?.get('password')?.hasError('pattern')}}                                  
                     </pre>
                 </ng-template>
             </form>
