@@ -3,12 +3,7 @@ import { AbstractControl } from '@angular/forms';
 
 
 
-export function ssnValidator(control: AbstractControl): ValidationErrors | null {
-   const value = control.value || '' ;
-   const valid = value.match(/^\d{9}$/);
-   return valid ? null : {ssn: {description: 'Numero de Seg Social Inválido'}};
 
-}
 
 
 export function equalValidator(control: AbstractControl): ValidationErrors | null {
@@ -25,3 +20,13 @@ export function custonPattern(control: AbstractControl): ValidationErrors | null
 
 }
 
+
+export class ssnValidator {
+  public static SSNVALIDATOR(control: AbstractControl): ValidationErrors | null {
+    const value = control.value || '' ;
+    const valid = value.match(/^\d{9}$/);
+    return valid ? null : {ssn: {description: 'Numero de Seg Social Inválido'}};
+ 
+ }
+
+}

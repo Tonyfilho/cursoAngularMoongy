@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ssnValidator } from '../../../../assets/classes/custom-validators/custons-validations'
 
 @Component({
   selector: 'app-template-driven-validators-local-variable',
@@ -7,16 +8,27 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./template-driven-validators-local-variable.component.css']
 })
 export class TemplateDrivenValidatorsLocalVariableComponent implements OnInit {
-
+  @ViewChild('localSsn', {static: true})  campoValorInput!: HTMLElement; 
+  ssn!:NgForm;
  
   localPattern =  '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[ -/:-@\[-`{-~]).{6,64}$';
-  constructor() { }
+  constructor() {
+    
+   }
+   /*
+   *Ver os dados mais não acessa o Objeto, dá erro 
+  ngAfterViewInit(): void {
+    console.log('ViewChild: ',  this.campoValorInput.control.value);   
+  }
+  */
   
   
-
   ngOnInit(): void {
+    // this.ssn.valueChanges?.subscribe(d => console.log("Value Change", d))
+
   }
   submitForms(f: NgForm ) { 
+    ssnValidator.SSNVALIDATOR(f.controls['ssn'].value);
     console.log('Objeto_de_Validator',f.errors );
     console.log('dirty',f.controls['nome'].dirty);
     console.log('pristine',f.controls['nome'].pristine);
@@ -28,6 +40,7 @@ export class TemplateDrivenValidatorsLocalVariableComponent implements OnInit {
     console.log('hasError pattern getError',f.controls['passwordGroup'].get('password')?.hasError('pattern'));
     console.log('hasError pattern getError',f.controls['passwordGroup'].get('confirmPassword')?.hasError('pattern'));
     console.log(f);
+    console.log('NgModel SSN ', this.ssn);
     // f.reset();
     // this.hasError = !this.hasError;
   }

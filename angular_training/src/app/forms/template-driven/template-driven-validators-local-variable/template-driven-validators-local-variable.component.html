@@ -60,44 +60,33 @@
 <!-- -------------------------------------------------------------------------Falta fazer os validators  -->
                 <label for="ssn" class="col-sm-2 col-form-label">SSN</label>
                 <div class="col-sm-6">
-                    <input type="number" class="form-control ssn" id="ssn" name="ssn" ngModel required minlength="3"
-                        maxlength="30" pattern="[0-9]*">
+                    <input type="number" class="form-control ssn" id="ssn" name="ssn" [(ngModel)]="ssn" required minlength="3"
+                        maxlength="30" pattern="[0-9]*" #localSsn="ngModel" >
                     <!-- Validators------------------------------------------------- -->
-                    <div
-                        *ngIf="f.controls['ssn']?.hasError('required') && f.controls['ssn'].dirty ||
-                           f.controls['ssn']?.hasError('required') && f.controls['ssn'].touched ||
-                            f.controls['ssn']?.pristine && f.controls['ssn']?.touched || f.controls['ssn']?.hasError('minlength') || f.controls['ssn']?.hasError('maxlength') ">
-                        <small class="warning" style="color: red; padding:1%;">
-                            <p>The Field is mandatory</p>
+                    <section *ngIf="localSsn.invalid && localSsn.touched">
+                        <small style="color: red; margin-top:0.5%">
+                            <p>The Field is mandatory.</p>
                         </small>
-                        <small class="warning" style="color: red; padding:1%;"
-                            [hidden]="!f.controls['ssn'].hasError('minlength')">
-                            <p>Min size are 3 lettlers</p>
+                        <small style="color: red; margin-top:0.5%"
+                            [hidden]="!localSsn.invalid &&  localSsn['control']?.hasError('ssn')">
+                            <p>Min size are 5 lettlers.</p>
                         </small>
-                        <small class="warning" style="color: red; padding:1%;"
-                            [hidden]="!f.controls['ssn'].hasError('maxlength')">
-                            <p>Max Field are 30 lettlers</p>
-                        </small>
-                    </div>
+                       
+                    </section>
                 </div>
+
+
+
+
+
                 <div class="passwordGroup" ngModelGroup="passwordGroup">
                     <label for="password" class="col-sm-2 col-form-label">Password</label>
                     <div class="col-sm-6">
                         <input type="password" class="form-control password" id="password" name="password" ngModel
-                            required [pattern]="localPattern" required>
+                            required [pattern]="localPattern" >
                         <!-- Validators--------------------------------------- -->
-                        <div
-                            *ngIf="f.controls['passwordGroup']?.get('password')?.hasError('required') && f.controls['passwordGroup']?.get('password')?.dirty ||
-                            f.controls['passwordGroup']?.get('password')?.hasError('required') && f.controls['passwordGroup']?.get('password')?.touched ||
-                            f.controls['passwordGroup']?.get('password')?.pristine && f.controls['passwordGroup']?.get('password')?.touched || f.controls['passwordGroup']?.get('password')?.hasError('pattern')">
-                            <small class="warning" style="color: red; padding:1%;">
-                                <p>The Field is mandatory</p>
-                            </small>
-                            <small class="warning" style="color: red; padding:1%;"
-                                [hidden]="!f.controls['passwordGroup']?.get('password')?.hasError('pattern')">
-                                <p>Require a lowercase letter, require an uppercase letter, require a digit, require a
-                                    special character, Any character (but a newline), 6 to 64 occurrences</p>
-                            </small>
+                        <div>
+                         
                         </div>
                     </div>
                     <label for="confirmPassword" class="col-sm-2 col-form-label">Confirm Password</label>
