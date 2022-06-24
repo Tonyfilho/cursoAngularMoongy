@@ -1,4 +1,3 @@
-
 /* .home {
     width: 100%;
     height: 55rem;
@@ -8,8 +7,32 @@
    background-repeat: initial;
    background-size: contain;
 } */
-.home {
+body {
     width: 100%;
-    height: 55rem;
+    height: 91vh;
     background: linear-gradient(68.15deg, #3906f3 16.62%, #2b336b 85.61%);
+    display: grid;
+    place-items: center;
 }
+
+main {
+    width: 96%;
+    height: 85vh;
+    background-color: linear-gradient(68.15deg, #3906f3 16.62%, #2b336b 85.61%);
+    position: relative;
+    box-shadow: 1em 1em 25px 1em #3a3af3a9,
+     inset 0 0 25px 0.5em #0e0e3fa9,
+       inset 0 0 5em 0px #3609af8f;
+}
+.home {
+
+    width: 92%;
+    height: 80vh;
+    background-color: linear-gradient(-68.15deg, #12152e 16.62%, #2c09aa 85.61%);
+    position: relative;
+    box-shadow: 1em 1em 25px 0.5em #3a3af3a9,
+     inset 0 0 25px 0.25em #0e0e3fa9,
+       inset 0 0 5em 0px #3609af8f;
+}
+
+
