@@ -1,9 +1,24 @@
+body {
+
+    width: 100%;    
+    height: 100vmax;
+    background: linear-gradient(68.15deg, #3906f3 16.62%, #2b336b 85.61%);
+    display: grid;
+    place-items: center;
+}
+
+main {
+    width: 96%;    
+    background-color: linear-gradient(68.15deg, #3906f3 16.62%, #2b336b 85.61%);
+    position: relative;
+    box-shadow: 1em 1em 25px 1em #3a3af3a9,
+     inset 0 0 25px 0.5em #0e0e3fa9,
+       inset 0 0 5em 0px #3609af8f;
+}
+
 .card-list {
     margin: 1%;   
-    display: inline-flex;
-    
-    /* flex-direction: column; */
-    /* justify-content: center; */
+    display: inline-flex;   
     flex-wrap: wrap;
 
 }
