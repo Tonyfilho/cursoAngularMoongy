@@ -9,6 +9,7 @@ import { TemplateDrivenFormsComponent } from './template-driven/template-driven-
 import { TemplateDrivenValidatorsFormsBasicComponent } from './template-driven/template-driven-validators-forms-basic/template-driven-validators-forms-basic.component';
 import { TemplateDrivenValidatorsLocalVariableComponent } from './template-driven/template-driven-validators-local-variable/template-driven-validators-local-variable.component';
 import { FormControlComponent } from './reactive-forms/form-control/form-control.component';
+import { FormGroupComponent } from './reactive-forms/form-group/form-group.component';
 
 
 
@@ -19,7 +20,8 @@ import { FormControlComponent } from './reactive-forms/form-control/form-control
     TemplateDrivenFormsComponent,
     TemplateDrivenValidatorsFormsBasicComponent,
     TemplateDrivenValidatorsLocalVariableComponent,
-    FormControlComponent
+    FormControlComponent,
+    FormGroupComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +31,7 @@ import { FormControlComponent } from './reactive-forms/form-control/form-control
       {path: '', component: FormsComponent},
       {path:'reactive', component: ReactiveFormsComponent},
       {path:'reactive/formsControl', component: FormControlComponent},
-      {path:'reactive/formsGroup', component: FormControlComponent},
+      {path:'reactive/formsGroup', component: FormGroupComponent},
       {path:'reactive/formsBuilder', component: FormControlComponent},
       {path:'reactive/formsArray', component: FormControlComponent},
       {path:'reactive/formsUpdate', component: FormControlComponent},
