@@ -12,6 +12,7 @@ body {
     color: #FFF2E7;
     min-height: 54em;
     height: 100vh;
+    height: max-content;
 
 }
 

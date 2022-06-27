@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { debounceTime } from 'rxjs';
 import { ssnValidator } from '../../../../assets/classes/custom-validators/custons-validations'
 
 @Component({
@@ -8,26 +9,26 @@ import { ssnValidator } from '../../../../assets/classes/custom-validators/custo
   styleUrls: ['./template-driven-validators-local-variable.component.css']
 })
 export class TemplateDrivenValidatorsLocalVariableComponent implements OnInit {
-  @ViewChild('localSsn', {static: true})  campoValorInput!: HTMLElement; 
+  @ViewChild('localSsn', {static: true})  campoValorInput!: HTMLElement;
   ssn!:NgForm;
- 
+
   localPattern =  '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[ -/:-@\[-`{-~]).{6,64}$';
   constructor() {
-    
+
    }
    /*
-   *Ver os dados mais não acessa o Objeto, dá erro 
+   *Ver os dados mais não acessa o Objeto, dá erro
   ngAfterViewInit(): void {
-    console.log('ViewChild: ',  this.campoValorInput.control.value);   
+    console.log('ViewChild: ',  this.campoValorInput.control.value);
   }
   */
-  
-  
+
+
   ngOnInit(): void {
-    // this.ssn.valueChanges?.subscribe(d => console.log("Value Change", d))
+  //  this.ssn.valueChanges?.pipe(debounceTime(1000)).subscribe(data => console.log(data));
 
   }
-  submitForms(f: NgForm ) { 
+  submitForms(f: NgForm ) {
     ssnValidator.SSNVALIDATOR(f.controls['ssn'].value);
     console.log('Objeto_de_Validator',f.errors );
     console.log('dirty',f.controls['nome'].dirty);
