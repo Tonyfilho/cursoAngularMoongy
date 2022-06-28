@@ -1,1 +1,54 @@
-<p>update-form works!</p>
+
+<body>
+  <main>
+    <section class="container">
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="button" class="btn btn-outline-light" routerLink="/forms/reactive">Back</button>
+      </div>
+      <form class="form" [formGroup]="myUpdateForm" (ngSubmit)="submitForms()">
+        <h2 class="title">Update-form</h2>
+        <label for="name" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="name" formControlName="name">
+        </div>
+        <label for="address" class="col-sm-2 col-form-label">Address</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="address" formControlName="address">
+        </div>
+
+        <div class="col-sm-6">
+          <label for="email" class="col-sm-2 col-form-label">Email</label>
+          <input type="text" class="form-control" id="email" formControlName="email">
+        </div>
+        <label for="ssn" class="col-sm-2 col-form-label">SSN</label>
+        <div class="col-sm-6">
+          <input type="number" class="form-control" id="ssn" formControlName="ssn">
+        </div>
+        <div class="passwordGroup" formGroupName="passwordGroup">
+          <label for="password" class="col-sm-2 col-form-label">Password</label>
+          <div class="col-sm-6">
+            <input type="password" class="form-control" id="password" formControlName="password">
+          </div>
+          <label for="pConfirm" class="col-sm-2 col-form-label">Confirm Password</label>
+          <div class="col-sm-6">
+            <input type="password" class="form-control" id="pConfirm" formControlName="pConfirm">
+          </div>
+        </div>
+        <div class="col-sm-6 d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: 1%;">
+          <button class="btn btn-outline-danger mb-3" (click)="myUpdateForm.reset() ">Reset Form</button>
+          <button class="btn btn-outline-warning mb-3" (click)="updateForm() ">Update Description</button>
+          <button type="submit" class="btn btn-outline-primary mb-3" (click)="polulateForm()">Populate Description</button>
+        </div>
+
+        <ng-container *ngIf="!myUpdateForm.dirty; else hasdirty"></ng-container>
+        <ng-template #hasdirty>
+          <pre>
+                      {{ myUpdateForm?.value  | json }}
+
+         </pre>
+        </ng-template>
+      </form>
+    </section>
+  </main>
+</body>
+

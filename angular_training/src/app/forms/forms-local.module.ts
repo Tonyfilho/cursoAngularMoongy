@@ -40,7 +40,7 @@ import { UpdateFormComponent } from './reactive-forms/update-form/update-form.co
       {path:'reactive/formsGroup', component: FormGroupComponent},
       {path:'reactive/formsBuilder', component: FormBuilderComponent},
       {path:'reactive/formsArray', component: FormArrayComponent},
-      {path:'reactive/formsUpdate', component: FormControlComponent},
+      {path:'reactive/formsUpdate', component: UpdateFormComponent},
       {path:'reactive/formsBasicValidators', component: FormControlComponent},
       {path:'reactive/formsValitatosBlurCss', component: FormControlComponent},
       {path:'reactive/formsCustons', component: FormControlComponent},
