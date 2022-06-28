@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Lexend+Peta&family=Roboto:ital,wght@1,300&family=Sansita+Swashed:wght@300&display=swap');
+
+body {
+    /* background: linear-gradient(68.15deg, #1e037e 16.62%, #3aa0e4 85.61%); */
+    background: linear-gradient(68.15deg, #3912e6 16.62%, #230758 85.61%);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 20px;
+    color: #FFF2E7;
+    display: grid;
+    place-items: center;
+    height: 100vmin
+
+
+  }
+
+  main {
+
+    width: 92%;
+    height: 100vh;
+
+  background-color: linear-gradient(-68.15deg, #3e78cf 16.62%, #0941aa 85.61%);
+  position: relative;
+  box-shadow: 1em 1em 25px 0.5em #e48a40a9,
+   inset 0 0 25px 0.25em #89898da9,
+     inset 0 0 5em 0px #0c061d8f;
+}
+
+
+.container {
+    padding: 1%;
+}
+
+
+.form {
+    margin-left: 25%;
+}
+.title {
+  margin-left: 10%;
+}
+
+label {
+    color: #FFF2E7;
+}

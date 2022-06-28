@@ -11,6 +11,8 @@ import { TemplateDrivenValidatorsLocalVariableComponent } from './template-drive
 import { FormControlComponent } from './reactive-forms/form-control/form-control.component';
 import { FormGroupComponent } from './reactive-forms/form-group/form-group.component';
 import { FormBuilderComponent } from './reactive-forms/form-builder/form-builder.component';
+import { FormArrayComponent } from './reactive-forms/form-array/form-array.component';
+import { UpdateFormComponent } from './reactive-forms/update-form/update-form.component';
 
 
 
@@ -23,7 +25,9 @@ import { FormBuilderComponent } from './reactive-forms/form-builder/form-builder
     TemplateDrivenValidatorsLocalVariableComponent,
     FormControlComponent,
     FormGroupComponent,
-    FormBuilderComponent
+    FormBuilderComponent,
+    FormArrayComponent,
+    UpdateFormComponent
   ],
   imports: [
     CommonModule,
@@ -35,7 +39,7 @@ import { FormBuilderComponent } from './reactive-forms/form-builder/form-builder
       {path:'reactive/formsControl', component: FormControlComponent},
       {path:'reactive/formsGroup', component: FormGroupComponent},
       {path:'reactive/formsBuilder', component: FormBuilderComponent},
-      {path:'reactive/formsArray', component: FormControlComponent},
+      {path:'reactive/formsArray', component: FormArrayComponent},
       {path:'reactive/formsUpdate', component: FormControlComponent},
       {path:'reactive/formsBasicValidators', component: FormControlComponent},
       {path:'reactive/formsValitatosBlurCss', component: FormControlComponent},
