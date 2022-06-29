@@ -1,1 +1,59 @@
-<p>form-controls-basic works!</p>
+<body>
+  <main>
+    <section class="container">
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="button" class="btn btn-outline-primary" routerLink="/forms/reactive">Back</button>
+      </div>
+      <form class="form" (ngSubmit)="submitForms()" [formGroup]="myformBasicValidators">
+        <h2 class="title">Form-controls-basic-validators</h2>
+        <label for="name" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="name" formControlName="name">
+          <section >
+
+          </section>
+          <small class="warning" style="color: red; padding:1%;" [hidden]="!myformBasicValidators.hasError('required', 'name')">
+              <p>Field is mandatory</p>
+          </small>
+          <small class="warning" style="color: red; padding:1%;"
+              [hidden]="myformBasicValidators.controls['nome']?.hasError('minlength')">
+              <p>Min size are 3 lettlers</p>
+          </small>
+          <small class="warning" style="color: red; padding:1%;"
+              [hidden]="!myformBasicValidators.controls['nome']?.hasError('maxlength')">
+              <p>Max Field are 30 lettlers</p>
+          </small>
+        </div>
+
+        <label for="address" class="col-sm-2 col-form-label">Address</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="address" formControlName="address">
+        </div>
+
+        <label for="email" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="email" formControlName="email">
+        </div>
+
+        <label for="ssn" class="col-sm-2 col-form-label">SSN</label>
+        <div class="col-sm-6">
+          <input type="number" class="form-control" id="ssn" formControlName="ssn">
+        </div>
+
+        <div class="col-sm-6 d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: 1%;">
+          <button type="submit" class="btn btn-outline-primary mb-3">Send</button>        </div>
+
+        <ng-container *ngIf="!myformBasicValidators.dirty; else hasdirty"></ng-container>
+        <ng-template #hasdirty>
+          <pre>
+                      {{ myformBasicValidators.controls['name']?.value  | json }}
+                      {{  myformBasicValidators.controls['address']?.value  | json }}
+                      {{ myformBasicValidators.controls['email']?.value  | json }}
+                      {{ myformBasicValidators.controls['ssn']?.value  | json }}
+                      {{ myformBasicValidators.controls['nome']?.hasError('minlength') }}
+                  </pre>
+        </ng-template>
+      </form>
+    </section>
+  </main>
+</body>

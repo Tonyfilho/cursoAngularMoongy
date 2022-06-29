@@ -43,7 +43,7 @@ import { FormControlsBasicValidatorsComponent } from './reactive-forms/form-cont
       {path:'reactive/formsBuilder', component: FormBuilderComponent},
       {path:'reactive/formsArray', component: FormArrayComponent},
       {path:'reactive/formsUpdate', component: UpdateFormComponent},
-      {path:'reactive/formsBasicValidators', component: FormControlComponent},
+      {path:'reactive/formsBasicValidators', component: FormControlsBasicValidatorsComponent},
       {path:'reactive/formsValitatosBlurCss', component: FormControlComponent},
       {path:'reactive/formsCustons', component: FormControlComponent},
       {path:'driven', component: TemplateDrivenComponent},
