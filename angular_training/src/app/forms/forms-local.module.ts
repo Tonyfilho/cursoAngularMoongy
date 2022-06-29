@@ -13,7 +13,7 @@ import { FormGroupComponent } from './reactive-forms/form-group/form-group.compo
 import { FormBuilderComponent } from './reactive-forms/form-builder/form-builder.component';
 import { FormArrayComponent } from './reactive-forms/form-array/form-array.component';
 import { UpdateFormComponent } from './reactive-forms/update-form/update-form.component';
-import { FormControlsBasicComponent } from './reactive-forms/form-controls-basic/form-controls-basic.component';
+import { FormControlsBasicValidatorsComponent } from './reactive-forms/form-controls-basic-validators/form-controls-basic-validators.component';
 
 
 
@@ -29,7 +29,7 @@ import { FormControlsBasicComponent } from './reactive-forms/form-controls-basic
     FormBuilderComponent,
     FormArrayComponent,
     UpdateFormComponent,
-    FormControlsBasicComponent
+    FormControlsBasicValidatorsComponent
   ],
   imports: [
     CommonModule,
