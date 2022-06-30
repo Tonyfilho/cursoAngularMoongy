@@ -20,19 +20,19 @@ export function custonPattern(control: AbstractControl): ValidationErrors | null
 
 }
 
-
+/*************Funciona na forma de função no Ecmascript6**************** */
 export function ssnValidatorFunc(control: AbstractControl): ValidationErrors | null {
     const value = control.value || '' ;
-    const valid = value.match(/^\d{9}$/);
-    return valid ? null : {ssn: {description: 'Numero de Seg Social Inválido'}};
+    const pattern:RegExp = /^\d{9}$/
+    return pattern.test(value)  || !control.value ? null : { ssn: {description: 'Invalid Social number, Max of 9 letters'}}
 
  }
+ /*************Funciona na forma de Classe Statica ou Não **************** */
 export class ssnValidator {
   public static SSNVALIDATOR(control: AbstractControl): ValidationErrors | null {
+    const pattern:RegExp = /^\d{9}$/;
     const value = control.value || '' ;
-    const valid = value.match(/^\d{9}$/);
-    return valid ? null : {ssn: {description: 'Numero de Seg Social Inválido'}};
-
+     return pattern.test(value)  || !control.value ? null : { ssn: {description: 'Invalid Social number, Max de 9 letters'}}
  }
 
 }

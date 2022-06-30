@@ -13,13 +13,16 @@ export class FormControlsBasicValidatorsComponent implements OnInit {
 
   myformBasicValidators!: FormGroup;
   emailRegex:RegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-
+  // ssnValidator = new ssnValidator();
   constructor(private fb: FormBuilder) {
     this.myformBasicValidators = fb.group({
           name: ['' , {validators: [Validators.required, Validators.minLength(3),Validators.maxLength(50)],  updateOn: 'blur'}],
-          address:['', Validators.required, Validators.minLength(3),Validators.maxLength(50)],
-          email:['', {validators: [Validators.required, Validators.email, Validators.pattern(this.emailRegex)], updateOn: 'blur'}],
-          ssn:['', {validators: [Validators.required, ssnValidatorFunc]}]
+          address:['', {validators: [Validators.required, Validators.minLength(3),Validators.maxLength(50)], updateOn: 'blur'}],
+          email:['', {validators: [Validators.required, Validators.pattern(this.emailRegex)], updateOn: 'blur'}],
+          /**Posso chamar o Static dentro da Classe, ou a função */
+          // ssn:['', {validators: [Validators.required, ssnValidator.SSNVALIDATOR]}]
+          ssn:['', {validators: [Validators.required, Validators.minLength(9), Validators.maxLength(9), ssnValidatorFunc]}]
+
     })
    }
 
@@ -31,7 +34,10 @@ export class FormControlsBasicValidatorsComponent implements OnInit {
   }
 
   submitForms() {
-   
+    console.log('Form: ', this.myformBasicValidators );
+    console.log('FormNameTouched: ', this.myformBasicValidators.controls['name'].touched );
+    console.log('FormHasErrorMinLenghtName: ', this.myformBasicValidators.hasError('minlength', 'name') );
+    console.log('FormHasErrorMinLenghtAdress: ', this.myformBasicValidators.hasError('minlength', 'address') );
 
   }
 
