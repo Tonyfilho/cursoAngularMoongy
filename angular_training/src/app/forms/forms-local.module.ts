@@ -14,6 +14,7 @@ import { FormBuilderComponent } from './reactive-forms/form-builder/form-builder
 import { FormArrayComponent } from './reactive-forms/form-array/form-array.component';
 import { UpdateFormComponent } from './reactive-forms/update-form/update-form.component';
 import { FormControlsBasicValidatorsComponent } from './reactive-forms/form-controls-basic-validators/form-controls-basic-validators.component';
+import { FormControlsCustonsValidatorsComponent } from './reactive-forms/form-controls-custons-validators/form-controls-custons-validators.component';
 
 
 
@@ -29,7 +30,8 @@ import { FormControlsBasicValidatorsComponent } from './reactive-forms/form-cont
     FormBuilderComponent,
     FormArrayComponent,
     UpdateFormComponent,
-    FormControlsBasicValidatorsComponent
+    FormControlsBasicValidatorsComponent,
+    FormControlsCustonsValidatorsComponent
   ],
   imports: [
     CommonModule,
@@ -44,7 +46,7 @@ import { FormControlsBasicValidatorsComponent } from './reactive-forms/form-cont
       {path:'reactive/formsArray', component: FormArrayComponent},
       {path:'reactive/formsUpdate', component: UpdateFormComponent},
       {path:'reactive/formsBasicValidators', component: FormControlsBasicValidatorsComponent},
-      {path:'reactive/formsValitatosBlurCss', component: FormControlComponent},
+      {path:'reactive/formsCustons', component: FormControlsCustonsValidatorsComponent},
       {path:'reactive/formsCustons', component: FormControlComponent},
       {path:'driven', component: TemplateDrivenComponent},
       {path:'driven/forms-basics', component: TemplateDrivenFormsComponent },

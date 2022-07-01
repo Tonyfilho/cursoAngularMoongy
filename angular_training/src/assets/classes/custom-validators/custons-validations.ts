@@ -6,17 +6,17 @@ import { AbstractControl } from '@angular/forms';
 
 
 
-export function equalValidator(control: AbstractControl): ValidationErrors | null {
+export function equalPasswordValidator(control: AbstractControl): ValidationErrors | null  {
     const [first, ...rest] = Object.keys(control.value || {});
     const valid = rest.every(v => control.value[v] !== control.value[first]);
-    return valid ? {equal: 'Error password doesnt match'}: null;
+    return !valid ?  null :{equalPassword: {description:'Error password doesnt match'}};
 }
 
 
-export function custonPattern(control: AbstractControl): ValidationErrors | null {
+export function custonPatternPassword(control: AbstractControl): ValidationErrors | null {
   const pattern:RegExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[ -/:-@\[-`{-~]).{6,64}$/ ;
 
-  return pattern.test(control.value) || !control.value ? null : { password: 'Password doenst contain the pattern '}
+  return pattern.test(control.value) || !control.value ? null : { passwordPattern: {description: 'Password doenst contain the pattern '}}
 
 }
 
