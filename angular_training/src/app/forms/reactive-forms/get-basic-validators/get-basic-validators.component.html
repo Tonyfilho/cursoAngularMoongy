@@ -1,27 +1,26 @@
-<p>get-basic-validators works!</p>
 <body>
   <main>
     <section class="container">
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <button type="button" class="btn btn-outline-light" routerLink="/forms/reactive">Back</button>
       </div>
-      <form class="form" (ngSubmit)="submitForms()" [formGroup]="myFormCustons">
+      <form class="form" (ngSubmit)="submitForms()" [formGroup]="myGetForm">
         <h2 class="title">Get-basic-validators</h2>
         <label for="name" class="col-sm-2 col-form-label">Name</label>
         <div class="col-sm-6">
           <input type="text" class="form-control" id="name" formControlName="name">
           <!-- Validatiors------------------------------------ -->
-          <section *ngIf="!myFormCustons.controls['name']?.valid && myFormCustons.controls['name']?.touched">
-            <!-- <small class="warning" style="color: red; padding:1%;" *ngIf="myFormCustons?.hasError('required', 'name')">
+          <section *ngIf="name.valid && name.touched">
+            <small class="warning" style="color: red; padding:1%;" *ngIf="name?.hasError('required', 'name')">
               <p>Field is mandatory</p>
-            </small> -->
+            </small>
             <!-- Usando CONTROLS Errors -->
             <!-- <small class="warning" style="color: red; padding:1%;"
-              *ngIf="myFormCustons.controls['name'].errors?.['minlength']">
+              *ngIf="myGetForm.controls['name'].errors?.['minlength']">
               <p>Min size are 3 lettlers</p>
             </small> -->
             <!-- Usando HASERROR -->
-            <!-- <small class="warning" style="color: red; padding:1%;" *ngIf="myFormCustons.hasError('maxlength', 'name')">
+            <!-- <small class="warning" style="color: red; padding:1%;" *ngIf="myGetForm.hasError('maxlength', 'name')">
               <p>Max Field are 30 lettlers</p>
             </small> -->
           </section>
@@ -31,7 +30,7 @@
         <div class="col-sm-6">
           <input type="text" class="form-control" id="address" formControlName="address">
           <!-- Validatiors------------------------------------ -->
-          <section *ngIf="!myFormCustons.controls['address']?.valid && myFormCustons.controls['address']?.touched">
+          <section *ngIf="!myGetForm.controls['address']?.valid && myGetForm.controls['address']?.touched">
 
           </section>
         </div>
@@ -41,7 +40,7 @@
           <input type="text" class="form-control" id="email" formControlName="email">
           <!-- Validatiors------------------------------------ -->
           <!-- Usando CONTROLS Errors -->
-          <section *ngIf="!myFormCustons.controls['email']?.valid && myFormCustons.controls['email']?.touched">
+          <section *ngIf="!myGetForm.controls['email']?.valid && myGetForm.controls['email']?.touched">
 
           </section>
         </div>
@@ -51,7 +50,7 @@
           <input type="number" class="form-control" id="ssn" formControlName="ssn">
           <!-- Validatiors------------------------------------ -->
           <!-- Usando CONTROLS Errors -->
-          <section *ngIf="!myFormCustons.controls['ssn']?.valid && myFormCustons.controls['ssn']?.touched">
+          <section *ngIf="!myGetForm.controls['ssn']?.valid && myGetForm.controls['ssn']?.touched">
 
           </section>
         </div>
@@ -70,11 +69,11 @@
 
 
           </div>
-          <section *ngIf="!myFormCustons.controls['passwordGroup']?.valid && myFormCustons.controls['passwordGroup']?.touched">
+          <section *ngIf="!myGetForm.controls['passwordGroup']?.valid && myGetForm.controls['passwordGroup']?.touched">
 
           </section>
-          
-          <!-- {{ 'HASERROR: ' + myFormCustons.getError('passwordPattern', 'passwordGroup')?.description }} -->
+
+          <!-- {{ 'HASERROR: ' + myGetForm.getError('passwordPattern', 'passwordGroup')?.description }} -->
 
         </div>
 
@@ -82,16 +81,16 @@
           <button type="submit" class="btn btn-outline-primary mb-3">Send</button>
         </div>
 
-        <ng-container *ngIf="!myFormCustons.dirty; else hasdirty"></ng-container>
+        <ng-container *ngIf="!myGetForm.dirty; else hasdirty"></ng-container>
         <ng-template #hasdirty>
           <pre>
 
-                      {{ myFormCustons.controls['name']?.value  | json }}
-                      {{  myFormCustons.controls['address']?.value  | json }}
-                      {{ myFormCustons.controls['email']?.value  | json }}
-                      {{ myFormCustons.controls['ssn']?.value  | json }}
-                      {{ myFormCustons.controls['passwordGroup'].get('password')?.value  | json }}
-                      {{ myFormCustons.controls['passwordGroup'].get('pConfirm')?.value  | json }}
+                      {{ myGetForm.controls['name']?.value  | json }}
+                      {{  myGetForm.controls['address']?.value  | json }}
+                      {{ myGetForm.controls['email']?.value  | json }}
+                      {{ myGetForm.controls['ssn']?.value  | json }}
+                      {{ myGetForm.controls['passwordGroup'].get('password')?.value  | json }}
+                      {{ myGetForm.controls['passwordGroup'].get('pConfirm')?.value  | json }}
                   </pre>
         </ng-template>
       </form>

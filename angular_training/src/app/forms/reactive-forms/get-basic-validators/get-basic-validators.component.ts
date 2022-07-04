@@ -10,11 +10,11 @@ import { custonPatternPassword, equalPasswordValidator, ssnValidatorFunc } from 
 })
 export class GetBasicValidatorsComponent implements OnInit {
 
-  myFormCustons!: FormGroup;
+  myGetForm!: FormGroup;
   emailRegex: RegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
   // ssnValidator = new ssnValidator();
   constructor(private fb: FormBuilder) {
-    this.myFormCustons = fb.group({
+    this.myGetForm = fb.group({
       name: ['', { validators: [Validators.required, Validators.minLength(3), Validators.maxLength(50)], updateOn: 'blur' }],
       address: ['', { validators: [Validators.required, Validators.minLength(3), Validators.maxLength(50)], updateOn: 'blur' }],
       email: ['', { validators: [Validators.required, Validators.pattern(this.emailRegex)], updateOn: 'blur' }],
@@ -33,11 +33,28 @@ export class GetBasicValidatorsComponent implements OnInit {
     return form.valueChanges.pipe(debounceTime(1000));
   }
 
+
+  get name(): FormGroup {
+    return this.myGetForm.get('name') as FormGroup;
+  }
+  get address():FormGroup {
+    return this.myGetForm.get('address') as FormGroup
+  }
+  get email():FormGroup {
+    return this.myGetForm.get('email') as FormGroup
+  }
+  get ssn():FormGroup {
+    return this.myGetForm.get('ssn') as FormGroup
+  }
+  get passwordGroup():FormGroup {
+    return this.myGetForm.get('passwordGroup') as FormGroup
+  }
+
   submitForms() {
-    console.log('Form: ', this.myFormCustons);
-    console.log('FormNameTouched: ', this.myFormCustons.controls['name'].touched);
-    console.log('FormHasErrorMinLenghtName: ', this.myFormCustons.hasError('minlength', 'name'));
-    console.log('FormHasErrorMinLenghtAdress: ', this.myFormCustons.hasError('minlength', 'address'));
+    console.log('Form: ', this.myGetForm);
+    console.log('FormNameTouched: ', this.myGetForm.controls['name'].touched);
+    console.log('FormHasErrorMinLenghtName: ', this.myGetForm.hasError('minlength', 'name'));
+    console.log('FormHasErrorMinLenghtAdress: ', this.myGetForm.hasError('minlength', 'address'));
 
   }
 }
