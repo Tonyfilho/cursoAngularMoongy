@@ -15,6 +15,7 @@ import { FormArrayComponent } from './reactive-forms/form-array/form-array.compo
 import { UpdateFormComponent } from './reactive-forms/update-form/update-form.component';
 import { FormControlsBasicValidatorsComponent } from './reactive-forms/form-controls-basic-validators/form-controls-basic-validators.component';
 import { FormControlsCustonsValidatorsComponent } from './reactive-forms/form-controls-custons-validators/form-controls-custons-validators.component';
+import { GetBasicValidatorsComponent } from './reactive-forms/get-basic-validators/get-basic-validators.component';
 
 
 
@@ -31,7 +32,8 @@ import { FormControlsCustonsValidatorsComponent } from './reactive-forms/form-co
     FormArrayComponent,
     UpdateFormComponent,
     FormControlsBasicValidatorsComponent,
-    FormControlsCustonsValidatorsComponent
+    FormControlsCustonsValidatorsComponent,
+    GetBasicValidatorsComponent
   ],
   imports: [
     CommonModule,
@@ -47,7 +49,7 @@ import { FormControlsCustonsValidatorsComponent } from './reactive-forms/form-co
       {path:'reactive/formsUpdate', component: UpdateFormComponent},
       {path:'reactive/formsBasicValidators', component: FormControlsBasicValidatorsComponent},
       {path:'reactive/formsCustons', component: FormControlsCustonsValidatorsComponent},
-      {path:'reactive/formsCustons', component: FormControlComponent},
+      {path:'reactive/get-basic-validation', component: GetBasicValidatorsComponent},
       {path:'driven', component: TemplateDrivenComponent},
       {path:'driven/forms-basics', component: TemplateDrivenFormsComponent },
       {path:'driven/validators-forms-basics', component: TemplateDrivenValidatorsFormsBasicComponent},
