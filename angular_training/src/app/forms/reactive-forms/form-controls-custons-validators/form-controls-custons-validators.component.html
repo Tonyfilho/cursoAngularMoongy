@@ -2,7 +2,7 @@
   <main>
     <section class="container">
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button type="button" class="btn btn-outline-dark" routerLink="/forms/reactive">Back</button>
+        <button type="button" class="btn btn-outline-light" routerLink="/forms/reactive">Back</button>
       </div>
       <form class="form" (ngSubmit)="submitForms()" [formGroup]="myFormCustons">
         <h2 class="title">Form-controls-custons-validators</h2>
@@ -106,10 +106,20 @@
             <small class="warning" style="color: red; padding:1%;" *ngIf="myFormCustons.getError('equalPassword', 'passwordGroup')">
               <p>{{ myFormCustons.getError('equalPassword', 'passwordGroup')?.description }}</p>
             </small>
+            <!-- Usando GETERROR onde passo: 1º nome do Custons-validator e 2º o campo
+                Obs: Tem que passar myFormCustons.getError('passwordPattern', 'passwordGroup') no IF, por mais q seja
+                retornado um OBJETO,a directiva consegue transformar em um Boolean
+            -->
+            <small class="warning" style="color: red; padding:1%;" *ngIf="myFormCustons.getError('passwordPattern', 'passwordGroup')">
+              <p>{{ myFormCustons.getError('passwordPattern', 'passwordGroup')?.description }}</p>
+              <p> It needs to have 2 lowerCase, 2 uppercase, 1 special character and minlength 8</p>
+            </small>
           </section>
           <!-- {{ 'HASERROR: ' + myFormCustons.getError('equalPassword', 'passwordGroup')?.description }} -->
           <!-- {{'REQUIRED: ' + myFormCustons.hasError('required', ['passwordGroup','password']) }} -->
           <!-- {{'REQUIRED: ' + myFormCustons.hasError('required', ['passwordGroup','pConfirm']) }} -->
+          <!-- {{ 'HASERROR: ' + myFormCustons.getError('passwordPattern', 'passwordGroup')?.description }} -->
+
         </div>
 
         <div class="col-sm-6 d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: 1%;">

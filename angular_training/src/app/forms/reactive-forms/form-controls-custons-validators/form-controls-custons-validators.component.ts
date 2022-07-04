@@ -22,7 +22,7 @@ export class FormControlsCustonsValidatorsComponent implements OnInit {
       passwordGroup: fb.group({
         password: ['', [Validators.required, Validators.minLength(4)]],
         pConfirm: ['', [Validators.required, Validators.minLength(4)]], updateOn: 'blur'
-      }, { validators: [equalPasswordValidator] })
+      }, { validators: [equalPasswordValidator, custonPatternPassword] })
     })
   }
 
