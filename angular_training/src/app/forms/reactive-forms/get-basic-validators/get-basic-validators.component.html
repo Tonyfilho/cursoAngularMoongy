@@ -10,19 +10,19 @@
         <div class="col-sm-6">
           <input type="text" class="form-control" id="name" formControlName="name">
           <!-- Validatiors------------------------------------ -->
-          <section *ngIf="name.valid && name.touched">
-            <small class="warning" style="color: red; padding:1%;" *ngIf="name?.hasError('required', 'name')">
+          <section *ngIf="name.valid || name.touched">
+            <!-- Usando Get e transformando o formbuilder em Propriedade  e pegando o Erro pelo getError()-->
+            <small class="warning" style="color: red; padding:1%;" *ngIf="name.getError('required')">
               <p>Field is mandatory</p>
             </small>
-            <!-- Usando CONTROLS Errors -->
-            <!-- <small class="warning" style="color: red; padding:1%;"
-              *ngIf="myGetForm.controls['name'].errors?.['minlength']">
+            <!-- Usando Get e transformando o formbuilder em Propriedade  e pegando o Erro pelo HasError()-->
+            <small class="warning" style="color: red; padding:1%;" *ngIf="this.name.hasError('minlength')">
               <p>Min size are 3 lettlers</p>
-            </small> -->
-            <!-- Usando HASERROR -->
-            <!-- <small class="warning" style="color: red; padding:1%;" *ngIf="myGetForm.hasError('maxlength', 'name')">
-              <p>Max Field are 30 lettlers</p>
-            </small> -->
+            </small>
+            <!-- Usando HASERROR do formulario -->
+            <small class="warning" style="color: red; padding:1%;" *ngIf="myGetForm.hasError('maxlength', 'name')">
+              <p>Max Field are 50 lettlers</p>
+            </small>
           </section>
         </div>
 
@@ -30,8 +30,19 @@
         <div class="col-sm-6">
           <input type="text" class="form-control" id="address" formControlName="address">
           <!-- Validatiors------------------------------------ -->
-          <section *ngIf="!myGetForm.controls['address']?.valid && myGetForm.controls['address']?.touched">
-
+          <section *ngIf="address.valid || address.touched">
+            <!-- Usando Get e transformando o formbuilder em Propriedade  e pegando o Erro pelo getError()-->
+            <small class="warning" style="color: red; padding:1%;" *ngIf="address.getError('required')">
+              <p>Field is mandatory</p>
+            </small>
+            <!-- Usando Get e transformando o formbuilder em Propriedade  e pegando o Erro pelo HasError()-->
+            <small class="warning" style="color: red; padding:1%;" *ngIf="this.address.hasError('minlength')">
+              <p>Min size are 3 lettlers</p>
+            </small>
+            <!-- Usando HASERROR do formulario -->
+            <small class="warning" style="color: red; padding:1%;" *ngIf="myGetForm.hasError('maxlength', 'address')">
+              <p>Max Field are 50 lettlers</p>
+            </small>
           </section>
         </div>
 
@@ -39,22 +50,35 @@
         <div class="col-sm-6">
           <input type="text" class="form-control" id="email" formControlName="email">
           <!-- Validatiors------------------------------------ -->
-          <!-- Usando CONTROLS Errors -->
-          <section *ngIf="!myGetForm.controls['email']?.valid && myGetForm.controls['email']?.touched">
-
+          <section *ngIf="email.valid || email.touched">
+            <!-- Usando Get e transformando o formbuilder em Propriedade  e pegando o Erro pelo getError()-->
+            <small class="warning" style="color: red; padding:1%;" *ngIf="email.getError('required')">
+              <p>Field is mandatory</p>
+            </small>
+            <!-- Usando Get e transformando o formbuilder em Propriedade  e pegando o Erro pelo HasError()-->
+            <small class="warning" style="color: red; padding:1%;" *ngIf="email.hasError('pattern')">
+              <p>Its Field needs to have yourEmail@yourprovider......</p>
+            </small>
           </section>
         </div>
 
         <label for="ssn" class="col-sm-2 col-form-label">SSN</label>
         <div class="col-sm-6">
           <input type="number" class="form-control" id="ssn" formControlName="ssn">
-          <!-- Validatiors------------------------------------ -->
-          <!-- Usando CONTROLS Errors -->
-          <section *ngIf="!myGetForm.controls['ssn']?.valid && myGetForm.controls['ssn']?.touched">
+        <!-- Validatiors------------------------------------ -->
+        <section *ngIf="ssn.valid || ssn.touched">
+          <!-- Usando Get e transformando o formbuilder em Propriedade  e pegando o Erro pelo getError()-->
+          <small class="warning" style="color: red; padding:1%;" *ngIf="ssn.getError('required')">
+            <p>Field is mandatory</p>
+          </small>
+          <!-- Usando Get e transformando o formbuilder em Propriedade  e pegando o Erro pelo HasError()-->
+          <small class="warning" style="color: red; padding:1%;" *ngIf="ssn.hasError('ssn')">
+            <p>Error in the pattern, min and max are 9 letters  </p>
+          </small>
 
-          </section>
+        </section>
         </div>
-
+<!-- ---------------------------------------------------------------------------------------------------falta fazer  -->
         <div class="passwordGroup" formGroupName="passwordGroup">
           <label for="password" class="col-sm-2 col-form-label">Password</label>
           <div class="col-sm-6">
@@ -73,7 +97,7 @@
 
           </section>
 
-          <!-- {{ 'HASERROR: ' + myGetForm.getError('passwordPattern', 'passwordGroup')?.description }} -->
+      
 
         </div>
 
@@ -97,4 +121,3 @@
     </section>
   </main>
 </body>
-

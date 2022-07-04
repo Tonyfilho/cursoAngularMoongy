@@ -18,7 +18,7 @@ export class GetBasicValidatorsComponent implements OnInit {
       name: ['', { validators: [Validators.required, Validators.minLength(3), Validators.maxLength(50)], updateOn: 'blur' }],
       address: ['', { validators: [Validators.required, Validators.minLength(3), Validators.maxLength(50)], updateOn: 'blur' }],
       email: ['', { validators: [Validators.required, Validators.pattern(this.emailRegex)], updateOn: 'blur' }],
-      ssn: ['', { validators: [Validators.required, Validators.minLength(9), Validators.maxLength(9), ssnValidatorFunc] }],
+      ssn: ['', { validators: [Validators.required, ssnValidatorFunc] }],
       passwordGroup: fb.group({
         password: ['', [Validators.required, Validators.minLength(4)]],
         pConfirm: ['', [Validators.required, Validators.minLength(4)]], updateOn: 'blur'
@@ -35,6 +35,7 @@ export class GetBasicValidatorsComponent implements OnInit {
 
 
   get name(): FormGroup {
+
     return this.myGetForm.get('name') as FormGroup;
   }
   get address():FormGroup {
@@ -53,8 +54,11 @@ export class GetBasicValidatorsComponent implements OnInit {
   submitForms() {
     console.log('Form: ', this.myGetForm);
     console.log('FormNameTouched: ', this.myGetForm.controls['name'].touched);
-    console.log('FormHasErrorMinLenghtName: ', this.myGetForm.hasError('minlength', 'name'));
-    console.log('FormHasErrorMinLenghtAdress: ', this.myGetForm.hasError('minlength', 'address'));
+    console.log('FormHasErrorMinLenghtName: ', this.myGetForm.hasError('required', 'name'));
+    console.log('Name Erros: ',   this.name['errors']);
+    console.log('Name GetError: ',   this.name.getError('required'));
+    console.log('Name HasError: ',   this.name.hasError('minlength'));
+
 
   }
 }
