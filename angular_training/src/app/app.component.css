@@ -1,15 +1,29 @@
+.main {
+  background: linear-gradient(68.15deg, #040013 16.62%, #2e2e30 85.61%);
+  display: flex;
+  justify-content: space-between;
+}
 
-a { color: inherit; } 
+a {
+  color: inherit;
+}
 
 ul {
-    
-    
-    background: linear-gradient(68.15deg, #040013 16.62%, #2e2e30 85.61%);
+  font-family: 'Sarala';
+  font-style: normal;
+  font-size: 12px;
+  line-height: 29px;
+  color: #FFF2E7;
+}
 
-    font-family: 'Sarala';
-    font-style: normal;
-    
-    font-size: 12px;
-    line-height: 29px;
-    color: #FFF2E7;
+.nav-contant {
+  background: linear-gradient(68.15deg, #040013 16.62%, #2e2e30 85.61%);
+  width: 100%;
+  height: max-content;
+  /* height: 100% */
+
+}
+
+.nav-contant-router {
+  padding: 1%;
 }

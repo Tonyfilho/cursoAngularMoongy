@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ForecastingCityComponent } from './forecast/forecasting-city/forecasting-city.component';
 import { FormsComponent } from './forms/forms.component';
+import { LoginComponent } from './login/login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormsComponent } from './forms/forms.component';
     AboutComponent,
     ForecastComponent,
     ForecastingCityComponent,
-    FormsComponent
+    FormsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

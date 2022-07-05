@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Lexend+Peta&family=Roboto:ital,wght@1,300&family=Sansita+Swashed:wght@300&display=swap');
+
+
+main {
+  margin: 0;
+  padding: 0;
+  width: 92%;
+  height: 83vh;
+  background-color: linear-gradient(-68.15deg, #713ecf 16.62%, #2c09aa 85.61%);
+  position: relative;
+  box-shadow: 1em 1em 25px 0.5em #eaeaf0a9,
+    inset 0 0 25px 0.25em #17171aa9,
+    inset 0 0 5em 0px #529fe78f;
+  display: grid;
+  place-items: center;
+  background-image: url('../../../assets/img/login.jpg') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+
+}
+
+
+body {
+  /* background: linear-gradient(68.15deg, #110b25 16.62%, #322e35 85.61%); */
+  width: 30%;
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 20px;
+  color: #FFF2E7;
+  display: block;
+  margin: 0 auto;
+
+
+}
+
+.dummy {
+  padding: 5%;
+  padding-top:20%;
+  height: 40vh;
+  background-image: url('../../../assets/img/login2.jpg') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+  font-size: larger;
+  /* text-align: center !important; */
+
+
+
+}

@@ -5,6 +5,7 @@ import { BookComponent } from './books/book/book.component';
 import { BooksComponent } from './books/books/books.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './login/login/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'forecasting',
     component: ForecastComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
   /*************************************************Carregando LAZYLOAD ROUTE*/
   { path: 'forms', loadChildren: () => import('./forms/forms-local.module').then(module => module.FormsLocalModule)},
