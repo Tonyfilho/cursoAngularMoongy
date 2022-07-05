@@ -32,7 +32,9 @@ export function equalPasswordValidator(control: AbstractControl): ValidationErro
 export function custonPatternPassword(control: AbstractControl): ValidationErrors | null {
   const pattern: RegExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!"#$%&'()*+,-.\/:;<=>?\\@[\]^_`{|}~]).{8,64}$/;
   // console.log('TEST: ', pattern.test(control.value['password']), ' ', pattern.test(control.value['pConfirm']));
-  return pattern.test(control.value['password']) && pattern.test(control.value['pConfirm']) ? null : { passwordPattern: { description: 'Password doenst contain the pattern ' } }
+  return pattern.test(control.value['password']) && pattern.test(control.value['pConfirm']) ? null :
+   { passwordPattern: { description: `Password doenst contain the pattern Ex: Min size 8 caracters, 2 lowercase and
+    2 upcase letters, min 2 numbers and more special caracters...,` } }
 
 }
 

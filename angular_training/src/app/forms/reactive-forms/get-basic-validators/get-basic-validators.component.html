@@ -73,31 +73,36 @@
           </small>
           <!-- Usando Get e transformando o formbuilder em Propriedade  e pegando o Erro pelo HasError()-->
           <small class="warning" style="color: red; padding:1%;" *ngIf="ssn.hasError('ssn')">
-            <p>Error in the pattern, min and max are 9 letters  </p>
+            <!-- <p>Error in the pattern, min and max are 9 letters  </p> -->
+            <p>{{ ssn.getError('ssn').description }}</p>
           </small>
         </section>
         </div>
-<!-- ---------------------------------------------------------------------------------------------------falta fazer  -->
+
         <div class="passwordGroup" formGroupName="passwordGroup">
           <label for="password" class="col-sm-2 col-form-label">Password</label>
           <div class="col-sm-6">
             <input type="password" class="form-control" id="password" formControlName="password">
-            <!-- Validators--------------------------------------- -->
-
           </div>
           <label for="pConfirm" class="col-sm-2 col-form-label">Confirm Password</label>
           <div class="col-sm-6">
             <input type="password" class="form-control" id="pConfirm" formControlName="pConfirm">
-            <!-- Validators--------------------------------------- -->
-
-
           </div>
-          <section *ngIf="!myGetForm.controls['passwordGroup']?.valid && myGetForm.controls['passwordGroup']?.touched">
-
+          <!-- Validators--------------------------------------- -->
+          <section *ngIf="passwordGroup.valid || passwordGroup.touched">
+            <!-- FormGroup tem q pegar por cada nome separados usando get e depois o  getError()-->
+            <small class="warning" style="color: red; padding:1%;" *ngIf="this.passwordGroup.get('password')?.getError('required') || this.passwordGroup.get('pConfirm')?.getError('required')">
+              <p>Field is mandatory</p>
+            </small>
+            <!-- Usando Get e transformando o formbuilder em Propriedade  e pegando o Erro pelo HasError()-->
+            <small class="warning" style="color: red; padding:1%;" *ngIf="this.passwordGroup.hasError('equalPassword')">
+              <p> {{ this.passwordGroup.getError('equalPassword').description }}</p>
+            </small>
+            <!-- Usando Get e transformando o formbuilder em Propriedade  e pegando o Erro pelo HasError()-->
+            <small class="warning" style="color: red; padding:1%;" *ngIf="this.passwordGroup.getError('passwordPattern')">
+              <p>{{ this.passwordGroup.getError('passwordPattern').description }} </p>
+            </small>
           </section>
-
-
-
         </div>
 
         <div class="col-sm-6 d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: 1%;">

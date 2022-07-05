@@ -20,18 +20,15 @@ export class GetBasicValidatorsComponent implements OnInit {
       email: ['', { validators: [Validators.required, Validators.pattern(this.emailRegex)], updateOn: 'blur' }],
       ssn: ['', { validators: [Validators.required, ssnValidatorFunc] }],
       passwordGroup: fb.group({
-        password: ['', [Validators.required, Validators.minLength(4)]],
-        pConfirm: ['', [Validators.required, Validators.minLength(4)]], updateOn: 'blur'
-      }, { validators: [equalPasswordValidator, custonPatternPassword] })
+        password: ['', [Validators.required]],
+        pConfirm: ['',[ Validators.required]], updateOn: 'blur'
+      }, { validators: [ equalPasswordValidator, custonPatternPassword] })
     })
   }
 
   ngOnInit(): void {
   }
-  debouceTimeControl(form: FormControl): Observable<any> {
-    console.log('FormControl: ', form);
-    return form.valueChanges.pipe(debounceTime(1000));
-  }
+
 
 
   get name(): FormGroup {
@@ -58,6 +55,9 @@ export class GetBasicValidatorsComponent implements OnInit {
     console.log('Name Erros: ',   this.name['errors']);
     console.log('Name GetError: ',   this.name.getError('required'));
     console.log('Name HasError: ',   this.name.hasError('minlength'));
+    console.log('PasswordGroup GetError: ',   this.passwordGroup.getError('passwordPattern'));
+    console.log('PasswordGroup HAsError: ',   this.passwordGroup.hasError('equalPassword'));
+    console.log('PasswordGroup: ',   this.passwordGroup.get('password')?.getError('required'));
 
 
   }
