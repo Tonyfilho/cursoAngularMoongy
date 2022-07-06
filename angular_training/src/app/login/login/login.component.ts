@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthenticationServiceService } from 'src/app/_services/authentication-service.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
    loginForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(private fb: FormBuilder, private router: Router, private auth: AuthenticationServiceService) {
     this.loginForm = fb.group({
       email: ['', {validators:[Validators.required, Validators.email], updateOn: 'blur'}],
       password: ['', { validators:[Validators.required, ], updateOn: 'blur'}]
@@ -27,6 +28,25 @@ export class LoginComponent implements OnInit, OnDestroy {
     }
     ngOnDestroy(): void {
       this.close;
+    }
+
+    /**1º Ver se  o form é INvalido, caso seja ja retornar */
+    submit() {
+      if(!this.loginForm.valid) {
+        return;
+      }
+      /**Useo Controls.value ou Destrution, q é a boa pratica
+      Ex: this.auth.login(this.loginForm.controls['email'].value, this.loginForm.controls['password'].value) ; */
+      /**
+       * 2º caso hava login com sucess, seremos redirecionado para homePage
+       */
+      const {email, password} = this.loginForm.value
+      this.auth.login(email, password).subscribe({
+        next: val => {console.log(val.user.displayName), this.router.navigate(['/home']) },
+        error: err => {console.log('Something was wrong!!!: ', err), this.router.navigate(['/login']) },
+        complete: () => console.log("Closed Conection")
+
+      });
     }
 
 

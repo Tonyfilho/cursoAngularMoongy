@@ -17,6 +17,7 @@ import { SignUpComponent } from './login/sign-up/sign-up.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
+import { HotToastModule } from '@ngneat/hot-toast';
 
 @NgModule({
   declarations: [
@@ -37,11 +38,12 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    /**Importação do ng add @angularFire, depois de authorization code ele cria a importação
-     * automaticamente
+    /**Importação automatica pelo  ng add @angularFire, depois configuração e da
+     *  authorization code ele cria a importação automaticamente
      */
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth())
+    provideAuth(() => getAuth()),
+    HotToastModule.forRoot()
 
   ],
   providers: [],

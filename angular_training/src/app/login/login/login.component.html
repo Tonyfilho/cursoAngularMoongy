@@ -6,7 +6,7 @@
     </div>
     <div class="container dummy">
       <h3>Login</h3>
-      <form action=""  [formGroup]="loginForm">
+      <form action=""  [formGroup]="loginForm"  (ngSubmit)="submit()">
         <div class="mb-3 row">
           <!-- {{ this.loginForm.controls['email'].dirty }} -->
           <label for="email" class="col-sm-3 col-form-label">Gmail</label>
@@ -35,7 +35,7 @@
             </small>
           </section>
         </div>
-        <div class="col-auto center margin-top">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end margin-top">
           <button type="submit" class="btn btn-primary mb-3">Login</button>
         </div>
       </form>
