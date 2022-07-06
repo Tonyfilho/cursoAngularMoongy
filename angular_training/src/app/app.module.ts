@@ -14,12 +14,15 @@ import { ForecastingCityComponent } from './forecast/forecasting-city/forecastin
 import { FormsComponent } from './forms/forms.component';
 import { LoginComponent } from './login/login/login.component';
 import { SignUpComponent } from './login/sign-up/sign-up.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
     AppComponent,
     BooksComponent,
-    BookComponent,    
+    BookComponent,
     NotFoundComponent,
     AboutComponent,
     ForecastComponent,
@@ -33,7 +36,12 @@ import { SignUpComponent } from './login/sign-up/sign-up.component';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    /**Importação do ng add @angularFire, depois de authorization code ele cria a importação
+     * automaticamente
+     */
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth())
 
   ],
   providers: [],
