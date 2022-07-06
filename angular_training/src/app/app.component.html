@@ -1,30 +1,42 @@
 <header class="main">
   <div class="dummy"></div>
   <div class="nav-first">
-    <ul class="nav justify-content-center">
+    <!-- Bloco NgContainer não logado -->
+    <!-- <ng-container  *ngIf="this.auth.currentUser$ | async else userLogin2">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/" >Home</a>
+        </li>
+      </ul>
+     </ng-container> -->
+      <!-- Bloco NgTemplate depois de logado -->
+    <!-- <ng-template #userLogin2> -->
+      <ul class="nav justify-content-center">
       <li class="nav-item">
         <a class="nav-link active" aria-current="page" routerLink="/" >Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/books" [hidden]="userLogout">Books</a>
+        <a class="nav-link" routerLink="/books" >Books</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/forecasting" [hidden]="userLogout">Forecasting Weather</a>
+        <a class="nav-link" routerLink="/forecasting">Forecasting Weather</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/forms" [hidden]="userLogout">Forms</a>
+        <a class="nav-link" routerLink="/forms">Forms</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/about" >About</a>
+        <a class="nav-link" routerLink="/about">About</a>
       </li>
     </ul>
+    <!-- </ng-template> -->
+
   </div>
   <div class="nav-second">
     <!-- 1º Colocamos este bloco dentro de um NgContainer e recebe um Observable do AuthenticationService
     que monitora estamos ou não logado.
     2º temos o NgTemplate que irá trabalhar junto, caso NGContainer receber a resposta do Observable  -->
     <ul class="nav justify-content-center">
-      <ng-container *ngIf="this.auth.currentUser$ | async as userLogin, else userLogout">
+      <ng-container *ngIf="this.auth.currentUser$ | async as user, else userLogin">
         <!-- <ng-container *ngIf="this.hasLogin"> -->
         <li class="nav-item login">
           <a class="nav-link" (click)="logOut()">
@@ -32,9 +44,9 @@
           </a>
         </li>
       </ng-container>
-      <ng-template #userLogout>
+      <ng-template #userLogin>
         <li class="nav-item login">
-          <a class="nav-link" routerLink="/about">
+          <a class="nav-link" routerLink="/home">
             <i class="bi bi-door-open">Login</i>
           </a>
         </li>

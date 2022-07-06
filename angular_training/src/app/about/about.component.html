@@ -1,55 +1,50 @@
-<!-- <div class="container">
-  <p class="muted"> ``
-  In this link  I am implement the Lazyload in the router
-   
-  </p>
+<main>
+  <nav id="navbar-example2" class="navbar bg-light px-3">
+    <a class="navbar-brand" routerLink="/about">About the Tecnicle CV</a>
+  </nav>
 
-</div> -->
-<nav id="navbar-example2" class="navbar bg-light px-3">
-  <a class="navbar-brand" routerLink="/about">About the Tecnicle CV</a>
-  <ul class="nav nav-pills">
-    <li class="nav-item">
-      <a class="nav-link" href="#scrollspyHeading1">About</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#scrollspyHeading2">BookList</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#scrollspyHeading3">Forecaste Wheather</a>
-    </li>
-    
-  </ul>
-</nav>
-<div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
-  data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
-  <h4 id="scrollspyHeading1">About Compoment</h4>
-  <p>In this compoment called the About compoment was implemented the LazyLoad routes</p>
+  <body>
 
-  <h4 id="scrollspyHeading2">BookList Compoment</h4>
-  <p>In this Compoment I am create a service called BooksService and create the Dummy with array of Books and
-    2 methods: First, map the array and retorn one array of the books. Secunde, find the book by Id.
-    I am Inject the service the de compoment called the Books compoment, and list all the items in this template. In the
-    Book Compoment i show more details about each.
-    book. I used Observable in the routes become the routhes reactive. </p>
+    <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
+      data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+      <h4 id="scrollspyHeading1">About Compoment</h4>
+      <p>In this compoment called the About compoment was implemented the LazyLoad routes</p>
 
-  <h4 id="scrollspyHeading3">Forecaste Wheather Compoment</h4>
-  <p>in this compoment I consume the API called http://api.openweathermap.org. You can test using your city name, the image of background will change according 
-    with weather city.
-  </p>
-  <p>I created a service, and used the HttpClient from HttpClientModule and used the HttpClient Verb GET.
-     and get all the data from this API in Json. I used  Observable, EMPTY, catchError, of, take  operator from RXJS.</p>
-  <p>Inner the Forecaste compoment I injected  this service in constructor. I import inner the AppModule the module called ReactiveFormsModule
-    with that  import i user the FormControl Object to get imput`s value useing the observable valueChanges in the forecast template </p>
+      <h4 id="scrollspyHeading2">BookList Compoment</h4>
+      <p>In this Compoment I am create a service called BooksService and create the Dummy with array of Books and
+        2 methods: First, map the array and retorn one array of the books. Secunde, find the book by Id.
+        I am Inject the service the de compoment called the Books compoment, and list all the items in this template. In
+        the
+        Book Compoment i show more details about each.
+        book. I used Observable in the routes become the routhes reactive. </p>
 
-  <p> I used debounceTime, switchMap, EMPTY from RXJS Operators  </p>
-  <p> I used lifeciclehooks AfterViewInit and OnDestroy  </p>
-  <p> I used BootStrap Modal, BootStrap NavBar </p>
-  <p> I shared data inner compoment useing @Input() parent to child and @Output()  </p>
+      <h4 id="scrollspyHeading3">Forecaste Wheather Compoment</h4>
+      <p>in this compoment I consume the API called http://api.openweathermap.org. You can test using your city name,
+        the
+        image of background will change according
+        with weather city.
+      </p>
+      <p>I created a service, and used the HttpClient from HttpClientModule and used the HttpClient Verb GET.
+        and get all the data from this API in Json. I used Observable, EMPTY, catchError, of, take operator from RXJS.
+      </p>
+      <p>Inner the Forecaste compoment I injected this service in constructor. I import inner the AppModule the module
+        called ReactiveFormsModule
+        with that import i user the FormControl Object to get imput`s value useing the observable valueChanges in the
+        forecast template </p>
 
-  <h4 id="scrollspyHeading4">Fourth heading</h4>
-  <p>...</p>
-  <h4 id="scrollspyHeading5">Fifth heading</h4>
-  <p>...</p>
-</div>
+      <p> I used debounceTime, switchMap, EMPTY from RXJS Operators </p>
+      <p> I used lifeciclehooks AfterViewInit and OnDestroy </p>
+      <p> I used BootStrap Modal, BootStrap NavBar </p>
+      <p> I shared data inner compoment useing @Input() parent to child and @Output() </p>
 
+      <h4 id="scrollspyHeading4">Fourth heading</h4>
+      <p>...</p>
+      <h4 id="scrollspyHeading5">Fifth heading</h4>
+      <p>...</p>
+    </div>
+
+  </body>
+</main>
+<div class="content">
 <router-outlet></router-outlet>
+</div>
