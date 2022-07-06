@@ -1,6 +1,13 @@
 <body>
   <main >
-    <div class="home">
+    <div class="home" #localUser>
+    <ng-container *ngIf="this.UserLogin$ | async as user, else login" localUser = user></ng-container>
+    <ng-template #login >
+     <p>Welcome our app Welcome our app  {{ localUser }}</p>
+
+
+    </ng-template>
+
     </div>
 
   </main>

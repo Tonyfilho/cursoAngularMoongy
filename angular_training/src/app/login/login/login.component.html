@@ -2,7 +2,7 @@
 
   <body>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-      <button type="button" class="btn btn-outline-light me-md-2 margin-top" (click)="close()" >Close</button>
+      <button type="button" class="btn btn-outline-light me-md-2 margin-top" (click)="close()" >Cancel</button>
     </div>
     <div class="container dummy">
       <h3>Login</h3>
@@ -36,7 +36,8 @@
           </section>
         </div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end margin-top">
-          <button type="submit" class="btn btn-primary mb-3">Login</button>
+          <button type="button" class="btn btn-outline-danger mb-3" (click)="loginForm.reset()">Clean Fields</button>
+          <button type="submit" class="btn btn-outline-primary mb-3" [disabled]="!loginForm.valid">Login</button>
         </div>
       </form>
       <span class="muted margin-top ">New to our platform? <a  class="margin-top color" routerLink="sign-up">Sign Up! </a></span>

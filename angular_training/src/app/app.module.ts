@@ -43,6 +43,7 @@ import { HotToastModule } from '@ngneat/hot-toast';
      */
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
+    /**Após a instação do NgNeat/tost, fui acrecentado aqui nos imports  */
     HotToastModule.forRoot()
 
   ],
