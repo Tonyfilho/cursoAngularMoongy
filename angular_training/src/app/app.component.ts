@@ -16,7 +16,7 @@ export class AppComponent {
    /**Em caso de deslocagar subscrevemos no metodo e redirecinaremos a rota */
    logOut() {
     this.auth.logout().subscribe(()=> {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/about']);
     });
    }
 }

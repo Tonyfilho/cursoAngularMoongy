@@ -36,7 +36,7 @@
           </section>
         </div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end margin-top">
-          <button type="button" class="btn btn-outline-danger mb-3" (click)="loginForm.reset()">Clean Fields</button>
+          <button type="button" class="btn btn-outline-danger mb-3" (click)="this.resertForm">Clean Fields</button>
           <button type="submit" class="btn btn-outline-primary mb-3" [disabled]="!loginForm.valid">Login</button>
         </div>
       </form>

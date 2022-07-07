@@ -1,12 +1,14 @@
 <body>
   <main >
-    <div class="home" #localUser>
-    <ng-container *ngIf="this.UserLogin$ | async as user, else login" localUser = user></ng-container>
-    <ng-template #login >
-     <p>Welcome our app Welcome our app  {{ localUser }}</p>
+    <div class="home" >
+    <ng-container *ngIf="this.UserLogin$ | async as userLocal, else logout">
+      <p>Welcome our app {{ userLocal.email }} </p>
 
-
+    </ng-container>
+    <ng-template #logout>
+     <p>Wellcome. In order to acess our app, you need to be login.</p>
     </ng-template>
+
 
     </div>
 

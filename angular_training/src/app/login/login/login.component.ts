@@ -58,11 +58,16 @@ export class LoginComponent implements OnInit, OnDestroy {
       loading: 'Logging in ..',
       error: 'There was as error'
     })
-   ).subscribe(() => {
-     this.router.navigate(['/home']);
+   ).subscribe({
+    next: () => {this.router.navigate(['/home'])},
+    error: () => {this.resertForm}
+
     })
   }
 
+   get resertForm() {
+    return this.loginForm.reset();
+   }
 
 
 }

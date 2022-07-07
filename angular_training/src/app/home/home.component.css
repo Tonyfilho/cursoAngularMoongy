@@ -14,6 +14,11 @@ body {
     background: linear-gradient(68.15deg, #110b25 16.62%, #322e35 85.61%);
     display: grid;
     place-items: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 20px;
+    color: #FFF2E7;
 }
 
 main {
@@ -34,6 +39,7 @@ main {
     box-shadow: 1em 1em 25px 0.5em #3a3af3a9,
      inset 0 0 25px 0.25em #0e0e3fa9,
        inset 0 0 5em 0px #529fe78f;
+    padding: 5%;
 }
 
 
