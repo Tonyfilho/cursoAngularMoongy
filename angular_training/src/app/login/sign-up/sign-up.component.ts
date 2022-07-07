@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
+import { custonPatternPassword } from 'src/app/_custom-validators/custons-validations';
 import { AuthenticationService } from 'src/app/_services/authentication.service';
 
 @Component({
@@ -19,7 +20,7 @@ export class SignUpComponent implements OnInit {
       email: ['', { validators: [Validators.required, Validators.email], updateOn: 'blur' }],
       passwordGroup : fb.group({
          password: ['', [Validators.required]],
-         pConfirm: ['',  [Validators.required]], updateOn: 'blur', validators: [],
+         pConfirm: ['',  [Validators.required]], updateOn: 'blur', validators: [custonPatternPassword, ],
       })
 
 

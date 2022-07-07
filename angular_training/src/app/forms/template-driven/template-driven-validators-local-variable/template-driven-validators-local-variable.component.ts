@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { debounceTime } from 'rxjs';
-import { ssnValidator } from '../../../../assets/classes/custom-validators/custons-validations'
+import { ssnValidator } from '../../../_custom-validators/custons-validations'
 
 @Component({
   selector: 'app-template-driven-validators-local-variable',

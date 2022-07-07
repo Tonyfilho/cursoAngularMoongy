@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable, debounceTime } from 'rxjs';
-import { custonPatternPassword, equalPasswordValidator, ssnValidatorFunc } from 'src/assets/classes/custom-validators/custons-validations';
+import { custonPatternPassword, equalPasswordValidator, ssnValidatorFunc } from 'src/app/_custom-validators/custons-validations';
 
 @Component({
   selector: 'app-form-controls-custons-validators',
