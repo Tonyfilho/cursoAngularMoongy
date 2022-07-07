@@ -1,1 +1,49 @@
 <p>sign-up works!</p>
+<main>
+
+  <body>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <button type="button" class="btn btn-outline-light me-md-2 margin-top" (click)="close()" >Cancel</button>
+    </div>
+    <div class="container dummy">
+      <h3>Login</h3>
+      <form action=""  [formGroup]="loginForm"  (ngSubmit)="submit()">
+        <div class="mb-3 row">
+          <!-- {{ this.loginForm.controls['email'].dirty }} -->
+          <label for="email" class="col-sm-3 col-form-label">Gmail</label>
+          <div class="col-sm-9">
+            <input type="email" class="form-control" id="email" formControlName="email">
+          </div>
+          <!-- Validators -->
+          <section *ngIf="this.loginForm.controls['email'].dirty">
+            <small *ngIf="loginForm.controls['email'].getError('required') && loginForm.controls['email'].touched" class="error">
+                <p>Password required</p>
+            </small>
+            <small *ngIf="loginForm.controls['email'].getError('email') && loginForm.controls['email'].touched" class="error">
+                <p>Email Field needs to have yourEmail@gmail.com</p>
+            </small>
+          </section>
+        </div>
+        <div class="mb-3 row">
+          <label for="password" class="col-sm-3 col-form-label">Password</label>
+          <div class="col-sm-9">
+            <input type="password" class="form-control" id="password" formControlName="password">
+          </div>
+          <!-- Validators -->
+          <section *ngIf="this.loginForm.controls['password'].dirty">
+            <small *ngIf="loginForm.controls['password'].getError('required') && loginForm.controls['password'].touched" class="error">
+                <p>Password required</p>
+            </small>
+          </section>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end margin-top">
+          <button type="button" class="btn btn-outline-danger mb-3" (click)="this.resertForm">Clean Fields</button>
+          <button type="submit" class="btn btn-outline-primary mb-3" [disabled]="!loginForm.valid">Login</button>
+        </div>
+      </form>
+      <span class="muted margin-top ">New to our platform? <a  class="margin-top color" routerLink="sign-up">Sign Up! </a></span>
+
+    </div>
+  </body>
+</main>
+

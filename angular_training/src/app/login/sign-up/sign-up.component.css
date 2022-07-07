@@ -1,0 +1,78 @@
+
+
+main {
+  margin: 0;
+  padding: 0;
+  width: 92%;
+  height: 83vh;
+  background-color: linear-gradient(-68.15deg, #713ecf 16.62%, #2c09aa 85.61%);
+  position: relative;
+  box-shadow: 1em 1em 25px 0.5em #eaeaf0a9,
+    inset 0 0 25px 0.25em #17171aa9,
+    inset 0 0 5em 0px #529fe78f;
+  display: grid;
+  place-items: center;
+  background-image: url('../../../assets/img/login.jpg') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+
+}
+
+
+body {
+  /* background: linear-gradient(68.15deg, #110b25 16.62%, #322e35 85.61%); */
+  width: 35%;
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 20px;
+  color: #FFF2E7;
+  display: block;
+  margin: 0 auto;
+  height: fit-content;
+  border-radius:15px;
+  background-image: url('../../../assets/img/login2.jpg') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+
+
+}
+
+.dummy {
+  width: 100%;
+  padding: 2%;
+  padding-top:5%;
+  font-size: larger;
+  height: fit-content;
+
+}
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.margin-top {
+  margin-top: 1em;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.color {
+  text-decoration: none;
+  color: inherit;
+}
+.color:hover {
+  color: rgb(238, 145, 58);
+}
+/**Css do angular no form*/
+.form-control.ng-pristine.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+.error {
+  color: #ee1c0d;
+}

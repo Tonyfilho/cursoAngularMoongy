@@ -2,7 +2,7 @@
   <main >
     <div class="home" >
     <ng-container *ngIf="this.UserLogin$ | async as userLocal, else logout">
-      <p>Welcome our app {{ userLocal.email }} </p>
+      <p>Welcome our app  {{ userLocal.displayName }} com email:  {{ userLocal.email }} </p>
 
     </ng-container>
     <ng-template #logout>
