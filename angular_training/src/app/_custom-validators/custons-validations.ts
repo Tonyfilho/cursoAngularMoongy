@@ -2,7 +2,7 @@ import { ValidationErrors, ValidatorFn } from '@angular/forms';
 import { AbstractControl } from '@angular/forms';
 
 /**
- *  Função de validar iqualdade de password para sem usar o Every
+ *  Função de validar iqualdade de password para sem usar o Every, retorno true e um objeto com a description
  * @returns
  */
 
@@ -14,7 +14,6 @@ return (control: AbstractControl): ValidationErrors | null => {
   const pConfirm = control.value['pConfirm'];
   const password = control.get('password')?.value;
   if (password!== pConfirm) {
-    console.log("dentro if: ");
     return true && { passwordsDontMatch: {description: 'Error password doesnt match'}};
   }
   return null

@@ -1,4 +1,8 @@
 # cursoAngularMoongy
+In order to authentication you need to use the credentials below:
+User Login: visityUser@visity.com
+User Password: SSff2007@
+
 Estudo as principais ferramentas do Angular. Consome uma API onde fazemos Consumo da API, Rotas , ActiveRouting, CanDeactivateRouteGuard, Modais, Formularios etc: Diretorio _services/auth: temos o Auths guards, e o admin guards , rotas filhas e rotas protegidas. Diretorio _services/loggin-service: temos o serviço de Observable que será acionado para confirmar se está ou não logado Se é o não Admin. Diretorio users e seus subdiretorios é onde a Api é subscrita.
 
 Obs: Diretorio Dummy contem outros diretorios : [_routing, api,http-error-handling, pipes], não são carregão o projeto, servem para testar algumas logicas e exercicos.

@@ -53,23 +53,23 @@ export class SignUpComponent implements OnInit {
 
 
 
-  //   if (!this.sigUpForm.valid) {
-  //     return;
-  //   }
+    if (!this.sigUpForm.valid) {
+      return;
+    }
 
 
-  //   const { email, password } = this.sigUpForm.value
-  //  this.auth.login(email, password).pipe(
-  //   this.tost.observe({
-  //     success: 'Logged in Sucessfully',
-  //     loading: 'Logging in ..',
-  //     error: 'There was as error'
-  //   })
-  //  ).subscribe({
-  //   next: () => {this.router.navigate(['/home'])},
-  //   error: () => {this.resertForm}
+    const { nome, email, passwordGroup: {password} } = this.sigUpForm.value
+   this.auth.signUp(nome,email, password).pipe(
+    this.tost.observe({
+      success: 'Logged in Sucessfully',
+      loading: 'Logging in ..',
+      error :  (err) => `erro Message ${err}`
+    })
+   ).subscribe({
+    next: () => {this.router.navigate(['/home'])},
+    error: () => {this.resertForm}
 
-  //   })
+    })
   }
 
    get resertForm() {

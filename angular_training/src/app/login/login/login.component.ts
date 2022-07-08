@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.tost.observe({
       success: 'Logged in Sucessfully',
       loading: 'Logging in ..',
-      error: 'There was as error'
+      error: (err) => `FireBase Message : ${err}`
     })
    ).subscribe({
     next: () => {this.router.navigate(['/home'])},

@@ -30,7 +30,8 @@
         <!-- <ng-container *ngIf="this.hasLogin"> -->
         <li class="nav-item login">
           <a class="nav-link logout" (click)="logOut()">
-            <i class="bi bi-door-closed">Logout</i>
+            <!-- <i class="bi bi-door-closed">Logout</i> -->
+            <i class="bi bi-door-closed">Logout: {{ user.displayName }}</i>
           </a>
         </li>
       </ng-container>
