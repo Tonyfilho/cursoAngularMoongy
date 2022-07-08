@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     // this.loginForm.controls['email'].dirty;
   }
   close() {
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/about');
   }
   ngOnDestroy(): void {
     this.close;

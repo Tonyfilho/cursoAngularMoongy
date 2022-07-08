@@ -37,7 +37,7 @@ export class SignUpComponent implements OnInit {
 
 
   close() {
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/about');
   }
 
 
