@@ -12,7 +12,7 @@ main {
     inset 0 0 5em 0px #529fe78f;
   display: grid;
   place-items: center;
-  background-image: url('../../../assets/img/login.jpg') !important;
+  background-image: url('../../../assets/img/login2.jpg') !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: cover !important;
@@ -32,7 +32,7 @@ body {
   margin: 0 auto;
   height: fit-content;
   border-radius:15px;
-  background-image: url('../../../assets/img/login2.jpg') !important;
+  background-image: url('../../../assets/img/login.jpg') !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: cover !important;
