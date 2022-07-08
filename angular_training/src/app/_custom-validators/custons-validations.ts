@@ -1,11 +1,28 @@
-import { ValidationErrors } from '@angular/forms';
+import { ValidationErrors, ValidatorFn } from '@angular/forms';
 import { AbstractControl } from '@angular/forms';
 
+/**
+ *  Função de validar iqualdade de password para sem usar o Every
+ * @returns
+ */
 
+export function passwordsMarchValidator(): ValidatorFn {
+return (control: AbstractControl): ValidationErrors | null => {
+  const password = control.get('password')?.value;
+  const pConfirm = control.value['pConfirm'];
+  if (password && pConfirm !== pConfirm) {
+    return { passwordsDontMatch: {description: 'Error password doesnt match'}};
+  }
+  return null
+}
 
+}
 
-
-
+/**
+ *Função para validar iqualdade em passwords
+ * @param control
+ * @returns
+ */
 export function equalPasswordValidator(control: AbstractControl): ValidationErrors | null {
   const [first, ...rest] = Object.keys(control.value || {});
   const valid = rest.every(v => control.value[v] !== control.value[first]);
@@ -13,7 +30,7 @@ export function equalPasswordValidator(control: AbstractControl): ValidationErro
 }
 
 /**
- *
+ * função para validar padrões pre escolhidos em password
  * @param control
  * @returns
  * ^ - Beginning of string

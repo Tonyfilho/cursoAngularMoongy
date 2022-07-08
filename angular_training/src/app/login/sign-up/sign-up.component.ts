@@ -12,56 +12,66 @@ import { AuthenticationService } from 'src/app/_services/authentication.service'
 })
 export class SignUpComponent implements OnInit {
 
-  loginForm!: FormGroup;
+  sigUpForm!: FormGroup;
 
   constructor(private fb: FormBuilder, private router: Router, private auth: AuthenticationService, private tost:  HotToastService) {
-    this.loginForm = fb.group({
+    this.sigUpForm = fb.group({
       nome: ['', {validators: [Validators.required,Validators.minLength(3)], updateOn: 'blur'}],
       email: ['', { validators: [Validators.required, Validators.email], updateOn: 'blur' }],
       passwordGroup : fb.group({
          password: ['', [Validators.required]],
-         pConfirm: ['',  [Validators.required]], updateOn: 'blur', validators: [custonPatternPassword, ],
-      })
-
-
-
+         pConfirm: ['',  [Validators.required]], updateOn: 'blur',
+      },{validators: [custonPatternPassword, ]})
     })
   }
 
   ngOnInit(): void {
-    this.loginForm.controls['email'].getError('required');
-    this.loginForm.controls['email'].dirty;
+  this.passwordGroup.dirty
+  this.passwordGroup.get('password')?.getError('custonPatternPassword');
   }
+  /**Get do PasswordGroup */
+  get passwordGroup():FormGroup {
+    return this.sigUpForm.controls['passwordGroup'] as FormGroup;
+  }
+
+
+
   close() {
     this.router.navigateByUrl('/home');
   }
+
+
   ngOnDestroy(): void {
     this.close;
   }
 
   /**1º Ver se  o form é INvalido, caso seja ja retornar */
   submit() {
-    if (!this.loginForm.valid) {
-      return;
-    }
+    this.passwordGroup;
+    this.passwordGroup.dirty;
+    this.passwordGroup.get('password')?.getError('custonPatternPassword');
+
+  //   if (!this.sigUpForm.valid) {
+  //     return;
+  //   }
 
 
-    const { email, password } = this.loginForm.value
-   this.auth.login(email, password).pipe(
-    this.tost.observe({
-      success: 'Logged in Sucessfully',
-      loading: 'Logging in ..',
-      error: 'There was as error'
-    })
-   ).subscribe({
-    next: () => {this.router.navigate(['/home'])},
-    error: () => {this.resertForm}
+  //   const { email, password } = this.sigUpForm.value
+  //  this.auth.login(email, password).pipe(
+  //   this.tost.observe({
+  //     success: 'Logged in Sucessfully',
+  //     loading: 'Logging in ..',
+  //     error: 'There was as error'
+  //   })
+  //  ).subscribe({
+  //   next: () => {this.router.navigate(['/home'])},
+  //   error: () => {this.resertForm}
 
-    })
+  //   })
   }
 
    get resertForm() {
-    return this.loginForm.reset();
+    return this.sigUpForm.reset();
    }
 
 }

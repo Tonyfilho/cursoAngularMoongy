@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
   hasLogin!: boolean | undefined ;
    constructor( public auth: AuthenticationService, private router: Router) {
-    auth.currentUser$.subscribe(user => this.hasLogin = user?.emailVerified)
+    // auth.currentUser$.subscribe(user => this.hasLogin = user?.emailVerified)
    }
 
    /**Em caso de deslocagar subscrevemos no metodo e redirecinaremos a rota */

@@ -6,19 +6,19 @@
     </div>
     <div class="container dummy">
       <h3>Sign-Up</h3>
-      <form action="" [formGroup]="loginForm" (ngSubmit)="submit()">
+      <form action="" [formGroup]="sigUpForm" (ngSubmit)="submit()">
         <div class="mb-3 row">
           <label for="email" class="col-sm-3 col-form-label">Nome</label>
           <div class="col-sm-9">
             <input type="nome" class="form-control" id="nome" formControlName="nome">
           </div>
           <!-- Validators -->
-          <section *ngIf="this.loginForm.controls['nome'].dirty">
-            <small *ngIf="loginForm.controls['nome'].getError('required') && loginForm.controls['nome'].touched"
+          <section *ngIf="this.sigUpForm.controls['nome'].dirty">
+            <small *ngIf="sigUpForm.controls['nome'].getError('required') && sigUpForm.controls['nome'].touched"
               class="error">
               <p>Password required</p>
             </small>
-            <small *ngIf="loginForm.controls['nome'].getError('minlength') && loginForm.controls['nome'].touched"
+            <small *ngIf="sigUpForm.controls['nome'].getError('minlength') && sigUpForm.controls['nome'].touched"
               class="error">
               <p>This Field needs to have min 3 letters</p>
             </small>
@@ -30,19 +30,19 @@
             <input type="email" class="form-control" id="email" formControlName="email">
           </div>
           <!-- Validators -->
-          <section *ngIf="this.loginForm.controls['email'].dirty">
-            <small *ngIf="loginForm.controls['email'].getError('required') && loginForm.controls['email'].touched"
+          <section *ngIf="this.sigUpForm.controls['email'].dirty">
+            <small *ngIf="sigUpForm.controls['email'].getError('required') && sigUpForm.controls['email'].touched"
               class="error">
               <p>Password required</p>
             </small>
-            <small *ngIf="loginForm.controls['email'].getError('email') && loginForm.controls['email'].touched"
+            <small *ngIf="sigUpForm.controls['email'].getError('email') && sigUpForm.controls['email'].touched"
               class="error">
               <p>Email Field needs to have yourEmail@gmail.com</p>
             </small>
           </section>
         </div>
 
-        <div class="passwordGroup">
+        <div class="passwordGroup" formGroupName="passwordGroup">
           <div class="mb-3 row">
             <label for="password" class="col-sm-3 col-form-label">Password</label>
             <div class="col-sm-9">
@@ -55,17 +55,25 @@
               <input type="pConfirm" class="form-control" id="pConfirm" formControlName="pConfirm">
             </div>
           </div>
-          <!-- Validators -->
-          <section *ngIf="this.loginForm.controls['passwordGroup'].dirty">
-            <small *ngIf="loginForm.controls['pConfirm'].getError('required') && loginForm.controls['pConfirm'].touched"
+          {{ this.passwordGroup.errors?.['touched'] }}
+          <!-- {{ this.passwordGroup?.getError('dirty') }} -->
+          <!-- {{ this.passwordGroup?.getError('passwordPattern').description }} -->
+           <!-- Validators -->
+          <!-- <section *ngIf="this.passwordGroup.errors?.['required']"> -->
+          <section *ngIf="this.passwordGroup.errors?.['touched']">
+            <small *ngIf=" this.passwordGroup.touched && this.passwordGroup.errors?.['required']"
               class="error">
               <p>Password required</p>
+            </small>
+            <small *ngIf="this.passwordGroup.get('password')?.getError('passwordPattern') || this.passwordGroup.get('pConfirm')?.getError('passwordPattern')  "
+              class="error">
+              <p>{{ this.passwordGroup.getError('passwordPattern').description }}</p>
             </small>
           </section>
         </div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end margin-top">
           <button type="button" class="btn btn-outline-danger mb-3" (click)="this.resertForm">Clean Fields</button>
-          <button type="submit" class="btn btn-outline-primary mb-3" [disabled]="!loginForm.valid">Login</button>
+          <button type="submit" class="btn btn-outline-primary mb-3" [disabled]="!sigUpForm.valid">Login</button>
         </div>
       </form>
     </div>

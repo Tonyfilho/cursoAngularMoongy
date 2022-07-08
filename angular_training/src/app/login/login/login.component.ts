@@ -21,8 +21,8 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.loginForm.controls['email'].getError('required');
-    this.loginForm.controls['email'].dirty;
+    // this.loginForm.controls['email'].getError('required');
+    // this.loginForm.controls['email'].dirty;
   }
   close() {
     this.router.navigateByUrl('/home');
@@ -32,14 +32,10 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   /**1º Ver se  o form é INvalido, caso seja ja retornar */
-  submit() {
-    if (!this.loginForm.valid) {
-      return;
-    }
-    /**Useo Controls.value ou Destrution, q é a boa pratica
-    Ex: this.auth.login(this.loginForm.controls['email'].value, this.loginForm.controls['password'].value) ; */
-    /**
-     * 2º caso haja login com next seremos redirecionado para homePage
+  /**Useo Controls.value ou Destrution, q é a boa pratica
+   Ex: this.auth.login(this.loginForm.controls['email'].value, this.loginForm.controls['password'].value) ; */
+   /**
+    * 2º caso haja login com next seremos redirecionado para homePage
 
     const { email, password } = this.loginForm.value
     this.auth.login(email, password).subscribe({
@@ -49,7 +45,11 @@ export class LoginComponent implements OnInit, OnDestroy {
 
     });*/
 
-  /** usar o HotToastService para termos um tost sem precisar usar Modais */
+    /** usar o HotToastService para termos um tost sem precisar usar Modais */
+    submit() {
+      if (!this.loginForm.valid) {
+        return;
+      }
 
     const { email, password } = this.loginForm.value
    this.auth.login(email, password).pipe(
