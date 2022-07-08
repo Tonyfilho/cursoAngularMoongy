@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
-import { custonPatternPassword } from 'src/app/_custom-validators/custons-validations';
+import { custonPatternPassword, passwordsMarchValidator } from 'src/app/_custom-validators/custons-validations';
 import { AuthenticationService } from 'src/app/_services/authentication.service';
 
 @Component({
@@ -21,7 +21,7 @@ export class SignUpComponent implements OnInit {
       passwordGroup : fb.group({
          password: ['', [Validators.required]],
          pConfirm: ['',  [Validators.required]], updateOn: 'blur',
-      },{validators: [custonPatternPassword, ]})
+      },{validators: [custonPatternPassword, passwordsMarchValidator()]})
     })
   }
 
@@ -47,9 +47,11 @@ export class SignUpComponent implements OnInit {
 
   /**1º Ver se  o form é INvalido, caso seja ja retornar */
   submit() {
-    this.passwordGroup;
-    this.passwordGroup.dirty;
-    this.passwordGroup.get('password')?.getError('custonPatternPassword');
+   console.log('PasswordGroup', this.passwordGroup) ;
+   console.log('PasswordGroup Dirty', this.passwordGroup.dirty) ;
+   console.log('PasswordGroup.get(password)', this.passwordGroup.get('password')?.getError('custonPatternPassword')) ;
+
+
 
   //   if (!this.sigUpForm.valid) {
   //     return;

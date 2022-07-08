@@ -52,22 +52,24 @@
           <div class="mb-3 row">
             <label for="pConfirm" class="col-sm-3 col-form-label">Confirm Password</label>
             <div class="col-sm-9">
-              <input type="pConfirm" class="form-control" id="pConfirm" formControlName="pConfirm">
+              <input type="password" class="form-control" id="pConfirm" formControlName="pConfirm">
             </div>
           </div>
-          {{ this.passwordGroup.errors?.['touched'] }}
-          <!-- {{ this.passwordGroup?.getError('dirty') }} -->
-          <!-- {{ this.passwordGroup?.getError('passwordPattern').description }} -->
-           <!-- Validators -->
-          <!-- <section *ngIf="this.passwordGroup.errors?.['required']"> -->
-          <section *ngIf="this.passwordGroup.errors?.['touched']">
-            <small *ngIf=" this.passwordGroup.touched && this.passwordGroup.errors?.['required']"
+          <!-- Validator do FormGroup-------------------------------------------- -->
+          <!-- {{ this.passwordGroup.hasError('passwordsDontMatch') }}
+          {{ this.passwordGroup.errors?.['passwordsDontMatch'] }} -->
+          <section *ngIf="this.passwordGroup.touched || this.passwordGroup.dirty">
+            <small *ngIf="this.passwordGroup.get('password')?.getError('required') || this.passwordGroup.get('pConfirm')?.getError('required')"
               class="error">
               <p>Password required</p>
             </small>
-            <small *ngIf="this.passwordGroup.get('password')?.getError('passwordPattern') || this.passwordGroup.get('pConfirm')?.getError('passwordPattern')  "
+            <small *ngIf="this.passwordGroup.hasError('passwordPattern')"
               class="error">
               <p>{{ this.passwordGroup.getError('passwordPattern').description }}</p>
+            </small>
+            <small *ngIf="this.passwordGroup.hasError('passwordsDontMatch')"
+              class="error">
+              <p>{{ this.passwordGroup.getError('passwordsDontMatch').description }}</p>
             </small>
           </section>
         </div>

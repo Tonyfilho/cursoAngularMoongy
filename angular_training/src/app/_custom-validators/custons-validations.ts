@@ -8,10 +8,14 @@ import { AbstractControl } from '@angular/forms';
 
 export function passwordsMarchValidator(): ValidatorFn {
 return (control: AbstractControl): ValidationErrors | null => {
-  const password = control.get('password')?.value;
+  // console.log("password: ", control.get('password')?.value );
+  // console.log("pConfirm: ", control.get('pConfirm')?.value );
+  // console.log("pConfirm2: ", control.value['pConfirm'] );
   const pConfirm = control.value['pConfirm'];
-  if (password && pConfirm !== pConfirm) {
-    return { passwordsDontMatch: {description: 'Error password doesnt match'}};
+  const password = control.get('password')?.value;
+  if (password!== pConfirm) {
+    console.log("dentro if: ");
+    return true && { passwordsDontMatch: {description: 'Error password doesnt match'}};
   }
   return null
 }
