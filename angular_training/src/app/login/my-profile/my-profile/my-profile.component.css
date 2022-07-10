@@ -1,0 +1,38 @@
+.main {
+  background: linear-gradient(68.15deg, #040013 16.62%, #2e2e30 85.61%);
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  color: inherit;
+}
+
+ul {
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-size: 1.2rem;
+  line-height: 21px;
+  color: #FFF2E7;
+}
+
+.nav-contant {
+  background: linear-gradient(68.15deg, #040013 16.62%, #2e2e30 85.61%);
+  width: 100%;
+  height: max-content;
+
+}
+
+.nav-contant-router {
+  padding-left: 0.2%;
+}
+
+
+a.logout {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  background: linear-gradient(68.15deg, #040013 16.62%, #2e2e30 85.61%);
+
+}

@@ -1,3 +1,4 @@
+import { MyProfileComponent } from './login/my-profile/my-profile/my-profile.component';
 import { ForecastComponent } from './forecast/forecast.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -43,6 +44,10 @@ const routes: Routes = [
   {
     path: 'login/sign-up',
     component: SignUpComponent, ...canActivate(redirectToHome)
+  },
+  {
+    path: 'my-profile',
+    component: MyProfileComponent, ...canActivate(redirectToHome)
   },
   /*************************************************Carregando LAZYLOAD ROUTE*/
   { path: 'forms', loadChildren: () => import('./forms/forms-local.module').then(module => module.FormsLocalModule), ...canActivate(redirectToLogin)},

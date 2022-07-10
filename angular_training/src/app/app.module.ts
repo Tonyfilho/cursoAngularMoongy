@@ -14,11 +14,14 @@ import { ForecastingCityComponent } from './forecast/forecasting-city/forecastin
 import { FormsComponent } from './forms/forms.component';
 import { LoginComponent } from './login/login/login.component';
 import { SignUpComponent } from './login/sign-up/sign-up.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideAuth,getAuth } from '@angular/fire/auth';
 import { HotToastModule } from '@ngneat/hot-toast';
+import { MyProfileComponent } from './login/my-profile/my-profile/my-profile.component';
 
+/***********************Importações do FireBase ********************/
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideStorage, getStorage }   from '@angular/fire/storage'
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +33,8 @@ import { HotToastModule } from '@ngneat/hot-toast';
     ForecastingCityComponent,
     FormsComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    MyProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +47,8 @@ import { HotToastModule } from '@ngneat/hot-toast';
      */
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
+    provideStorage(() => getStorage()),
+
     /**Após a instação do NgNeat/tost, fui acrecentado aqui nos imports  */
     HotToastModule.forRoot()
 

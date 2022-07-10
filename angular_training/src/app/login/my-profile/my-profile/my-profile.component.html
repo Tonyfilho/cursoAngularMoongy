@@ -1,0 +1,27 @@
+<h2>my-profile</h2>
+<main>
+  <body>
+    <form action="" [formGroup]="myProfileForm" (ngSubmit)="submit()">
+      <div class="mb-3 row">
+        <label for="email" class="col-sm-3 col-form-label">Nome</label>
+        <div class="col-sm-9">
+          <input type="nome" class="form-control" id="nome" formControlName="nome">
+        </div>
+        <!-- Validators -->
+
+      </div>
+      <div class="mb-3 row">
+        <label for="email" class="col-sm-3 col-form-label">Email</label>
+        <div class="col-sm-9">
+          <input type="email" class="form-control" id="email" formControlName="email">
+        </div>
+      </div>
+
+
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end margin-top">
+        <!-- <button type="button" class="btn btn-outline-danger mb-3" (click)="this.resertForm">Clean Fields</button> -->
+        <button type="submit" class="btn btn-outline-primary mb-3" [disabled]="!myProfileForm.valid">Login</button>
+      </div>
+    </form>
+  </body>
+</main>
