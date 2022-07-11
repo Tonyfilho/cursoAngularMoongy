@@ -45,9 +45,13 @@ const routes: Routes = [
     path: 'login/sign-up',
     component: SignUpComponent, ...canActivate(redirectToHome)
   },
+  // {
+  //   path: 'myPerfil',
+  //   component: MyProfileComponent, ...canActivate(redirectToHome)
+  // },
   {
-    path: 'my-profile',
-    component: MyProfileComponent, ...canActivate(redirectToHome)
+    path: 'myPerfil',
+    component: MyProfileComponent
   },
   /*************************************************Carregando LAZYLOAD ROUTE*/
   { path: 'forms', loadChildren: () => import('./forms/forms-local.module').then(module => module.FormsLocalModule), ...canActivate(redirectToLogin)},

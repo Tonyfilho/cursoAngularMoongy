@@ -1,38 +1,62 @@
-.main {
+/* main {
   background: linear-gradient(68.15deg, #040013 16.62%, #2e2e30 85.61%);
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  justify-content: center;
+}
+ */
+
+ main {
+  width: 96%;
+  height: fit-content;
+  background-color: linear-gradient(68.15deg, #3906f3 16.62%, #2b336b 85.61%);
+  position: relative;
+  box-shadow: 1em 1em 25px 1em #3a3af3a9,
+   inset 0 0 25px 0.5em #0e0e3fa9,
+     inset 0 0 5em 0px #3609af8f;
 }
 
-a {
-  color: inherit;
-}
-
-ul {
+body {
+  width: 100%;
+  height: 91vh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(68.15deg, #0d24f583 16.62%, #322e35 85.61%);
   font-family: 'Josefin Sans', sans-serif;
   font-style: normal;
-  font-size: 1.2rem;
-  line-height: 21px;
+  font-size: 1rem;
+  line-height: 20px;
   color: #FFF2E7;
-}
 
-.nav-contant {
-  background: linear-gradient(68.15deg, #040013 16.62%, #2e2e30 85.61%);
+}
+.card {
   width: 100%;
-  height: max-content;
+  /* height: max-content; */
+  height: fit-content;
+ 
+  background: linear-gradient(68.15deg, #d3d4dd83 16.62%, #322e35 85.61%);
+  z-index: 5;
+  box-shadow: 0 0  5px 0.5em #111111a9,
+  inset 0 0 25px 0.25em #0e0e3fa9,
+    inset 0 0 5em 0px #529fe78f;
 
 }
 
-.nav-contant-router {
-  padding-left: 0.2%;
+.file-image > img  {
+  margin: 5% 0%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+
+
 }
 
 
-a.logout {
-  cursor: pointer;
+.file-image {
+  position: relative;
 }
-
-.dropdown-menu {
-  background: linear-gradient(68.15deg, #040013 16.62%, #2e2e30 85.61%);
-
+.file-image > button {
+  position: absolute;
+  bottom: 3em;
+  right: 32%;
 }

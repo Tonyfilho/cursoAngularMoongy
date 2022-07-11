@@ -4,8 +4,8 @@
     <ul class="nav justify-content-center">
       <li class="nav-item">
         <a class="nav-link active" aria-current="page" routerLink="/home">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" style="text-align:center; margin-right:2px" fill="currentColor" class="bi bi-house-door"
-            viewBox="0 0 16 16">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" style="text-align:center; margin-right:2px"
+            fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
             <path
               d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
           </svg>
@@ -65,32 +65,35 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle logout" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" style="text-align:center; margin-right:2px" fill="currentColor" class="bi bi-stoplights" viewBox="0 0 16 16">
-              <path d="M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm0 4a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm1.5 2.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
-              <path d="M4 2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2h2c-.167.5-.8 1.6-2 2v2h2c-.167.5-.8 1.6-2 2v2h2c-.167.5-.8 1.6-2 2v1a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1c-1.2-.4-1.833-1.5-2-2h2V8c-1.2-.4-1.833-1.5-2-2h2V4c-1.2-.4-1.833-1.5-2-2h2zm2-1a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6z"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" style="text-align:center; margin-right:2px"
+              fill="currentColor" class="bi bi-stoplights" viewBox="0 0 16 16">
+              <path
+                d="M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm0 4a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm1.5 2.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+              <path
+                d="M4 2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2h2c-.167.5-.8 1.6-2 2v2h2c-.167.5-.8 1.6-2 2v2h2c-.167.5-.8 1.6-2 2v1a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1c-1.2-.4-1.833-1.5-2-2h2V8c-1.2-.4-1.833-1.5-2-2h2V4c-1.2-.4-1.833-1.5-2-2h2zm2-1a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6z" />
             </svg>
             Your Section: {{ user.displayName }}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" (click)="logOut()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                  style="text-align:center; margin-right:2px" fill="currentColor" class="bi bi-door-closed"
-                  viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" style="margin-right:2px"
+                  fill="currentColor" class="bi bi-door-closed" viewBox="0 0 16 16">
                   <path
                     d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2zm1 13h8V2H4v13z" />
                   <path d="M9 9a1 1 0 1 0 2 0 1 1 0 0 0-2 0z" />
                 </svg>Logout
               </a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
             <li><a class="dropdown-item" routerLink="/myPerfil">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" style="text-align:center; margin-right:2px"fill="currentColor"
-                  class="bi bi-info-circle" viewBox="0 0 16 16">
-                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"   style="margin-right:2px"  fill="currentColor"
+                  class="bi bi-file-earmark-person" viewBox="0 0 16 16">
+                  <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                   <path
-                    d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                </svg>My Perfil
+                    d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2v9.255S12 12 8 12s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h5.5v2z" />
+                </svg>
+                My Perfil
               </a></li>
             <li>
               <hr class="dropdown-divider">
@@ -104,8 +107,8 @@
           <a class="nav-link" routerLink="/login">
             <!-- <i class="bi bi-door-open">Login</i> -->
             Login
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" style="text-align:center; margin-right:2px" fill="currentColor" class="bi bi-door-open"
-              viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" style="text-align:center; margin-right:2px"
+              fill="currentColor" class="bi bi-door-open" viewBox="0 0 16 16">
               <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z" />
               <path
                 d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117zM11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5zM4 1.934V15h6V1.077l-6 .857z" />
