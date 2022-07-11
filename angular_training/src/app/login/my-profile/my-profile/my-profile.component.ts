@@ -1,9 +1,11 @@
 import { FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { concatMap, Observable } from 'rxjs';
 import { User } from '@angular/fire/auth';
 import { AuthenticationService } from 'src/app/_services/authentication.service';
 import { Router } from '@angular/router';
+import { UpLoadService } from 'src/app/_services/up-load.service';
+import { HotToastService } from '@ngneat/hot-toast';
 
 @Component({
   selector: 'app-my-profile',
@@ -15,12 +17,31 @@ export class MyProfileComponent implements OnInit {
   myProfileForm!: FormGroup
   name$: Observable<User | null>;
 
-  constructor(public auth: AuthenticationService, private router: Router) {
+  constructor(public auth: AuthenticationService,
+    private router: Router, private upservice: UpLoadService, private tost: HotToastService) {
     this.name$ = auth.currentUser$;
   }
 
   ngOnInit(): void {
   }
 
-  submit() { }
+
+
+  changePicture(event: any, user: User) {
+    console.log("dentro", event.target?.files[0])
+    this.upservice.uploadImage(event.target?.files[0], `images/profiles/${user.uid}`).
+      pipe(
+        this.tost.observe({
+          success: 'Image is being uploaded',
+          loading: 'Logging in ..',
+          error: (err) => `There was erro in uploading : ${err}`
+        }),
+        concatMap((photoURL) => this.auth.updateProfileData({photoURL}) )
+      ).subscribe({
+        next: () => {},
+        error: err =>  {console.log('Error uploading: ', err) },
+      })
+
+
+  }
 }

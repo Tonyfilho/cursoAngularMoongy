@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Auth, authState, createUserWithEmailAndPassword, updateProfile } from '@angular/fire/auth';
+import { Auth, authState, createUserWithEmailAndPassword, updateProfile, UserInfo } from '@angular/fire/auth';
 import { signInWithEmailAndPassword } from '@firebase/auth';
-import {from, switchMap } from 'rxjs';
+import { from, switchMap, Observable, of, concatMap } from 'rxjs';
+import { UpLoadService } from './up-load.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class AuthenticationService {
    * 3º o authState() é um Obsevable é do firebase q controla se estamos ou não logados
    * com isto podemos dar ou bloquear acessos.
    */
-  constructor(private auth: Auth) {
+  constructor(private auth: Auth, private uploadFile: UpLoadService) {
 
   }
 
@@ -47,5 +48,27 @@ export class AuthenticationService {
   signUp(nome: any, email: any, password: any) {
     return from(createUserWithEmailAndPassword(this.auth, email, password))
     .pipe(switchMap(({user}) => updateProfile(user, { displayName: nome }))) ;
+  }
+
+
+
+
+
+/**
+ *
+ * @param param0 Partial é um SuperSet do UserInfo q conteim informações
+ * sobre o usuario do fireStorage
+ * 1º Pegar o user atual.
+ * 2º Retornar um Of() e usar o concatMap para juntar os dados
+ * 3º no concatmap validar se existe ou não um user
+ */
+  updateProfileData(profileData: Partial<UserInfo>) : Observable<any> {
+   const userAtual = this.auth.currentUser;
+   return of(userAtual).pipe(concatMap(user => {
+    if(!user) { throw new Error('User Not Authenticated')}
+    return updateProfile(user, profileData)
+   }
+   ))
+
   }
 }//end class

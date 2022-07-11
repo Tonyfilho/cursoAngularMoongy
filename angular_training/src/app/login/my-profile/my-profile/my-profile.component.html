@@ -38,7 +38,7 @@
           </div>
           <div class="container file-image">
             <img [src]="user.photoURL ?? '../../../assets/img/foto-perfil.jpg'" alt="...">
-            <button class="btn btn-outline-danger btn-sm" (click)="inputField.click()">
+            <button class="btn btn-outline-danger btn-sm" (click)="inputField.click()" (change)="changePicture($event, user)">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                 class="bi bi-pencil-square" viewBox="0 0 16 16">
                 <path

@@ -30,9 +30,7 @@ body {
 }
 .card {
   width: 100%;
-  /* height: max-content; */
   height: fit-content;
- 
   background: linear-gradient(68.15deg, #d3d4dd83 16.62%, #322e35 85.61%);
   z-index: 5;
   box-shadow: 0 0  5px 0.5em #111111a9,
