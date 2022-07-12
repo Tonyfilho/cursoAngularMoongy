@@ -28,7 +28,7 @@ export class MyProfileComponent implements OnInit {
 
 
   changePicture(event: any, user: User) {
-    console.log("dentro", event.target?.files[0])
+
     this.upservice.uploadImage(event.target?.files[0], `images/profiles/${user.uid}`).
       pipe(
         this.tost.observe({

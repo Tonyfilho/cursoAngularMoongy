@@ -1,0 +1,54 @@
+{
+"error": {
+"code": 400,
+"message": "Permission denied. Please enable Firebase Storage for your bucket by visiting the Storage tab in the Firebase Console and ensure that you have sufficient permission to properly provision resources."
+}
+}
+
+
+code: 400
+message: "Your bucket has not been set up properly for Firebase Storage. Please visit 'https://console.firebase.google.com/project/angular-training-by-tony-filho/storage/files' to automatically repair this issue and then retry. If the issue lasts longer than five minutes, you may have insufficient permissions to repair the project.
+You can check your permissions by visiting 'https://console.firebase.google.com/iam-admin/iam/project?project=angular-training-by-tony-filho'."
+
+// rules_version para  FireStorage DataBase
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if
+          request.time < timestamp.date(2022, 8, 9);
+    }
+  }
+}
+
+// rules_version para Storage
+
+
+
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
+
+
+
+rules_version = '2';
+service firebase.storage {
+
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if
+          request.time < timestamp.date(2022, 8, 9);
+    }
+    match /b/{bucket}/o {
+       match /{allPaths=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+  }
+}
