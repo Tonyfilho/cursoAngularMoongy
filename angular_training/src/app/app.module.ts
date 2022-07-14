@@ -21,7 +21,9 @@ import { MyProfileComponent } from './login/my-profile/my-profile/my-profile.com
 /***********************Importações do FireBase ********************/
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth,getAuth } from '@angular/fire/auth';
-import { provideStorage, getStorage }   from '@angular/fire/storage'
+import { provideStorage, getStorage}   from '@angular/fire/storage'
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +50,7 @@ import { provideStorage, getStorage }   from '@angular/fire/storage'
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideStorage(() => getStorage()),
+    provideFirestore(() => getFirestore()),
 
     /**Após a instação do NgNeat/tost, fui acrecentado aqui nos imports  */
     HotToastModule.forRoot()
