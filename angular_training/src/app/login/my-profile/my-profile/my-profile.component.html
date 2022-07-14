@@ -2,7 +2,7 @@
 
   <body>
 
-    <div *ngIf="this.name$ | async as user" class="row"  (submit)="submitProfile()">
+    <div *ngIf="this.user$ | async as user" class="row"  >
       <div class="col-sm-6">
 
         <div class="card text-center" style="width: 35rem;">
@@ -41,7 +41,7 @@
                 </section> -->
               </div>
               <div class="mb-3 row">
-                <label for="firstName" class="col-sm-3 col-form-label">Fist Name</label>
+                <label for="firstName" class="col-sm-3 col-form-label">First Name</label>
                 <div class="col-sm-9">
                   <input type="text" class="form-control" id="firstName" formControlName="firstName">
                 </div>
@@ -71,7 +71,7 @@
             </form>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end margin-top">
               <button type="button" class="btn btn-outline-danger mb-3" (click)="this.myProfileForm">Clean Fields</button>
-              <button type="submit" class="btn btn-outline-primary mb-3" >Login</button>
+              <button type="submit" class="btn btn-outline-primary mb-3"   (submit)="submitProfile()" >UpDate</button>
             </div>
           </div>
           <div class="card-footer">

@@ -45,9 +45,8 @@ export class AuthenticationService {
  * o metodo createUserWithEmailAndPassword só aceita 3 paramentros, e com o switchmap temos acesso
  * ao recursos disponiveis. Indo para UpdateProfile
  */
-  signUp(nome: any, email: any, password: any) {
-    return from(createUserWithEmailAndPassword(this.auth, email, password))
-    .pipe(switchMap(({user}) => updateProfile(user, { displayName: nome }))) ;
+  signUp( email: any, password: any) {
+    return from(createUserWithEmailAndPassword(this.auth, email, password));
   }
 
 
@@ -77,5 +76,5 @@ export class AuthenticationService {
 
 
 
-  
+
 }//end class

@@ -1,3 +1,5 @@
+import { IUserLocalProfile } from './_models/user-profile.model';
+import { UserService } from './_services/user.service';
 import { Observable } from 'rxjs';
 import { AuthenticationService } from 'src/app/_services/authentication.service';
 import { Component } from '@angular/core';
@@ -10,9 +12,10 @@ import { User } from '@angular/fire/auth';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-   name:Observable<User | null>;
-   constructor( public auth: AuthenticationService, private router: Router) {
-    this.name = auth.currentUser$;
+   user$: Observable<IUserLocalProfile | null>;
+   constructor( public auth: AuthenticationService, private router: Router, private userService: UserService) {
+
+    this.user$ = userService.currentUserProfile$;
    }
 
    /**Em caso de deslocagar subscrevemos no metodo e redirecinaremos a rota */

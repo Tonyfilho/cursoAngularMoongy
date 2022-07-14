@@ -50,7 +50,7 @@ const routes: Routes = [
   //   component: MyProfileComponent, ...canActivate(redirectToHome)
   // },
   {
-    path: 'myPerfil',
+    path: 'myProfile',
     component: MyProfileComponent
   },
   /*************************************************Carregando LAZYLOAD ROUTE*/

@@ -53,8 +53,8 @@ export class UserService {
    * 5º Usaremos o Set e converteremos a Promise em Observable e retornarmos
    */
 
-  addUser({ user }: { user: UserLocalProfile; }): Observable<any> {
-    const localRef = doc(this.firestore, 'users', user.Uid);
+  addUser(user: IUserLocalProfile): Observable<any> {
+    const localRef = doc(this.firestore, 'users', user.uid);
     return from(setDoc(localRef, user))
 
   }
