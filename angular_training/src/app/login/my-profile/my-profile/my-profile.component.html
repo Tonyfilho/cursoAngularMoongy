@@ -4,34 +4,7 @@
 
     <div *ngIf="this.name$ | async as user" class="row">
       <div class="col-sm-6">
-        <!-- <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center w-100">
-        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-          <form action="" (ngSubmit)="submit()" *ngIf="this.name | async as name">
-            <div class="toast-header">
-              <img src="..." class="rounded me-2" alt="...">
-              <strong class="me-auto">My-profile: {{ name.displayName }}</strong>
-              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <div class="toast-body">
-              <div class="mb-3 row">
-                <label for="email" class="col-sm-3 col-form-label">Nome</label>
-                <div class="col-sm-9">
-                  <input type="nome" class="form-control" id="nome">
-                </div>
-              </div>
-              <div class="mb-3 row">
-                <div class="col-sm-9">
-                  <input type="email" id="email">
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div class="d-grid gap-2 d-md-flex justify-content-md-end margin-top">
 
-        <button type="submit" class="btn btn-outline-primary mb-3">Login</button>
-      </div> -->
         <div class="card text-center" style="width: 35rem;">
           <div class="card-header">
             User Profile: {{ user.displayName | uppercase}}

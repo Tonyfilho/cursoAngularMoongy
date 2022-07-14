@@ -1,5 +1,5 @@
-import { SecundBlock } from './../../../assets/classes/secundBlock.model';
-import { FirstBlock } from './../../../assets/classes/fistBlock.model';
+import { SecundBlock } from '../../_models/secundBlock.model';
+import { FirstBlock } from '../../_models/fistBlock.model';
 import { AfterContentInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ForecastingService } from '../forecasting.service';
 
@@ -15,17 +15,17 @@ export class ForecastingCityComponent implements OnInit, AfterContentInit {
   @Output() closeModalEvent = new EventEmitter<any>();
 
   openOrCloseModal = 'block'
-  wheatherCity = ''; 
+  wheatherCity = '';
   firstBlock!: FirstBlock;
   secundBlock!: SecundBlock;
- 
+
   constructor(private fs: ForecastingService) {
    // console.log('Forcaste no construtor, vem Undefined: ', this.forecastWithSwitch)
   }
   ngOnInit(): void {
     this.fs.imageResponse.subscribe(data => this.image = data);
   }
-  /**Permite ter acesso aos dados depois q o conteudo foi iniciado, pois foi Recebido do componente PAI 
+  /**Permite ter acesso aos dados depois q o conteudo foi iniciado, pois foi Recebido do componente PAI
    * que manda um OBSERVABLE q recebemos ele via INPUT()
    */
   ngAfterContentInit(): void {
@@ -43,7 +43,7 @@ export class ForecastingCityComponent implements OnInit, AfterContentInit {
       weather: this.forecastWithSwitch?.weather[0]['description'],
       main: this.forecastWithSwitch?.weather[0]['main'],
       totalClouds: this.forecastWithSwitch.clouds['all']
-     };     
+     };
       this.firstBlock = new FirstBlock(firstBlockObj);
 
 
@@ -55,7 +55,7 @@ export class ForecastingCityComponent implements OnInit, AfterContentInit {
         pressure: this.forecastWithSwitch?.main['pressure'],
         humidity:this.forecastWithSwitch?.main['humidity'],
         timezone: this.forecastWithSwitch['timezone']
-  
+
       }
 
       this.secundBlock = new SecundBlock(secundBockObj);
@@ -72,9 +72,9 @@ export class ForecastingCityComponent implements OnInit, AfterContentInit {
   }
 
   /**
-   * 
+   *
    * @param text Format the 1º lettle of word to upcase()
-   * @returns 
+   * @returns
    */
   formtTheFirstLetter(text: string) {
     let loweredText = text?.toLowerCase();

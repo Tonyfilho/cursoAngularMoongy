@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Book } from 'src/assets/classes/book.model';
+import { Book } from 'src/app/_models/book.model';
 import { BooksService } from '../books.service';
 
 @Component({
@@ -20,7 +20,7 @@ bookId: number | any; /** */
 
   console.log(this.bookId);
   }
-    
+
   ngOnInit(): void {
     this.book = this.bookService.getBookById(parseInt(this.bookId));
   }

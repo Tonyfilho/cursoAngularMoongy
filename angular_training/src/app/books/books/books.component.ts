@@ -1,4 +1,4 @@
-import { Book } from 'src/assets/classes/book.model';
+import { Book } from 'src/app/_models/book.model';
 import { Component, OnInit } from '@angular/core';
 import { BooksService } from '../books.service';
 
@@ -12,7 +12,7 @@ export class BooksComponent implements OnInit {
   constructor(private bookService: BooksService) {
    // console.log(bookService.getBooks())
   }
-  
+
   ngOnInit(): void {
     this.bookService.getBooks().forEach(book => {this.books.push(book)});
 
