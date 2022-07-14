@@ -1,4 +1,4 @@
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { concatMap, Observable } from 'rxjs';
 import { User } from '@angular/fire/auth';
@@ -20,6 +20,14 @@ export class MyProfileComponent implements OnInit {
   constructor(public auth: AuthenticationService,
     private router: Router, private upservice: UpLoadService, private tost: HotToastService) {
     this.name$ = auth.currentUser$;
+    this.myProfileForm = new FormGroup ({
+        uid: new FormControl(''),
+        displayName: new FormControl(''),
+        fistName: new FormControl(''),
+        lastName: new FormControl(''),
+        phone: new FormControl(''),
+        address: new FormControl(''),
+    });
   }
 
   ngOnInit(): void {
@@ -36,12 +44,14 @@ export class MyProfileComponent implements OnInit {
           loading: 'Logging in ..',
           error: (err) => `There was erro in uploading : ${err}`
         }),
-        concatMap((photoURL) => this.auth.updateProfileData({photoURL}) )
+        concatMap((photoURL) => this.auth.updateProfileData({ photoURL }))
       ).subscribe({
-        next: () => {},
-        error: err =>  {console.log('Error uploading: ', err) },
+        next: () => { },
+        error: err => { console.log('Error uploading: ', err) },
       })
+  }
 
+  submitProfile() {
 
   }
 }

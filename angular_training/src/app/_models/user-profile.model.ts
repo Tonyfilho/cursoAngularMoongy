@@ -1,4 +1,4 @@
-export class ProfileUser {
+export class UserLocalProfile {
 
   uid: string;
   email: string;
@@ -9,17 +9,30 @@ export class ProfileUser {
   phone:string;
   address: string;
 
-  constructor(profileuser: ProfileUser) {
-      this.uid = profileuser.uid;
-      this.email = profileuser.email;
-      this.displayName = profileuser.displayName;
-      this.photoURL = profileuser.photoURL;
-      this.firstName = profileuser.firstName;
-      this.lastName = profileuser.lastName;
-      this.phone = profileuser.phone;
-      this.address = profileuser.address;
+  constructor(userProfile: UserLocalProfile) {
+      this.uid = userProfile.uid;
+      this.email = userProfile.email;
+      this.displayName = userProfile.displayName;
+      this.photoURL = userProfile.photoURL;
+      this.firstName = userProfile.firstName;
+      this.lastName = userProfile.lastName;
+      this.phone = userProfile.phone;
+      this.address = userProfile.address;
   }
 
+  get Uid () {
+    return this.uid;
+  }
 
+}
 
+export interface IUserLocalProfile  {
+  uid?: string;
+  email?: string;
+  displayName?: string;
+  photoURL?:string;
+  firstName?: string;
+  lastName?: string;
+  phone?:string;
+  address?: string;
 }

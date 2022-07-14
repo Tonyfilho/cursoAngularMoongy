@@ -2,7 +2,7 @@
 
   <body>
 
-    <div *ngIf="this.name$ | async as user" class="row">
+    <div *ngIf="this.name$ | async as user" class="row"  (submit)="submitProfile()">
       <div class="col-sm-6">
 
         <div class="card text-center" style="width: 35rem;">
@@ -11,7 +11,7 @@
           </div>
           <div class="container file-image">
             <img [src]="user.photoURL ?? '../../../assets/img/foto-perfil.jpg'" alt="...">
-            <button class="btn btn-outline-danger btn-sm" (click)="inputField.click()" >
+            <button class="btn btn-outline-danger btn-sm" (click)="inputField.click()">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                 class="bi bi-pencil-square" viewBox="0 0 16 16">
                 <path
@@ -20,6 +20,59 @@
                   d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
               </svg>
             </button>
+          </div>
+
+          <div class="card-body">
+
+            <form action="" [formGroup]="myProfileForm">
+              <div class="mb-3 row">
+                <label for="displayName" class="col-sm-3 col-form-label">Display Name</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="displayName" formControlName="displayName">
+                </div>
+                <!-- Validators -->
+                <!-- <section *ngIf="this.loginForm.controls['email'].dirty">
+                  <small *ngIf="loginForm.controls['email'].getError('required') && loginForm.controls['email'].touched" class="error">
+                      <p>Password required</p>
+                  </small>
+                  <small *ngIf="loginForm.controls['email'].getError('email') && loginForm.controls['email'].touched" class="error">
+                      <p>Email Field needs to have yourEmail@gmail.com</p>
+                  </small>
+                </section> -->
+              </div>
+              <div class="mb-3 row">
+                <label for="firstName" class="col-sm-3 col-form-label">Fist Name</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="firstName" formControlName="firstName">
+                </div>
+                <!-- Validators -->
+              </div>
+              <div class="mb-3 row">
+                <label for="lastName" class="col-sm-3 col-form-label">Last Name</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="lastName" formControlName="lastName">
+                </div>
+                <!-- Validators -->
+              </div>
+              <div class="mb-3 row">
+                <label for="phone" class="col-sm-3 col-form-label">Phone</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="phone" formControlName="phone">
+                </div>
+                <!-- Validators -->
+              </div>
+              <div class="mb-3 row">
+                <label for="address" class="col-sm-3 col-form-label">Address</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="address" formControlName="address">
+                </div>
+                <!-- Validators -->
+              </div>
+            </form>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end margin-top">
+              <button type="button" class="btn btn-outline-danger mb-3" (click)="this.myProfileForm">Clean Fields</button>
+              <button type="submit" class="btn btn-outline-primary mb-3" >Login</button>
+            </div>
           </div>
           <div class="card-footer">
             Email: {{ user.email }}
