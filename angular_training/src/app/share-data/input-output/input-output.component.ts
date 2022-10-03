@@ -7,27 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputOutputComponent implements OnInit {
   serverElements:any[] = [];
-  newServerName:any = '';
-  newServerContent:any = '';
+  
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onAddServer() {
+  onAddServer(event:{ name: string , content:string}) {
     this.serverElements.push({
       type: 'server',
-      name: this.newServerName,
-      content: this.newServerContent
+      name: event.name,
+      content: event.content
     });
   }
 
-  onAddBlueprint() {
+  onAddBlueprint(event:{ name: string , content:string}) {
     this.serverElements.push({
       type: 'blueprint',
-      name: this.newServerName,
-      content: this.newServerContent
+      name: event.name,
+      content: event.content
     });
   }
 

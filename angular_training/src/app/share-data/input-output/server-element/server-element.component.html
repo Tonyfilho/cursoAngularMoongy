@@ -1,11 +1,11 @@
-
+    <ng-content select="selector"></ng-content>
     <div
       class="panel panel-default">
-      <div class="panel-heading">{{ element.name }}</div>
+      <div class="panel-heading">{{ "Este Evento é um @Input: " | uppercase }} {{ element?.name }}</div>
       <div class="panel-body">
         <p>
-          <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
-          <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
+          <strong *ngIf="element?.type === 'server'" style="color: red">{{ element?.content }}</strong>
+          <em *ngIf="element?.type === 'blueprint'" style="color: rgb(37, 17, 226)">{{ element?.content }}</em>
         </p>
       </div>
     </div>
