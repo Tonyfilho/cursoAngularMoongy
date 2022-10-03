@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ShareDataComponent } from './share-data.component';
 import { NgContentLocalComponent } from './ng-content-local/ng-content-local.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -12,6 +13,7 @@ import { NgContentLocalComponent } from './ng-content-local/ng-content-local.com
   declarations: [InputOutputComponent, ViewChildComponent, ShareDataComponent, NgContentLocalComponent],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild([
       {path:'', component:ShareDataComponent},
       { path: 'input&outPut', component: InputOutputComponent},
