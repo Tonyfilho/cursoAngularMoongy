@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-input-output',
-  templateUrl: './input-output.component.html',
-  styleUrls: ['./input-output.component.css']
+  selector: 'app-server-element',
+  templateUrl: './server-element.component.html',
+  styleUrls: ['./server-element.component.css']
 })
-export class InputOutputComponent implements OnInit {
+export class ServerElementComponent implements OnInit {
   serverElements:any[] = [];
   newServerName:any = '';
   newServerContent:any = '';
