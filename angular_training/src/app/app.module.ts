@@ -24,6 +24,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideStorage, getStorage}   from '@angular/fire/storage'
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
     FormsComponent,
     LoginComponent,
     SignUpComponent,
-    MyProfileComponent
+    MyProfileComponent,
+
   ],
   imports: [
     BrowserModule,
