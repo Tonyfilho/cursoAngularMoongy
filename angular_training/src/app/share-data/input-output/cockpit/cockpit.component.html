@@ -1,1 +1,17 @@
-<p>local-input works!</p>
+
+    <h2> {{ '@InPut and @OutPut !'| uppercase}}</h2>
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="ServerName" placeholder="New Server Name" [(ngModel)]="newServerName">
+      <label for="ServerName">Server Name</label>
+    </div>
+    <div class="form-floating">
+      <input type="text" class="form-control" id="newServerContent" placeholder="New Server Content" [(ngModel)]="newServerContent">
+      <label for="newServerContent">Server Content</label>
+    </div>
+    <br>
+    <button
+      class="btn btn-primary"
+      (click)="onAddServer()">Add Server</button>
+    <button
+      class="btn btn-primary"
+      (click)="onAddBlueprint()">Add Server Blueprint</button>
