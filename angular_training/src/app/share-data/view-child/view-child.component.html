@@ -1,1 +1,14 @@
-<p>view-child works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <app-cockpit-from-view-child (cockPitElementsRed)="onAddServer($event)"  [localLabel]="'@ViewChild'"></app-cockpit-from-view-child>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-server-element *ngFor="let item of serverElements" [serverElement]="item"> </app-server-element>
+    </div>
+  </div>
+</div>
+

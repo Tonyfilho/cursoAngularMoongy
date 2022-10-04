@@ -10,12 +10,13 @@ import { CockPitComponent } from './input-output/cockpit/cockpit.component';
 import { ServerElementComponent } from './input-output/server-element/server-element.component';
 import { LocalReferencesComponent } from './local-references/local-references.component';
 import { CockpitFromLocalComponent } from './local-references/cockpit-from-local/cockpit-from-local.component';
+import { CockpitFromViewChildComponent } from './view-child/cockpit-from-view-child/cockpit-from-view-child.component';
 
 
 
 
 @NgModule({
-  declarations: [InputOutputComponent, ViewChildComponent, ShareDataComponent, NgContentLocalComponent, CockPitComponent, ServerElementComponent, LocalReferencesComponent, CockpitFromLocalComponent],
+  declarations: [InputOutputComponent, ViewChildComponent, ShareDataComponent, NgContentLocalComponent, CockPitComponent, ServerElementComponent, LocalReferencesComponent, CockpitFromLocalComponent, CockpitFromViewChildComponent],
   imports: [
     CommonModule,
     FormsModule,

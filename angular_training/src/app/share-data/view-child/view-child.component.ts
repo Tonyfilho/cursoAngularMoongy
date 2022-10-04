@@ -7,9 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewChildComponent implements OnInit {
 
+  serverElements:any[] = [];
+
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onAddServer(event:{ name: string , content:string}) {
+    this.serverElements.push({
+      type: 'server',
+      name: event.name,
+      content: event.content
+    });
+  }
+
+  onAddBlueprint(event:{ name: string , content:string}) {
+    this.serverElements.push({
+      type: 'blueprint',
+      name: event.name,
+      content: event.content
+    });
+  }
 }

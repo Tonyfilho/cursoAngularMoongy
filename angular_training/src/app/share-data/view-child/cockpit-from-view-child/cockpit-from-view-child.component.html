@@ -1,0 +1,13 @@
+<h2> {{ localLabel | uppercase}}</h2>
+    <div class="form-floating mb-3">
+      <!-- Usa-se @viewChild para trazer para TypeScript os dados Antes do Evento do Click do botão, usamos a Local Reference para pegar os dados.-->
+      <!-- <input type="text" class="form-control" id="ServerName" placeholder="New Server Name" [(ngModel)]="newServerName"> -->
+      <input type="text" class="form-control" id="ServerName" placeholder="New Server Name" #cockPitInputName>
+      <label for="ServerName">@ViewChild serve para buscar  os dados antes do evento do click</label>
+    </div>
+
+    <br>
+    <button
+      class="btn btn-primary"
+      (click)="onAddServer()">Add Server</button>
+
