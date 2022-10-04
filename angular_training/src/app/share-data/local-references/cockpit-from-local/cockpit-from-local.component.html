@@ -1,0 +1,14 @@
+<h2> {{ localLabel | uppercase}}</h2>
+<div class="form-floating mb-3">
+  <!-- <input type="text" class="form-control" id="ServerName" placeholder="New Server Name" [(ngModel)]="newServerName"> -->
+  <!-- Aqui usaremos uma LOCAL REFERENCE, são variaveis locais que podem ser usadas em QUALQUER TAG HTML, comentaremos  o NgModel e adcionaremos #MAISNOMEDAVAR -->
+  <input type="text" class="form-control" id="ServerName" placeholder="New Server Name" #cockpitNameInput>
+  <label for="ServerName">#Local References</label>
+</div>
+<br>
+<!-- Passando a reference para metodo e pegando o valor no TS -->
+<button
+  class="btn btn-primary"
+  (click)="onAddServer(cockpitNameInput)">Add Server</button>
+
+

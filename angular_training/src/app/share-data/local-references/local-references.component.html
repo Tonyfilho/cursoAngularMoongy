@@ -1,0 +1,15 @@
+<div class="container">
+  <p>Local References é uma das formas fazer o Fetch ou buscar os dados do Template para Ts.</p>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-cockpit-from-local (cockPitElementsRed)="onAddServer($event)" (cockPitElementsBlue)="onAddBlueprint($event)" [localLabel]="'Local References'" ></app-cockpit-from-local>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-server-element *ngFor="let item of serverElements" [serverElement]="item"> </app-server-element>
+    </div>
+  </div>
+</div>
+
