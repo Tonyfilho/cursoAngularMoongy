@@ -1,4 +1,4 @@
-   
+
     <div
       class="panel panel-default">
       <div class="panel-heading">{{ "Este Evento é um @Input: " | uppercase }} {{ element?.name }}</div>
@@ -9,3 +9,5 @@
         </p>
       </div>
     </div>
+    <!-- Este Ng-Content é adcionado lá no compomente NG-CONTENT-LOCAL, Obs: Só funciona se usar o class Css mas tem que por  select=".card" -->
+    <div class="container">  <ng-content select=".card"></ng-content></div>

@@ -1,13 +1,23 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <app-cockpit (cockPitElementsRed)="onAddServer($event)" (cockPitElementsBlue)="onAddBlueprint($event)" ></app-cockpit>
+      <app-cockpit (cockPitElementsRed)="onAddServer($event)" (cockPitElementsBlue)="onAddBlueprint($event)" [localLabel]="'NgContent Share Data by Template'"></app-cockpit>
     </div>
   </div>
   <hr>
   <div class="row">
     <div class="col-xs-12">
-      <app-server-element *ngFor="let item of serverElements" [serverElement]="item"> </app-server-element>
+      <app-server-element *ngFor="let item of serverElements" [serverElement]="item">
+        <!-- Este CARD é adcionado lá no compomente NG-CONTENT-LOCAL, Lá temos que por a TAG NG-CONTENT. Obs: Só funciona se usar o class Css mas tem que por  select=".card" -->
+        <div class="card" style="width: 18rem;">
+          <img src="./../../../assets/img/sharing.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Ng-Content</h5>
+            <p class="card-text">Este Card Esta sendo Enviado aqui neste compomente e redenrizado dentro do compomente APP-SERVER-ELEMENT, usando a TAG NG-CONTENT...</p>
+            <a routerLink="/shareData" class="btn btn-primary">Go to Share</a>
+          </div>
+        </div>
+      </app-server-element>
     </div>
   </div>
 </div>

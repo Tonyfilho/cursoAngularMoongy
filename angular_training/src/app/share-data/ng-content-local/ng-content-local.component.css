@@ -1,0 +1,14 @@
+.container {
+  /* margin-top: 30px; */
+  background: linear-gradient(68.15deg, #f32a06 16.62%, #1e220e 85.61%);
+  height: 100vh;
+}
+
+p {
+  color: blue;
+}
+
+button {
+  margin: 0 0.5%;
+}
+
