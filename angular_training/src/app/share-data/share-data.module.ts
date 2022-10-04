@@ -11,6 +11,7 @@ import { ServerElementComponent } from './input-output/server-element/server-ele
 
 
 
+
 @NgModule({
   declarations: [InputOutputComponent, ViewChildComponent, ShareDataComponent, NgContentLocalComponent, CockPitComponent, ServerElementComponent],
   imports: [

@@ -1,1 +1,13 @@
-<p>ng-content-local works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <app-cockpit (cockPitElementsRed)="onAddServer($event)" (cockPitElementsBlue)="onAddBlueprint($event)" ></app-cockpit>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-server-element *ngFor="let item of serverElements" [serverElement]="item"> </app-server-element>
+    </div>
+  </div>
+</div>
