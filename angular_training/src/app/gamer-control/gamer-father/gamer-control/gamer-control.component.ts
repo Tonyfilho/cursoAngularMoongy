@@ -7,15 +7,25 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class GamerControlComponent implements OnInit {
 
-  @Output("gamer") gamer: EventEmitter<number> = new EventEmitter<number>();
+  @Output("gameFired") gamerFired: EventEmitter<number> = new EventEmitter<number>();
+  interval: number | any; //recebe a função interval
+  lastNumber: number = 0;
   constructor() { }
 
   ngOnInit(): void {
   }
 
 
-  startGamer() {}
+  startGamer() {
+    this.interval = setInterval(() => {
+  this.gamerFired.emit(this.lastNumber + 1);
+  // console.log("Game Start: " , this.lastNumber);
+  this.lastNumber++;
+    },1000);
+  }
 
-  stopGamer(){}
+  stopGamer(){
+    clearInterval(this.interval); //stop a intervalo passando a var que recebe a Função interval
+  }
 
 }

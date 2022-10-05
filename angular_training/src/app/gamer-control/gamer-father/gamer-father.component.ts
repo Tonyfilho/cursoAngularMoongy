@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gamer-father.component.css']
 })
 export class GamerFatherComponent implements OnInit {
-
+  oddNumbers: number[] = [];
+  evenNumbers: number[] = [];
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onIntervalFired(gameControlNumber: number) {
+    console.log("dentro do GamerFather: " + gameControlNumber);
+    gameControlNumber % 2 ?  this.oddNumbers.push(gameControlNumber): this.evenNumbers.push(gameControlNumber);
   }
 
 }

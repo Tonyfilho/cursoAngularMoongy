@@ -7,7 +7,17 @@
     </div>
     <div class="row">
       <div class="col-xs-12">
-        <app-gamer-control></app-gamer-control>
+        <app-gamer-control (gameFired)="onIntervalFired($event)"></app-gamer-control>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <app-odd *ngFor="let item of oddNumbers" [oddNumber]="item"></app-odd>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <app-even *ngFor="let item of evenNumbers" [evenNumber]="item"></app-even>
       </div>
     </div>
   </div>
