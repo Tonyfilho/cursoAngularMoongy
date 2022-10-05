@@ -22,7 +22,11 @@ h2 {
 }
 
 a {
-    color: #FFF2E7 !important;
+  color: #FFF2E7 !important;
+}
+
+a:hover {
+  color: #f0b686 !important;
 }
 
 .navbar {
@@ -59,7 +63,7 @@ a {
 .section-template-driven:hover {
     background: linear-gradient(68.15deg, #3906f3 16.62%, #0d0e14 85.61%);
     padding: 0.5%;
-   
+
 }
 
 .div-template-drive {
@@ -212,7 +216,7 @@ a {
     align-items: center;
     flex-wrap: wrap;
     column-gap: 2%;
-  
+
 }
 
 .div-template-drive-nineth {
@@ -236,9 +240,9 @@ a {
     align-content: center;
     flex-wrap: wrap;
     column-gap: 2%;
-   
-    
-  
+
+
+
 }
 
 .div-template-drive-tenth {
@@ -254,7 +258,7 @@ a {
 .img-section-template-driven-tenth2 {
     width: 63%;
     height: 21em;
-    object-fit: contain;   
+    object-fit: contain;
 }
 .img-section-template-driven-tenth3 {
     width: 63%;
