@@ -56,7 +56,7 @@ const routes: Routes = [
   /*************************************************Carregando LAZYLOAD ROUTE*/
   { path: 'forms', loadChildren: () => import('./forms/forms-local.module').then(module => module.FormsLocalModule), ...canActivate(redirectToLogin)},
   { path:'shareData', loadChildren:() => import('./share-data/share-data.module').then(module => module.ShareDataModule),...canActivate(redirectToLogin)},
-  { path:'lifeCycle', loadChildren:() => import('./lifecycle/lifecycle.module').then(module => module.LifecycleModule ), ...canActivate(redirectToLogin)},
+  { path:'gamer', loadChildren:() => import('./gamer-control/gamer.module').then(module => module.GamerModule ), ...canActivate(redirectToLogin)},
   { path: 'about', loadChildren: () => import('./about/about.module').then(module => module.AboutModule)},
   {
     path: '**',
