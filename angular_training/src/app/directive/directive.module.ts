@@ -17,8 +17,8 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     RouterModule.forChild([
       {path: '' ,component:DirectiveComponent},
-      {path: 'gamerControl' ,component:BasicHighLightDirectiveComponent},
-      {path: 'gamerControl' ,component:AdvanceDirectiveComponent}
+      {path: 'directive/basic' ,component:BasicHighLightDirectiveComponent},
+      {path: 'directive/advanced' ,component:AdvanceDirectiveComponent}
     ])
   ]
 })
