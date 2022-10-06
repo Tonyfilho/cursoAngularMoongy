@@ -57,6 +57,7 @@ const routes: Routes = [
   { path: 'forms', loadChildren: () => import('./forms/forms-local.module').then(module => module.FormsLocalModule), ...canActivate(redirectToLogin)},
   { path:'shareData', loadChildren:() => import('./share-data/share-data.module').then(module => module.ShareDataModule),...canActivate(redirectToLogin)},
   { path:'gamer', loadChildren:() => import('./gamer-control/gamer.module').then(module => module.GamerModule ), ...canActivate(redirectToLogin)},
+  { path:'directive' , loadChildren:() => import('./directive/directive.module').then(module => module.DirectiveModule), ...redirectToLogin},
   { path: 'about', loadChildren: () => import('./about/about.module').then(module => module.AboutModule)},
   {
     path: '**',
