@@ -4,6 +4,8 @@ import { DirectiveComponent } from './directive.component';
 import { BasicHighLightDirectiveComponent } from './basic-high-light-directive/basic-high-light-directive.component';
 import { AdvanceDirectiveComponent } from './advance-directive/advance-directive.component';
 import { RouterModule } from '@angular/router';
+import { DirectiveDirective } from './directive.directive';
+import { DirectiveBetterDirective } from './directive-better.directive';
 
 
 
@@ -11,14 +13,16 @@ import { RouterModule } from '@angular/router';
   declarations: [
     DirectiveComponent,
     BasicHighLightDirectiveComponent,
-    AdvanceDirectiveComponent
+    AdvanceDirectiveComponent,
+    DirectiveDirective,
+    DirectiveBetterDirective
   ],
   imports: [
     CommonModule,
     RouterModule.forChild([
       {path: '' ,component:DirectiveComponent},
-      {path: 'directive/basic' ,component:BasicHighLightDirectiveComponent},
-      {path: 'directive/advanced' ,component:AdvanceDirectiveComponent}
+      {path: 'basic' ,component:BasicHighLightDirectiveComponent},
+      {path: 'advanced' ,component:AdvanceDirectiveComponent}
     ])
   ]
 })
