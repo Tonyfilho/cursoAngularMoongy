@@ -10,7 +10,7 @@ export class DirectiveBetterDirective implements OnInit {
  * mas aqui injetaremos o ElementoRef conforme o Exemplo Abaixo. Pois é ele que vai renderizar atravez do Rendered.
  */
   ngOnInit(): void {
-    this.renderer.setStyle(this.elRef, "backgroundColor", "blue"); /**backgroundColor */
+    this.renderer.setStyle(this.elRef.nativeElement, "background-color", "blue"); /**backgroundColor */
   }
 
 }
