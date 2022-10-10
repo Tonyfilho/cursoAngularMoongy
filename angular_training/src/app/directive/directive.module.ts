@@ -10,6 +10,8 @@ import { AdvanceDirectiveWithHostlisternerDirective } from './advance-directive-
 import { AdvanceDirectiveWithHostlisternerComponent } from './advance-directive-with-hostlisterner/advance-directive-with-hostlisterner.component';
 import { AdvanceDirectiveWithHostlisternerAndHostBindingComponent } from './advance-directive-with-hostlisterner-and-host-binding/advance-directive-with-hostlisterner-and-host-binding.component';
 import { AdvanceDirectiveWithHostlisternerAndHostbindingDirective } from './advance-directive-with-hostlisterner-and-hostbinding.directive';
+import { CustomsColorsDirective } from './customs-colors.directive';
+import { CustomsColorsComponent } from './customs-colors/customs-colors.component';
 
 
 
@@ -25,7 +27,9 @@ import { AdvanceDirectiveWithHostlisternerAndHostbindingDirective } from './adva
     AdvanceDirectiveWithHostlisternerComponent,
     AdvanceDirectiveWithHostlisternerAndHostBindingComponent,
     AdvanceDirectiveWithHostlisternerAndHostbindingDirective,
-    
+    CustomsColorsDirective,
+    CustomsColorsComponent,
+
   ],
   imports: [
     CommonModule,
@@ -35,6 +39,7 @@ import { AdvanceDirectiveWithHostlisternerAndHostbindingDirective } from './adva
       {path: 'advanced' ,component:AdvanceDirectiveComponent},
       {path: 'advancedWithHostiListener' ,component:AdvanceDirectiveWithHostlisternerComponent},
       {path: 'advancedWithHostiListenerAndHostBinding' ,component:AdvanceDirectiveWithHostlisternerAndHostBindingComponent},
+      {path: 'customsColors' ,component:CustomsColorsComponent},
     ])
   ]
 })
