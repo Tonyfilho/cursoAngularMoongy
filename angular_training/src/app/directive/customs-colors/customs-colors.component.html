@@ -8,13 +8,14 @@
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <h2 app-customs-colors>Advanced Customs Colors</h2>
+      <h2 appCustomsColors>Advanced Customs Colors</h2>
       <ul class="list-group">
-        <!-- appDirective Carrega a class de diretiva feita no modulo de directiva, deixando a linha da cor configurada na Directiva  -->
-        <li class="list-group-item" app-customs-colors [customsColors]="'red'" >An item</li>
+        <!-- appDirective Carrega a class de diretiva feita no modulo de directiva, deixando
+          a linha da cor configurada na Directiva pela propriedade customsColors -->
+        <li class="list-group-item"  appCustomsColors [customsColors]="'red'" >An item</li>
         <li class="list-group-item">A second item</li>
         <li class="list-group-item">A third item</li>
-        <li class="list-group-item" app-customs-colors>A fourth item</li>
+        <li class="list-group-item" appCustomsColors [customsColors]="'green'">A fourth item</li>
         <li class="list-group-item">And a fifth one</li>
       </ul>
     </div>
