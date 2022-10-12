@@ -4,7 +4,7 @@ import { DirectiveComponent } from './directive.component';
 import { BasicHighLightDirectiveComponent } from './basic-high-light-directive/basic-high-light-directive.component';
 import { AdvanceDirectiveComponent } from './advance-directive/advance-directive.component';
 import { RouterModule } from '@angular/router';
-import { DirectiveDirective } from './directive.directive';
+import { DirectiveBasic } from './directive-basic.directive';
 import { DirectiveBetterDirective } from './directive-better.directive';
 import { AdvanceDirectiveWithHostlisternerDirective } from './advance-directive-with-hostlisterner.directive';
 import { AdvanceDirectiveWithHostlisternerComponent } from './advance-directive-with-hostlisterner/advance-directive-with-hostlisterner.component';
@@ -12,6 +12,8 @@ import { AdvanceDirectiveWithHostlisternerAndHostBindingComponent } from './adva
 import { AdvanceDirectiveWithHostlisternerAndHostbindingDirective } from './advance-directive-with-hostlisterner-and-hostbinding.directive';
 import { CustomsColorsDirective } from './customs-colors.directive';
 import { CustomsColorsComponent } from './customs-colors/customs-colors.component';
+import { DropdownDirective } from './directive-dropdown.directive';
+import { DirectiveDropdownAdvancedDirective } from './directive-dropdown-advanced.directive';
 
 
 
@@ -21,7 +23,7 @@ import { CustomsColorsComponent } from './customs-colors/customs-colors.componen
     DirectiveComponent,
     BasicHighLightDirectiveComponent,
     AdvanceDirectiveComponent,
-    DirectiveDirective,
+    DirectiveBasic,
     DirectiveBetterDirective,
     AdvanceDirectiveWithHostlisternerDirective,
     AdvanceDirectiveWithHostlisternerComponent,
@@ -29,6 +31,8 @@ import { CustomsColorsComponent } from './customs-colors/customs-colors.componen
     AdvanceDirectiveWithHostlisternerAndHostbindingDirective,
     CustomsColorsDirective,
     CustomsColorsComponent,
+    DropdownDirective,
+    DirectiveDropdownAdvancedDirective,
 
   ],
   imports: [

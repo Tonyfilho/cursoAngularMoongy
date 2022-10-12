@@ -1,9 +1,9 @@
 import { Directive, ElementRef, OnInit } from '@angular/core';
 
 @Directive({
-  selector: '[appDirective]'
+  selector: '[appDirectiveBasic]'
 })
-export class DirectiveDirective implements OnInit {
+export class DirectiveBasic implements OnInit {
   red!: string;
   /**Esta forma não é melhor  conceito de mudar o DOM, não é muito indicado pela comunidade Angular, mas funciona. */
   /**O ElementoRef é o mesmo usado com o ViewChild e ViewContent */
