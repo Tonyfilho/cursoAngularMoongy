@@ -1,11 +1,14 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './basics/home/home.component';
-import { ServersComponent } from './servers/servers.component';
-import { ViewAndEditServersComponent } from './servers/view-and-edit-servers/view-and-edit-servers.component';
-import { ServiceUsedToLoadUpdatesServersComponent } from './servers/service-used-to-load-updates-servers/service-used-to-load-updates-servers.component';
-import { UsersComponent } from './users/users.component';
-import { ViewUsersComponent } from './users/view-users/view-users.component';
+
+import { RoutesComponent } from './routes.component';
+import { ServersComponent } from './basics/servers/servers.component';
+import { ViewAndEditServersComponent } from './basics/servers/view-and-edit-servers/view-and-edit-servers.component';
+import { ServiceUsedToLoadUpdatesServersComponent } from './basics/servers/service-used-to-load-updates-servers/service-used-to-load-updates-servers.component';
+import { UsersComponent } from './basics/users/users.component';
+import { ViewUsersComponent } from './basics/users/view-users/view-users.component';
 
 
 
@@ -16,10 +19,15 @@ import { ViewUsersComponent } from './users/view-users/view-users.component';
     ViewAndEditServersComponent,
     ServiceUsedToLoadUpdatesServersComponent,
     UsersComponent,
-    ViewUsersComponent
+    ViewUsersComponent,
+    RoutesComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forChild([
+      {path: '', component: RoutesComponent},
+      {path: 'basic', component: HomeComponent}
+    ])
   ]
 })
 export class RoutesModule { }
