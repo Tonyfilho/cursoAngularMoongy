@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './basics/home/home.component';
 import { ServersComponent } from './servers/servers.component';
 import { ViewAndEditServersComponent } from './servers/view-and-edit-servers/view-and-edit-servers.component';
 import { ServiceUsedToLoadUpdatesServersComponent } from './servers/service-used-to-load-updates-servers/service-used-to-load-updates-servers.component';

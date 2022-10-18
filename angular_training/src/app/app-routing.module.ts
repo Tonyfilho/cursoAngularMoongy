@@ -58,6 +58,7 @@ const routes: Routes = [
   { path:'shareData', loadChildren:() => import('./share-data/share-data.module').then(module => module.ShareDataModule),...canActivate(redirectToLogin)},
   { path:'gamer', loadChildren:() => import('./gamer-control/gamer.module').then(module => module.GamerModule ), ...canActivate(redirectToLogin)},
   { path:'directive' , loadChildren:() => import('./directive/directive.module').then(module => module.DirectiveModule), ...redirectToLogin},
+  { path: 'route', loadChildren:() => import('./routes/routes.module').then(module => module.RoutesModule), ...redirectToLogin},
   { path: 'about', loadChildren: () => import('./about/about.module').then(module => module.AboutModule)},
   {
     path: '**',
