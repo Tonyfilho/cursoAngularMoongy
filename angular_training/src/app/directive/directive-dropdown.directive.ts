@@ -16,7 +16,7 @@ export class DropdownDirective {
 
 
   /**
-   *
+   Exemplos
 @Directive*
 ({selector: 'button[counting]'})
 class CountClicks {
