@@ -9,6 +9,7 @@ import { ViewAndEditServersComponent } from './basics/servers/view-and-edit-serv
 import { ServiceUsedToLoadUpdatesServersComponent } from './basics/servers/service-used-to-load-updates-servers/service-used-to-load-updates-servers.component';
 import { UsersComponent } from './basics/users/users.component';
 import { ViewUsersComponent } from './basics/users/view-users/view-users.component';
+import { BasicsComponent } from './basics/basics.component';
 
 
 
@@ -20,13 +21,14 @@ import { ViewUsersComponent } from './basics/users/view-users/view-users.compone
     ServiceUsedToLoadUpdatesServersComponent,
     UsersComponent,
     ViewUsersComponent,
-    RoutesComponent
+    RoutesComponent,
+    BasicsComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild([
       {path: '', component: RoutesComponent},
-      {path: 'basic', component: HomeComponent}
+      {path: 'basic', component: BasicsComponent}
     ])
   ]
 })
