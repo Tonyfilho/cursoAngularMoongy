@@ -1,3 +1,4 @@
+import { BasicsComponent } from './basics.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -9,6 +10,7 @@ import { ViewUsersComponent } from './users/view-users/view-users.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes =  [
+  {path:'', component: BasicsComponent},
   {path:'home', component: HomeComponent},
 ]
 
@@ -20,6 +22,7 @@ const routes: Routes =  [
     ServiceUsedToLoadUpdatesServersComponent,
     UsersComponent,
     ViewUsersComponent,
+    BasicsComponent
   ],
   imports: [
     CommonModule,
