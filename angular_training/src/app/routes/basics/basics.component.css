@@ -33,6 +33,13 @@ a:hover {
   background: linear-gradient(68.15deg, #2e2e30 16.62%, #040013 85.61%);
 
 }
+.nav-tabs {
+  background-color: transparent;
+  border-bottom: none !important;
+}
+.nav-link.active {
+  background-color: #0e0e3f;
+}
 
 main {
   /* background: linear-gradient(68.15deg, #0665f3 16.62%, #0d0e14 85.61%); */
