@@ -1,9 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Lexend+Peta&family=Roboto:ital,wght@1,300&family=Sansita+Swashed:wght@300&display=swap');
+
 .container {
 
   background: linear-gradient(68.15deg, #373b0b 16.62%, #348181 85.61%);
-  /* height: 100vh; */
   width: 100%;
   height: min-content;
+  padding: 2%;
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 20px;
+  color: #FFF2E7;
+
 }
 
 
@@ -14,7 +22,13 @@ button {
   width: 100%;
 }
 .image {
-  width: 450px;
-  height: 50%;
+/* ------------------centralizando as imagens--------------------------- */
+  display: grid;
+  place-items: center;
+  padding: 3%;
+}
+img {
+  width: 85%;
   object-fit: fill;
+
 }
