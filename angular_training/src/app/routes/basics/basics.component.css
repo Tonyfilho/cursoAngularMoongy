@@ -1,8 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Lexend+Peta&family=Roboto:ital,wght@1,300&family=Sansita+Swashed:wght@300&display=swap');
-
-body {
+ @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Lexend+Peta&family=Roboto:ital,wght@1,300&family=Sansita+Swashed:wght@300&display=swap');
+html {
   margin: 0;
   padding: 0;
+}
+
+ h1 {
+   padding: 1% 0%;
+ }
+
+ h2 {
+   padding: 1% 0%;
+
+ }
+
+ a {
+   color: #FFF2E7 !important;
+ }
+
+ a:hover {
+   color: #f0b686 !important;
+ }
+
+ .navbar-header{
+   background: linear-gradient(68.15deg, #2e2e30 16.62%, #040013 85.61%);
+   padding: 0.5%;
+
+ }
+
+body {
+
   width: 100%;
   font-family: 'Josefin Sans', sans-serif;
   font-style: normal;
@@ -12,27 +38,7 @@ body {
 
 }
 
-h1 {
-  padding: 1% 0%;
-}
 
-h2 {
-  padding: 1% 0%;
-
-}
-
-a {
-  color: #FFF2E7 !important;
-}
-
-a:hover {
-  color: #f0b686 !important;
-}
-
-.navbar {
-  background: linear-gradient(68.15deg, #2e2e30 16.62%, #040013 85.61%);
-
-}
 .nav-tabs {
   background-color: transparent;
   border-bottom: none !important;
@@ -42,7 +48,7 @@ a:hover {
 }
 
 main {
-  /* background: linear-gradient(68.15deg, #0665f3 16.62%, #0d0e14 85.61%); */
+   background: linear-gradient(68.15deg, #0665f3 16.62%, #0d0e14 85.61%);
   background: linear-gradient(68.15deg, #0e0e3f 16.62%, #4f22f1 85.61%);
   padding: 1%;
   min-height: fit-content;
@@ -54,3 +60,38 @@ main {
 
 
 }
+
+
+.container {
+
+  background: linear-gradient(68.15deg, #373b0b 16.62%, #348181 85.61%);
+  width: 100%;
+  height: min-content;
+  padding: 2%;
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 20px;
+  color: #FFF2E7;
+
+}
+
+
+button {
+  margin: 0.5% 0.5%;
+}
+.image-father {
+  width: 100%;
+}
+.image {
+/* ------------------centralizando as imagens--------------------------- */
+  display: grid;
+  place-items: center;
+  padding: 3%;
+}
+img {
+  width: 85%;
+  object-fit: fill;
+
+}
+
