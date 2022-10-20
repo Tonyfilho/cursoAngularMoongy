@@ -38,49 +38,29 @@ a:hover {
    padding-bottom: 0.5%;
 
  }
- /* .navbar.navbar-dark.bg-dark {
-   margin: 0%;
-   padding: 0%;
- } */
+ .nav-tabs {
+   background-color: transparent;
+   border-bottom: none !important;
+ }
+ .nav-link.active {
+   background-color: #0e0e3f;
+ }
+ .father-container {
+   background: linear-gradient(68.15deg, #373b0b 16.62%, #348181 85.61%);
+   width: 100%;
+   height: min-content;
+   padding: 2%;
+   font-family: 'Josefin Sans', sans-serif;
+   font-style: normal;
+   font-size: 1rem;
+   line-height: 20px;
+   color: #FFF2E7;
+   min-height: fit-content;
+   height: 100vh;
+ }
 
-
-body {
-
-  /* width: 100%; */
-  font-family: 'Josefin Sans', sans-serif;
-  font-style: normal;
-  font-size: 1rem;
-  line-height: 20px;
-  color: #FFF2E7;
-
-}
-
-
-.nav-tabs {
-  background-color: transparent;
-  border-bottom: none !important;
-}
-.nav-link.active {
-  background-color: #0e0e3f;
-}
-
-main {
-
-  background: linear-gradient(68.15deg, #0e0e3f 16.62%, #4f22f1 85.61%);
-  /* padding: 1%; */
-  min-height: fit-content;
-  height: 100vh;
-  box-shadow: 0 0 25px 0.5em #9b9baca9,
-    inset 0 0 25px 0.25em #17171aa9,
-    inset 0 0 5em 0px #7a52e78f;
-
-
-}
-
-
-.container {
-
-  background: linear-gradient(68.15deg, #373b0b 16.62%, #348181 85.61%);
+ .container {
+  background: linear-gradient(68.15deg, #d7e44b 16.62%, #343981 85.61%);
   width: 100%;
   height: min-content;
   padding: 2%;
@@ -91,6 +71,10 @@ main {
   color: #FFF2E7;
 
 }
+
+
+
+
 
 
 
