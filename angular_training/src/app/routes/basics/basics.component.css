@@ -4,36 +4,49 @@ html {
   padding: 0;
 }
 
- h1 {
-   padding: 1% 0%;
+h1 {
+  padding: 1% 0%;
+}
+
+h2 {
+  padding: 1% 0%;
+
+}
+
+a {
+  color: #FFF2E7 !important;
+}
+
+a:hover {
+  color: #f0b686 !important;
+}
+
+.father {
+  width: 100%;
+  padding: 0.8% 0.8%;
+}
+ .col-xs-12 {
+ padding: 0%;
  }
-
- h2 {
-   padding: 1% 0%;
-
+ .row {
+  padding: 0%;
  }
-
- a {
-   color: #FFF2E7 !important;
- }
-
- a:hover {
-   color: #f0b686 !important;
- }
-
  .navbar-header{
+  width: 100%;
    background: linear-gradient(68.15deg, #2e2e30 16.62%, #040013 85.61%);
-   padding: 0.5%;
+   padding-top: 0.5%;
+   padding-bottom: 0.5%;
 
  }
- .nav-col {
-  display: grid;
-  justify-content: space-between;
- }
+ /* .navbar.navbar-dark.bg-dark {
+   margin: 0%;
+   padding: 0%;
+ } */
+
 
 body {
 
-  width: 100%;
+  /* width: 100%; */
   font-family: 'Josefin Sans', sans-serif;
   font-style: normal;
   font-size: 1rem;
@@ -52,11 +65,10 @@ body {
 }
 
 main {
-   background: linear-gradient(68.15deg, #0665f3 16.62%, #0d0e14 85.61%);
+
   background: linear-gradient(68.15deg, #0e0e3f 16.62%, #4f22f1 85.61%);
-  padding: 1%;
+  /* padding: 1%; */
   min-height: fit-content;
-  height: 52em;
   height: 100vh;
   box-shadow: 0 0 25px 0.5em #9b9baca9,
     inset 0 0 25px 0.25em #17171aa9,
@@ -81,9 +93,9 @@ main {
 }
 
 
-button {
+/* button {
   margin: 0.5% 0.5%;
-}
+} */
 .image-father {
   width: 100%;
 }

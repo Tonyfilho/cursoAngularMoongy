@@ -1,3 +1,6 @@
+header {
+  width: 100%;
+}
 .main {
   background: linear-gradient(68.15deg, #040013 16.62%, #2e2e30 85.61%);
   display: flex;
