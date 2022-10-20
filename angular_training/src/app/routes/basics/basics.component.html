@@ -1,6 +1,6 @@
 <div class="row">
-  <div class="col-xs-12">
-    <header class="navbar-header">
+  <header class="navbar-header">
+    <div class="col-xs-12 nav-col" >
       <ul class="nav nav-tabs ">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="/basic/home">
@@ -45,17 +45,20 @@
             Servers</a>
         </li>
       </ul>
-    </header>
-  </div>
+      <!-- </div>
+    <div class="col-xs-2"> -->
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="button" class="btn btn-outline-light" routerLink="/routes">Back Routes</button>
+      </div>
+    </div>
+  </header>
 </div>
+
 <div class="row">
   <div class="col-xs-12">
-    <body>
 
+    <body>
       <main>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-          <button type="button" class="btn btn-outline-light" routerLink="/routes">Back Routes</button>
-        </div>
         <section class="reactive-img-father">
           <section class="reactive-img"></section>
         </section>

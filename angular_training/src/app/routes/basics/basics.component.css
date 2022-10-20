@@ -26,6 +26,10 @@ html {
    padding: 0.5%;
 
  }
+ .nav-col {
+  display: grid;
+  justify-content: space-between;
+ }
 
 body {
 
