@@ -51,7 +51,7 @@ a:hover {
 }
 
 .father-container {
-  background: linear-gradient(68.15deg, #373b0b 16.62%, #348181 85.61%);
+  background: linear-gradient(68.15deg, #0b1c3b4b 16.62%, #344c81 85.61%);
   padding: 2%;
   font-family: 'Josefin Sans', sans-serif;
   font-style: normal;
@@ -62,7 +62,7 @@ a:hover {
 }
 
 .container {
-  background: linear-gradient(68.15deg, #d7e44b 16.62%, #343981 85.61%);
+  background: linear-gradient(68.15deg, #4ba7e43b 16.62%, #343981 85.61%);
   height: min-content;
   padding: 2%;
   font-family: 'Josefin Sans', sans-serif;

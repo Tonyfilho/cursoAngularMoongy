@@ -9,4 +9,3 @@ export class Book {
       public description: string) {
     }
   }
-  

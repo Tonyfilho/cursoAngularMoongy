@@ -24,8 +24,8 @@ import { ParametersCardComponent } from './parameters/parameters-card/parameters
       {path: '', component: RoutesComponent},
       {path:'prog', component: ProgrammaticallyComponent},
       {path:'parameters', component: ParametersComponent},
-      {path:'parameters/card', component: ParametersCardComponent},
-      {path:'parameters/card:/id', component: ParametersIdComponent},
+      {path:'parameters/parameters-card', component: ParametersCardComponent},
+      {path:'parameters/parameters-card:/id', component: ParametersIdComponent},
 
     ])
   ]
