@@ -1,11 +1,10 @@
-import { BasicsModule } from './basics/basics.module';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RoutesComponent } from './routes.component';
 import { ProgrammaticallyComponent } from './programmatically/programmatically.component';
-import { ParansComponent } from './parans/parans.component';
-import { ParansIdComponent } from './parans/parans-id/parans-id.component';
+import { ParametersComponent } from './parameters/parameters.component';
+import { ParametersIdComponent } from './parameters/parameters-card/parans-id/parameters-id.component';
 
 
 
@@ -13,8 +12,8 @@ import { ParansIdComponent } from './parans/parans-id/parans-id.component';
   declarations: [
     RoutesComponent,
     ProgrammaticallyComponent,
-    ParansComponent,
-    ParansIdComponent,
+    ParametersComponent,
+    ParametersIdComponent,
 
   ],
   imports: [
@@ -22,8 +21,8 @@ import { ParansIdComponent } from './parans/parans-id/parans-id.component';
     RouterModule.forChild([
       {path: '', component: RoutesComponent},
       {path:'prog', component: ProgrammaticallyComponent},
-      {path:'parans', component: ProgrammaticallyComponent},
-      {path:'prog', component: ProgrammaticallyComponent},
+      {path:'parameters', component: ProgrammaticallyComponent},
+      {path:'parameters/:id', component: ProgrammaticallyComponent},
 
     ])
   ]
