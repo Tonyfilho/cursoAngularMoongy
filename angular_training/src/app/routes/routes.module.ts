@@ -23,8 +23,9 @@ import { ParametersCardComponent } from './parameters/parameters-card/parameters
     RouterModule.forChild([
       {path: '', component: RoutesComponent},
       {path:'prog', component: ProgrammaticallyComponent},
-      {path:'parameters', component: ProgrammaticallyComponent},
-      {path:'parameters/:id', component: ProgrammaticallyComponent},
+      {path:'parameters', component: ParametersComponent},
+      {path:'parameters/card', component: ParametersCardComponent},
+      {path:'parameters/card:/id', component: ParametersIdComponent},
 
     ])
   ]
