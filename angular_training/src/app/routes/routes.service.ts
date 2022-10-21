@@ -46,9 +46,9 @@ export class RoutesService {
    getBooks(): Observable<Book[]> {
     return of(this.books);
   }
-  getBookById(bookId: number): Observable<Book> {
-    let bookfilded:Book|undefined = this.books?.find((b) => b.id === bookId);
-    return from(bookfilded);
+  getBookById(bookId: number): Observable<Book | undefined> {
+    let bookfilded: Book | undefined = this.books?.find((b) => b.id === bookId);
+    return of(bookfilded);
 
   }
 
