@@ -1,1 +1,49 @@
-<p>parans works!</p>
+<div class="row">
+  <div class="col-xs-12 navbar navbar-expand-lg">
+    <header class="navbar-header container-fluid">
+      <ul class="nav nav-tabs ">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/basic/home">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-arrow-left-right" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z" />
+            </svg>
+            Parameters Card</a>
+        </li>
+
+      </ul>
+      <form class="d-flex" role="search">
+        <button class="btn btn-outline-light" routerLink="/routes">Back Routes</button>
+      </form>
+    </header>
+  </div>
+</div>
+<div class="father-container">
+
+  <body class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2 style="margin: 0 16%;">Routes with Parameters.</h2>
+      </div>
+      <div class="col-xs-12">
+        <h3>Html File</h3>
+        <div class="image">
+          <img src="./../../../assets/img-from-files/02_route_basic_basicmoduleHTML.png" alt="Arquivo Html">
+        </div>
+      </div>
+      <h3>Basic Module</h3>
+      <div class="image">
+        <img src="./../../../assets/img-from-files/02_route_basic_basicmodule.png" alt="Arquivo Html">
+      </div>
+      <h3>App Module</h3>
+      <div class="image">
+        <img src="./../../../assets/img-from-files/02_route_basic_appmodule.png" alt="Arquivo Html">
+      </div>
+    </div>
+  </body>
+</div>
+
+<div>
+  <router-outlet></router-outlet>
+</div>

@@ -5,6 +5,7 @@ import { RoutesComponent } from './routes.component';
 import { ProgrammaticallyComponent } from './programmatically/programmatically.component';
 import { ParametersComponent } from './parameters/parameters.component';
 import { ParametersIdComponent } from './parameters/parameters-card/parans-id/parameters-id.component';
+import { ParametersCardComponent } from './parameters/parameters-card/parameters-card.component';
 
 
 
@@ -14,6 +15,7 @@ import { ParametersIdComponent } from './parameters/parameters-card/parans-id/pa
     ProgrammaticallyComponent,
     ParametersComponent,
     ParametersIdComponent,
+    ParametersCardComponent,
 
   ],
   imports: [
