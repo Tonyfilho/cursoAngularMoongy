@@ -1,4 +1,4 @@
-import { from, Observable, of } from 'rxjs';
+import { from, Observable, ObservableInput, of } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Book } from '../_models/book.model';
 
@@ -47,9 +47,22 @@ export class RoutesService {
     return of(this.books);
   }
   getBookById(bookId: number): Observable<Book | undefined> {
-    let bookfilded: Book | undefined = this.books?.find((b) => b.id === bookId);
+    const bookfilded: Book | undefined = this.books?.find((b) => b.id === bookId);
     return of(bookfilded);
 
   }
 
+  getBookIdWithForm(bookId: number): ObservableInput<Book | any> {
+   let localBook: Book  | any=  {};
+   localBook = this.books.find(book => {book.id === bookId});
+  return from(localBook);
+  }
+  getBookIdWithFormAndDestruiction(bookId: number): ObservableInput<Book | any> {
+    const lBook:  Book | any =  this.books.find(book => {book.id === bookId});
+    const {id= lBook?.id , title = lBook?.title, author = lBook.author, alreadyRead = lBook.alreadyRead, imageUrl = lBook.imageUrl, imageUrlGr = lBook.imageUrlGr, description = lBook["description"] } = lBook;
+  return  from([{id, title, author, alreadyRead, imageUrl, imageUrlGr, description}]);
+
+  }
+
 }
+
