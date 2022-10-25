@@ -6,17 +6,21 @@
       </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row-container">
     <div class="col-xs-12">
       <h2>Get Id By Parameters</h2>
-      <!-- <ul class="list-group">
+      <!-- ---------------------------------------------------Pipe Async no IF -->
+      <div class="card" *ngIf="( book | async) as localBook">
+        <img src="/assets/livros/{{ localBook?.imageUrl }}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{ localBook?.title }}</h5>
+          <p class="card-text">
+            {{ localBook?.description }}
+          </p>
+          <a class="btn btn-primary" routerLink="/routes/parameters/parameters-card">go to Dynamic Parameters</a>
+        </div>
+      </div>
 
-        <li class="list-group-item"  >An item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
-        <li class="list-group-item" appDirectiveBetter>A fourth item</li>
-        <li class="list-group-item">And a fifth one</li>
-      </ul> -->
     </div>
   </div>
 </div>

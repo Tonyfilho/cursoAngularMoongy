@@ -1,4 +1,6 @@
+import { RoutesService } from './../../routes.service';
 import { Component, OnInit } from '@angular/core';
+import { Book } from 'src/app/_models/book.model';
 
 @Component({
   selector: 'app-parameters-card',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parameters-card.component.css']
 })
 export class ParametersCardComponent implements OnInit {
-
-  constructor() { }
+  books: Book[] = [];
+  constructor(private routerServices: RoutesService) { }
 
   ngOnInit(): void {
-  }
+    this.routerServices.getBooks().subscribe((book: Book[]) => {
+      return this.books = book;
+  })
+
+}
 
 }

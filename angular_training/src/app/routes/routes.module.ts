@@ -25,7 +25,8 @@ import { ParametersCardComponent } from './parameters/parameters-card/parameters
       {path:'prog', component: ProgrammaticallyComponent},
       {path:'parameters', component: ParametersComponent},
       {path:'parameters/parameters-card', component: ParametersCardComponent},
-      {path:'parameters/parameters-card:/id', component: ParametersIdComponent},
+      {path:'parameters/parameters-card/:id', component: ParametersIdComponent},
+    /**  {path:'parameters/parameters-card/:id/:name', component: ParametersIdComponent},  /:NAME is just Exemple to get value by parameter*/
 
     ])
   ]

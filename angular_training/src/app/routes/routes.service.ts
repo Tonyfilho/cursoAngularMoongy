@@ -49,8 +49,8 @@ export class RoutesService {
   getBookById(bookId: number): Observable<Book | undefined> {
     const bookfilded: Book | undefined = this.books?.find((b) => b.id === bookId);
     return of(bookfilded);
-
   }
+
 
   getBookIdWithForm(bookId: number): ObservableInput<Book | any> {
    let localBook: Book  | any=  {};
@@ -61,8 +61,17 @@ export class RoutesService {
     const lBook:  Book | any =  this.books.find(book => {book.id === bookId});
     const {id= lBook?.id , title = lBook?.title, author = lBook.author, alreadyRead = lBook.alreadyRead, imageUrl = lBook.imageUrl, imageUrlGr = lBook.imageUrlGr, description = lBook["description"] } = lBook;
   return  from([{id, title, author, alreadyRead, imageUrl, imageUrlGr, description}]);
-
   }
 
+  getBookByIdCASTAndParcial(bookId: number): Partial<Observable<Book>> {
+    const bookfilded: Partial<Book | undefined> = this.books?.find((b) => b.id === bookId);
+    return of(bookfilded) as Partial<Observable<Book>>;
+  }
+
+  getBookByIdCast(bookId: number): Observable<Book> {
+    const bookfilded: Book | undefined = this.books?.find((b) => b.id === bookId);
+    return of(bookfilded) as Observable<Book>;
+
+  }
 }
 
