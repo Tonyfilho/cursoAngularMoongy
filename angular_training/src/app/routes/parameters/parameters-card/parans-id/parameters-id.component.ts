@@ -20,12 +20,12 @@ export class ParametersIdComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    /**Or  Using SnapShot*/
+    this.localId = this.route.snapshot.params['id'];
+    this.localName = this.route.snapshot.params['name'];
     /**Using Observable */
    this.route.params.subscribe(data =>  {this.localId = data["id"], console.log("Into the Observable Var localName: ", this.localName)} );
-   /**Or  Using SnapShot*/
-   this.localId = this.route.snapshot.params['id'];
-   this.localName = this.route.snapshot.params['name'];
-   console.log("Out the Observable: ", this.localName);
+
    this.book = this.routesService.getBookById(parseInt(this.localId));
 
   }
