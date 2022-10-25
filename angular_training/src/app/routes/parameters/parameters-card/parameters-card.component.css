@@ -2,7 +2,17 @@
 
 .container {
   background: linear-gradient(68.15deg, #36489b 16.62%, #6b93eb 85.61%);
-  height: min-content;
+  height: max-content;
+}
+
+.container2 {
+
+  background: linear-gradient(68.15deg,#36489b 16.62%, #6b93eb 85.61%);
+  height: max-content;
+}
+.container2:hover {
+  background: linear-gradient(31.85deg,#4914da42 85.61%, #367b9b 16.62% );
+
 }
 
 
@@ -10,21 +20,39 @@ button {
   margin: 0.5% 0.5%;
 }
 
+h2 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-size: 2.5rem;
+  line-height: 20px;
+  color: #FFF2E7;
+}
+
+h3 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: 20px;
+  color: #FFF2E7;
+}
+
+
 .card-list {
   margin: 1%;
   display: inline-flex;
   flex-wrap: wrap;
 
 }
+
 .father-container {
-  /* background: linear-gradient(68.15deg, #0b1c3b4b 16.62%, #344c81 85.61%); */
+  background: transparent;
   padding: 2%;
-  font-family: 'Josefin Sans', sans-serif;
-  font-style: normal;
-  font-size: 1rem;
-  line-height: 20px;
-  color: #FFF2E7;
   height: 100vw;
+}
+.row-container {
+  display: grid;
+  place-items: center;
+  padding: 3%;
 }
 
 /* ------------------centralizando as imagens--------------------------- */

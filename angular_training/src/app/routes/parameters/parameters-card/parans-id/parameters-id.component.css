@@ -3,21 +3,72 @@
   background: linear-gradient(68.15deg, #367b9b 16.62%, #4914da42 85.61%);
   height: max-content;
 }
+.container2 {
+
+  
+  height: max-content;
+}
+.container2:hover {
+  background: linear-gradient(68.15deg,#4914da42 85.61%, #367b9b 16.62% );
+
+}
 
 
 button {
   margin: 0.5% 0.5%;
 }
 
-.row-container {
-  padding: 1%;
-  display: grid;
-  place-items: center;
+
+
+h2 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-size: 2.5rem;
+  line-height: 20px;
+  color: #FFF2E7;
+}
+
+h3 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: 20px;
+  color: #FFF2E7;
+}
+
+
+.card-list {
+  margin: 1%;
+  display: inline-flex;
+  flex-wrap: wrap;
 
 }
 
+.father-container {
+  background: transparent;
+  padding: 2%;
+  height: 100vw;
+}
+.row-container {
+  display: grid;
+  place-items: center;
+  padding: 3%;
+}
+
+/* ------------------centralizando as imagens--------------------------- */
+.image {
+  display: grid;
+  place-items: center;
+  padding: 3%;
+}
+
+img {
+  width: 90%;
+  object-fit: fill;
+
+}
 .card {
-width: 25em;
-height: inherit;
+  width: 25em;
+  height: inherit;
 
 }

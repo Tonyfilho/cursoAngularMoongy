@@ -6,9 +6,13 @@
       </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row-container">
     <div class="col-xs-12">
       <h2>Parameters Card</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
       <div *ngFor="let item of books" class="card-list">
         <div class="card" style="width: 25rem">
           <img src="/assets/livros/{{ item.imageUrl }}" class="card-img-top" alt="..." />
@@ -23,27 +27,27 @@
       </div>
     </div>
   </div>
-  <div class="father-container">
-    <div class="row">
+  <div class="container2">
+    <div class="row-container">
       <div class="col-xs-12">
         <h2>Explain about the Router with Images</h2>
       </div>
     </div>
-    <body class="container">
+    <body class="father-container">
       <div class="row">
         <div class="col-xs-12">
-          <h3>Html File</h3>
+          <h3>Template from Parameters-card.Html</h3>
           <div class="image">
             <img src="./../../../../assets/img-from-files/03_Dynamic_Parameters_HTML.png" alt="Arquivo Html">
           </div>
         </div>
-        <h3>Mouse over button</h3>
+        <h3>Mouse over up button in Parameters-card File</h3>
         <div class="image">
           <img src="./../../../../assets/img-from-files/03_Dynamic_Parameters_Button_HTML.png" alt="Arquivo Html">
         </div>
-        <h3>App Module</h3>
+        <h3>Routes Module File</h3>
         <div class="image">
-          <img src="./../../../assets/img-from-files/02_route_basic_appmodule.png" alt="Arquivo Html">
+          <img src="./../../../assets/img-from-files/03_Dynamic_Parameters_RouteModuleTS.png" alt="Arquivo Html">
         </div>
       </div>
     </body>
