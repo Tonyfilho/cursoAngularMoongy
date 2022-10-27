@@ -6,6 +6,7 @@ import { ProgrammaticallyComponent } from './programmatically/programmatically.c
 import { ParametersComponent } from './parameters/parameters.component';
 import { ParametersIdComponent } from './parameters/parameters-card/parans-id/parameters-id.component';
 import { ParametersCardComponent } from './parameters/parameters-card/parameters-card.component';
+import { QueryParametersComponent } from './query-parameters/query-parameters.component';
 
 
 
@@ -16,6 +17,7 @@ import { ParametersCardComponent } from './parameters/parameters-card/parameters
     ParametersComponent,
     ParametersIdComponent,
     ParametersCardComponent,
+    QueryParametersComponent,
 
   ],
   imports: [
@@ -26,7 +28,9 @@ import { ParametersCardComponent } from './parameters/parameters-card/parameters
       {path:'parameters', component: ParametersComponent},
       {path:'parameters/parameters-card', component: ParametersCardComponent},
       {path:'parameters/parameters-card/:id', component: ParametersIdComponent},
-    /**  {path:'parameters/parameters-card/:id/:name', component: ParametersIdComponent},  /:NAME is just Exemple to get value by parameter*/
+      /**  {path:'parameters/parameters-card/:id/:name', component: ParametersIdComponent},  /:NAME is just Exemple to get value by parameter*/
+      {path:'query-parameters', component: QueryParametersComponent},
+      {path:'query-parameters/:id', component: QueryParametersComponent},
 
     ])
   ]
