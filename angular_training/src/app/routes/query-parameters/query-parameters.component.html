@@ -1,31 +1,69 @@
-<div class="father-container">
-  <body class="container">
-    <div class="row">
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="button" class="btn btn-outline-light" routerLink="/routes">Back Routes</button>
+      </div>
+    </div>
+  </div>
+  <div class="row-container">
+    <div class="col-xs-12">
+      <h2>Query Parameters Card</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div *ngFor="let item of books |async" class="card-list">
+        <div class="card" style="width: 25rem">
+          <img src="/assets/livros/{{ item.imageUrl }}" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">{{ item.title }}</h5>
+            <p class="card-text">
+              {{ item.description }}
+            </p>
+            <a class="btn btn-primary" [routerLink]="[item.id]">More Information</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container2">
+    <div class="row-container">
       <div class="col-xs-12">
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-          <button type="button" class="btn btn-outline-light" routerLink="/routes">Back Routes</button>
-        </div>
-        <h2 style=>Query Parameters: How can you pass then and how can you retrive then.</h2>
+        <h2>Explain about the Query Parameters with Images</h2>
       </div>
-      <div class="col-xs-12 picture">
-        <h3>Template from QueryParameters.Html</h3>
-        <div class="image">
-          <img src="./../../../assets/img-from-files/04_Query_Parameters_Question_marks.png" alt="Arquivo Html">
-        </div>
-      </div>
-      <div class="col-xs-12 picture">
-        <h3>Template from QueryParameters.Html</h3>
-        <div class="image">
-          <img src="./../../../assets/img-from-files/04_Query_Parameters_Fragments.png" alt="Arquivo Html">
-        </div>
-      </div>
-      <div class="col-xs-12 picture">
-        <h3>App Module</h3>
-        <div class="image">
-          <img src="./../../../assets/img-from-files/02_route_basic_appmodule.png" alt="Arquivo Html">
-        </div>
-      </div>
-      </div>
-  </body>
-</div>
+    </div>
+    <div class="father-container">
 
+      <body class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <button type="button" class="btn btn-outline-light" routerLink="/routes">Back Routes</button>
+            </div>
+            <h2 style=>Query Parameters: How can you pass then and how can you retrive then.</h2>
+          </div>
+
+          <div class="col-xs-12 picture">
+            <h3>Template from QueryParameters.Html</h3>
+            <div class="image">
+              <img src="./../../../assets/img-from-files/04_Query_Parameters_Question_marks.png" alt="Arquivo Html">
+            </div>
+          </div>
+          <div class="col-xs-12 picture">
+            <h3>Template from QueryParameters.Html</h3>
+            <div class="image">
+              <img src="./../../../assets/img-from-files/04_Query_Parameters_Fragments.png" alt="Arquivo Html">
+            </div>
+          </div>
+          <div class="col-xs-12 picture">
+            <h3>App Module</h3>
+            <div class="image">
+              <img src="./../../../assets/img-from-files/02_route_basic_appmodule.png" alt="Arquivo Html">
+            </div>
+          </div>
+        </div>
+      </body>
+    </div>
+  </div>
+</div>

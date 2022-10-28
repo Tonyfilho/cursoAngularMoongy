@@ -1,4 +1,7 @@
+import { Observable } from 'rxjs';
+import { RoutesService } from './../routes.service';
 import { Component, OnInit } from '@angular/core';
+import { Book } from 'src/app/_models/book.model';
 
 @Component({
   selector: 'app-query-parameters',
@@ -6,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./query-parameters.component.css']
 })
 export class QueryParametersComponent implements OnInit {
+  books: Observable<Book[]> | undefined;
+  constructor(private routerService: RoutesService) {
 
-  constructor() { }
+   }
 
   ngOnInit(): void {
+    this.books = this.routerService.getBooks();
   }
 
 }

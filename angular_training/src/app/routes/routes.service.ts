@@ -6,7 +6,7 @@ import { Book } from '../_models/book.model';
   providedIn: 'root'
 })
 export class RoutesService {
-  books:Book[] = [];
+ private books:Book[] = [];
 
   constructor () {
    this.books = [

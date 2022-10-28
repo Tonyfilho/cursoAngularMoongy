@@ -5,19 +5,33 @@ html {
   padding: 0;
 }
 
+button {
+  margin: 0.5% 0.5%;
+}
 
 h2 {
   display: grid;
   place-items: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-size: 2.5rem;
+  line-height: 20px;
+  color: #FFF2E7;
 
 }
 
-a {
-  color: #FFF2E7 !important;
+h3 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: 20px;
+  color: #FFF2E7;
 }
-
-a:hover {
-  color: #f0b686 !important;
+/**Fazendo os Card ficarem alinhado na horizontal*/
+.card-list {
+  margin: 1%;
+  display: inline-flex;
+  flex-wrap: wrap;
 }
 
 .father {
@@ -38,22 +52,10 @@ a:hover {
   padding: 0%;
 }
 
-.navbar {
-  width: 100%;
-  background: linear-gradient(68.15deg, #2e2e30 16.62%, #040013 85.61%);
-  padding-top: 0.5%;
-  padding-bottom: 0.5%;
 
-}
 
-.nav-tabs {
-  background-color: transparent;
-  border-bottom: none !important;
-}
 
-.nav-link.active {
-  background-color: #0e0e3f;
-}
+
 
 .father-container {
   background: linear-gradient(68.15deg, #0b1c3b4b 16.62%, #344c81 85.61%);
@@ -66,6 +68,7 @@ a:hover {
   height: 100vw;
 }
 
+
 .container {
   background: linear-gradient(68.15deg, #4ba7e43b 16.62%, #343981 85.61%);
   height: min-content;
@@ -77,7 +80,6 @@ a:hover {
   color: #FFF2E7;
 
 }
-
 
 .image-father {
   width: 100%;
