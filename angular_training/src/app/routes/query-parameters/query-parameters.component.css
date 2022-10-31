@@ -1,8 +1,9 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Lexend+Peta&family=Roboto:ital,wght@1,300&family=Sansita+Swashed:wght@300&display=swap');
 
-html {
-  margin: 0;
-  padding: 0;
+.container {
+  background: linear-gradient(68.15deg, #36489b 16.62%, #6b93eb 85.61%);
+  height: max-content;
 }
 
 button {
@@ -17,7 +18,6 @@ h2 {
   font-size: 2.5rem;
   line-height: 20px;
   color: #FFF2E7;
-
 }
 
 h3 {
@@ -27,66 +27,43 @@ h3 {
   line-height: 20px;
   color: #FFF2E7;
 }
-/**Fazendo os Card ficarem alinhado na horizontal*/
+
+/* --------Cards------------- */
 .card-list {
   margin: 1%;
   display: inline-flex;
   flex-wrap: wrap;
+
 }
 
-.father {
-  width: 100%;
-  padding: 0.8% 0.8%;
+/* -----Css Imagens explain-------- */
+
+.father-container {
+  background: transparent;
+  padding: 2%;
+  height: 100vw;
+}
+.row-container {
+  display: grid;
+  place-items: center;
+  padding: 3%;
 }
 
 .col-xs-12 {
   padding: 0.5%;
   margin: 1% 0%;
 }
+.col-xs-12.picture{
+  background: inherit;
+
+}
 .col-xs-12.picture:hover {
-  background: linear-gradient(68.15deg, #a3a3eb 16.62%, #000213 85.61%);
+  background: linear-gradient(68.15deg, #a3a3eb 16.62%, #2632a1 85.61%);
 
 }
 
-.row {
-  padding: 0%;
-}
-
-
-
-
-
-
-.father-container {
-  background: linear-gradient(68.15deg, #0b1c3b4b 16.62%, #344c81 85.61%);
-  padding: 2%;
-  font-family: 'Josefin Sans', sans-serif;
-  font-style: normal;
-  font-size: 1rem;
-  line-height: 20px;
-  color: #FFF2E7;
-  height: 100vw;
-}
-
-
-.container {
-  background: linear-gradient(68.15deg, #4ba7e43b 16.62%, #343981 85.61%);
-  height: min-content;
-  padding: 2%;
-  font-family: 'Josefin Sans', sans-serif;
-  font-style: normal;
-  font-size: 1rem;
-  line-height: 20px;
-  color: #FFF2E7;
-
-}
-
-.image-father {
-  width: 100%;
-}
-
+/* ------------------centralizando as imagens--------------------------- */
 .image {
-  /* ------------------centralizando as imagens--------------------------- */
   display: grid;
   place-items: center;
   padding: 3%;
