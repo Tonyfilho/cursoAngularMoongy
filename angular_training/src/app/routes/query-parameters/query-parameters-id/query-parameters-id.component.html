@@ -1,1 +1,26 @@
-<p>query-parameters-id works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="button" class="btn btn-outline-light" routerLink="/routes">Back Routes</button>
+      </div>
+    </div>
+  </div>
+  <div class="row-container">
+    <div class="col-xs-12">
+      <h2>Get Id and Edit Parameters</h2>
+      <!-- ---------------------------------------------------Pipe Async no IF -->
+      <div class="card" *ngIf="( book | async) as localVarBook">
+        <img src="/assets/livros/{{ localVarBook?.imageUrl }}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{ localVarBook?.title }}</h5>
+          <p class="card-text">
+            {{ localVarBook?.description }}
+          </p>
+          <a class="btn btn-primary" routerLink="/routes/query-parameters">go to Dynamic Parameters</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

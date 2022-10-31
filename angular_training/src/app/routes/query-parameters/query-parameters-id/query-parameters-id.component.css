@@ -1,0 +1,40 @@
+.container {
+
+  background: linear-gradient(68.15deg, #367b9b 16.62%, #4914da42 85.61%);
+  height: max-content;
+}
+
+
+
+button {
+  margin: 0.5% 0.5%;
+}
+
+.row-container {
+  display: inline-flex;
+  place-items: center;
+}
+
+h2 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-size: 2.5rem;
+  line-height: 20px;
+  color: #FFF2E7;
+}
+
+
+
+.card-list {
+  margin: 1%;
+
+
+}
+
+.card {
+  width: 25em;
+  height: inherit;
+
+}
+
+
