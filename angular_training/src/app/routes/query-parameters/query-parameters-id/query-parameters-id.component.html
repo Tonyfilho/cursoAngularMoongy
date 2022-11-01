@@ -9,6 +9,11 @@
   <div class="row-container">
     <div class="col-xs-12">
       <h2>Get Id and Edit Parameters</h2>
+
+    </div>
+  </div>
+  <div class="row-container">
+    <div class="col-xs-12">
       <!-- ---------------------------------------------------Pipe Async no IF -->
       <div class="card" *ngIf="( book | async) as localVarBook">
         <img src="/assets/livros/{{ localVarBook?.imageUrl }}" class="card-img-top" alt="..." />
@@ -17,7 +22,7 @@
           <p class="card-text">
             {{ localVarBook?.description }}
           </p>
-          <a class="btn btn-primary" routerLink="/routes/query-parameters">go to Dynamic Parameters</a>
+          <a class="btn btn-primary" routerLink="/routes/query-parameters">go to Query Parameters</a>
         </div>
       </div>
 
