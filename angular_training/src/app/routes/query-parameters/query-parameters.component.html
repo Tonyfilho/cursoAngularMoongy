@@ -21,7 +21,8 @@
             <p class="card-text">
               {{ item.description }}
             </p>
-            <a class="btn btn-primary" [routerLink]="[item.id, 'edit']">More Information</a>
+            <a class="btn btn-primary" [routerLink]="[item.id, 'edit']" [queryParams]="{allowEdit: item.id +1 }">More
+              Information</a>
           </div>
         </div>
       </div>
@@ -44,7 +45,7 @@
             <h2 style=> How can you pass then and how can you retrive then.</h2>
           </div>
 
-          <div class="col-xs-12 picture">
+          <!-- <div class="col-xs-12 picture">
             <h3>Template from QueryParameters.Html</h3>
             <div class="image">
               <img src="./../../../assets/img-from-files/04_Query_Parameters_Question_marks.png" alt="Arquivo Html">
@@ -55,7 +56,7 @@
             <div class="image">
               <img src="./../../../assets/img-from-files/04_Query_Parameters_Fragments.png" alt="Arquivo Html">
             </div>
-          </div>
+          </div> -->
           <div class="col-xs-12 picture">
             <h3>Route Module.TS</h3>
             <div class="image">
@@ -63,15 +64,37 @@
             </div>
           </div>
           <div class="col-xs-12 picture">
-            <h3>QueryParameters.Html</h3>
+            <h3>Template from Params and QueryParameters.Html</h3>
+            <div class="image">
+              <img src="./../../../assets/img-from-files/04_Query_Parameters_RoutesHTML.png" alt="Arquivo Html">
+            </div>
+          </div>
+          <div class="col-xs-12 picture">
+            <h3>Parameters.Html</h3>
             <div class="image">
               <img src="./../../../assets/img-from-files/04_Query_Parameters_RoutesHTML2.png" alt="Arquivo Html">
             </div>
           </div>
           <div class="col-xs-12 picture">
-            <h3>Template from QueryParameters.Html</h3>
+            <div class="col-xs-12 picture">
+              <h3>Template from QueryParameters.Html</h3>
+              <div class="image">
+                <img src="./../../../assets/img-from-files/04_Query_Parameters_Question_marks.png" alt="Arquivo Html">
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-xs-12 picture">
+            <div class="col-xs-12 picture">
+              <h3>QueryParameters.Html</h3>
+              <div class="image">
+                <img src="./../../../assets/img-from-files/04_Query_Parameters_Question_marks.png" alt="Arquivo Html">
+              </div>
+            </div>
+          </div> -->
+          <div class="col-xs-12 picture">
+            <h3>QueryParameters.Html</h3>
             <div class="image">
-              <img src="./../../../assets/img-from-files/04_Query_Parameters_RoutesHTML.png" alt="Arquivo Html">
+              <img src="./../../../assets/img-from-files/04_Query_Parameters_RoutesHTML3.png" alt="Arquivo Html">
             </div>
           </div>
         </div>

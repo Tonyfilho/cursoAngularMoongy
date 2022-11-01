@@ -63,9 +63,9 @@ export class RoutesService {
   return  from([{id, title, author, alreadyRead, imageUrl, imageUrlGr, description}]);
   }
 
-  getBookByIdCASTAndParcial(bookId: number): Partial<Observable<Book>> {
-    const bookfilded: Partial<Book | undefined> = this.books?.find((b) => b.id === bookId);
-    return of(bookfilded) as Partial<Observable<Book>>;
+  getBookByIdCASTAndParcial(bookId: number): Observable<Partial<Book | undefined>> {
+    const bookfilded:  Partial<Book | undefined> = this.books?.find((b) => b.id === bookId);
+    return of(bookfilded);
   }
 
   getBookByIdCast(bookId: number): Observable<Book> {
