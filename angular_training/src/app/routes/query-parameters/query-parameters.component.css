@@ -7,7 +7,7 @@
 }
 
 button {
-  margin: 0.5% 0.5%;
+  margin: 2% 0.5%;
 }
 
 h2 {
@@ -41,7 +41,7 @@ h3 {
 .father-container {
   background: transparent;
   padding: 2%;
-  /* height: 100vw; */
+
 }
 .row-container {
   display: grid;
@@ -70,6 +70,10 @@ h3 {
 }
 
 img {
+  border-radius: 8px;
+  border-color: rgba(146, 144, 144, 0.582);
+  border-style: solid ;
+  box-sizing: 2px;
   width: 90%;
   object-fit: fill;
 
