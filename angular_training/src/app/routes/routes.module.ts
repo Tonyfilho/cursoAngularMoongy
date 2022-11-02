@@ -8,6 +8,7 @@ import { ParametersIdComponent } from './parameters/parameters-card/parans-id/pa
 import { ParametersCardComponent } from './parameters/parameters-card/parameters-card.component';
 import { QueryParametersComponent } from './query-parameters/query-parameters.component';
 import { QueryParametersIdComponent } from './query-parameters/query-parameters-id/query-parameters-id.component';
+import { ChildComponent } from './child/child.component';
 
 
 
@@ -20,6 +21,7 @@ import { QueryParametersIdComponent } from './query-parameters/query-parameters-
     ParametersCardComponent,
     QueryParametersComponent,
     QueryParametersIdComponent,
+    ChildComponent,
 
   ],
   imports: [
@@ -27,6 +29,7 @@ import { QueryParametersIdComponent } from './query-parameters/query-parameters-
     RouterModule.forChild([
       {path: '', component: RoutesComponent},
       {path:'prog', component: ProgrammaticallyComponent},
+      {path:'child', component: ChildComponent},
       {path:'parameters', component: ParametersComponent},
       {path:'parameters/parameters-card', component: ParametersCardComponent},
       {path:'parameters/parameters-card/:id', component: ParametersIdComponent},
