@@ -52,8 +52,7 @@
 
  .father-container {
    background: linear-gradient(68.15deg, #373b0b 16.62%, #348181 85.61%);
-   /* width: 100%;
-   height: min-content; */
+
    padding: 2%;
    font-family: 'Josefin Sans', sans-serif;
    font-style: normal;
@@ -88,7 +87,11 @@
  }
 
  img {
-   width: 90%;
-   object-fit: fill;
+  border-radius: 8px;
+  border-color: rgba(146, 144, 144, 0.582);
+  border-style: solid ;
+  box-sizing: 2px;
+  width: 90%;
+  object-fit: fill;
 
- }
+}
