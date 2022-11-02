@@ -45,10 +45,7 @@ const routes: Routes = [
     path: 'login/sign-up',
     component: SignUpComponent, ...canActivate(redirectToHome)
   },
-  // {
-  //   path: 'myPerfil',
-  //   component: MyProfileComponent, ...canActivate(redirectToHome)
-  // },
+
   {
     path: 'myProfile',
     component: MyProfileComponent
