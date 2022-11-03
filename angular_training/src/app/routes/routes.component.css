@@ -17,6 +17,7 @@ body {
 }
 a {
   color: #FFF2E7 !important;
+  text-decoration: none;
 }
 
 a:hover {
@@ -68,21 +69,10 @@ h2 {
   color: #FFF2E7;
 }
 
-h3 {
-  font-family: 'Josefin Sans', sans-serif;
-  font-style: normal;
-  font-size: 1.5rem;
-  line-height: 20px;
-  color: #FFF2E7;
-  padding: 1%;
-}
-
-
-
-
 
 /* ------------------centralizando as imagens--------------------------- */
 .image {
+  height: fit-content;
   display: grid;
   place-items: center;
   padding: 3%;
@@ -93,7 +83,7 @@ img {
   border-color: rgba(146, 144, 144, 0.582);
   border-style: solid ;
   box-sizing: 2px;
-  width: 80%;
+  width: 65%;
   object-fit: fill;
 
 }
