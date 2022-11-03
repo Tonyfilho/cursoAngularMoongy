@@ -9,6 +9,7 @@ import { ParametersCardComponent } from './parameters/parameters-card/parameters
 import { QueryParametersComponent } from './query-parameters/query-parameters.component';
 import { QueryParametersIdComponent } from './query-parameters/query-parameters-id/query-parameters-id.component';
 import { ChildComponent } from './child/child.component';
+import { NotFoundExempleComponent } from './not-found-exemple/not-found-exemple.component';
 
 
 
@@ -22,6 +23,7 @@ import { ChildComponent } from './child/child.component';
     QueryParametersComponent,
     QueryParametersIdComponent,
     ChildComponent,
+    NotFoundExempleComponent,
 
   ],
   imports: [
@@ -31,6 +33,7 @@ import { ChildComponent } from './child/child.component';
       {path:'prog', component: ProgrammaticallyComponent},
       {path:'child', component: ChildComponent},
       {path:'parameters', component: ParametersComponent},
+      {path:'not-found', component: NotFoundExempleComponent},
       {path:'parameters/parameters-card', component: ParametersCardComponent},
       {path:'parameters/parameters-card/:id', component: ParametersIdComponent},
       /**  {path:'parameters/parameters-card/:id/:name', component: ParametersIdComponent},  /:NAME is just Exemple to get value by parameter*/

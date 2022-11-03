@@ -59,9 +59,8 @@ const routes: Routes = [
   { path: 'basic', loadChildren:() => import('./routes/basics/basics.module').then(module => module.BasicsModule), ...redirectToLogin},
   { path: 'about', loadChildren: () => import('./about/about.module').then(module => module.AboutModule)},
   {
-    path: '**',
-    component: NotFoundComponent ,...canActivate(redirectToLogin)
-  },
+    path: '**', component: NotFoundComponent ,...canActivate(redirectToLogin)},
+    
 ];
 
 @NgModule({
