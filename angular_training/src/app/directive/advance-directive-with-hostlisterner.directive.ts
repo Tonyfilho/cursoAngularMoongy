@@ -6,6 +6,7 @@ import { Directive, ElementRef, HostListener, Renderer2, OnInit} from '@angular/
 export class AdvanceDirectiveWithHostlisternerDirective implements OnInit {
 /** 1º Adcionaremos a Anotação @Hostlistener , pemite usar metodos que temos no teclado ou no mouse */
 
+varColor: string = 'write';
 constructor(private elRel:ElementRef, private renderer2: Renderer2) {
 }
 ngOnInit(): void {
@@ -19,11 +20,13 @@ ngOnInit(): void {
 
 /** Quando passar o mouse sobre a lista, mudaremos a cor da mesma */
 @HostListener('mouseenter') mouseOver(evendData: Event) {
-  this.renderer2.setStyle(this.elRel.nativeElement, "background-color", 'yellow',);
+  this.varColor = "yellow";
+  this.renderer2.setStyle(this.elRel.nativeElement, "background-color", this.varColor,);
 
 }
 @HostListener('mouseleave') mouseleave(evendData: Event) {
-  this.renderer2.setStyle(this.elRel.nativeElement, "background-color", 'transparent',);
+  this.varColor = "";
+  this.renderer2.setStyle(this.elRel.nativeElement, "background-color", this.varColor,);
 
 }
 

@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostBinding, HostListener, Input } from '@angular/core';
+import { Directive,  HostBinding, HostListener, Input } from '@angular/core';
 
 @Directive({
   selector: '[appCustomsColors]'
@@ -6,7 +6,6 @@ import { Directive, ElementRef, HostBinding, HostListener, Input } from '@angula
 export class CustomsColorsDirective {
 
  /**Customizaremos a cor  do backGround */
-// @Input("defaultColors") defaultColors: string = "";
 @Input("customsColors") customsColors: string = "Blue";
 
 /** 1º Adcionaremos a Anotação @Hostlistener , permite usar metodos que temos no teclado ou no mouse */
@@ -17,7 +16,7 @@ export class CustomsColorsDirective {
  */
  @HostBinding("style.backgroundColor")  localBackGroundColor: string = "";
 
- constructor(private elRel:ElementRef) {
+ constructor() {
 }
 ngOnInit(): void {
 

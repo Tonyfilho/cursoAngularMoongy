@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostBinding, HostListener, Renderer2 } from '@angular/core';
+import { Directive, HostBinding, HostListener, } from '@angular/core';
 
 @Directive({
   selector: '[appAdvanceDirectiveWithHostlisternerAndHostbinding]'
@@ -13,7 +13,7 @@ export class AdvanceDirectiveWithHostlisternerAndHostbindingDirective {
   */
  @HostBinding("style.backgroundColor")  localBackGroundColor: string ="";
 
- constructor(private elRel:ElementRef, private renderer2: Renderer2) {
+ constructor() {
 }
 ngOnInit(): void {
 
@@ -25,12 +25,10 @@ ngOnInit(): void {
 
 /** Quando passar o mouse sobre a lista, mudaremos a cor da mesma */
 @HostListener('mouseenter') mouseOver(evendData: Event) {
-  // this.renderer2.setStyle(this.elRel.nativeElement, "background-color", 'linear-gradient(68.15deg, #7cbe76 16.62%, #ebd0e0 85.61%)');
   this.localBackGroundColor = 'green';
 
 }
 @HostListener('mouseleave') mouseleave(evendData: Event) {
-  // this.renderer2.setStyle(this.elRel.nativeElement, "background-color", 'transparent',);
   this.localBackGroundColor = "";
 
 }

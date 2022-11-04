@@ -1,10 +1,72 @@
-.container {
 
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Lexend+Peta&family=Roboto:ital,wght@1,300&family=Sansita+Swashed:wght@300&display=swap');
+
+.container {
   background: linear-gradient(68.15deg, #ef8bf8 16.62%, #576869 85.61%);
-  height: 100vh;
+  height: max-content;
+}
+
+button {
+  margin: 2% 0.5%;
+}
+
+h2 {
+  display: grid;
+  place-items: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-size: 2.5rem;
+  line-height: 20px;
+  color: #FFF2E7;
+  padding: 1.5%;
+}
+
+h3 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: 20px;
+  color: #FFF2E7;
 }
 
 
-button {
-  margin: 0.5% 0.5%;
+
+
+
+/* -----Css Imagens explain-------- */
+
+.row-container {
+  display: grid;
+  place-items: center;
+  padding: 3%;
+}
+
+.col-xs-12 {
+  padding: 0.5%;
+  margin: 1% 0%;
+}
+.col-xs-12.picture{
+  background: inherit;
+
+}
+.col-xs-12.picture:hover {
+  background: linear-gradient(68.15deg, #a3a3eb 16.62%, #2693a1 85.61%);
+
+}
+
+/* ------------------centralizando as imagens--------------------------- */
+.image {
+  display: grid;
+  place-items: center;
+  padding: 3%;
+}
+
+img {
+  border-radius: 8px;
+  border-color: rgba(146, 144, 144, 0.582);
+  border-style: solid ;
+  box-sizing: 2px;
+  width: 90%;
+  object-fit: fill;
+
 }
