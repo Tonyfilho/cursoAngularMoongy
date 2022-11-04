@@ -10,6 +10,7 @@ import { QueryParametersComponent } from './query-parameters/query-parameters.co
 import { QueryParametersIdComponent } from './query-parameters/query-parameters-id/query-parameters-id.component';
 import { ChildComponent } from './child/child.component';
 import { NotFoundExempleComponent } from './not-found-exemple/not-found-exemple.component';
+import { CanActivateComponent } from './can-activate/can-activate.component';
 
 
 
@@ -24,6 +25,7 @@ import { NotFoundExempleComponent } from './not-found-exemple/not-found-exemple.
     QueryParametersIdComponent,
     ChildComponent,
     NotFoundExempleComponent,
+    CanActivateComponent,
 
   ],
   imports: [
@@ -33,6 +35,7 @@ import { NotFoundExempleComponent } from './not-found-exemple/not-found-exemple.
       {path:'prog', component: ProgrammaticallyComponent},
       {path:'child', component: ChildComponent},
       {path:'parameters', component: ParametersComponent},
+      {path:'canActivate', component: CanActivateComponent},
       {path:'not-found', component: NotFoundExempleComponent},
       {path:'parameters/parameters-card', component: ParametersCardComponent},
       {path:'parameters/parameters-card/:id', component: ParametersIdComponent},
