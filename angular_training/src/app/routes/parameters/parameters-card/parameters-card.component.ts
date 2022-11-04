@@ -1,6 +1,6 @@
 import { RoutesService } from './../../routes.service';
 import { Component, OnInit } from '@angular/core';
-import { Book } from 'src/app/_models/book.model';
+import { Book } from 'src/app/_share/_models/book.model';
 
 @Component({
   selector: 'app-parameters-card',

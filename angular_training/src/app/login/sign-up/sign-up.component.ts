@@ -1,11 +1,11 @@
 import { switchMap } from 'rxjs';
-import { UserService } from './../../_services/user.service';
+import { UserService } from '../../_share/_services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
-import { custonPatternPassword, passwordsMarchValidator } from 'src/app/_custom-validators/custons-validations';
-import { AuthenticationService } from 'src/app/_services/authentication.service';
+import { custonPatternPassword, passwordsMarchValidator } from 'src/app/_share/_custom-validators/custons-validations';
+import { AuthenticationService } from 'src/app/_share/_services/authentication.service';
 
 @Component({
   selector: 'app-sign-up',

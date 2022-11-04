@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { RoutesService } from './../routes.service';
 import { Component, OnInit } from '@angular/core';
-import { Book } from 'src/app/_models/book.model';
+import { Book } from 'src/app/_share/_models/book.model';
 
 @Component({
   selector: 'app-query-parameters',
@@ -25,5 +25,5 @@ export class QueryParametersComponent implements OnInit {
   }
 
 
- 
+
 }

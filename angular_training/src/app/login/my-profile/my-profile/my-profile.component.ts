@@ -1,14 +1,14 @@
-import { UserLocalProfile } from './../../../_models/user-profile.model';
-import { UserService } from './../../../_services/user.service';
+import { UserLocalProfile } from '../../../_share/_models/user-profile.model';
+import { UserService } from '../../../_share/_services/user.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { concatMap, Observable, take } from 'rxjs';
 import { User } from '@angular/fire/auth';
-import { AuthenticationService } from 'src/app/_services/authentication.service';
+import { AuthenticationService } from 'src/app/_share/_services/authentication.service';
 import { Router } from '@angular/router';
-import { UpLoadService } from 'src/app/_services/up-load.service';
+import { UpLoadService } from 'src/app/_share/_services/up-load.service';
 import { HotToastService } from '@ngneat/hot-toast';
-import { IUserLocalProfile } from 'src/app/_models/user-profile.model';
+import { IUserLocalProfile } from 'src/app/_share/_models/user-profile.model';
 
 @Component({
   selector: 'app-my-profile',

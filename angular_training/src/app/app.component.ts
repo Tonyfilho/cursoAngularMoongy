@@ -1,7 +1,7 @@
-import { IUserLocalProfile } from './_models/user-profile.model';
-import { UserService } from './_services/user.service';
+import { IUserLocalProfile } from './_share/_models/user-profile.model';
+import { UserService } from './_share/_services/user.service';
 import { Observable } from 'rxjs';
-import { AuthenticationService } from 'src/app/_services/authentication.service';
+import { AuthenticationService } from 'src/app/_share/_services/authentication.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '@angular/fire/auth';

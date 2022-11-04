@@ -1,7 +1,7 @@
 import { Observable, Subscription } from 'rxjs';
 import { ActivatedRoute, Params } from '@angular/router';
 import { RoutesService } from './../../../routes.service';
-import { Book } from './../../../../_models/book.model';
+import { Book } from '../../../../_share/_models/book.model';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({

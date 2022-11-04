@@ -1,4 +1,4 @@
-import { AuthenticationService } from './../_services/authentication.service';
+import { AuthenticationService } from '../_share/_services/authentication.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, take } from 'rxjs';
 import { User } from '@angular/fire/auth';

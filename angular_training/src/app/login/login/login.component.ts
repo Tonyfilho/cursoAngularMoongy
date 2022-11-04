@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
-import { AuthenticationService } from 'src/app/_services/authentication.service';
+import { AuthenticationService } from 'src/app/_share/_services/authentication.service';
 
 @Component({
   selector: 'app-login',
