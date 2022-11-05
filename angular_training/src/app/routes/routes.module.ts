@@ -34,17 +34,22 @@ import { DummyAuthGuard } from '../_share/auth-guards/dummy-auth-guard';
   imports: [
     CommonModule,
     RouterModule.forChild([
-      {path: '', component: RoutesComponent},
-      {path:'prog', component: ProgrammaticallyComponent},
-      {path:'child', component: ChildComponent},
-      {path:'parameters', component: ParametersComponent},
-      {path:'canActivate', canActivate: [DummyAuthGuard], component: CanActivateComponent},
-      {path:'not-found', component: NotFoundExempleComponent},
-      {path:'parameters/parameters-card', component: ParametersCardComponent},
-      {path:'parameters/parameters-card/:id', canActivate:[DummyAdminGuardService] ,component: ParametersIdComponent,  },
+      { path: '', component: RoutesComponent },
+      { path: 'prog', component: ProgrammaticallyComponent },
+      { path: 'child', component: ChildComponent },
+      { path: 'parameters', component: ParametersComponent },
+      { path: 'canActivate', canActivate: [DummyAuthGuard], component: CanActivateComponent },
+      { path: 'not-found', component: NotFoundExempleComponent },
+      {
+        path: 'parameters', component: ParametersComponent,  canActivateChild: [DummyAdminGuardService], children: [
+          { path: 'parameters-card',component: ParametersCardComponent },
+          { path: 'parameters-card/:id', component: ParametersIdComponent, },
+        ]
+      },
+
       /**  {path:'parameters/parameters-card/:id/:name', component: ParametersIdComponent},  /:NAME is just Exemple to get value by parameter*/
-      {path:'query-parameters', component: QueryParametersComponent},
-      {path:'query-parameters/:id/edit',  component: QueryParametersIdComponent},
+      { path: 'query-parameters', component: QueryParametersComponent },
+      { path: 'query-parameters/:id/edit', component: QueryParametersIdComponent },
 
     ])
   ]

@@ -7,9 +7,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DummyAdminGuardService implements CanActivate, CanActivateChild  {
- private logged: boolean = false;
-  constructor(private dummyLoginservice: DummyLoginService, private router: Router) {
-    this.dummyLoginservice.userAdmin.subscribe((isAdmin: boolean) => {this.logged = isAdmin, console.log("isAdmin: "),this.logged});
+ private logged: boolean = true;
+  constructor(private dummyLoginService: DummyLoginService, private router: Router) {
+    this.dummyLoginService.serviceLoggedRetorno.subscribe(isLoggin => this.logged = isLoggin)
    }
   canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
    /**Eu posso retornar um canActivate e usar tanto nas rotas Pais o canAtivate e nas rotas filhas o canActivateChild */

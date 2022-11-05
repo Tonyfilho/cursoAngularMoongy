@@ -16,11 +16,14 @@ export class DummyLoginService {
   /**
    * Se é ou não administrador
    */
-  userAdmin: EventEmitter<boolean> = new EventEmitter();
+  private userAdmin = new BehaviorSubject<boolean>(false);
+  serviceLoggedRetornoadmin = this.userAdmin.asObservable();
+  // userAdmin: EventEmitter<boolean> = new EventEmitter();
 
   constructor() {
     this.isLogged(true); //passando se estou ou não logado, como se estivesse vindo do backend
-    this.userAdmin.emit(false);; //passando se é ou não admin, como se estivesse vindo do backend
+   // this.userAdmin.emit(true); passando se é ou não admin, como se estivesse vindo do backend
+    this.isAdmin(true); //passando se é ou não admin, como se estivesse vindo do backend
   }
 
 
@@ -29,7 +32,7 @@ export class DummyLoginService {
     this.userLogged.next(localLogged)
   }
 
-  isAdmin() {
-    this.userAdmin.emit(true);
+  isAdmin(localLogged: boolean) {
+    this.userLogged.next(localLogged);
   }
 }
