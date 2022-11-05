@@ -1,3 +1,4 @@
+import { DummyAdminGuardService } from './../_share/auth-guards/dummy-admin-guard.service';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -11,6 +12,8 @@ import { QueryParametersIdComponent } from './query-parameters/query-parameters-
 import { ChildComponent } from './child/child.component';
 import { NotFoundExempleComponent } from './not-found-exemple/not-found-exemple.component';
 import { CanActivateComponent } from './can-activate/can-activate.component';
+import { DummyAuthGuard } from '../_share/auth-guards/dummy-auth-guard';
+
 
 
 
@@ -35,13 +38,13 @@ import { CanActivateComponent } from './can-activate/can-activate.component';
       {path:'prog', component: ProgrammaticallyComponent},
       {path:'child', component: ChildComponent},
       {path:'parameters', component: ParametersComponent},
-      {path:'canActivate', component: CanActivateComponent},
+      {path:'canActivate', canActivate: [DummyAuthGuard], component: CanActivateComponent},
       {path:'not-found', component: NotFoundExempleComponent},
       {path:'parameters/parameters-card', component: ParametersCardComponent},
-      {path:'parameters/parameters-card/:id', component: ParametersIdComponent},
+      {path:'parameters/parameters-card/:id', canActivate:[DummyAdminGuardService] ,component: ParametersIdComponent,  },
       /**  {path:'parameters/parameters-card/:id/:name', component: ParametersIdComponent},  /:NAME is just Exemple to get value by parameter*/
       {path:'query-parameters', component: QueryParametersComponent},
-      {path:'query-parameters/:id/edit', component: QueryParametersIdComponent},
+      {path:'query-parameters/:id/edit',  component: QueryParametersIdComponent},
 
     ])
   ]
