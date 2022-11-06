@@ -1,3 +1,4 @@
+import { BasicsComponent } from './basics/basics.component';
 import { DummyAdminGuardService } from './../_share/auth-guards/dummy-admin-guard.service';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -29,6 +30,7 @@ import { DummyAuthGuard } from '../_share/auth-guards/dummy-auth-guard';
     ChildComponent,
     NotFoundExempleComponent,
     CanActivateComponent,
+    BasicsComponent
 
   ],
   imports: [
@@ -36,9 +38,10 @@ import { DummyAuthGuard } from '../_share/auth-guards/dummy-auth-guard';
     RouterModule.forChild([
       { path: '', component: RoutesComponent },
       { path: 'prog', component: ProgrammaticallyComponent },
+      { path: 'basic', component: BasicsComponent },
       { path: 'child', component: ChildComponent },
       { path: 'parameters', component: ParametersComponent },
-      { path: 'canActivate', canActivate: [DummyAuthGuard], component: CanActivateComponent },
+      { path: 'canActivate-component', canActivate: [DummyAuthGuard], component: CanActivateComponent },
       { path: 'not-found', component: NotFoundExempleComponent },
       {
         path: 'parameters', component: ParametersComponent,  canActivateChild: [DummyAdminGuardService], children: [

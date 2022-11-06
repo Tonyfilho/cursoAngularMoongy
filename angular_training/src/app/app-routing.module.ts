@@ -56,11 +56,10 @@ const routes: Routes = [
   { path:'gamer', loadChildren:() => import('./gamer-control/gamer.module').then(module => module.GamerModule ), ...canActivate(redirectToLogin)},
   { path:'directive' , loadChildren:() => import('./directive/directive.module').then(module => module.DirectiveModule), ...redirectToLogin},
   { path: 'routes', loadChildren:() => import('./routes/routes.module').then(module => module.RoutesModule), ...redirectToLogin},
-  { path: 'basic', loadChildren:() => import('./routes/basics/basics.module').then(module => module.BasicsModule), ...redirectToLogin},
   { path: 'about', loadChildren: () => import('./about/about.module').then(module => module.AboutModule)},
   {
     path: '**', component: NotFoundComponent ,...canActivate(redirectToLogin)},
-    
+
 ];
 
 @NgModule({

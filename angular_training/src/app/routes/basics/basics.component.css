@@ -1,92 +1,63 @@
- @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Lexend+Peta&family=Roboto:ital,wght@1,300&family=Sansita+Swashed:wght@300&display=swap');
 
- html {
-   margin: 0;
-   padding: 0;
- }
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Lexend+Peta&family=Roboto:ital,wght@1,300&family=Sansita+Swashed:wght@300&display=swap');
 
+.container {
+  background: linear-gradient(68.15deg, #8ff88b 16.62%, #576469 85.61%);
+  height: max-content;
+}
 
- h2 {
-   display: grid;
-   place-items: center;
+button {
+  margin: 2% 0.5%;
+}
 
- }
+h2 {
+  display: grid;
+  place-items: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-size: 2.5rem;
+  line-height: 20px;
+  color: #FFF2E7;
+  padding: 1.5%;
+}
 
- a {
-   color: #FFF2E7 !important;
- }
+h3 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: 20px;
+  color: #FFF2E7;
+}
 
- a:hover {
-   color: #f0b686 !important;
- }
+/* -----Css Imagens explain-------- */
 
- .father {
-   width: 100%;
-   padding: 0.8% 0.8%;
- }
+.row-container {
+  display: grid;
+  place-items: center;
+  padding: 3%;
+}
 
- .col-xs-12 {
-   padding: 0%;
- }
+.col-xs-12 {
+  padding: 0.5%;
+  margin: 1% 0%;
+}
+.col-xs-12.picture{
+  background: inherit;
 
- .row {
-   padding: 0%;
- }
+}
+.col-xs-12.picture:hover {
+  background: linear-gradient(68.15deg, #b7b7d8 16.62%, #2657a1 85.61%);
 
- .navbar-header {
-   width: 100%;
-   background: linear-gradient(68.15deg, #2e2e30 16.62%, #040013 85.61%);
-   padding-top: 0.5%;
-   padding-bottom: 0.5%;
+}
 
- }
+/* ------------------centralizando as imagens--------------------------- */
+.image {
+  display: grid;
+  place-items: center;
+  padding: 3%;
+}
 
- .nav-tabs {
-   background-color: transparent;
-   border-bottom: none !important;
- }
-
- .nav-link.active {
-   background-color: #0e0e3f;
- }
-
- .father-container {
-   background: linear-gradient(68.15deg, #373b0b 16.62%, #348181 85.61%);
-
-   padding: 2%;
-   font-family: 'Josefin Sans', sans-serif;
-   font-style: normal;
-   font-size: 1rem;
-   line-height: 20px;
-   color: #FFF2E7;
-   height: 100vw;
- }
-
- .container {
-   background: linear-gradient(68.15deg, #d7e44b 16.62%, #343981 85.61%);
-   height: min-content;
-   padding: 2%;
-   font-family: 'Josefin Sans', sans-serif;
-   font-style: normal;
-   font-size: 1rem;
-   line-height: 20px;
-   color: #FFF2E7;
-
- }
-
-
- .image-father {
-   width: 100%;
- }
-
- .image {
-   /* ------------------centralizando as imagens--------------------------- */
-   display: grid;
-   place-items: center;
-   padding: 3%;
- }
-
- img {
+img {
   border-radius: 8px;
   border-color: rgba(146, 144, 144, 0.582);
   border-style: solid ;
