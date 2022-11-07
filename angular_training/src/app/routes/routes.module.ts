@@ -10,7 +10,7 @@ import { ParametersIdComponent } from './parameters/parameters-card/parans-id/pa
 import { ParametersCardComponent } from './parameters/parameters-card/parameters-card.component';
 import { QueryParametersComponent } from './query-parameters/query-parameters.component';
 import { QueryParametersIdComponent } from './query-parameters/query-parameters-id/query-parameters-id.component';
-import { ChildComponent } from './child/child.component';
+import { ChildComponent } from './child-and-lazy-load/child.component';
 import { NotFoundExempleComponent } from './not-found-exemple/not-found-exemple.component';
 import { CanActivateComponent } from './can-activate/can-activate.component';
 import { DummyAuthGuard } from '../_share/auth-guards/dummy-auth-guard';
