@@ -1,14 +1,14 @@
-.not-found { 
-    width: 100%; 
-    height: 50rem;  
-    background-image: url('../../assets/background/not-found.jpg') !important; 
+.not-found {
+    width: 100%;
+    height: max-content;
+    background-image: url('../../assets/background/not-found.jpg') !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
     background-size: cover !important;
     color: aliceblue;
     text-align: center;
-    
-    
+
+
 }
 
 .div-button {
@@ -16,7 +16,7 @@
     flex-direction: row;
     justify-content: flex-end;
     align-content: space-around;
-   
+
 }
 .btn {
     margin-top: 2%;

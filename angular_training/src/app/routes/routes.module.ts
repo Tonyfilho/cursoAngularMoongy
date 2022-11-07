@@ -1,6 +1,7 @@
+import { UnSaveChangesGuardsService } from './../_share/auth-guards/un-save-changes-guards.service';
 import { BasicsComponent } from './basics/basics.component';
 import { DummyAdminGuardService } from './../_share/auth-guards/dummy-admin-guard.service';
-import { RouterModule } from '@angular/router';
+import { RouterModule, CanDeactivate } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RoutesComponent } from './routes.component';
@@ -14,6 +15,7 @@ import { ChildComponent } from './child-and-lazy-load/child.component';
 import { NotFoundExempleComponent } from './not-found-exemple/not-found-exemple.component';
 import { CanActivateComponent } from './can-activate/can-activate.component';
 import { DummyAuthGuard } from '../_share/auth-guards/dummy-auth-guard';
+import { CanDeactivateComponent } from './can-deactivate/can-deactivate.component';
 
 
 
@@ -30,7 +32,8 @@ import { DummyAuthGuard } from '../_share/auth-guards/dummy-auth-guard';
     ChildComponent,
     NotFoundExempleComponent,
     CanActivateComponent,
-    BasicsComponent
+    BasicsComponent,
+    CanDeactivateComponent
 
   ],
   imports: [
@@ -40,6 +43,8 @@ import { DummyAuthGuard } from '../_share/auth-guards/dummy-auth-guard';
       { path: 'prog', component: ProgrammaticallyComponent },
       { path: 'basic', component: BasicsComponent },
       { path: 'child', component: ChildComponent },
+      { path: 'canDeactivate', component: CanDeactivateComponent, canDeactivate: [UnSaveChangesGuardsService]},
+
       { path: 'parameters', component: ParametersComponent },
       { path: 'canActivate-component', canActivate: [DummyAuthGuard], component: CanActivateComponent },
       { path: 'not-found', component: NotFoundExempleComponent },
