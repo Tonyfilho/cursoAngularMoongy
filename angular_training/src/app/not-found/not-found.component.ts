@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./not-found.component.css']
 })
 export class NotFoundComponent implements OnInit {
-
-  constructor() { }
+ message: string = "";
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    /**Buscando DATA da rota not-found com a propriedade DATA */
+    this.route.data.subscribe(data => this.message = data['message']);
   }
 
 }

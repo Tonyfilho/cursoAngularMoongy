@@ -1,5 +1,5 @@
 import { ICanComponentLeave } from './../../_share/auth-guards/un-save-changes-guards.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-can-deactivate',
@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./can-deactivate.component.css']
 })
 export class CanDeactivateComponent implements OnInit, ICanComponentLeave {
+
+  @HostListener('click', ['$event.target'])
+  onClick(btn: any) {
+    console.log('button', btn, 'number of clicks:');
+  }
+
 
   constructor() { }
 

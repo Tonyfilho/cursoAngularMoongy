@@ -1,23 +1,40 @@
-.not-found {
-    width: 100%;
-    height: max-content;
-    background-image: url('../../assets/background/not-found.jpg') !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
-    background-size: cover !important;
-    color: aliceblue;
-    text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Lexend+Peta&family=Roboto:ital,wght@1,300&family=Sansita+Swashed:wght@300&display=swap');
 
+.container {
+  background: linear-gradient(68.15deg, #121312 16.62%, #1a2327 85.61%);
+  height: max-content;
+}
+
+button {
+  margin: 2% 0.5%;
+}
+
+h2 {
+  display: grid;
+  place-items: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-size: 2.5rem;
+  line-height: 20px;
+  color: #FFF2E7;
+  padding: 1%;
+}
+
+/* ------------------centralizando as imagens--------------------------- */
+.image {
+  display: grid;
+  place-items: center;
+  padding: 0.5%;
+}
+
+img {
+  border-radius: 8px;
+  border-color: rgba(146, 144, 144, 0.582);
+  border-style: solid ;
+  box-sizing: 2px;
+  width: 100%;
+  object-fit: fill;
 
 }
 
-.div-button {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-content: space-around;
 
-}
-.btn {
-    margin-top: 2%;
-}
