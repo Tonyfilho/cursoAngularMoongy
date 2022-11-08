@@ -8,6 +8,24 @@
     </div>
   </div>
   <div class="row ">
+    <div class="col-xs-12 ">
+      <form class="form" [formGroup]="myDeactivate" (ngSubmit)="submitForms()">
+        <h2 class="title">CanDeactivate Form Dummy</h2>
+        <label for="name" class="col-sm-10 col-form-label">Name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="name" formControlName="name">
+        </div>
+        <label for="address" class="col-sm-10 col-form-label">Address</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="address" formControlName="address">
+        </div>
+      </form>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="submit" class="btn btn-outline-light" (click)="myDeactivate.reset()">Send Form</button>
+      </div>
+    </div>
+  </div>
+  <div class="row ">
     <div class="col-xs-12">
       <h2> Can-deactivate </h2>
     </div>

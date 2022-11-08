@@ -14,7 +14,7 @@ import { SignUpComponent } from './login/sign-up/sign-up.component';
 /**São importações Auth do angularFire, é uma forma mais fácil de proteger
  * rotas quando usamos o firebase, Criando PIPES locais
  */
-import { canActivate, redirectLoggedInTo, redirectUnauthorizedTo }  from '@angular/fire/auth-guard'
+import { canActivate, redirectLoggedInTo, redirectUnauthorizedTo } from '@angular/fire/auth-guard'
 /**Usuario não Autorizado ou não logado Redireciona para Login*/
 const redirectToLogin = () => redirectUnauthorizedTo(['/login']);
 /**Usuario Autorizado ou  logado, Redireciona para Paginas */
@@ -26,15 +26,15 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   /**Nos Outros LINKS, caso receba um FALSE por falta de autorização, o FireBase Authorization,
    *  a pagina será redirecinada para login*/
-  { path: 'home', component: HomeComponent, ...canActivate(redirectToLogin)},
-  { path: 'books', component: BooksComponent ,...canActivate(redirectToLogin) },
+  { path: 'home', component: HomeComponent, ...canActivate(redirectToLogin) },
+  { path: 'books', component: BooksComponent, ...canActivate(redirectToLogin) },
   {
     path: 'books/:id',
-    component: BookComponent,...canActivate(redirectToLogin)
+    component: BookComponent, ...canActivate(redirectToLogin)
   },
   {
     path: 'forecasting',
-    component: ForecastComponent,...canActivate(redirectToLogin)
+    component: ForecastComponent, ...canActivate(redirectToLogin)
   },
   /**Nos Link LOGIN e LOGIN/SIGN-UP, caso receba um TRUE do FireBase Authorization, a pagina será redirecinada para home*/
   {
@@ -51,19 +51,25 @@ const routes: Routes = [
     component: MyProfileComponent
   },
   /*************************************************Carregando LAZYLOAD ROUTE*/
-  { path: 'forms', loadChildren: () => import('./forms/forms-local.module').then(module => module.FormsLocalModule), ...canActivate(redirectToLogin)},
-  { path:'shareData', loadChildren:() => import('./share-data/share-data.module').then(module => module.ShareDataModule),...canActivate(redirectToLogin)},
-  { path:'gamer', loadChildren:() => import('./gamer-control/gamer.module').then(module => module.GamerModule ), ...canActivate(redirectToLogin)},
-  { path:'directive' , loadChildren:() => import('./directive/directive.module').then(module => module.DirectiveModule), ...redirectToLogin},
-  { path: 'routes', loadChildren:() => import('./routes/routes.module').then(module => module.RoutesModule), ...redirectToLogin},
-  { path: 'about', loadChildren: () => import('./about/about.module').then(module => module.AboutModule)},
+  { path: 'forms', loadChildren: () => import('./forms/forms-local.module').then(module => module.FormsLocalModule), ...canActivate(redirectToLogin) },
+  { path: 'shareData', loadChildren: () => import('./share-data/share-data.module').then(module => module.ShareDataModule), ...canActivate(redirectToLogin) },
+  { path: 'gamer', loadChildren: () => import('./gamer-control/gamer.module').then(module => module.GamerModule), ...canActivate(redirectToLogin) },
+  { path: 'directive', loadChildren: () => import('./directive/directive.module').then(module => module.DirectiveModule), ...redirectToLogin },
+  { path: 'routes', loadChildren: () => import('./routes/routes.module').then(module => module.RoutesModule), ...redirectToLogin },
+  { path: 'about', loadChildren: () => import('./about/about.module').then(module => module.AboutModule) },
   {
-    path: '**', component: NotFoundComponent ,...redirectToLogin, data: {message:"Page not found Message from App-Routing"}},
+    path: '**', component: NotFoundComponent, ...redirectToLogin, data: { message: "Page not found Message from App-Routing" }
+  },
 
 ];
+/**NOTE:
+ * RouterModule.forRoot(routes, {useHash: true}), usando ,{useHash: true}
+ * ele o angular vai por a RASH #/rota em nossa rotas, com isto informamos
+ * ao servidor de aplicação que: Tudo que for informado depois da RASH #/
+ * são as nossas rotas, com isto evitamos o 404 como erro  */
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

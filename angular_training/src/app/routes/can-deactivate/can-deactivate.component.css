@@ -29,18 +29,14 @@ h3 {
   color: #FFF2E7;
 }
 
-/* -----Css Imagens explain-------- */
-
-/* .row-container {
+.form {
   display: grid;
   place-items: center;
-  padding: 3%;
+  padding: 1%;
+  width: 90%;
+
 }
 
-.col-xs-12 {
-  padding: 0.5%;
-  margin: 1% 0%;
-} */
 .col-xs-12.picture{
   background: inherit;
 

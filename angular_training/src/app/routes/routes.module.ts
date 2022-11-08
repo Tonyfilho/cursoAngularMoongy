@@ -16,6 +16,7 @@ import { NotFoundExempleComponent } from './not-found-exemple/not-found-exemple.
 import { CanActivateComponent } from './can-activate/can-activate.component';
 import { DummyAuthGuard } from '../_share/auth-guards/dummy-auth-guard';
 import { CanDeactivateComponent } from './can-deactivate/can-deactivate.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -38,6 +39,8 @@ import { CanDeactivateComponent } from './can-deactivate/can-deactivate.componen
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild([
       { path: '', component: RoutesComponent },
       { path: 'prog', component: ProgrammaticallyComponent },

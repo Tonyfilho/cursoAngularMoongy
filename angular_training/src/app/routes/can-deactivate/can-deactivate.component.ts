@@ -1,5 +1,6 @@
 import { ICanComponentLeave } from './../../_share/auth-guards/un-save-changes-guards.service';
 import { Component, HostListener, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-can-deactivate',
@@ -12,23 +13,27 @@ export class CanDeactivateComponent implements OnInit, ICanComponentLeave {
   onClick(btn: any): any {
     console.log('button', btn, 'number of clicks:');
   }
+  myDeactivate!: FormGroup;
 
+  constructor(private fb: FormBuilder) {
 
-  constructor() { }
+    this.myDeactivate = fb.group({
+      name: [''],
+      address: [''],
+    });
+  }
 
   ngOnInit(): void {
   }
 
   canLeave():boolean {
-   /**Precisa passar a logica de quando entrar no template ele acionar o candeateave */
-   /**
-    *  if(this.userFormBuilder.dirty) {
-      return window.confirm(`You have some unsaved changes. Are you sure you want to leave`);
-    }
-    */
-   if(this.onClick.caller){
+   if(this.myDeactivate.dirty || this.myDeactivate.touched){
     return window.confirm(`You have some unsaved changes. Are you sure you want to leave`);
    }
     return true;
+  }
+
+  submitForms() {
+   /**Apenas um Dummy para botão */
   }
 }

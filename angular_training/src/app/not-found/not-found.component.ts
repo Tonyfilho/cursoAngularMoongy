@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Data } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,7 +12,7 @@ export class NotFoundComponent implements OnInit {
 
   ngOnInit(): void {
     /**Buscando DATA da rota not-found com a propriedade DATA */
-    this.route.data.subscribe(data => this.message = data['message']);
+    this.route.data.subscribe((data: Data )=> this.message = data['message']);
   }
 
 }
