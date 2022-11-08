@@ -43,7 +43,7 @@ import { CanDeactivateComponent } from './can-deactivate/can-deactivate.componen
       { path: 'prog', component: ProgrammaticallyComponent },
       { path: 'basic', component: BasicsComponent },
       { path: 'child', component: ChildComponent },
-      { path: 'canDeactivate', component: CanDeactivateComponent, canDeactivate: [UnSaveChangesGuardsService]},
+      { path: 'canDeactivate-component', component: CanDeactivateComponent, canDeactivate: [UnSaveChangesGuardsService]},
 
       { path: 'parameters', component: ParametersComponent },
       { path: 'canActivate-component', canActivate: [DummyAuthGuard], component: CanActivateComponent },

@@ -9,7 +9,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 export class CanDeactivateComponent implements OnInit, ICanComponentLeave {
 
   @HostListener('click', ['$event.target'])
-  onClick(btn: any) {
+  onClick(btn: any): any {
     console.log('button', btn, 'number of clicks:');
   }
 
@@ -26,6 +26,9 @@ export class CanDeactivateComponent implements OnInit, ICanComponentLeave {
       return window.confirm(`You have some unsaved changes. Are you sure you want to leave`);
     }
     */
+   if(this.onClick.caller){
+    return window.confirm(`You have some unsaved changes. Are you sure you want to leave`);
+   }
     return true;
   }
 }

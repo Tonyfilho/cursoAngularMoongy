@@ -58,7 +58,7 @@ const routes: Routes = [
   { path: 'routes', loadChildren:() => import('./routes/routes.module').then(module => module.RoutesModule), ...redirectToLogin},
   { path: 'about', loadChildren: () => import('./about/about.module').then(module => module.AboutModule)},
   {
-    path: '**', component: NotFoundComponent ,...redirectToLogin, data: {message:"Page not found"}},
+    path: '**', component: NotFoundComponent ,...redirectToLogin, data: {message:"Page not found Message from App-Routing"}},
 
 ];
 
