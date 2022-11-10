@@ -11,12 +11,32 @@ import { ServerElementComponent } from './input-output/server-element/server-ele
 import { LocalReferencesComponent } from './local-references/local-references.component';
 import { CockpitFromLocalComponent } from './local-references/cockpit-from-local/cockpit-from-local.component';
 import { CockpitFromViewChildComponent } from './view-child/cockpit-from-view-child/cockpit-from-view-child.component';
+import { GamerFatherComponent } from './gamer-control-in-share-data/gamer-father/gamer-father.component';
+import { GamerControlComponent } from './gamer-control-in-share-data/gamer-father/gamer-control/gamer-control.component';
+import { OddComponent } from './gamer-control-in-share-data/gamer-father/odd/odd.component';
+import { EvenComponent } from './gamer-control-in-share-data/gamer-father/even/even.component';
+
 
 
 
 
 @NgModule({
-  declarations: [InputOutputComponent, ViewChildComponent, ShareDataComponent, NgContentLocalComponent, CockPitComponent, ServerElementComponent, LocalReferencesComponent, CockpitFromLocalComponent, CockpitFromViewChildComponent],
+  declarations: [
+    InputOutputComponent,
+    ViewChildComponent,
+    ShareDataComponent,
+    NgContentLocalComponent,
+    CockPitComponent,
+    ServerElementComponent,
+    LocalReferencesComponent,
+    CockpitFromLocalComponent,
+    CockpitFromViewChildComponent,
+    OddComponent,
+    EvenComponent,
+    GamerControlComponent,
+    GamerFatherComponent
+
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -25,7 +45,8 @@ import { CockpitFromViewChildComponent } from './view-child/cockpit-from-view-ch
       { path: 'input&outPut', component: InputOutputComponent },
       { path: 'viewChild', component: ViewChildComponent },
       { path: 'ngContent', component: NgContentLocalComponent },
-      { path: 'localReference', component: LocalReferencesComponent }
+      { path: 'localReference', component: LocalReferencesComponent },
+      { path: 'shareData/gamerControl' ,component:GamerFatherComponent}
     ])
   ]
 })
