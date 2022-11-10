@@ -11,10 +11,10 @@ import { ServerElementComponent } from './input-output/server-element/server-ele
 import { LocalReferencesComponent } from './local-references/local-references.component';
 import { CockpitFromLocalComponent } from './local-references/cockpit-from-local/cockpit-from-local.component';
 import { CockpitFromViewChildComponent } from './view-child/cockpit-from-view-child/cockpit-from-view-child.component';
-import { GamerFatherComponent } from './gamer-control-in-share-data/gamer-father/gamer-father.component';
-import { GamerControlComponent } from './gamer-control-in-share-data/gamer-father/gamer-control/gamer-control.component';
-import { OddComponent } from './gamer-control-in-share-data/gamer-father/odd/odd.component';
-import { EvenComponent } from './gamer-control-in-share-data/gamer-father/even/even.component';
+import { GamerFatherComponent } from './gamer-control-in-share-data/gamer-father.component';
+import { GamerControlComponent } from './gamer-control-in-share-data/gamer-control/gamer-control.component';
+import { OddComponent } from './gamer-control-in-share-data/odd/odd.component';
+import { EvenComponent } from './gamer-control-in-share-data/even/even.component';
 
 
 
