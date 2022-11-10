@@ -23,6 +23,7 @@ h2 {
 
 h3 {
   font-family: 'Josefin Sans', sans-serif;
+  padding: 1%;
   font-style: normal;
   font-size: 1.5rem;
   line-height: 20px;
@@ -38,7 +39,7 @@ h3 {
 }
 
 .col-xs-12.picture{
-  background: inherit;
+  background: transparent;
 
 }
 .col-xs-12.picture:hover {
