@@ -7,8 +7,9 @@
 
 .container2 {
 
-  background: linear-gradient(68.15deg,#36489b 16.62%, #6b93eb 85.61%);
-  height: max-content;
+  background: transparent;
+
+
 }
 .container2:hover {
   background: linear-gradient(31.85deg,#4914da42 85.61%, #367b9b 16.62% );
