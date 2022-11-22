@@ -4,7 +4,9 @@ html {
   margin: 0;
   padding: 0;
 }
-
+.container-outlet {
+  height: max-content;
+}
 
 h2 {
   display: grid;
