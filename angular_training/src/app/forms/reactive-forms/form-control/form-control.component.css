@@ -1,24 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Lexend+Peta&family=Roboto:ital,wght@1,300&family=Sansita+Swashed:wght@300&display=swap');
+.container {
+  background: linear-gradient(68.15deg, #1e037e 16.62%, #4e5374 85.61%);
 
+  width: 100%;
+  height: max-content;
+}
 body {
-    background: linear-gradient(68.15deg, #1e037e 16.62%, #4e5374 85.61%);
+   background: transparent;
     margin: 0;
     padding: 0;
-    width: 100%;
     font-family: 'Josefin Sans', sans-serif;
     font-style: normal;
     font-size: 1rem;
     line-height: 20px;
     color: #FFF2E7;
-    height: 100vh;
 
 }
 
 main {
 
-  width: 92%;
-  height: 80vh;
-  background-color: linear-gradient(-68.15deg, #3e9acf 16.62%, #0941aa 85.61%);
+  /* width: 92%;
+  height: 80vh; */
+  /* background-color: linear-gradient(-68.15deg, #3e9acf 16.62%, #0941aa 85.61%); */
   position: relative;
   box-shadow: 1em 1em 25px 0.5em #9b9baca9,
    inset 0 0 25px 0.25em #17171aa9,
@@ -26,19 +29,62 @@ main {
 }
 
 
-
-.container {
-    padding: 1%;
+button {
+  margin: 2% 0.5%;
 }
 
+h2 {
+  display: grid;
+  margin: 1%;
+  place-items: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-size: 2.5rem;
+  line-height: 20px;
+  color: #FFF2E7;
+  padding: 1.5%;
+}
+
+h3 {
+  font-family: 'Josefin Sans', sans-serif;
+  padding: 1%;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: 20px;
+  color: #FFF2E7;
+}
 
 .form {
-    margin-left: 25%;
-}
-.title {
-  margin-left: 10%;
+  display: grid;
+  place-items: center;
+  padding: 1%;
+  width: 90%;
+
 }
 
-label {
-    color: #FFF2E7;
+.col-xs-12.picture{
+  background: transparent;
+
 }
+.col-xs-12.picture:hover {
+  background: linear-gradient(68.15deg, #2e2eeb 16.62%, #268ea1 85.61%);
+
+}
+
+/* ------------------centralizando as imagens--------------------------- */
+.image {
+  display: grid;
+  place-items: center;
+  padding: 3%;
+}
+
+img {
+  border-radius: 8px;
+  border-color: rgba(146, 144, 144, 0.582);
+  border-style: solid ;
+  box-sizing: 2px;
+  width: 90%;
+  object-fit: fill;
+
+}
+

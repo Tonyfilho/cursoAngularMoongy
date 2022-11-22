@@ -1,41 +1,69 @@
-<body>
-  <main>
-    <section class="container">
-      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button type="button" class="btn btn-outline-primary" routerLink="/forms/reactive">Back</button>
-      </div>
-      <form class="form" (ngSubmit)="submitForms()">
-        <h2 class="title">form-control Basics</h2>
-        <label for="name" class="col-sm-2 col-form-label">Name</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" id="name" [formControl]="name">
-        </div>
-        <label for="address" class="col-sm-2 col-form-label">Address</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" id="address" [formControl]="address">
-        </div>
-        <label for="email" class="col-sm-2 col-form-label">Email</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" id="email" [formControl]="email">
-        </div>
-        <label for="ssn" class="col-sm-2 col-form-label">SSN</label>
-        <div class="col-sm-6">
-          <input type="number" class="form-control" id="ssn" [formControl]="ssn">
-        </div>
-        <div class="col-sm-6 d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: 1%;">
-          <button type="submit" class="btn btn-outline-primary mb-3">Send</button>
-        </div>
-        <!-- <ng-container *ngIf="!f.dirty; else hasdirty"></ng-container> -->
-        <ng-container *ngIf="!name.dirty; else hasdirty"></ng-container>
-        <ng-template #hasdirty>
-          <pre>
-                      {{ name?.value  | json }}
-                      {{ address?.value  | json }}
-                      {{email?.value  | json }}
-                      {{ ssn?.value  | json }}
-                  </pre>
-        </ng-template>
-      </form>
-    </section>
-  </main>
-</body>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <body>
+        <main>
+          <section class="container">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <button type="button" class="btn btn-outline-primary" routerLink="/forms/reactive">Back</button>
+            </div>
+            <form class="form" (ngSubmit)="submitForms()">
+              <h2 class="title">form-control Basics</h2>
+              <label for="name" class="col-sm-2 col-form-label">Name</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="name" [formControl]="name">
+              </div>
+              <label for="address" class="col-sm-2 col-form-label">Address</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="address" [formControl]="address">
+              </div>
+              <label for="email" class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="email" [formControl]="email">
+              </div>
+              <label for="ssn" class="col-sm-2 col-form-label">SSN</label>
+              <div class="col-sm-6">
+                <input type="number" class="form-control" id="ssn" [formControl]="ssn">
+              </div>
+              <div class="col-sm-6 d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: 1%;">
+                <button type="submit" class="btn btn-outline-primary mb-3">Send</button>
+              </div>
+              <!-- <ng-container *ngIf="!f.dirty; else hasdirty"></ng-container> -->
+              <ng-container *ngIf="!name.dirty; else hasdirty"></ng-container>
+              <ng-template #hasdirty>
+                <pre>
+                            {{ name?.value  | json }}
+                            {{ address?.value  | json }}
+                            {{email?.value  | json }}
+                            {{ ssn?.value  | json }}
+                        </pre>
+              </ng-template>
+            </form>
+          </section>
+        </main>
+      </body>
+
+
+    </div>
+  </div>
+
+  <div class="row ">
+    <div class="col-xs-12">
+      <h2> Explain about the Reactive  FormControl with Images </h2>
+    </div>
+  </div>
+  <div class="col-xs-12 picture">
+    <h3>FormControlComponent.HTML</h3>
+    <div class="image">
+      <img src="./../../../../assets/img-forms-reactive/01_ReactiveFormHTML.png" alt="Arquivo Html">
+    </div>
+  </div>
+  <div class="col-xs-12 picture">
+    <h3>FormControlComponent.TS</h3>
+    <div class="image">
+      <img src="./../../../../assets/img-forms-reactive/01_ReactiveFormTS.png" alt="Arquivo Html">
+    </div>
+  </div>
+
+
+</div>
