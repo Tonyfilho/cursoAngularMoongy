@@ -55,6 +55,7 @@ const routes: Routes = [
   { path: 'shareData', loadChildren: () => import('./share-data/share-data.module').then(module => module.ShareDataModule), ...canActivate(redirectToLogin) },
   { path: 'directive', loadChildren: () => import('./directive/directive.module').then(module => module.DirectiveModule), ...redirectToLogin },
   { path: 'routes', loadChildren: () => import('./routes/routes.module').then(module => module.RoutesModule), ...redirectToLogin },
+  { path: 'pipes', loadChildren: () => import('./pipes/pipes.module').then(module => module.PipesModule), ...redirectToLogin },
   { path: 'about', loadChildren: () => import('./about/about.module').then(module => module.AboutModule) },
   {
     path: '**', component: NotFoundComponent, ...redirectToLogin, data: { message: "Page not found Message from App-Routing" }
