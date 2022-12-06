@@ -11,6 +11,7 @@
   <div class="row">
     <div class="col-xs-12">
       <h2>Basic Pipes</h2>
+      <h3>What is Pipes? Pipes is feature in Angular allow you  transform output in your template.</h3>
     </div>
   </div>
 
@@ -21,12 +22,12 @@
           <span class="badge">
             {{ server.status }}
           </span>
-          <strong>{{ server.name }}</strong> | {{ server.instanceType }} | {{ server.started }}
+          <strong>{{ server.name }}</strong> | {{ server.instanceType | uppercase}} | {{ server.started }}
         </li>
       </ul>
     </div>
   </div>
-  
+
   <!-- ------------------IMGs Sections------------------------------ -->
 
   <div class="row ">
@@ -35,21 +36,21 @@
     </div>
   </div>
   <div class="col-xs-12 picture">
-    <h3>Html File</h3>
+    <h3>Template Pipe-Basic. Before to put UppercasePipe</h3>
     <div class="image">
-      <img src="./../../../assets/img-routes/02_route_basic_basicmoduleHTML.png" alt="Arquivo Html">
+      <img src="./../../../assets/img-pipes/01_basic_pipes_TEMPLATE_Before.png" alt="Arquivo Html">
     </div>
   </div>
   <div class="col-xs-12 picture">
-    <h3>Father.html</h3>
+    <h3>Pipe-Basic.html</h3>
     <div class="image">
-      <img src="./../../../assets/img-routes/02_route_basic_basicmodule.png" alt="Arquivo Html">
+      <img src="./../../../assets/img-pipes/01_basic_pipes_HTML.png" alt="Arquivo Html">
     </div>
   </div>
   <div class="col-xs-12 picture">
-    <h3>Routes Module</h3>
+    <h3>Template Pipe-Basic. After to put UppercasePipe</h3>
     <div class="image">
-      <img src="./../../../assets/img-routes/02_route_basic_appmodule.png" alt="Arquivo Html">
+      <img src="./../../../assets/img-pipes/01_basic_pipes_TEMPLATE_After.png" alt="Arquivo Html">
     </div>
   </div>
 </div>
