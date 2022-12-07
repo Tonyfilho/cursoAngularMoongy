@@ -3,7 +3,7 @@
 
 .container {
   background: linear-gradient(68.15deg, #8ff88b 16.62%, #576469 85.61%);
-  height: max-content;
+  height: fit-content;
 }
 
 button {
@@ -29,6 +29,15 @@ h3 {
   color: #FFF2E7;
 }
 
+h3>a{
+  color: #FFF2E7;
+  text-decoration: none;
+}
+
+h3>a:hover{
+  color: #f1a86b;
+
+}
 /* -----Css Imagens explain-------- */
 
 .row-container {

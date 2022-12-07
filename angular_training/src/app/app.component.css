@@ -6,6 +6,9 @@ header {
   display: flex;
   justify-content: space-between;
 }
+body {
+  height: max-content;
+}
 
 a {
   color: inherit;
