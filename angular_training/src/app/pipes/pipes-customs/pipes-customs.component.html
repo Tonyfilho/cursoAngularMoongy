@@ -1,0 +1,91 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="button" class="btn btn-outline-dark" routerLink="/pipes">Back Pipes</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Basic Pipes</h2>
+      <h3>What is Pipes? Pipes is feature in Angular allow you transform output in your template.</h3>
+    </div>
+  </div>
+
+  <div class="row row-container">
+    <div class="col-xs-12 col-sm-10  ">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let server of servers" [ngClass]="getStatusClasses(server)">
+          <span class="badge">
+            {{ server.status }}
+          </span>
+          <strong>{{ server.name }}</strong> | {{ server.instanceType | uppercase}} | {{ server.started | date:
+          'fullDate' | uppercase }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ------------------IMGs Sections------------------------------ -->
+
+  <div class="row ">
+    <div class="col-xs-12">
+      <h2>Basic Directive exemples with images</h2>
+    </div>
+  </div>
+  <div class="col-xs-12 picture">
+    <h3> <a href="https://angular.io/api/common/DatePipeConfig" target="_blank">UppercasePipe Pipe in Angular.io</a>
+    </h3>
+    <div class="image">
+      <img src="./../../../assets/img-pipes/01_basic_pipes_TEMPLATE_Before.png" alt="Arquivo Html">
+    </div>
+  </div>
+  <div class="col-xs-12 picture">
+    <h3>Pipe-Basic.html</h3>
+    <div class="image">
+      <img src="./../../../assets/img-pipes/01_basic_pipes_HTML.png" alt="Arquivo Html">
+    </div>
+  </div>
+  <div class="col-xs-12 picture">
+
+    <h3>Template Pipe-Basic. After to put UppercasePipe Pipe</h3>
+    <div class="image">
+      <img src="./../../../assets/img-pipes/01_basic_pipes_TEMPLATE_After.png" alt="Arquivo Html">
+    </div>
+  </div>
+  <div class="col-xs-12 picture">
+    <h3> <a href="https://angular.io/api/common/DATE_PIPE_DEFAULT_OPTIONS" target="_blank">Date Pipe in Angular.io</a>
+    </h3>
+    <div class="image">
+      <img src="./../../../assets/img-pipes/01_basic_pipesDate_TEMPLATE_Before.png" alt="Arquivo Html">
+    </div>
+  </div>
+  <div class="col-xs-12 picture">
+    <h3>Pipe-Basic.html</h3>
+    <div class="image">
+      <img src="./../../../assets/img-pipes/01_basic_pipesDate_HTML.png" alt="Arquivo Html">
+    </div>
+  </div>
+  <div class="col-xs-12 picture">
+    <h3>After to put Chain Pipes Date and Uppercase</h3>
+    <div class="image">
+      <img src="./../../../assets/img-pipes/01_basic_pipesDate_TEMPLATE_After.png" alt="Arquivo Html">
+    </div>
+  </div>
+  <div class="col-xs-12 picture">
+    <h3> <a href="https://angular.io/api/common/DATE_PIPE_DEFAULT_OPTIONS" target="_blank">Chain Pipes in Angular.io</a>
+    </h3>
+    <div class="image">
+      <img src="./../../../assets/img-pipes/01_basic_ChainPipes_TEMPLATE_After.png" alt="Arquivo Html">
+    </div>
+  </div>
+  <div class="col-xs-12 picture">
+    <h3>Pipe-Basic.html</h3>
+    <div class="image">
+      <img src="./../../../assets/img-pipes/01_basic_pipesChainPipes_HTML.png" alt="Arquivo Html">
+    </div>
+  </div>
+</div>

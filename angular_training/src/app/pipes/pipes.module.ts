@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PipesComponent } from './pipes.component';
 import { PipesBasicComponent } from './pipes-basic/pipes-basic.component';
+import { PipesCustomsComponent } from './pipes-customs/pipes-customs.component';
 
 
 
@@ -10,12 +11,14 @@ import { PipesBasicComponent } from './pipes-basic/pipes-basic.component';
   declarations: [
     PipesComponent,
     PipesBasicComponent,
+    PipesCustomsComponent,
   ],
   imports: [
     CommonModule,
     RouterModule.forChild([
       {path:'', component:PipesComponent },
-      {path:'pipes-basics', component:PipesBasicComponent }
+      {path:'pipes-basics', component:PipesBasicComponent },
+      {path:'pipes-customs', component:PipesCustomsComponent}
   ])
   ]
 })
