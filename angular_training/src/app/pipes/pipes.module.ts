@@ -1,3 +1,4 @@
+import { ShortenPipe } from './pipes-customs/shorten-pipes.component';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -12,6 +13,8 @@ import { PipesCustomsComponent } from './pipes-customs/pipes-customs.component';
     PipesComponent,
     PipesBasicComponent,
     PipesCustomsComponent,
+    ShortenPipe
+
   ],
   imports: [
     CommonModule,
