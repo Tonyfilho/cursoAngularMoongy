@@ -21,7 +21,7 @@
           <span class="badge">
             {{ server.status }}
           </span>
-          <strong>{{ server.name | customPipeShorten }}</strong> | {{ server.instanceType | uppercase}} | {{ server.started | date:
+          <strong>{{ server.name | customPipeShorten:8 }}</strong> | {{ server.instanceType | uppercase}} | {{ server.started | date:
           'fullDate' }}
         </li>
       </ul>
@@ -58,6 +58,12 @@
     <h3>Shorten Customs TS</h3>
     <div class="image">
       <img src="./../../../assets/img-pipes/02_Custom_Pipe_TS.png" alt="Arquivo Html">
+    </div>
+  </div>
+  <div class="col-xs-12 picture">
+    <h3>Pipe Module.TS</h3>
+    <div class="image">
+      <img src="./../../../assets/img-pipes/02_PipeModule.png" alt="Arquivo Html">
     </div>
   </div>
 

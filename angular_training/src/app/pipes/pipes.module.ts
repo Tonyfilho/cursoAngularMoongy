@@ -1,10 +1,11 @@
-import { ShortenPipe } from './pipes-customs/shorten-pipes.component';
+import { ShortenPipe } from './shorten-pipes.component';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PipesComponent } from './pipes.component';
 import { PipesBasicComponent } from './pipes-basic/pipes-basic.component';
 import { PipesCustomsComponent } from './pipes-customs/pipes-customs.component';
+import { PipesAdvancedComponent } from './pipes-advanced/pipes-advanced.component';
 
 
 
@@ -13,7 +14,8 @@ import { PipesCustomsComponent } from './pipes-customs/pipes-customs.component';
     PipesComponent,
     PipesBasicComponent,
     PipesCustomsComponent,
-    ShortenPipe
+    ShortenPipe,
+    PipesAdvancedComponent
 
   ],
   imports: [
@@ -22,6 +24,7 @@ import { PipesCustomsComponent } from './pipes-customs/pipes-customs.component';
       {path:'', component:PipesComponent },
       {path:'pipes-basics', component:PipesBasicComponent },
       {path:'pipes-customs', component:PipesCustomsComponent}
+      {path:'pipes-customs-advanced', component:PipesAdvancedComponent}
   ])
   ]
 })
