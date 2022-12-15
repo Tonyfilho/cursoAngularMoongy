@@ -10,7 +10,7 @@
 
   <div class="row">
     <div class="col-xs-12">
-      <h2>Customs Pipes</h2>
+      <h2>Customs Pipes With Reduce Size</h2>
     </div>
   </div>
 
@@ -21,7 +21,8 @@
           <span class="badge">
             {{ server.status }}
           </span>
-          <strong>{{ server.name | customPipeShorten:8 }}</strong> | {{ server.instanceType | uppercase}} | {{ server.started | date:
+          <strong>{{ server.name | customPipeShorten:8 }}</strong> | {{ server.instanceType | uppercase}} | {{
+          server.started | date:
           'fullDate' }}
         </li>
       </ul>
@@ -32,7 +33,7 @@
 
   <div class="row ">
     <div class="col-xs-12">
-      <h2>Customs Pipe exemples with images</h2>
+      <h2>Customs Pipe examples with images</h2>
     </div>
   </div>
   <div class="col-xs-12 picture">

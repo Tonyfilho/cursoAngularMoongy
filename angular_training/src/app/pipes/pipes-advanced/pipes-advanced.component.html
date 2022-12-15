@@ -1,1 +1,61 @@
-<p>pipes-advanced works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button type="button" class="btn btn-outline-dark" routerLink="/pipes">Back Pipes</button>
+            </div>
+        </div>
+    </div>
+    <h2 class="title">Filter By Pipe</h2>
+
+      <div class="row">
+        <div class="col-sm-4">
+          <label for="name" class="col-sm-2 col-form-label">Filter</label>
+          <!-- <div class="col-sm-4"> -->
+            <input type="text" class="form-control" id="name" >
+          <!-- </div> -->
+
+        </div>
+     
+    </div>
+    <div class="row row-container">
+        <div class="col-xs-12 col-sm-10  ">
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let server of servers" [ngClass]="getStatusClasses(server)">
+                    <span class="badge">
+                        {{ server.status }}
+                    </span>
+                    <strong>{{ server.name  }}</strong> | {{ server.instanceType | uppercase}} | {{
+                    server.started | date:
+                    'fullDate' }}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>Pipes Advanced With Filter</h2>
+        </div>
+        <div class="col-xs-12 picture">
+            <h3>Html File</h3>
+            <div class="image">
+                <img src="./../../../assets/img-routes/02_route_basic_basicmoduleHTML.png" alt="Arquivo Html">
+            </div>
+        </div>
+        <div class="col-xs-12 picture">
+            <h3>Father.html</h3>
+            <div class="image">
+                <img src="./../../../assets/img-routes/02_route_basic_basicmodule.png" alt="Arquivo Html">
+            </div>
+        </div>
+        <div class="col-xs-12 picture">
+            <h3>Routes Module</h3>
+            <div class="image">
+                <img src="./../../../assets/img-routes/02_route_basic_appmodule.png" alt="Arquivo Html">
+            </div>
+        </div>
+    </div>
+</div>

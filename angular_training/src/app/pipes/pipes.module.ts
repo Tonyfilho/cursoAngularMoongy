@@ -1,4 +1,5 @@
-import { ShortenPipe } from './shorten-pipes.component';
+import { ShortenPipe } from './pipe-shorten.pipe';
+import { PipeFilterPipe } from './pipe-filter.pipe';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -15,7 +16,8 @@ import { PipesAdvancedComponent } from './pipes-advanced/pipes-advanced.componen
     PipesBasicComponent,
     PipesCustomsComponent,
     ShortenPipe,
-    PipesAdvancedComponent
+    PipesAdvancedComponent,
+    PipeFilterPipe
 
   ],
   imports: [
@@ -23,7 +25,7 @@ import { PipesAdvancedComponent } from './pipes-advanced/pipes-advanced.componen
     RouterModule.forChild([
       {path:'', component:PipesComponent },
       {path:'pipes-basics', component:PipesBasicComponent },
-      {path:'pipes-customs', component:PipesCustomsComponent}
+      {path:'pipes-customs', component:PipesCustomsComponent},
       {path:'pipes-customs-advanced', component:PipesAdvancedComponent}
   ])
   ]
