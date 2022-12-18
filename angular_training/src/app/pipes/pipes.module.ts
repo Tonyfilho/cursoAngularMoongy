@@ -7,6 +7,7 @@ import { PipesComponent } from './pipes.component';
 import { PipesBasicComponent } from './pipes-basic/pipes-basic.component';
 import { PipesCustomsComponent } from './pipes-customs/pipes-customs.component';
 import { PipesAdvancedComponent } from './pipes-advanced/pipes-advanced.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -22,6 +23,7 @@ import { PipesAdvancedComponent } from './pipes-advanced/pipes-advanced.componen
   ],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild([
       {path:'', component:PipesComponent },
       {path:'pipes-basics', component:PipesBasicComponent },

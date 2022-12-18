@@ -14,7 +14,7 @@ interface IServers {
   styleUrls: ['./pipes-advanced.component.css']
 })
 export class PipesAdvancedComponent implements OnInit {
-
+  filterStatus:string = "";
   servers: IServers[] = [];
   constructor(private pipesService: PipesService) {
     this.servers = [...pipesService.serversDummy];

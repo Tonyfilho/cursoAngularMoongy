@@ -9,25 +9,33 @@
     <h2 class="title">Filter By Pipe</h2>
 
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col"></div>
+        <div class="col">
           <label for="name" class="col-sm-2 col-form-label">Filter</label>
           <!-- <div class="col-sm-4"> -->
-            <input type="text" class="form-control" id="name" >
-          <!-- </div> -->
+            <input type="text" class="form-control" id="filterStatus" [(ngModel)]="filterStatus" >
+            <!-- </div> -->
+            <!-- <div class="col-sm-6 d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: 1%;"> -->
+              <button type="submit" class="btn btn-outline-primary mb-3">Send</button>
+            <!-- </div> -->
 
         </div>
-     
+        <div class="col">
+        </div>
+        <div class="col"></div>
+
+
     </div>
     <div class="row row-container">
         <div class="col-xs-12 col-sm-10  ">
             <ul class="list-group">
-                <li class="list-group-item" *ngFor="let server of servers" [ngClass]="getStatusClasses(server)">
-                    <span class="badge">
-                        {{ server.status }}
-                    </span>
-                    <strong>{{ server.name  }}</strong> | {{ server.instanceType | uppercase}} | {{
+                <li class="list-group-item" *ngFor="let server of servers | pipeFilter:filterStatus:'status'" [ngClass]="getStatusClasses(server)">
+                  <strong>{{ server.name  }}</strong> | {{ server.instanceType | uppercase}} | {{
                     server.started | date:
                     'fullDate' }}
+                    <span class="badge justify-content-md-end">
+                        {{ server.status }}
+                    </span>
                 </li>
             </ul>
         </div>
