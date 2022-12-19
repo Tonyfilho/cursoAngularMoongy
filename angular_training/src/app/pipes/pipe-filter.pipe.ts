@@ -5,14 +5,14 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PipeFilterPipe implements PipeTransform {
 
-  transform(value: any, args:string, properName:string): unknown | any | undefined {
+  transform(value: any, dataToArray:string, properName:string): unknown | any | undefined {
    const localValue = [];
-    if (value.length === 0 || args === '') {
+    if (value.length === 0 || dataToArray === '') {
           return value;
     }
 
     for (const iterator of value) {
-        if (iterator[properName]  === args) {
+        if (iterator[properName]  === dataToArray) {
            localValue.push(iterator);
         }
     }
