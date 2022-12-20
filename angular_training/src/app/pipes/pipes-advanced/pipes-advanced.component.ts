@@ -18,13 +18,12 @@ export class PipesAdvancedComponent implements OnInit, OnDestroy {
   subscr$!: Subscription;
   filterStatus:string = "";
   localdata: IServers [] = [];
-  servers: Observable<IServers[]>;
+  
   constructor(private pipesService: PipesService) {
  this.subscr$ =   this.pipesService.getServesDummy().subscribe((data: IServers[]) => {
       this.localdata = [...data];
     })
-    // this.servers = [...pipesService.serversDummy];
-   this.servers =  this.pipesService.getServesDummy()
+
   }
 
   ngOnInit(): void {
