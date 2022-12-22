@@ -1,1 +1,72 @@
-<p>pipe-reverse works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="button" class="btn btn-outline-dark" routerLink="/pipes">Back Pipes</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Customs Pipes With Reverse String</h2>
+    </div>
+  </div>
+
+  <div class="row row-container">
+    <div class="col-xs-12 col-sm-10  ">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let server of servers" [ngClass]="getStatusClasses(server)">
+          <span class="badge">
+            {{ server.status }}
+          </span>
+          <strong>{{ server.name | customPipeShorten:8 }}</strong> | {{ server.instanceType | uppercase}} | {{
+          server.started | date:
+          'fullDate' }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ------------------IMGs Sections------------------------------ -->
+
+  <div class="row ">
+    <div class="col-xs-12">
+      <h2>Customs Pipe examples with images</h2>
+    </div>
+  </div>
+  <div class="col-xs-12 picture">
+
+    <div class="image">
+      <img src="./../../../assets/img-pipes/02_Custom_Pipe_TEMPLATE_Before.png" alt="Arquivo Html">
+    </div>
+  </div>
+  <div class="col-xs-12 picture">
+    <h3>Pipe-Customs.html</h3>
+    <div class="image">
+      <img src="./../../../assets/img-pipes/02_Custom_Pipe_TEMPLATE_HTML.png" alt="Arquivo Html">
+    </div>
+  </div>
+  <div class="col-xs-12 picture">
+
+    <h3>Template Pipe-Custom. After to put CustomPipeShorten </h3>
+    <div class="image">
+      <img src="./../../../assets/img-pipes/02_Custom_Pipe_TEMPLATE_After.png" alt="Arquivo Html">
+    </div>
+  </div>
+  <div class="col-xs-12 picture">
+    <h3>Shorten Customs TS</h3>
+    <div class="image">
+      <img src="./../../../assets/img-pipes/02_Custom_Pipe_TS.png" alt="Arquivo Html">
+    </div>
+  </div>
+  <div class="col-xs-12 picture">
+    <h3>Pipe Module.TS</h3>
+    <div class="image">
+      <img src="./../../../assets/img-pipes/02_PipeModule.png" alt="Arquivo Html">
+    </div>
+  </div>
+
+</div>
+

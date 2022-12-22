@@ -1,14 +1,10 @@
 import { Observable, Subscription } from 'rxjs';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { PipesService } from '../pipes.service';
+import { IServers } from 'src/app/_share/_models/iServices.model';
 
 
-interface IServers {
-  instanceType: string;
-  name: string;
-  status: string;
-  started: Date;
-}
+
 @Component({
   selector: 'app-pipes-advanced',
   templateUrl: './pipes-advanced.component.html',
@@ -18,7 +14,7 @@ export class PipesAdvancedComponent implements OnInit, OnDestroy {
   subscr$!: Subscription;
   filterStatus:string = "";
   localdata: IServers [] = [];
-  
+
   constructor(private pipesService: PipesService) {
  this.subscr$ =   this.pipesService.getServesDummy().subscribe((data: IServers[]) => {
       this.localdata = [...data];
