@@ -6,19 +6,26 @@
           </div>
       </div>
   </div>
-  <h2 class="title">Sort By with Pipe</h2>
+  <h2 class="title">Sort By with Pipe Before the PipeSortBy</h2>
 
-    <!-- <div class="row row-container">
-      <div class="col-xs-12 col-sm-10">
-        <label for="name" class="col-sm-8 col-form-label">Filter: Type stable or offline</label>
-          <input type="text" class="form-control" id="filterStatus" [(ngModel)]="filterStatus" >
-            <button type="submit" class="btn btn-outline-primary mb-3" (click)="newServer()" >new Server</button>
-      </div>
-  </div> -->
   <div class="row row-container">
       <div class="col-xs-12 col-sm-10  ">
           <ul class="list-group list-group-numbered">
-              <li class="list-group-item d-flex justify-content-between align-items-start" *ngFor="let server of localdata  |async " [ngClass]="getStatusClasses(server) ">
+              <li class="list-group-item d-flex justify-content-between align-items-start" *ngFor="let server of localdata " [ngClass]="getStatusClasses(server) ">
+                <strong>{{ server.name  }}</strong> | {{ server.instanceType | uppercase}} | {{
+                  server.started | date:
+                  'fullDate' }}
+                  <span class="badge text-bg-info rounded-pill"> {{ server.status }}</span>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <h2 class="title">Sort By with Pipe After the PipeSortBy</h2>
+  <h3 class="title">Now is a sort by alphabetical order look the property name.</h3>
+  <div class="row row-container">
+      <div class="col-xs-12 col-sm-10  ">
+          <ul class="list-group list-group-numbered">
+              <li class="list-group-item d-flex justify-content-between align-items-start" *ngFor="let server of localdata | pipeSortBy:'name'" [ngClass]="getStatusClasses(server) ">
                 <strong>{{ server.name  }}</strong> | {{ server.instanceType | uppercase}} | {{
                   server.started | date:
                   'fullDate' }}
@@ -30,38 +37,26 @@
 
   <div class="row">
       <div class="col-xs-12">
-          <h2>Pipes Advanced With Filter</h2>
+          <h2>Pipes Advanced With Sort By alphabetical order </h2>
       </div>
       <div class="col-xs-12 picture">
-          <h3>PipeAdvanced.compoment.Html File</h3>
+          <h3>PipeSortBy.compoment.Html File</h3>
           <div class="image">
-              <img src="./../../../assets/img-pipes/03_Filter_pipe_HTML.png" alt="Arquivo Html">
+              <img src="./../../../assets/img-pipes/05_Pipe_SortBy_FILE_HTML.png" alt="Arquivo Html">
           </div>
       </div>
       <div class="col-xs-12 picture">
-          <h3>PipeFilter.pipe.Ts</h3>
+          <h3>PipeSortBy.pipe.Ts</h3>
           <div class="image">
-              <img src="./../../../assets/img-pipes/03_Filter_pipe_pipe_TS.png" alt="Arquivo Html">
+              <img src="./../../../assets/img-pipes/05_Pipe_SortBy_PIPE_TS.png" alt="Arquivo Html">
           </div>
       </div>
       <div class="col-xs-12 picture">
-          <h3>Filter with word offline</h3>
+          <h3>PipeSortBy.compoment.Ts</h3>
           <div class="image">
-              <img src="./../../../assets/img-pipes/03_Filter_Pipe_Template_Status_offline.png" alt="Arquivo Html">
+              <img src="./../../../assets/img-pipes/05_Pipe_SortBy_FILE_TS.png" alt="Arquivo Html">
           </div>
       </div>
-      <div class="col-xs-12 picture">
-          <h3>Filter with word stable</h3>
-          <div class="image">
-              <img src="./../../../assets/img-pipes/03_Filter_Pipe_Template_Status_Stable.png" alt="Arquivo Html">
-          </div>
-      </div>
-      <div class="col-xs-12 picture">
-          <h3>PipeAdvanced.compoment.Ts</h3>
-          <div class="image">
-              <img src="./../../../assets/img-pipes/03_Filter_pipe_FILE_TS.png" alt="Arquivo Html">
-          </div>
-      </div>
-  </div>
+
 </div>
 

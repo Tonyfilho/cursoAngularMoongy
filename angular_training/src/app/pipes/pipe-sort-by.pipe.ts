@@ -18,8 +18,8 @@ export class PipeSortByPipe implements PipeTransform {
  * 2º Os Argumento são passado automaticamente pelo JS, não precisamos passar
  */
 
-  transform(value: any[], proName: string ): unknown  {
-    return value.sort((maior: string, menor: string) => {
+  transform(value: any[], proName: string ): unknown | any {
+    return value.sort((maior: any, menor: any) => {
       if(maior[proName] > menor[proName] )
       return 1;
       else {

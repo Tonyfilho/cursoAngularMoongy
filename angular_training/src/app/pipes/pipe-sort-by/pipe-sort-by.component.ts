@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
 import { IServers } from 'src/app/_share/_models/iServices.model';
 import { PipesService } from '../pipes.service';
 
@@ -8,14 +8,12 @@ import { PipesService } from '../pipes.service';
   templateUrl: './pipe-sort-by.component.html',
   styleUrls: ['./pipe-sort-by.component.css']
 })
-export class PipeSortByComponent implements OnInit {
-
-
-  filterStatus:string = "";
-  localdata: Observable<IServers[]>;
+export class PipeSortByComponent implements OnInit, OnDestroy {
+  subscr$!: Subscription;
+  localdata!: IServers[];
 
   constructor(private pipesService: PipesService) {
-     this.localdata = pipesService.getServesDummy();
+   pipesService.getServesDummy().subscribe((data: IServers[]) => this.localdata = [...data]);
 
   }
 
@@ -25,5 +23,10 @@ export class PipeSortByComponent implements OnInit {
   getStatusClasses(server: { instanceType: string; name: string; status: string; started: Date; }) {
     return this.pipesService.getStatusClasses(server)
   }
+
+  ngOnDestroy(): void {
+    this.subscr$.unsubscribe();
+  }
+
 
 }
