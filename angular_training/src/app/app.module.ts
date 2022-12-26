@@ -23,6 +23,7 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideStorage, getStorage}   from '@angular/fire/storage'
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { HttpRequestAndObservableComponent } from './http-resquest-and-observables/http-request-and-observable.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
     LoginComponent,
     SignUpComponent,
     MyProfileComponent,
+    HttpRequestAndObservableComponent,
 
   ],
   imports: [
