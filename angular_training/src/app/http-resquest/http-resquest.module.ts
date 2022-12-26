@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpRequestComponent } from './http-request.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    HttpRequestComponent,
+  ],
   imports: [
     CommonModule
   ]
