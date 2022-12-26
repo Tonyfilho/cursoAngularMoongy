@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription, Observable } from 'rxjs';
 import { PipesService } from '../pipes.service';
 import { IServers } from 'src/app/_share/_models/iServices.model';
@@ -8,9 +8,9 @@ import { IServers } from 'src/app/_share/_models/iServices.model';
   templateUrl: './pipe-reverse.component.html',
   styleUrls: ['./pipe-reverse.component.css']
 })
-export class PipeReverseComponent implements OnInit {
+export class PipeReverseComponent implements OnInit, OnDestroy {
 
-  filterStatus:string = "";
+
   localdata: Observable<IServers[]>;
 
   constructor(private pipesService: PipesService) {
@@ -26,5 +26,8 @@ export class PipeReverseComponent implements OnInit {
   }
 
 
+  ngOnDestroy(): void {
+    throw new Error('Method not implemented.');
+  }
 
 }
