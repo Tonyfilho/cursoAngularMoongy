@@ -1,1 +1,71 @@
-<p>post works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="button" class="btn btn-outline-dark" routerLink="/http-request">Back Http-Request</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <form class="form" [formGroup]="myFormGroup" (ngSubmit)="submitForms()">
+        <h2 class="title">form-group</h2>
+        <label for="name" class="col-sm-6 col-form-label">Name</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="name" formControlName="name">
+        </div>
+        <label for="address" class="col-sm-6 col-form-label">Address</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="address" formControlName="address">
+        </div>
+        <label for="email" class="col-sm-6 col-form-label">Email</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="email" formControlName="email">
+        </div>
+        <label for="ssn" class="col-sm-6 col-form-label">SSN</label>
+        <div class="col-sm-6">
+          <input type="number" class="form-control" id="ssn" formControlName="ssn">
+        </div>
+        <div class="passwordGroup" formGroupName="passwordGroup">
+          <label for="password" class="col-sm-6 col-form-label">Password</label>
+          <div class="col-sm-12">
+            <input type="password" class="form-control" id="password" formControlName="password">
+          </div>
+          <label for="pConfirm" class="col-sm-6 col-form-label">Confirm Password</label>
+          <div class="col-sm-12">
+            <input type="password" class="form-control" id="pConfirm" formControlName="pConfirm">
+          </div>
+        </div>
+        <div class="col-sm-6 d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: 1%;">
+          <button class="btn btn-outline-danger mb-3" (click)="myFormGroup.reset()">Reset Form</button>
+          <button type="submit" class="btn btn-outline-primary mb-3">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <h2 class="title">Http Request Using Realtime FireBase</h2>
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Pipes Advanced With Sort By alphabetical order </h2>
+    </div>
+    <div class="col-xs-12 picture">
+      <h3>PipeSortBy.compoment.Html File</h3>
+      <div class="image">
+        <img src="./../../../assets/img-pipes/05_Pipe_SortBy_FILE_HTML.png" alt="Arquivo Html">
+      </div>
+    </div>
+    <div class="col-xs-12 picture">
+      <h3>PipeSortBy.pipe.Ts</h3>
+      <div class="image">
+        <img src="./../../../assets/img-pipes/05_Pipe_SortBy_PIPE_TS.png" alt="Arquivo Html">
+      </div>
+    </div>
+    <div class="col-xs-12 picture">
+      <h3>PipeSortBy.compoment.Ts</h3>
+      <div class="image">
+        <img src="./../../../assets/img-pipes/05_Pipe_SortBy_FILE_TS.png" alt="Arquivo Html">
+      </div>
+    </div>
+
+  </div>
+</div>
