@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Lexend+Peta&family=Roboto:ital,wght@1,300&family=Sansita+Swashed:wght@300&display=swap');
+
+.bg-light {
+  background-color: transparent !important;
+}
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: max-content;
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 20px;
+
+
+}
+a {
+  color: #FFF2E7 !important;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f0b686 !important;
+}
+
+.navbar {
+  background: linear-gradient(68.15deg, #2e2e30 16.62%, #040013 85.61%);
+}
+
+main {
+  background: linear-gradient(68.15deg, #0e0e3f 16.62%, #f122f1 85.61%);
+  height: max-content;
+  box-shadow: 0 0 25px 0.5em #9b9baca9,
+    inset 0 0 25px 0.25em #17171aa9,
+    inset 0 0 5em 0px #7a52e78f;
+}
+
+/*  ********removendo margens e padding das Rows************* */
+.row>* {
+  margin: 0 !important;
+  padding: 0 !important;
+
+}
+div.row {
+  --bs-gutter-x: 0 !important;
+  --bs-gutter-y: 0 !important;
+}
+
+
+
+
+h1 {
+  padding: 1% 0%;
+}
+
+button {
+  margin: 2% 0.5%;
+}
+
+h2 {
+
+  display: grid;
+  place-items: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-size: 2.5rem;
+  line-height: 20px;
+  color: #FFF2E7;
+  padding: 1%;
+}
+h3 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: 20px;
+  color: #FFF2E7;
+  padding: 1%;
+}
+
+/* ------------------centralizando as imagens--------------------------- */
+.image {
+  height: fit-content;
+  display: grid;
+  place-items: center;
+  padding: 3%;
+}
+
+img {
+  border-radius: 8px;
+  border-color: rgba(146, 144, 144, 0.582);
+  border-style: solid ;
+  box-sizing: 2px;
+  width: 65%;
+  object-fit: fill;
+
+}

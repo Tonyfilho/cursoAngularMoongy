@@ -19,7 +19,7 @@ export class PipeSortByPipe implements PipeTransform {
  */
 
   transform(value: any[], proName: string ): unknown | any {
-    return value.sort((maior: any, menor: any) => {
+    return value?.sort((maior: any, menor: any) => {
       if(maior[proName] > menor[proName] )
       return 1;
       else {

@@ -8,7 +8,7 @@ import { IServers } from 'src/app/_share/_models/iServices.model';
   templateUrl: './pipe-reverse.component.html',
   styleUrls: ['./pipe-reverse.component.css']
 })
-export class PipeReverseComponent implements OnInit, OnDestroy {
+export class PipeReverseComponent implements OnInit{
 
 
   localdata: Observable<IServers[]>;
@@ -26,8 +26,6 @@ export class PipeReverseComponent implements OnInit, OnDestroy {
   }
 
 
-  ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
-  }
+
 
 }

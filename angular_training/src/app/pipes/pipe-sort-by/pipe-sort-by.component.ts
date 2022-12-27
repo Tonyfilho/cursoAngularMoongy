@@ -9,7 +9,7 @@ import { PipesService } from '../pipes.service';
   styleUrls: ['./pipe-sort-by.component.css']
 })
 export class PipeSortByComponent implements OnInit, OnDestroy {
-  subscr$!: Subscription;
+  subscr$?: Subscription;
   localdata!: IServers[];
 
   constructor(private pipesService: PipesService) {
@@ -25,7 +25,7 @@ export class PipeSortByComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.subscr$.unsubscribe();
+    this.subscr$?.unsubscribe();
   }
 
 
