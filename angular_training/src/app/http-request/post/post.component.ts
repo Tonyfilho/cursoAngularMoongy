@@ -1,3 +1,4 @@
+import { HttpResquestService } from './../http-resquest.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
@@ -10,16 +11,12 @@ export class PostComponent implements OnInit {
 
   myFormGroup!: FormGroup;
 
-  constructor() {
+  constructor(private httpServer: HttpResquestService) {
     this.myFormGroup = new FormGroup({
       name: new FormControl(''),
       address: new FormControl(''),
       email: new FormControl(''),
       ssn: new FormControl(''),
-      passwordGroup: new FormGroup({
-        password: new FormControl(''),
-        pConfirm: new FormControl(''),
-      })
     });
   }
 
@@ -28,12 +25,15 @@ export class PostComponent implements OnInit {
 
 
   submitForms() {
-    const { name, address, email,ssn , passwordGroup : { password, pConfirm} } = this.myFormGroup.value;
-    console.group();
-    console.log('Destruiction',name, address, email, ssn , password, pConfirm);
-    console.groupEnd();
     console.log("MyFormGroup: ", this.myFormGroup);
+    this.httpServer.savePost(this.myFormGroup.value).subscribe({
+      next: (data) => console.log("sucess: ",data),
+      error: (e) => console.error("error",e),
+      complete: () => console.info('complete and and Observable')
+    })
 
 
   }
 }
+
+
