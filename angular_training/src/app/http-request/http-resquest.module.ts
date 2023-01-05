@@ -22,6 +22,7 @@ import { GetComponent } from './get/get.component';
     RouterModule.forChild([
       {path:'', component: HttpRequestComponent},
       {path:'post', component: PostComponent},
+      {path:'getAll', component: GetComponent},
     ])
   ]
 })

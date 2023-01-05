@@ -1,11 +1,12 @@
-import { HttpResquestService } from './../http-resquest.service';
+
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { HttpResquestService } from 'src/app/http-request/http-resquest.service';
 
 @Component({
   selector: 'app-post',
-  templateUrl: './post.component.html',
-  styleUrls: ['./post.component.css']
+  templateUrl: '/src/app/http-request/post/post.component.html',
+  styleUrls: ['/src/app/http-request/post/post.component.css']
 })
 export class PostComponent implements OnInit {
 
@@ -29,7 +30,7 @@ export class PostComponent implements OnInit {
     this.httpServer.savePost(this.myFormGroup.value).subscribe({
       next: (data) => console.log("sucess: ",data),
       error: (e) => console.error("error",e),
-      complete: () =>{ console.info('complete and and Observable'), this.myFormGroup.reset()}
+      complete: () => console.info('complete and and Observable')
     })
 
 
