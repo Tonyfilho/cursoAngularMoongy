@@ -8,9 +8,36 @@
   </div>
   <div class="row ">
     <div class="col-xs-12">
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">An item</li>
-      </ul>
+
+      <table class="table  table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Full Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+            <th scope="col">Tax number</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let item of dataIservice | async as list, let i = index">
+          <tr *ngIf="list.length >= 1; else isNotData">
+            <th scope="row">{{list[i]['id']}}</th>
+            <td>{{list[i]['name'] }}</td>
+            <td>{{ list[i]['email'] }}</td>
+            <td>{{ list[i].address }}</td>
+            <td>{{ list[i].ssn }}</td>
+          </tr>
+          <ng-template #isNotData>
+            <tr>
+              <th scope="row">#</th>
+              <td>Not Have data</td>
+              <td>Not Have data</td>
+              <td>Not Have data</td>
+              <td>Not Have data</td>
+            </tr>
+          </ng-template>
+        </tbody>
+      </table>
     </div>
   </div>
   <h2 class="title">Http Request Using Realtime FireBase GET</h2>

@@ -1,22 +1,30 @@
-import { map } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { IdataFireBase } from '../_share/_models/Idata-Firebase';
 
+const FIREBASEREALTIME: string = `https://angular-training-by-tony-filho-default-rtdb.europe-west1.firebasedatabase.app/AngularTraning.json`;
 @Injectable({
   providedIn: 'root'
 })
 export class HttpResquestService {
+
 
   constructor(private http: HttpClient) {
     this.featchPost();
   }
 
 
-  savePost(localForm: FormGroup) {
-    return this.http.post<{ name: string }>(`https://angular-training-by-tony-filho-default-rtdb.europe-west1.firebasedatabase.app/posts.json`, localForm);
+  savePost(localForm: IdataFireBase) {
+    return this.http.post<{ name: string }>(FIREBASEREALTIME, localForm)
+    .pipe(map(data => {return {...localForm, id: data.name}}));
   }
+
+  // savePostUpdateId(localForm: IdataFireBase) {
+  //   return this.http.post<{ name: string }>(FIREBASEREALTIME, '')
+  //   .pipe(map(data =>  this.http.put(FIREBASEREALTIME +`.${data.name}`, {...localForm, id: data.name}) ));
+  // }
 
 
   /**Usaremos para pegar o ID que o Firebase cria automaticamente,e salvaremos em um array,
@@ -27,8 +35,8 @@ export class HttpResquestService {
    * NOTE: Tipar o Data from firebase com
    *
     */
-  featchPost() {
-    return this.http.get<{ [key: string]: IdataFireBase }>(`https://angular-training-by-tony-filho-default-rtdb.europe-west1.firebasedatabase.app/posts.json`)
+  featchPost(): Observable<IdataFireBase[]> {
+    return this.http.get<{ [key: string]: IdataFireBase }>(FIREBASEREALTIME)
       // .pipe(
       //   map((responseData: any) => {
       //     const localData: IdataFireBase[] = [];
@@ -41,6 +49,7 @@ export class HttpResquestService {
       //     return localData;
       //   }
       //   ))
+      /**Metodo TIPADO sem o ANY */
       .pipe(
         map((responseData) => {
           const localData: IdataFireBase[] = [];
@@ -56,6 +65,14 @@ export class HttpResquestService {
   }
 
   getAll() {
-    return this.http.get(`https://angular-training-by-tony-filho-default-rtdb.europe-west1.firebasedatabase.app/posts.json`);
+    return this.http.get(FIREBASEREALTIME);
+  }
+
+  deleteItem(item: string) {
+    this.http.delete(FIREBASEREALTIME +`/${item}`);
   }
 }
+function suitchMap(arg0: (data: any) => { id: any; name: string; email: string; ssn: number; address: string; }): import("rxjs").OperatorFunction<{ name: string; }, unknown> {
+  throw new Error('Function not implemented.');
+}
+
