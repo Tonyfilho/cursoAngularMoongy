@@ -1,8 +1,8 @@
 import { Observable, map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { FormGroup } from '@angular/forms';
 import { IdataFireBase } from '../_share/_models/Idata-Firebase';
+import { Database, set, ref, update, onValue, remove } from '@angular/fire/database';
 
 const FIREBASEREALTIME: string = `https://angular-training-by-tony-filho-default-rtdb.europe-west1.firebasedatabase.app/AngularTraning.json`;
 @Injectable({
@@ -11,7 +11,7 @@ const FIREBASEREALTIME: string = `https://angular-training-by-tony-filho-default
 export class HttpResquestService {
 
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private database: Database) {
     this.featchPost();
   }
 
@@ -21,10 +21,21 @@ export class HttpResquestService {
     .pipe(map(data => {return {...localForm, id: data.name}}));
   }
 
-  // savePostUpdateId(localForm: IdataFireBase) {
-  //   return this.http.post<{ name: string }>(FIREBASEREALTIME, '')
-  //   .pipe(map(data =>  this.http.put(FIREBASEREALTIME +`.${data.name}`, {...localForm, id: data.name}) ));
-  // }
+  /**Aqui misturamos HTTP Request com Usando POST e Operadores RXJS e o Metodo UPDATE
+   * Pois desta forma consigo usar o Exemplo do verbos HTTP e salvar um ID ja no usuario.
+   * 1º faz um Post vazio
+   * 2º recupera o ID com Pipe e Map
+   * 3ª usa metodo UPDATE e REF do Realtime Firebase.
+   * 4º Uso o SPREAD para disolver o Objeto e depois adciono o Objeto do ID, tem q ser nesta ordem
+   * senão o Spread sobre escreve o ID.
+   * OBS: o MEtodo PUT do HTTP não funcionar com FIREBASE
+   */
+  savePostUpdateId(localForm: IdataFireBase) {
+    return this.http.post<{ name: string }>(FIREBASEREALTIME, {})
+    .pipe(map(data =>  update(ref(this.database,`AngularTraning/` + `${data.name}`), {
+       ...localForm, id: data.name
+    }) ));
+  }
 
 
   /**Usaremos para pegar o ID que o Firebase cria automaticamente,e salvaremos em um array,
@@ -71,8 +82,5 @@ export class HttpResquestService {
   deleteItem(item: string) {
     this.http.delete(FIREBASEREALTIME +`/${item}`);
   }
-}
-function suitchMap(arg0: (data: any) => { id: any; name: string; email: string; ssn: number; address: string; }): import("rxjs").OperatorFunction<{ name: string; }, unknown> {
-  throw new Error('Function not implemented.');
 }
 

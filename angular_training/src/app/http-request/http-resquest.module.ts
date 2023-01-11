@@ -6,6 +6,7 @@ import { HttpRequestComponent } from './http-request.component';
 import { PostComponent } from './post/post.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { GetComponent } from './get/get.component';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
 
 
 
@@ -19,6 +20,7 @@ import { GetComponent } from './get/get.component';
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
+    provideDatabase(() => getDatabase()),
     RouterModule.forChild([
       {path:'', component: HttpRequestComponent},
       {path:'post', component: PostComponent},

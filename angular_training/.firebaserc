@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-training-by-tony-filho": {
+      "hosting": {
+        "bookList": [
+          "angular-training-by-tony-filho"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-training-by-tony-filho"
+  }
+}

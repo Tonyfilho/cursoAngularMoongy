@@ -25,8 +25,8 @@ export class PostComponent implements OnInit {
 
 
   submitForms() {
-    console.log("MyFormGroup: ", this.myFormGroup);
-    this.httpServer.savePost(this.myFormGroup.value).subscribe({
+    console.log("MyFormGroup: ", this.myFormGroup.value);
+    this.httpServer.savePostUpdateId(this.myFormGroup.value).subscribe({
       next: (data) => console.log("sucess: ",data),
       error: (e) => console.error("error",e),
       complete: () =>{ console.info('complete and and Observable'), this.myFormGroup.reset()}

@@ -98,6 +98,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "bookList:build:production",
+            "firebaseProject": "angular-training-by-tony-filho",
+            "firebaseHostingSite": "angular-training-by-tony-filho"
+          }
         }
       }
     }
