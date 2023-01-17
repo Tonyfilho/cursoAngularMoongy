@@ -32,9 +32,9 @@ export class HttpResquestService {
    */
   savePostUpdateId(localForm: IdataFireBase) {
     return this.http.post<{ name: string }>(FIREBASEREALTIME, {})
-    .pipe(map(data =>  update(ref(this.database,`AngularTraning/` + `${data.name}`), {
+    .pipe(map(data => { update(ref(this.database,`AngularTraning/` + `${data.name}`), {
        ...localForm, id: data.name
-    }) ));
+    }); return console.log("Exemple Data in Realtime DataBase: ",{ ...localForm, id: data.name}) }));
   }
 
 
