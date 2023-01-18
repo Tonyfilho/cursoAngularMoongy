@@ -56,7 +56,7 @@ const routes: Routes = [
   { path: 'directive', loadChildren: () => import('./directive/directive.module').then(module => module.DirectiveModule), ...redirectToLogin },
   { path: 'routes', loadChildren: () => import('./routes/routes.module').then(module => module.RoutesModule), ...redirectToLogin },
   { path: 'pipes', loadChildren: () => import('./pipes/pipes.module').then(module => module.PipesModule), ...redirectToLogin },
-  { path: 'http-request', loadChildren: () => import('./http-request/http-resquest.module').then(module => module.HttpResquestModule), ...redirectToLogin },
+  { path: 'http-request', loadChildren: () => import('./http-request/http-class.module').then(module => module.HttpResquestModule), ...redirectToLogin },
   { path: 'about', loadChildren: () => import('./about/about.module').then(module => module.AboutModule) },
   {
     path: '**', component: NotFoundComponent, ...redirectToLogin, data: { message: "Page not found Message from App-Routing" }

@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-http-request',
-  templateUrl: './http-request.component.html',
-  styleUrls: ['./http-request.component.css']
+  templateUrl: './http-class.component.html',
+  styleUrls: ['./http-class.component.css']
 })
-export class HttpRequestComponent implements OnInit {
+export class HttpClassComponent implements OnInit {
 
   constructor() { }
 

@@ -1,4 +1,4 @@
-import { Observable, map } from 'rxjs';
+import { Observable, map, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IdataFireBase } from '../_share/_models/Idata-Firebase';
@@ -8,7 +8,7 @@ const FIREBASEREALTIME: string = `https://angular-training-by-tony-filho-default
 @Injectable({
   providedIn: 'root'
 })
-export class HttpResquestService {
+export class HttpClassService {
 
 
   constructor(private http: HttpClient, private database: Database) {
@@ -75,8 +75,19 @@ export class HttpResquestService {
         ))
   }
 
-  getAll() {
-    return this.http.get(FIREBASEREALTIME);
+  getAll():Observable<{}> {
+    const data: Object[] = [];
+   // this.http.get(FIREBASEREALTIME).forEach(item => data.push(item));
+   this.http.get(FIREBASEREALTIME).pipe(map((res => {
+    for (const key in res) {
+      if (Object.prototype.hasOwnProperty.call(res, key)) {
+       data.push({...res[key]});
+
+      }
+    }
+   })))
+
+    return of(data);
   }
 
   deleteItem(item: string) {

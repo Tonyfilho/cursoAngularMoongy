@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { HttpResquestService } from 'src/app/http-request/http-resquest.service';
+import { HttpClassService } from 'src/app/http-request/http-class.service';
 
 @Component({
   selector: 'app-post',
@@ -12,7 +12,7 @@ export class PostComponent implements OnInit {
 
   myFormGroup!: FormGroup;
 
-  constructor(private httpServer: HttpResquestService) {
+  constructor(private httpServer: HttpClassService) {
     this.myFormGroup = new FormGroup({
       name: new FormControl(''),
       address: new FormControl(''),
