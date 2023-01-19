@@ -1,7 +1,7 @@
-import { Observable, map, of } from 'rxjs';
+import { IdataFireBase } from './../_share/_models/Idata-Firebase';
+import { Observable, from, map, of, pipe, switchMap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IdataFireBase } from '../_share/_models/Idata-Firebase';
 import { Database, set, ref, update, onValue, remove } from '@angular/fire/database';
 
 const FIREBASEREALTIME: string = `https://angular-training-by-tony-filho-default-rtdb.europe-west1.firebasedatabase.app/AngularTraning.json`;
@@ -18,7 +18,7 @@ export class HttpClassService {
 
   savePost(localForm: IdataFireBase) {
     return this.http.post<{ name: string }>(FIREBASEREALTIME, localForm)
-    .pipe(map(data => {return {...localForm, id: data.name}}));
+      .pipe(map(data => { return { ...localForm, id: data.name } }));
   }
 
   /**Aqui misturamos HTTP Request com Usando POST e Operadores RXJS e o Metodo UPDATE
@@ -32,9 +32,11 @@ export class HttpClassService {
    */
   savePostUpdateId(localForm: IdataFireBase) {
     return this.http.post<{ name: string }>(FIREBASEREALTIME, {})
-    .pipe(map(data => { update(ref(this.database,`AngularTraning/` + `${data.name}`), {
-       ...localForm, id: data.name
-    }); return console.log("Exemple Data in Realtime DataBase: ",{ ...localForm, id: data.name}) }));
+      .pipe(map(data => {
+        update(ref(this.database, `AngularTraning/` + `${data.name}`), {
+          ...localForm, id: data.name
+        }); return console.log("Exemple Data in Realtime DataBase: ", { ...localForm, id: data.name })
+      }));
   }
 
 
@@ -75,23 +77,38 @@ export class HttpClassService {
         ))
   }
 
-  getAll():Observable<{}> {
-    const data: Object[] = [];
-   // this.http.get(FIREBASEREALTIME).forEach(item => data.push(item));
-   this.http.get(FIREBASEREALTIME).pipe(map((res => {
-    for (const key in res) {
-      if (Object.prototype.hasOwnProperty.call(res, key)) {
-       data.push({...res[key]});
-
+  getAll() {
+    const data: IdataFireBase[] = [];
+    //this.http.get(FIREBASEREALTIME).forEach(item => data.push(item));
+    return this.http.get(FIREBASEREALTIME).pipe(map((localData: any) => {
+      console.log("server: ", localData);
+      for (const iterator in localData) {
+        if (localData.hasOwnProperty(iterator)) {
+            data.push({...localData[iterator]})
+        }
       }
-    }
-   })))
+      return data;
 
-    return of(data);
+    })
+
+    )
+    // return this.http.get(FIREBASEREALTIME).pipe(map((res: any) => {
+    //   for (const item in res) {
+    //     if (Object.prototype.hasOwnProperty(res)) {
+    //       console.log("server", res[item]);
+    //       data.push({ ...res[item] });
+
+    //     }
+    //   }
+    //   return data;
+    // }
+    // ))
+
+    // }
   }
 
   deleteItem(item: string) {
-    this.http.delete(FIREBASEREALTIME +`/${item}`);
+    this.http.delete(FIREBASEREALTIME + `/${item}`);
   }
 }
 
