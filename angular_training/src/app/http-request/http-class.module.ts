@@ -7,6 +7,7 @@ import { PostComponent } from './post/post.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { GetComponent } from './get/get.component';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { DeleteComponent } from './delete/delete.component';
 
 
 
@@ -15,6 +16,7 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
     HttpClassComponent,
     PostComponent,
     GetComponent,
+    DeleteComponent,
   ],
   imports: [
     CommonModule,
@@ -25,6 +27,7 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
       {path:'', component: HttpClassComponent},
       {path:'post', component: PostComponent},
       {path:'getAll', component: GetComponent},
+      {path:'delete', component: DeleteComponent},
     ])
   ]
 })

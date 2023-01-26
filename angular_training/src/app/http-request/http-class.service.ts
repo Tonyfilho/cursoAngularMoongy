@@ -77,34 +77,18 @@ export class HttpClassService {
         ))
   }
 
-  getAll() {
+  getAll(): Observable<IdataFireBase[]> {
     const data: IdataFireBase[] = [];
-    //this.http.get(FIREBASEREALTIME).forEach(item => data.push(item));
     return this.http.get(FIREBASEREALTIME).pipe(map((localData: any) => {
-      console.log("server: ", localData);
-      for (const iterator in localData) {
-        if (localData.hasOwnProperty(iterator)) {
-            data.push({...localData[iterator]})
+      console.log("Before the Map and FOR IN transformation : ", localData);
+      for (const key in localData) {
+        if (localData.hasOwnProperty(key)) {
+            data.push({...localData[key]})
         }
       }
       return data;
-
     })
-
     )
-    // return this.http.get(FIREBASEREALTIME).pipe(map((res: any) => {
-    //   for (const item in res) {
-    //     if (Object.prototype.hasOwnProperty(res)) {
-    //       console.log("server", res[item]);
-    //       data.push({ ...res[item] });
-
-    //     }
-    //   }
-    //   return data;
-    // }
-    // ))
-
-    // }
   }
 
   deleteItem(item: string) {
