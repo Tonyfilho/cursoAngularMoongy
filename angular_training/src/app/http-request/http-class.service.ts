@@ -1,7 +1,7 @@
 import { IdataFireBase } from './../_share/_models/Idata-Firebase';
-import { Observable, from, map, of, pipe, switchMap } from 'rxjs';
+import { Observable, map, } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, } from '@angular/core';
 import { Database, set, ref, update, onValue, remove } from '@angular/fire/database';
 
 const FIREBASEREALTIME: string = `https://angular-training-by-tony-filho-default-rtdb.europe-west1.firebasedatabase.app/AngularTraning.json`;
@@ -10,9 +10,25 @@ const FIREBASEREALTIME: string = `https://angular-training-by-tony-filho-default
 })
 export class HttpClassService {
 
+    hiddenButton = { hiddenButton: true,  nameTittle: "",
+    pathImage1!: "",
+    pathImage2!: "",
+    pathImage3!: ""} ;
+
+    serverEventEmiterHideButton: EventEmitter<{
+    hiddenButton: boolean;
+    nameTittle: string;
+    pathImage1: string;
+    pathImage2: string;
+    pathImage3: string;
+  }> = new EventEmitter();
 
   constructor(private http: HttpClient, private database: Database) {
     this.featchPost();
+    this.serverEventEmiterHideButton.emit({
+    
+
+    });
   }
 
 
@@ -83,7 +99,7 @@ export class HttpClassService {
       console.log("Before the Map and FOR IN transformation : ", localData);
       for (const key in localData) {
         if (localData.hasOwnProperty(key)) {
-            data.push({...localData[key]})
+          data.push({ ...localData[key] })
         }
       }
       return data;
@@ -94,5 +110,10 @@ export class HttpClassService {
   deleteItem(item: string) {
     this.http.delete(FIREBASEREALTIME + `/${item}`);
   }
+
+
+
+
+
 }
 

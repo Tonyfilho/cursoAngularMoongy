@@ -5,6 +5,7 @@
         <button type="button" class="btn btn-outline-dark" routerLink="/http-request">Back Http-Request</button>
       </div>
     </div>
+
   </div>
   <div class="row ">
     <div class="col-xs-12">
@@ -17,6 +18,7 @@
             <th scope="col">Email</th>
             <th scope="col">Address</th>
             <th scope="col">Tax number</th>
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody *ngFor="let item of dataIservice | async as list, let i = index">
@@ -26,6 +28,7 @@
             <td>{{ list[i]['email'] }}</td>
             <td>{{ list[i].address }}</td>
             <td>{{ list[i].ssn }}</td>
+            <td *ngIf="hiddenButton"> <button type="button" class="btn btn-outline-danger" (click)="deleteInFirebase()">Delete</button></td>
           </tr>
           <ng-template #isNotData>
             <tr>
@@ -38,6 +41,12 @@
           </ng-template>
         </tbody>
       </table>
+
+      <!-- <div class="col-xs-12" *ngIf="hiddenButton">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end" >
+          <button type="button" class="btn btn-outline-danger" (click)="deleteInFirebase()">Delete</button>
+        </div>
+      </div> -->
     </div>
   </div>
   <h2 class="title">GET Http Request. </h2>
