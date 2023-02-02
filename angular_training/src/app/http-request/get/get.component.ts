@@ -4,6 +4,7 @@ import { HttpClassService } from './../http-class.service';
 import { Observable, Subscription } from 'rxjs';
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { IdataFireBase } from 'src/app/_share/_models/Idata-Firebase';
+import { HiddenButton } from 'src/app/_share/_models/hidden-button';
 
 
 @Component({
@@ -12,25 +13,41 @@ import { IdataFireBase } from 'src/app/_share/_models/Idata-Firebase';
   styleUrls: ['./get.component.css']
 })
 export class GetComponent implements OnInit , OnDestroy{
-  hiddenButton: boolean = false;
-  nameTittle: string = "";
-  pathImage1: string = "";
-  pathImage2: string = "";
-  pathImage3: string = "";
+  hiddenButton: Partial<HiddenButton>;
+  hiddenButton2: boolean = false;
+  nameTittle1: string = "GET Http Request. ";
+  nameTittle2: string = "GET Http Request. ";
+  namePath1: string = "HttpClassService.service.ts";
+  namePath2: string = "Get Method in the Services before and After Data transformation.";
+  namePath3: string = "Get.compoment.Ts";
+  namePath4: string = "Get.compoment.HTML";
+  pathImage1: string = "./../../../assets/img-http-request/00_HttpResquestModuleTS_GET_Method.png" ;
+  pathImage2: string = "./../../../assets/img-http-request/02_GET_Console_LOG.png";
+  pathImage3: string = "./../../../assets/img-http-request/02_GET_Compoment_TS.png";
+  pathImage4: string = "./../../../assets/img-http-request/02_GET_Compoment_HTML.png" ;
   subs!: Subscription;
   dataIservice!: Observable<IdataFireBase[]>;
   constructor(private httpClassService: HttpClassService) {
     this.dataIservice = httpClassService.getAll();
+
+    this.hiddenButton = {
+      hiddenButton: false, nameTittle1: "GET Http Request. ",
+      nameTittle2: "GET Http Request. ", namePath1: "HttpClassService.service.ts",
+      namePath2:"Get Method in the Services before and After Data transformation.", namePath3: "Get.compoment.Ts",
+      namePath4:"Get.compoment.HTML", pathImage1:"./../../../assets/img-http-request/00_HttpResquestModuleTS_GET_Method.png",
+      pathImage2:  "./../../../assets/img-http-request/02_GET_Console_LOG.png", pathImage3: "./../../../assets/img-http-request/02_GET_Compoment_TS.png",
+      pathImage4: "./../../../assets/img-http-request/02_GET_Compoment_HTML.png"
+    }
+
+
   }
 
   ngOnInit(): void {
    this.subs = this.httpClassService.getAll().subscribe(data => console.log("After Map and FOR IN Transformation : ", data));
    this.httpClassService.serverEventEmiterHideButton.subscribe(data =>
     {
-      this.hiddenButton = data['hiddenButton'],
-      this.pathImage1 = data['pathImage1'],
-      this.pathImage2 = data['pathImage2'],
-      this.pathImage3 = data['pathImage3']
+
+      this.hiddenButton = {...data}
 
     })
 

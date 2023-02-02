@@ -1,3 +1,4 @@
+import { HiddenButton } from './../_share/_models/hidden-button';
 import { IdataFireBase } from './../_share/_models/Idata-Firebase';
 import { Observable, map, } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -10,25 +11,15 @@ const FIREBASEREALTIME: string = `https://angular-training-by-tony-filho-default
 })
 export class HttpClassService {
 
-    hiddenButton = { hiddenButton: true,  nameTittle: "",
-    pathImage1!: "",
-    pathImage2!: "",
-    pathImage3!: ""} ;
 
-    serverEventEmiterHideButton: EventEmitter<{
-    hiddenButton: boolean;
-    nameTittle: string;
-    pathImage1: string;
-    pathImage2: string;
-    pathImage3: string;
-  }> = new EventEmitter();
+  serverEventEmiterHideButton: EventEmitter<Partial<HiddenButton>> = new EventEmitter();
 
   constructor(private http: HttpClient, private database: Database) {
     this.featchPost();
-    this.serverEventEmiterHideButton.emit({
-    
 
-    });
+     /*******************Foi posto este SteInterval para evitar que EventEmitter retorne UNDEFINE */
+     setInterval(() =>  this.serverEventEmiterHideButton.emit());
+
   }
 
 
