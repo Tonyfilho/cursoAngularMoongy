@@ -26,7 +26,9 @@ export class DeleteComponent implements OnInit {
     this.httpClassService.serverEventEmiterHideButton.next(this.hiddenButton);
   }
 
-  deleteInFirebase() {}
+  deleteInFirebase(item: string) {
+    this.httpClassService.deleteItem(item);
+  }
 
 
   ngOnInit(): void {

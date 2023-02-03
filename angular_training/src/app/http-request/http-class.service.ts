@@ -99,6 +99,7 @@ export class HttpClassService {
   }
 
   deleteItem(item: string) {
+    console.log("dentro do service delete");
     this.http.delete(FIREBASEREALTIME + `/${item}`);
   }
 

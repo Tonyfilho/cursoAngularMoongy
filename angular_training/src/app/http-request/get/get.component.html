@@ -28,7 +28,7 @@
             <td>{{ list[i]['email'] }}</td>
             <td>{{ list[i].address }}</td>
             <td>{{ list[i].ssn }}</td>
-            <td > <button type="button" class="btn btn-outline-danger" (click)="deleteInFirebase()" [disabled]="hiddenButton?.['hiddenButton']">Delete</button></td>
+            <td > <button type="button" class="btn btn-outline-danger" (click)="deleteInFirebase(list[i]['id'])" [disabled]="hiddenButton?.['hiddenButton']">Delete</button></td>
           </tr>
           <ng-template #isNotData>
             <tr>

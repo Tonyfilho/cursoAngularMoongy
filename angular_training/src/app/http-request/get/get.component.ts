@@ -39,7 +39,7 @@ export class GetComponent implements OnInit , OnDestroy{
     })
 
   }
-  deleteInFirebase() {}
+  deleteInFirebase(item: string) {}
 
   ngOnDestroy(): void {
    this.subs.unsubscribe;
