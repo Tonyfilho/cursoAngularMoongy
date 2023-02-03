@@ -17,8 +17,8 @@ export class HttpClassService {
   constructor(private http: HttpClient, private database: Database) {
     this.featchPost();
 
-     /*******************Foi posto este SteInterval para evitar que EventEmitter retorne UNDEFINE */
-     setInterval(() =>  this.serverEventEmiterHideButton.emit());
+    /*******************Foi posto este SteInterval para evitar que EventEmitter retorne UNDEFINE */
+   //setInterval(() =>  this.serverEventEmiterHideButton.emit( ));
 
   }
 

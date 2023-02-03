@@ -28,7 +28,7 @@
             <td>{{ list[i]['email'] }}</td>
             <td>{{ list[i].address }}</td>
             <td>{{ list[i].ssn }}</td>
-            <td *ngIf="hiddenButton"> <button type="button" class="btn btn-outline-danger" (click)="deleteInFirebase()">Delete</button></td>
+            <td > <button type="button" class="btn btn-outline-danger" (click)="deleteInFirebase()" [disabled]="hiddenButton?.['hiddenButton']">Delete</button></td>
           </tr>
           <ng-template #isNotData>
             <tr>
@@ -41,41 +41,35 @@
           </ng-template>
         </tbody>
       </table>
-
-      <!-- <div class="col-xs-12" *ngIf="hiddenButton">
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end" >
-          <button type="button" class="btn btn-outline-danger" (click)="deleteInFirebase()">Delete</button>
-        </div>
-      </div> -->
     </div>
   </div>
-  <h2 class="title">{{ hiddenButton.nameTittle1 }}</h2>
+  <h2 class="title">{{ hiddenButton?.nameTittle1 }}</h2>
   <div class="row">
     <div class="col-xs-12">
       <h2>Note:Http Request Return a Observable.</h2>
     </div>
     <div class="col-xs-12 picture">
-      <h3>{{ hiddenButton.namePath1 }}</h3>
+      <h3>{{ hiddenButton?.['namePath1'] }}</h3>
       <div class="image">
-        <img src= {{ hiddenButton.pathImage1 }} alt="Arquivo Html">
+        <img src= "{{ hiddenButton?.pathImage1 }}" alt="Arquivo Html">
       </div>
     </div>
     <div class="col-xs-12 picture">
-      <h3>{{ hiddenButton.namePath2 }} </h3>
+      <h3>{{ hiddenButton?.['namePath2'] }} </h3>
       <div class="image">
-        <img src= {{ hiddenButton.pathImage2 }} alt="Arquivo Html">
+        <img src= "{{ hiddenButton?.['pathImage2'] }}" alt="Arquivo Html">
       </div>
     </div>
     <div class="col-xs-12 picture">
-      <h3>{{ hiddenButton.namePath3 }}</h3>
+      <h3>{{ hiddenButton?.['namePath3'] }}</h3>
       <div class="image">
-        <img src= {{ hiddenButton.pathImage3 }} alt="Arquivo Html">
+        <img src= "{{ hiddenButton?.['pathImage3'] }}" alt="Arquivo Html">
       </div>
     </div>
     <div class="col-xs-12 picture">
-      <h3> {{ hiddenButton.namePath4 }}</h3>
+      <h3> {{ hiddenButton?.['namePath4'] }}</h3>
       <div class="image">
-        <img src= {{   hiddenButton.pathImage4 }}alt="Arquivo Html">
+        <img src= "{{  hiddenButton?.['pathImage4'] }}"alt="Arquivo Html">
       </div>
     </div>
 
