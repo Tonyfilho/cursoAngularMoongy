@@ -100,7 +100,8 @@ export class HttpClassService {
 
   deleteItem(item: string) {
     console.log("dentro do service delete");
-    this.http.delete(FIREBASEREALTIME + `/${item}`);
+   remove(ref(this.database, `AngularTraning/` + `${item}`) );
+ // this.http.delete(FIREBASEREALTIME + `/${item}`);
   }
 
 

@@ -15,6 +15,7 @@ import { GamerFatherComponent } from './gamer-control-in-share-data/gamer-father
 import { GamerControlComponent } from './gamer-control-in-share-data/gamer-control/gamer-control.component';
 import { OddComponent } from './gamer-control-in-share-data/odd/odd.component';
 import { EvenComponent } from './gamer-control-in-share-data/even/even.component';
+import { ShareByServiceComponent } from './share-by-service/share-by-service.component';
 
 
 
@@ -34,7 +35,8 @@ import { EvenComponent } from './gamer-control-in-share-data/even/even.component
     OddComponent,
     EvenComponent,
     GamerControlComponent,
-    GamerFatherComponent
+    GamerFatherComponent,
+    ShareByServiceComponent
 
   ],
   imports: [
@@ -46,7 +48,8 @@ import { EvenComponent } from './gamer-control-in-share-data/even/even.component
       { path: 'viewChild', component: ViewChildComponent },
       { path: 'ngContent', component: NgContentLocalComponent },
       { path: 'localReference', component: LocalReferencesComponent },
-      { path: 'shareData/gamerControl' ,component:GamerFatherComponent}
+      { path: 'shareData/gamerControl' ,component:GamerFatherComponent},
+      { path: 'shareData/byService' ,component:ShareByServiceComponent}
     ])
   ]
 })
