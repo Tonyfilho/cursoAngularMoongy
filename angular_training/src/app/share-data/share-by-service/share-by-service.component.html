@@ -1,26 +1,48 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <app-cockpit (cockPitElementsRed)="onAddServer($event)" (cockPitElementsBlue)="onAddBlueprint($event)" ></app-cockpit>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="button" class="btn btn-outline-dark" routerLink="/shareData">Back ShareData</button>
+      </div>
     </div>
   </div>
-  <hr>
   <div class="row">
     <div class="col-xs-12">
-      <app-server-element *ngFor="let item of serverElements" [serverElement]="item"> </app-server-element>
+      <h2>Share Data by Service, for me this is a best exemples</h2>
     </div>
   </div>
-</div>
-<div class="container">
-  <div class="row">
+  <div class="row row-container">
     <div class="col-xs-12">
-      <app-cockpit (cockPitElementsRed)="onAddServer($event)" (cockPitElementsBlue)="onAddBlueprint($event)" ></app-cockpit>
+      <h2>Share Data exemples with images</h2>
     </div>
   </div>
-  <hr>
   <div class="row">
     <div class="col-xs-12">
-      <app-server-element *ngFor="let item of serverElements" [serverElement]="item"> </app-server-element>
+      <h2 style=>The Blue List Item.</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 picture">
+      <h3>Directive-better.directive.ts</h3>
+      <div class="image">
+        <img src="./../../../assets/img-directives/02_DirectiveBetterTS.png" alt="Arquivo Html">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 picture">
+      <h3>Advance-directive.component.html file.</h3>
+      <div class="image">
+        <img src="./../../../assets/img-directives/02_DirectiveBetterHTML.png" alt="Arquivo Html">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 picture">
+      <h3>Template File.</h3>
+      <div class="image">
+        <img src="./../../../assets/img-directives/02_DirectiveBetterTEMPLATE.png" alt="Arquivo Html">
+      </div>
     </div>
   </div>
 </div>

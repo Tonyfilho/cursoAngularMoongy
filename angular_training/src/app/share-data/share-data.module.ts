@@ -49,7 +49,7 @@ import { ShareByServiceComponent } from './share-by-service/share-by-service.com
       { path: 'ngContent', component: NgContentLocalComponent },
       { path: 'localReference', component: LocalReferencesComponent },
       { path: 'shareData/gamerControl' ,component:GamerFatherComponent},
-      { path: 'shareData/byService' ,component:ShareByServiceComponent}
+      { path: 'byService' ,component:ShareByServiceComponent}
     ])
   ]
 })
