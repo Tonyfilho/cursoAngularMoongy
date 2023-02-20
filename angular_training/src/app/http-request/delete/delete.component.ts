@@ -9,9 +9,9 @@ import { HttpClassService } from '../http-class.service';
   templateUrl: '../get/get.component.html', /**The same  file.html and file.css  to  get.Ts and Delete.Ts */
   styleUrls: ['../get/get.component.css'] /**The same  file.html and file.css  to  get.Ts and Delete.Ts */
 })
-export class DeleteComponent implements OnInit, OnDestroy {
+export class DeleteComponent implements OnInit {
   hiddenButton:Partial<HiddenButton>;
-  subsc!: Subscription;
+
 
   dataIservice!: Observable<IdataFireBase[]>;
   constructor(private httpClassService: HttpClassService) {
@@ -35,7 +35,5 @@ export class DeleteComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
   }
 
-  ngOnDestroy(): void {
-
-  }
+ 
 }
