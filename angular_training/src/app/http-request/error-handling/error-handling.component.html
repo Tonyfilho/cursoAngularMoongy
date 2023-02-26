@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="button" class="btn btn-outline-dark" routerLink="/http-request">Back Http-Request</button>
+      </div>
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-xs-12">
+      <form class="form row-container" [formGroup]="myFormGroup" (ngSubmit)="submitForms()">
+        <h2 class="title">form-group</h2>
+        <label for="name" class="col-sm-6 col-form-label">Name</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="name" formControlName="name">
+        </div>
+        <label for="address" class="col-sm-6 col-form-label">Address</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="address" formControlName="address">
+        </div>
+        <label for="email" class="col-sm-6 col-form-label">Email</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="email" formControlName="email">
+        </div>
+        <label for="ssn" class="col-sm-6 col-form-label">SSN</label>
+        <div class="col-sm-6">
+          <input type="number" class="form-control" id="ssn" formControlName="ssn">
+        </div>
+
+        <div class="col-sm-6 d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: 1%;">
+          <button class="btn btn-outline-danger mb-3" (click)="myFormGroup.reset()">Reset Form</button>
+          <button type="submit" class="btn btn-outline-primary mb-3">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <h2 class="title">Http Request Using Realtime FireBase</h2>
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>You will use Realtime DataBase and create a Error Handling. </h2>
+    </div>
+    <div class="col-xs-12 picture">
+      <h3>Postcompoment.html File</h3>
+      <div class="image">
+        <img src="./../../../assets/img-http-request/01_POST_Console_LOG.png" alt="Arquivo Html">
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

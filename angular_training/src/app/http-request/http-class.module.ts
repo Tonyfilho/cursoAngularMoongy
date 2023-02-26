@@ -8,6 +8,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { GetComponent } from './get/get.component';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { DeleteComponent } from './delete/delete.component';
+import { ErrorHandlingComponent } from './error-handling/error-handling.component';
+
 
 
 
@@ -17,6 +19,7 @@ import { DeleteComponent } from './delete/delete.component';
     PostComponent,
     GetComponent,
     DeleteComponent,
+    ErrorHandlingComponent,
   ],
   imports: [
     CommonModule,
@@ -28,6 +31,7 @@ import { DeleteComponent } from './delete/delete.component';
       {path:'post', component: PostComponent},
       {path:'getAll', component: GetComponent},
       {path:'delete', component: DeleteComponent},
+      {path:'error', component: ErrorHandlingComponent},
     ])
   ]
 })
