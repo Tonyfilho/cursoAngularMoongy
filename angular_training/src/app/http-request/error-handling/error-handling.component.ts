@@ -1,18 +1,22 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup} from '@angular/forms';
 import { HttpClassService } from '../http-class.service';
+
+
 
 @Component({
   selector: 'app-error-hangling',
   templateUrl: './error-handling.component.html',
-  // styleUrls: ['./error-handling.component.css']
    styleUrls: ['../post/post.component.css']
 })
-export class ErrorHandlingComponent implements OnInit, AfterViewInit {
+export class ErrorHandlingComponent implements OnInit, OnDestroy{
 
   myFormGroup!: FormGroup;
-  @ViewChild('exampleModal') myModal!: ElementRef;
-  @ViewChild('exampleModalLabel') myInput!: ElementRef;
+  displayStyle = "none";
+  localError!: {status: string, statusText: string, name: string};
+  subs!: Subscription;
+
 
   constructor(private httpServer: HttpClassService) {
     this.myFormGroup = new FormGroup({
@@ -21,37 +25,35 @@ export class ErrorHandlingComponent implements OnInit, AfterViewInit {
       email: new FormControl(''),
       ssn: new FormControl(''),
     });
+    this.localError = {status : '', statusText:'', name: ''}
+
   }
 
   ngOnInit(): void {
-  //  console.log( this.modalOpen.nativeElement.class('testes'));
-
+     this.httpServer.localError.next('criando um Error no EndPoint FIREBASEREALTIME ');
   }
 
 
   submitForms() {
     console.log("MyFormGroup: ", this.myFormGroup.value);
-    this.httpServer.savePostUpdateId(this.myFormGroup.value + 1).subscribe({
-      next: (data) => { window.alert("Save with Sucess"),  this.openModal()},
-      error: (e) => {window.alert("Ops something wrong.."), console.error("error",e), this.openModal()},
+    this.httpServer.savePost(this.myFormGroup.value).subscribe({
+      next: (data) => { window.alert("Save with Sucess")},
+      error: (e) => { console.error("error",e), this.openModal(), this.localError =  {...e} },
       complete: () =>{ console.info('complete and and Observable'), this.myFormGroup.reset()}
     })
   }
 
+
   openModal() {
-    this.myModal?.nativeElement('shown.bs.modal', () => {
-      this.myInput?.nativeElement.focus()
-    })
-
+    this.displayStyle = "block";
+  }
+  closeModal() {
+    this.displayStyle = "none";
+    this.myFormGroup.reset()
+  }
+  ngOnDestroy(): void {
+   this.subs.unsubscribe();
   }
 
-  ngAfterViewInit() {
-    console.log("exampleModal");
-  //   setTimeout(() => {
-  //     console.log(this.modalOpen.nativeElement.class('testes'));
-  //   }, 2000);
-
-
-  }
 
 }

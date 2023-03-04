@@ -1,7 +1,7 @@
 import { HiddenButton } from './../_share/_models/hidden-button';
 import { IdataFireBase } from './../_share/_models/Idata-Firebase';
-import { Observable, map, } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject, Observable, map, } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EventEmitter, Injectable, } from '@angular/core';
 import { Database, set, ref, update, onValue, remove } from '@angular/fire/database';
 
@@ -10,6 +10,8 @@ const FIREBASEREALTIME: string = `https://angular-training-by-tony-filho-default
   providedIn: 'root'
 })
 export class HttpClassService {
+
+  localError: BehaviorSubject<string> = new BehaviorSubject(''); //serve para criar um error quando clicar no endpoint /http-request/error
 
 
   serverEventEmiterHideButton: EventEmitter<Partial<HiddenButton>> = new EventEmitter();
@@ -24,7 +26,8 @@ export class HttpClassService {
 
 
   savePost(localForm: IdataFireBase) {
-    return this.http.post<{ name: string }>(FIREBASEREALTIME, localForm)
+    return this.http.post<{ name: string }>(this.localError.value + FIREBASEREALTIME, localForm ,
+      {headers: new HttpHeaders({ 'Custom-Header' : 'This is my private Headers', error: 'This is my private errors'})})
       .pipe(map(data => { return { ...localForm, id: data.name } }));
   }
 
@@ -38,7 +41,7 @@ export class HttpClassService {
    * OBS: o MEtodo PUT do HTTP não funcionar com FIREBASE
    */
   savePostUpdateId(localForm: IdataFireBase) {
-    return this.http.post<{ name: string }>(FIREBASEREALTIME, {})
+    return this.http.post<{ name: string }>(FIREBASEREALTIME, {headers: new HttpHeaders({ name: 'This is my private Headers', error: 'This is my private errors'})})
       .pipe(map(data => {
         update(ref(this.database, `AngularTraning/` + `${data.name}`), {
           ...localForm, id: data.name
@@ -56,7 +59,7 @@ export class HttpClassService {
    *
     */
   featchPost(): Observable<IdataFireBase[]> {
-    return this.http.get<{ [key: string]: IdataFireBase }>(FIREBASEREALTIME)
+    return this.http.get<{ [key: string]: IdataFireBase }>(FIREBASEREALTIME, {headers: new HttpHeaders({ name: 'This is my private Headers', error: 'This is my private errors'})})
       // .pipe(
       //   map((responseData: any) => {
       //     const localData: IdataFireBase[] = [];
