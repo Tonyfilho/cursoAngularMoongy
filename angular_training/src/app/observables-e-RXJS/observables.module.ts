@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ObservablesERXJSComponent } from './observables-e-rxjs.component';
@@ -12,7 +13,10 @@ import { ObservablesERXJSComponent } from './observables-e-rxjs.component';
     ObservablesERXJSComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forChild([
+      {path:'', component: ObservablesERXJSComponent}
+    ])
   ]
 })
 export class ObservablesModule { }

@@ -57,6 +57,7 @@ const routes: Routes = [
   { path: 'routes', loadChildren: () => import('./routes/routes.module').then(module => module.RoutesModule), ...redirectToLogin },
   { path: 'pipes', loadChildren: () => import('./pipes/pipes.module').then(module => module.PipesModule), ...redirectToLogin },
   { path: 'http-request', loadChildren: () => import('./http-request/http-class.module').then(module => module.HttpResquestModule), ...redirectToLogin },
+  { path: 'rxjs-observables', loadChildren: () => import('./observables-e-RXJS/observables.module').then(module => module.ObservablesModule), ...redirectToLogin },
   { path: 'about', loadChildren: () => import('./about/about.module').then(module => module.AboutModule) },
   {
     path: '**', component: NotFoundComponent, ...redirectToLogin, data: { message: "Page not found Message from App-Routing" }
