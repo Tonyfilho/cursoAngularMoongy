@@ -81,3 +81,8 @@ img {
   position: absolute; /*para movimentarmos ele*/
   box-shadow: #0a0202 1px 1px 55px; /*realçando*/
 }
+
+.parent {
+  margin-bottom: 70vh;
+  background-color: transparent;
+}

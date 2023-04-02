@@ -1,3 +1,4 @@
+import { AuthInterceptorService } from './observables-e-RXJS/auth-interceptor.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -9,7 +10,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AboutComponent } from './about/about.component';
 import { ForecastComponent } from './forecast/forecast.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ForecastingCityComponent } from './forecast/forecasting-city/forecasting-city.component';
 import { FormsComponent } from './forms/forms.component';
 import { LoginComponent } from './login/login/login.component';
@@ -19,11 +20,11 @@ import { HotToastModule } from '@ngneat/hot-toast';
 import { MyProfileComponent } from './login/my-profile/my-profile/my-profile.component';
 
 /***********************Importações do FireBase ********************/
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { provideAuth,getAuth } from '@angular/fire/auth';
-import { provideStorage, getStorage}   from '@angular/fire/storage'
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideStorage, getStorage } from '@angular/fire/storage'
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
-import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { provideDatabase, getDatabase } from '@angular/fire/database';
 
 
 
@@ -59,10 +60,15 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
 
     /**Após a instação do NgNeat/tost, fui acrecentado aqui nos imports  */
     HotToastModule.forRoot(),
-      provideDatabase(() => getDatabase())
+    provideDatabase(() => getDatabase())
 
   ],
-  providers: [],
+  /**
+   * 1º provide: HTTP_INTERCEPTORS será um token injetado pelo Angular,
+   * 2º useClass:  A classe do serviço onde o Interceptor irá atuar.
+   * 3º multi: Abilita a possiblidade de ter mais de 1 interceptor
+   */
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
