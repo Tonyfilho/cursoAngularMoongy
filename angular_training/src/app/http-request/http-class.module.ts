@@ -9,6 +9,7 @@ import { GetComponent } from './get/get.component';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { DeleteComponent } from './delete/delete.component';
 import { ErrorHandlingComponent } from './error-handling/error-handling.component';
+import { ErroHandlingHttpComponent } from './erro-handling-http/erro-handling-http.component';
 
 
 
@@ -20,6 +21,7 @@ import { ErrorHandlingComponent } from './error-handling/error-handling.componen
     GetComponent,
     DeleteComponent,
     ErrorHandlingComponent,
+    ErroHandlingHttpComponent,
   ],
   imports: [
     CommonModule,
@@ -32,6 +34,7 @@ import { ErrorHandlingComponent } from './error-handling/error-handling.componen
       {path:'getAll', component: GetComponent},
       {path:'delete', component: DeleteComponent},
       {path:'error', component: ErrorHandlingComponent},
+      {path:'error-http-request', component: ErroHandlingHttpComponent},
     ])
   ]
 })

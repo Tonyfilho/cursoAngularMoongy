@@ -53,15 +53,11 @@
 
 
 <!-- Modal -->
-  <div
-  class="modal"
-  tabindex="-1"
-  role="dialog"
-  [ngStyle]="{'display':displayStyle}">
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Ops... Some thing Wrong:  {{ this.localError.status}}</h4>
+        <h4 class="modal-title">Ops... Some thing Wrong: {{ this.localError.status}}</h4>
       </div>
       <div class="modal-body">
         <p>{{ this.localError.statusText}}</p>
@@ -69,12 +65,10 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger"
-                (click)="closeModal()" >
+        <button type="button" class="btn btn-danger" (click)="closeModal()">
           Close
         </button>
       </div>
     </div>
   </div>
 </div>
-
