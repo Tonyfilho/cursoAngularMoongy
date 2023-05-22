@@ -1,9 +1,9 @@
 import { MyProfileComponent } from './login/my-profile/my-profile/my-profile.component';
-import { ForecastComponent } from './forecast/forecast.component';
+import { ForecastComponent } from './apis/forecast/forecast.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BookComponent } from './books/book/book.component';
-import { BooksComponent } from './books/books/books.component';
+import { BookComponent } from './apis/books/book/book.component';
+import { BooksComponent } from './apis/books/books/books.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login/login.component';
@@ -15,6 +15,7 @@ import { SignUpComponent } from './login/sign-up/sign-up.component';
  * rotas quando usamos o firebase, Criando PIPES locais
  */
 import { canActivate, redirectLoggedInTo, redirectUnauthorizedTo } from '@angular/fire/auth-guard'
+import { ApisComponent } from './apis/apis.component';
 /**Usuario não Autorizado ou não logado Redireciona para Login*/
 const redirectToLogin = () => redirectUnauthorizedTo(['/login']);
 /**Usuario Autorizado ou  logado, Redireciona para Paginas */
@@ -27,15 +28,7 @@ const routes: Routes = [
   /**Nos Outros LINKS, caso receba um FALSE por falta de autorização, o FireBase Authorization,
    *  a pagina será redirecinada para login*/
   { path: 'home', component: HomeComponent, ...canActivate(redirectToLogin) },
-  { path: 'books', component: BooksComponent, ...canActivate(redirectToLogin) },
-  {
-    path: 'books/:id',
-    component: BookComponent, ...canActivate(redirectToLogin)
-  },
-  {
-    path: 'forecasting',
-    component: ForecastComponent, ...canActivate(redirectToLogin)
-  },
+ 
   /**Nos Link LOGIN e LOGIN/SIGN-UP, caso receba um TRUE do FireBase Authorization, a pagina será redirecinada para home*/
   {
     path: 'login',
@@ -49,6 +42,10 @@ const routes: Routes = [
   {
     path: 'myProfile',
     component: MyProfileComponent
+  },
+  {
+    path: 'apis', loadChildren: () => import('./apis/apis.module').then(module => module.ApisModule), ...canActivate(redirectToLogin)
+
   },
   /*************************************************Carregando LAZYLOAD ROUTE*/
   { path: 'forms', loadChildren: () => import('./forms/forms-local.module').then(module => module.FormsLocalModule), ...canActivate(redirectToLogin) },

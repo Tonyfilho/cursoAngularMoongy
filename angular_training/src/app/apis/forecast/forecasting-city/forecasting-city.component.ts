@@ -1,5 +1,5 @@
-import { SecundBlock } from '../../_share/_models/secundBlock.model';
-import { FirstBlock } from '../../_share/_models/fistBlock.model';
+import { SecundBlock } from '../../../_share/_models/secundBlock.model';
+import { FirstBlock } from '../../../_share/_models/fistBlock.model';
 import { AfterContentInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ForecastingService } from '../forecasting.service';
 

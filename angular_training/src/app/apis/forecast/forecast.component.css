@@ -7,15 +7,15 @@
     background-size: cover;
 }
 
-.modal-content {    
-    background-image: url('../../assets/background/espaco.jpg') !important; 
+.modal-content {
+    background-image: url('./../../../assets/background/espaco.jpg') !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
-    background-size: cover !important;    
+    background-size: cover !important;
     font-size: larger;
     text-align: center !important;
-    
-    
+
+
 }
 
 .modal-header {

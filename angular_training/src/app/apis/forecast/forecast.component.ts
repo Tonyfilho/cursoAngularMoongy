@@ -10,7 +10,7 @@ import { debounceTime, switchMap, EMPTY } from 'rxjs';
 })
 export class ForecastComponent implements  AfterViewInit, OnDestroy {
   searchCity: FormControl = new FormControl();
-  forecastWithSwitch = [{}];  
+  forecastWithSwitch = [{}];
   wheatherCity = '';
   modalDisplayStyle = 'none';
   openOrCloseModal = 'none';
@@ -31,7 +31,7 @@ export class ForecastComponent implements  AfterViewInit, OnDestroy {
   /** com SwitchMap, basta ter 1 subscrição para as 2 streams, o Switchmap pega os valores q estão na STREAM do FormControl
    * e manda para dentro da Stream de TEMPO q temos no Serviço ForecastingService, fazendo somente uam Subscrição.
    */
-  ngAfterViewInit(): void {   
+  ngAfterViewInit(): void {
     this.searchCity.valueChanges
       .pipe(
         debounceTime(1000),
@@ -46,7 +46,7 @@ export class ForecastComponent implements  AfterViewInit, OnDestroy {
       .subscribe({
         next: (sucess) => {
           if (sucess.weather) {
-            this.forecastWithSwitch = sucess;            
+            this.forecastWithSwitch = sucess;
             return this.changeImageFromApi(sucess.weather[0]['main']);
           } else {
             return this.openModalError();
@@ -59,14 +59,14 @@ export class ForecastComponent implements  AfterViewInit, OnDestroy {
       });
   }
   /**
-   * 
-   * @param event Received data from child compoment and change local Variable 
+   *
+   * @param event Received data from child compoment and change local Variable
    */
   closeModalCasting(event:any){
     this.modalDisplayStyle = event.openOrCloseModal;
     this.isOpenforecasting = event.isOpen;
     this.closeModalError();
-    
+
 
   }
 
@@ -94,27 +94,27 @@ export class ForecastComponent implements  AfterViewInit, OnDestroy {
   changeImageFromApi(image: string) {
     switch (image) {
       case 'Clear':
-        this.image = './assets/background/nuvens_sol.jpg';       
+        this.image = './assets/background/nuvens_sol.jpg';
         break;
       case 'Clouds':
-        this.image = './assets/background/nuvens_scattered.jpg';      
+        this.image = './assets/background/nuvens_scattered.jpg';
         break;
       case 'Fog':
-        this.image = './assets/background/nuvens_fog.jpg';        
+        this.image = './assets/background/nuvens_fog.jpg';
         break;
       case 'Rain':
-        this.image = './assets/background/nuvens_rain.jpg';        
+        this.image = './assets/background/nuvens_rain.jpg';
         break;
       case 'Erro':
-        this.image = './assets/background/built_day.jpg';        
+        this.image = './assets/background/built_day.jpg';
         break;
 
       default:
-        this.image = './assets/background/built_day.jpg';        
+        this.image = './assets/background/built_day.jpg';
         break;
     }
     /**
-     * Aciona o Serviço de troca de imagens via 
+     * Aciona o Serviço de troca de imagens via
      */
     this.fs.changeImage(this.image);
   }
