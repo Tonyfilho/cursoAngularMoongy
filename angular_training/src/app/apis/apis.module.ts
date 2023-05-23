@@ -8,7 +8,7 @@ import { ApisComponent } from './apis.component';
 import { ForecastComponent } from './forecast/forecast.component';
 import { ForecastingCityComponent } from './forecast/forecasting-city/forecasting-city.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BooksComponent } from './books/books/books.component';
+import { BooksComponent } from './books/books.component';
 import { BookComponent } from './books/book/book.component';
 import { FireBaseAuthApiComponent } from './fire-base-auth-api/fire-base-auth-api.component';
 
@@ -29,6 +29,7 @@ import { FireBaseAuthApiComponent } from './fire-base-auth-api/fire-base-auth-ap
       { path: 'books', component: BooksComponent },
       { path: 'books/:id', component: BookComponent },
       { path: 'forecasting', component: ForecastComponent, },
+      { path: 'authRestApiGoggle', component: FireBaseAuthApiComponent, },
     ])
   ]
 })

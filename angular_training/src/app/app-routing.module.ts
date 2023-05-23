@@ -3,7 +3,7 @@ import { ForecastComponent } from './apis/forecast/forecast.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BookComponent } from './apis/books/book/book.component';
-import { BooksComponent } from './apis/books/books/books.component';
+import { BooksComponent } from './apis/books/books.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login/login.component';
@@ -28,7 +28,7 @@ const routes: Routes = [
   /**Nos Outros LINKS, caso receba um FALSE por falta de autorização, o FireBase Authorization,
    *  a pagina será redirecinada para login*/
   { path: 'home', component: HomeComponent, ...canActivate(redirectToLogin) },
- 
+
   /**Nos Link LOGIN e LOGIN/SIGN-UP, caso receba um TRUE do FireBase Authorization, a pagina será redirecinada para home*/
   {
     path: 'login',

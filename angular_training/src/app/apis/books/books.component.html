@@ -1,19 +1,24 @@
-
-
 <body>
   <main>
-    
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button type="button" class="btn btn-outline-light back" routerLink="/apis">Back to Api</button>
+        </div>
+      </div>
+    </div>
+
     <div class="container">
       <div *ngFor="let item of books" class="card-list">
         <!-- {{ item.imageUrl }} -->
         <div class="card" style="width: 18rem">
           <img src="/assets/livros/{{ item.imageUrl }}" class="card-img-top" alt="..." />
-                <div class="card-body">
+          <div class="card-body">
             <h5 class="card-title">{{ item.title }}</h5>
             <p class="card-text">
               {{ item.description }}
             </p>
-            <a  class="btn btn-primary" [routerLink]="[item.id]">More Information</a>
+            <a class="btn btn-primary" [routerLink]="[item.id]">More Information</a>
           </div>
         </div>
       </div>
