@@ -8,18 +8,18 @@
     <div class="row">
       <div class="col-xs-12">
         <h2>Authentication Rest Api by FireBase</h2>
+        <h3>I am assume you already have installed FireBase DataBase in your Angular project.<a> If not, click here and I will show off.</a></h3>
       </div>
     </div>
     <!-- 1º block -->
     <div class="col-xs-12 picture">
-      <h3>Html File Form Authentication</h3>
       <div class="image">
         <img src="./../../../assets/img-auth/01_Html_buttons.png" alt="Arquivo Html">
       </div>
     </div>
     <!-- 2º block -->
     <div class="col-xs-12 picture">
-      <h3>FireBase Site Realtime Database.   <a href="https://console.firebase.google.com/u/0/" target="_blank"> Click and
+      <h3>FireBase Site Realtime Database. <a href="https://console.firebase.google.com/u/0/" target="_blank"> Click and
           Read the Documentation.</a> </h3>
       <div class="image">
         <img src="./../../../assets/img-auth/02B_Authentication_from_Firebase.png" alt="Arquivo Html">
@@ -48,8 +48,9 @@
     <!-- 3º block -->
 
     <div class="col-xs-12 picture">
-      <h3> FireBase Auth Rest API. <a href="https://firebase.google.com/docs/reference/rest/auth#section-create-email-password"
-        target="_blank">  Click and Read the Documentation</a> </h3>
+      <h3> FireBase Auth Rest API. <a
+          href="https://firebase.google.com/docs/reference/rest/auth#section-create-email-password" target="_blank">
+          Click and Read the Documentation</a> </h3>
       <div class="image">
         <img src="./../../../assets/img-auth/03A_Auth_API_SignIn.png" alt="Arquivo Html">
       </div>
@@ -58,51 +59,69 @@
         <img src="./../../../assets/img-auth/03_Auth_API_SignUp.png" alt="Arquivo Html">
       </div>
       <h3>2º Method that you need to use, SignIn.</h3>
-      <h3>SignIn are same steps I wont explain again, you just need to use the Right EndPoint.</h3>
+      <!-- <h3>SignIn are same steps I wont explain again, you just need to use the Right EndPoint.</h3> -->
       <div class="image">
         <img src="./../../../assets/img-auth/03_Auth_API_SignIn.png" alt="Arquivo Html">
       </div>
     </div>
 
-    <!-- 3º block -->
+    <!-- 4º block -->
 
     <div class="col-xs-12 picture">
+      <h3>Create a Server and inject HttpService. I called AuthService.</h3>
       <div class="image">
-        <h3>Create a Server and inject HttpService.</h3>
         <img src="./../../../assets/img-auth/05_Auth_Service_VARs.png" alt="Arquivo Html">
       </div>
+      <h3>Create a SignUp Method in the Server.</h3>
       <div class="image">
-        <h3>Create a SignUp Method in the Server.</h3>
         <img src="./../../../assets/img-auth/05_Auth_Services.png" alt="Arquivo Html">
       </div>
-    </div>
-    <div class="col-xs-12 picture">
+      <h3>Inject the Authserver in the AuthCompoment and Subscribe the Observable and get ResponseData.</h3>
       <div class="image">
-        <h3>Inject the server in the AuthCompoment and Subscribe the Observable.</h3>
         <img src="./../../../assets/img-auth/05_Auth_Compoment.png" alt="Arquivo Html">
       </div>
-    </div>
-    <div class="col-xs-12 picture">
+
       <h3>After you config your Authentication and Signup your 1º user.</h3>
+
       <div class="image">
         <img src="./../../../assets/img-auth/02_Authentication_from_Firebase.png" alt="Arquivo Html">
       </div>
-    </div>
-    <div class="col-xs-12 picture">
-      <h3>Your Response Data in console Log.</h3>
-      <div class="image">
-        <img src="./../../../assets/img-auth/06_SignUpMethodConsole.png" alt="Arquivo Html">
-      </div>
-    </div>
 
-
-    <div class="col-xs-12 picture">
       <h3> About the HandleAuthentication.</h3>
       <div class="image">
         <img src="./../../../assets/img-auth/07_HandleAuthentication.png" alt="Arquivo Html">
       </div>
     </div>
 
+    <!--5º block  -->
+    <div class="col-xs-12 picture">
+      <h3>Local Storage and AutoLogin and AutoLogOut.</h3>
+      <div class="image">
+        <img src="./../../../assets/img-auth/07_HandleAuthenticationLocalStorage.png" alt="Arquivo Html">
+      </div>
+      <h3>AutoLogin, call it in your AppComponent. </h3>
+      <div class="image">
+        <img src="./../../../assets/img-auth/08_Login_AutoLogin.png" alt="Arquivo Html">
+      </div>
+      <h3>AutoLogout, call it into AutoLoginWithLocalStorage. </h3>
+      <div class="image">
+        <img src="./../../../assets/img-auth/08_Login_AutoLogout.png" alt="Arquivo Html">
+      </div>
+
+    </div>
+    <!--6º block  -->
+    <div class="col-xs-12 picture">
+      <h3>Interceptor Service.</h3>
+      <div class="image">
+        <img src="./../../../assets/img-auth/09_Http_Interceptor.png" alt="Arquivo Html">
+      </div>
+
+      <h3>AppModule Providers[...]. </h3>
+      <div class="image">
+        <img src="./../../../assets/img-auth/09_Http_InterceptorAppModule.png" alt="Arquivo Html">
+      </div>
+
+    </div>
 
 
 
@@ -112,4 +131,3 @@
 </div>
 
 
-<!--  -->
