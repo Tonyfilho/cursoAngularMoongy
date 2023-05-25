@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MainObservablesERXJSComponent } from './main-observables-e-rxjs.component';
 import { DragAndDropComponent } from './drag-and-drop/drag-and-drop.component';
 import { ContatStreamsComponent } from './contat-streams/contat-streams.component';
+import { ExaustMapComponent } from './rxjs-operators/exaust-map/exaust-map.component';
 
 
 
@@ -14,7 +15,8 @@ import { ContatStreamsComponent } from './contat-streams/contat-streams.componen
 
     MainObservablesERXJSComponent,
       DragAndDropComponent,
-      ContatStreamsComponent
+      ContatStreamsComponent,
+      ExaustMapComponent
   ],
   imports: [
     CommonModule,
@@ -22,6 +24,7 @@ import { ContatStreamsComponent } from './contat-streams/contat-streams.componen
       {path:'', component: MainObservablesERXJSComponent},
       {path:'dragAndDrop', component: DragAndDropComponent},
       {path:'concatStreams', component: ContatStreamsComponent},
+      {path:'exaustMap', component: ExaustMapComponent},
     ])
   ]
 })
