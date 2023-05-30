@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Observable, debounceTime } from 'rxjs';
 
 import { ssnValidator, ssnValidatorFunc } from '../../../_share/_custom-validators/custons-validations';
@@ -11,10 +11,10 @@ import { ssnValidator, ssnValidatorFunc } from '../../../_share/_custom-validato
 })
 export class FormControlsBasicValidatorsComponent implements OnInit {
 
-  myformBasicValidators!: FormGroup;
+  myformBasicValidators!: UntypedFormGroup;
   emailRegex:RegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
   // ssnValidator = new ssnValidator();
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: UntypedFormBuilder) {
     this.myformBasicValidators = fb.group({
           name: ['' , {validators: [Validators.required, Validators.minLength(3),Validators.maxLength(50)],  updateOn: 'blur'}],
           address:['', {validators: [Validators.required, Validators.minLength(3),Validators.maxLength(50)], updateOn: 'blur'}],
@@ -28,7 +28,7 @@ export class FormControlsBasicValidatorsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  debouceTimeControl(form: FormControl): Observable<any> {
+  debouceTimeControl(form: UntypedFormControl): Observable<any> {
     console.log('FormControl: ', form);
     return form.valueChanges.pipe(debounceTime(1000));
   }

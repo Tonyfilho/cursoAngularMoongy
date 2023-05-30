@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, UntypedFormBuilder, FormControl, UntypedFormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-update-form',
@@ -8,10 +8,10 @@ import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 })
 export class UpdateFormComponent implements OnInit {
 
-  myUpdateForm!: FormGroup;
+  myUpdateForm!: UntypedFormGroup;
 
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: UntypedFormBuilder) {
     /**Ja na criação fo FormBuilder, posso passar um array, um objeto e setar um valor default,
      *  passar um null, posso setar o evento de blur ou onchange do mouse */
     this.myUpdateForm = fb.group({

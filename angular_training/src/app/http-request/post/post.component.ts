@@ -1,6 +1,6 @@
 import { HttpClassService } from '../http-class.service';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-post',
@@ -9,14 +9,14 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class PostComponent implements OnInit {
 
-  myFormGroup!: FormGroup;
+  myFormGroup!: UntypedFormGroup;
 
   constructor(private httpServer: HttpClassService) {
-    this.myFormGroup = new FormGroup({
-      name: new FormControl(''),
-      address: new FormControl(''),
-      email: new FormControl(''),
-      ssn: new FormControl(''),
+    this.myFormGroup = new UntypedFormGroup({
+      name: new UntypedFormControl(''),
+      address: new UntypedFormControl(''),
+      email: new UntypedFormControl(''),
+      ssn: new UntypedFormControl(''),
     });
   }
 

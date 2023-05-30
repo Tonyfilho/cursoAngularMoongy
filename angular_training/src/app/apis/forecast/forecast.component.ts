@@ -1,4 +1,4 @@
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { ForecastingService } from './forecasting.service';
 import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { debounceTime, switchMap, EMPTY } from 'rxjs';
@@ -9,7 +9,7 @@ import { debounceTime, switchMap, EMPTY } from 'rxjs';
   styleUrls: ['./forecast.component.css'],
 })
 export class ForecastComponent implements  AfterViewInit, OnDestroy {
-  searchCity: FormControl = new FormControl();
+  searchCity: UntypedFormControl = new UntypedFormControl();
   forecastWithSwitch = [{}];
   wheatherCity = '';
   modalDisplayStyle = 'none';

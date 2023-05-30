@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, UntypedFormArray, UntypedFormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-form-array',
@@ -8,10 +8,10 @@ import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
 })
 export class FormArrayComponent implements OnInit {
 
-  myFormArray!: FormGroup;
+  myFormArray!: UntypedFormGroup;
   // emailArray! : FormArray [];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: UntypedFormBuilder) {
     /**Ja na criação fo FormBuilder, posso passar um array, um objeto e setar um valor default,
      *  passar um null, posso setar o evento de blur ou onchange do mouse */
     this.myFormArray = fb.group({
@@ -30,10 +30,10 @@ export class FormArrayComponent implements OnInit {
   ngOnInit(): void {
   }
   addEmail() {
-   this.emails.push(new FormControl(''));
+   this.emails.push(new UntypedFormControl(''));
   }
-  get emails(): FormArray {
-    return this.myFormArray.get('emails') as FormArray;
+  get emails(): UntypedFormArray {
+    return this.myFormArray.get('emails') as UntypedFormArray;
   }
 
   submitForms() {

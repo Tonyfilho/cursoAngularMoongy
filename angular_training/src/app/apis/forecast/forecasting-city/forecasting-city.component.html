@@ -11,8 +11,8 @@
         </div>
         <div class="modal-body">
           <h4 class="modal-title">
-            {{ this.firstBlock?.name | uppercase }} -
-            {{ this.firstBlock?.country | uppercase }}
+            {{ this.firstBlock.name | uppercase }} -
+            {{ this.firstBlock.country | uppercase }}
           </h4>
           <!-- -----------------Carousel------------------------------------------------- -->
           <div id="carouselExampleInterval" class="carousel carousel-dark slide" data-bs-ride="carousel">
@@ -24,31 +24,31 @@
                     <li class="list-group-item d-flex justify-content-between align-items-start">
                       <div class="ms-2 me-auto">
                         <div class="fw-bold">Sunrise</div>
-                        Sunrise: {{ this.firstBlock?.sunrise | date }}
+                        Sunrise: {{ this.firstBlock.sunrise | date }}
                       </div>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-start">
                       <div class="ms-2 me-auto">
                         <div class="fw-bold">Sunset</div>
-                        Sunset: {{ this.firstBlock?.sunset | date }}
+                        Sunset: {{ this.firstBlock.sunset | date }}
                       </div>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-start">
                       <div class="ms-2 me-auto">
                         <div class="fw-bold">Visibility</div>
-                        Visibility: {{ this.firstBlock?.main }}
+                        Visibility: {{ this.firstBlock.main }}
                       </div>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-start">
                       <div class="ms-2 me-auto">
                         <div class="fw-bold">Sky</div>
-                        Sky: {{ this.firstBlock?.weather }}
+                        Sky: {{ this.firstBlock.weather }}
                       </div>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-start">
                       <div class="ms-2 me-auto">
                         <div class="fw-bold">Number Of Clouds</div>
-                        Number Of Clouds: {{ this.firstBlock?.totalClouds + " %" }}
+                        Number Of Clouds: {{ this.firstBlock.totalClouds + " %" }}
                       </div>
                     </li>
                   </ol>
@@ -60,31 +60,31 @@
                     <li class="list-group-item d-flex justify-content-between align-items-start">
                       <div class="ms-2 me-auto">
                         <div class="fw-bold">Wind Speed</div>
-                        Wind Speed: {{ this.secundBlock?.speed | date }}
+                        Wind Speed: {{ this.secundBlock.speed | date }}
                       </div>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-start">
                       <div class="ms-2 me-auto">
                         <div class="fw-bold">Temperature</div>
-                        Temperature: {{ this.secundBlock?.temperature | date }}
+                        Temperature: {{ this.secundBlock.temperature | date }}
                       </div>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-start">
                       <div class="ms-2 me-auto">
                         <div class="fw-bold">Min-Temperature</div>
-                        Min-Temperature: {{ this.secundBlock?.temp_min }}
+                        Min-Temperature: {{ this.secundBlock.temp_min }}
                       </div>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-start">
                       <div class="ms-2 me-auto">
                         <div class="fw-bold">Max-Temperature</div>
-                        Max-Temperature: {{ this.secundBlock?.temp_max }}
+                        Max-Temperature: {{ this.secundBlock.temp_max }}
                       </div>
-                    </li>              
+                    </li>
                     <li class="list-group-item d-flex justify-content-between align-items-start">
                       <div class="ms-2 me-auto">
                         <div class="fw-bold">Humidity</div>
-                        Humidity: {{ this.secundBlock?.humidity  }}
+                        Humidity: {{ this.secundBlock.humidity  }}
                       </div>
                     </li>
                   </ol>

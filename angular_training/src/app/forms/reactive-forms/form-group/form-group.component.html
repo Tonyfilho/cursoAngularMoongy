@@ -43,7 +43,7 @@
               <ng-container *ngIf="!myFormGroup.dirty; else hasdirty"></ng-container>
               <ng-template #hasdirty>
                 <pre>
-                            {{ myFormGroup?.value  | json }}
+                            {{ myFormGroup.value  | json }}
 
                         </pre>
               </ng-template>

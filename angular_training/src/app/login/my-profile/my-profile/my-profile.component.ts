@@ -1,6 +1,6 @@
 import { UserLocalProfile } from '../../../_share/_models/user-profile.model';
 import { UserService } from '../../../_share/_services/user.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl } from '@angular/forms';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { concatMap, Observable, take } from 'rxjs';
 import { User } from '@angular/fire/auth';
@@ -17,7 +17,7 @@ import { IUserLocalProfile } from 'src/app/_share/_models/user-profile.model';
 })
 export class MyProfileComponent implements OnInit{
 
-  myProfileForm!: FormGroup;
+  myProfileForm!: UntypedFormGroup;
   user$: Observable<IUserLocalProfile | null>
 
 
@@ -27,13 +27,13 @@ export class MyProfileComponent implements OnInit{
     this.user$ = userService.currentUserProfile$;
 
 
-    this.myProfileForm = new FormGroup({
-      uid: new FormControl(''),
-      displayName: new FormControl(''),
-      firstName: new FormControl(''),
-      lastName: new FormControl(''),
-      phone: new FormControl(''),
-      address: new FormControl(''),
+    this.myProfileForm = new UntypedFormGroup({
+      uid: new UntypedFormControl(''),
+      displayName: new UntypedFormControl(''),
+      firstName: new UntypedFormControl(''),
+      lastName: new UntypedFormControl(''),
+      phone: new UntypedFormControl(''),
+      address: new UntypedFormControl(''),
     });
   }
 

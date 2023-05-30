@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { FormControl, UntypedFormGroup, UntypedFormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-form-builder',
@@ -8,9 +8,9 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 })
 export class FormBuilderComponent implements OnInit {
 
-  myFormBuilder!: FormGroup;
+  myFormBuilder!: UntypedFormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: UntypedFormBuilder) {
     /**Ja na criação fo FormBuilder, posso passar um array, um objeto e setar um valor default,
      *  passar um null, posso setar o evento de blur ou onchange do mouse */
     this.myFormBuilder = fb.group({

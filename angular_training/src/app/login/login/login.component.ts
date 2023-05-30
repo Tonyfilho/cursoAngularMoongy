@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
 import { AuthenticationService } from 'src/app/_share/_services/authentication.service';
@@ -11,9 +11,9 @@ import { AuthenticationService } from 'src/app/_share/_services/authentication.s
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
-  loginForm!: FormGroup;
+  loginForm!: UntypedFormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router, private auth: AuthenticationService, private tost:  HotToastService) {
+  constructor(private fb: UntypedFormBuilder, private router: Router, private auth: AuthenticationService, private tost:  HotToastService) {
     this.loginForm = fb.group({
       email: ['', { validators: [Validators.required, Validators.email], updateOn: 'blur' }],
       password: ['', { validators: [Validators.required,], updateOn: 'blur' }]

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, FormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Observable, debounceTime } from 'rxjs';
 import { custonPatternPassword, equalPasswordValidator, ssnValidatorFunc } from 'src/app/_share/_custom-validators/custons-validations';
 
@@ -10,10 +10,10 @@ import { custonPatternPassword, equalPasswordValidator, ssnValidatorFunc } from 
 })
 export class GetBasicValidatorsComponent implements OnInit {
 
-  myGetForm!: FormGroup;
+  myGetForm!: UntypedFormGroup;
   emailRegex: RegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
   // ssnValidator = new ssnValidator();
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: UntypedFormBuilder) {
     this.myGetForm = fb.group({
       name: ['', { validators: [Validators.required, Validators.minLength(3), Validators.maxLength(50)], updateOn: 'blur' }],
       address: ['', { validators: [Validators.required, Validators.minLength(3), Validators.maxLength(50)], updateOn: 'blur' }],
@@ -31,21 +31,21 @@ export class GetBasicValidatorsComponent implements OnInit {
 
 
 
-  get name(): FormGroup {
+  get name(): UntypedFormGroup {
 
-    return this.myGetForm.get('name') as FormGroup;
+    return this.myGetForm.get('name') as UntypedFormGroup;
   }
-  get address():FormGroup {
-    return this.myGetForm.get('address') as FormGroup
+  get address():UntypedFormGroup {
+    return this.myGetForm.get('address') as UntypedFormGroup
   }
-  get email():FormGroup {
-    return this.myGetForm.get('email') as FormGroup
+  get email():UntypedFormGroup {
+    return this.myGetForm.get('email') as UntypedFormGroup
   }
-  get ssn():FormGroup {
-    return this.myGetForm.get('ssn') as FormGroup
+  get ssn():UntypedFormGroup {
+    return this.myGetForm.get('ssn') as UntypedFormGroup
   }
-  get passwordGroup():FormGroup {
-    return this.myGetForm.get('passwordGroup') as FormGroup
+  get passwordGroup():UntypedFormGroup {
+    return this.myGetForm.get('passwordGroup') as UntypedFormGroup
   }
 
   submitForms() {

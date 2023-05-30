@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Observable, debounceTime } from 'rxjs';
 
 @Component({
@@ -9,17 +9,17 @@ import { Observable, debounceTime } from 'rxjs';
 })
 export class FormGroupComponent implements OnInit {
 
-  myFormGroup!: FormGroup;
+  myFormGroup!: UntypedFormGroup;
 
   constructor() {
-    this.myFormGroup = new FormGroup({
-      name: new FormControl(''),
-      address: new FormControl(''),
-      email: new FormControl(''),
-      ssn: new FormControl(''),
-      passwordGroup: new FormGroup({
-        password: new FormControl(''),
-        pConfirm: new FormControl(''),
+    this.myFormGroup = new UntypedFormGroup({
+      name: new UntypedFormControl(''),
+      address: new UntypedFormControl(''),
+      email: new UntypedFormControl(''),
+      ssn: new UntypedFormControl(''),
+      passwordGroup: new UntypedFormGroup({
+        password: new UntypedFormControl(''),
+        pConfirm: new UntypedFormControl(''),
       })
     });
   }

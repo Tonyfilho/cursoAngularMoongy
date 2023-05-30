@@ -1,5 +1,5 @@
 import { debounceTime, Observable } from 'rxjs';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,15 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormControlComponent implements OnInit {
 
-  name: FormControl = new FormControl();
-  address: FormControl = new FormControl();
-  email: FormControl = new FormControl();
-  ssn: FormControl = new FormControl();
+  name: UntypedFormControl = new UntypedFormControl();
+  address: UntypedFormControl = new UntypedFormControl();
+  email: UntypedFormControl = new UntypedFormControl();
+  ssn: UntypedFormControl = new UntypedFormControl();
   constructor() { }
 
   ngOnInit(): void {
   }
-  debouceTimeControl(form: FormControl): Observable<any> {
+  debouceTimeControl(form: UntypedFormControl): Observable<any> {
     console.log('FormControl: ', form);
     return form.valueChanges.pipe(debounceTime(1000));
   }

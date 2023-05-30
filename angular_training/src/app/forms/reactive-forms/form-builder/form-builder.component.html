@@ -41,7 +41,7 @@
         <ng-container *ngIf="!myFormBuilder.dirty; else hasdirty"></ng-container>
         <ng-template #hasdirty>
           <pre>
-                      {{ myFormBuilder?.value  | json }}
+                      {{ myFormBuilder.value  | json }}
 
                   </pre>
         </ng-template>

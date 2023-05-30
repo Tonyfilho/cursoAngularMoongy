@@ -32,10 +32,10 @@
               <ng-container *ngIf="!name.dirty; else hasdirty"></ng-container>
               <ng-template #hasdirty>
                 <pre>
-                            {{ name?.value  | json }}
-                            {{ address?.value  | json }}
-                            {{email?.value  | json }}
-                            {{ ssn?.value  | json }}
+                            {{ name.value  | json }}
+                            {{ address.value  | json }}
+                            {{email.value  | json }}
+                            {{ ssn.value  | json }}
                         </pre>
               </ng-template>
             </form>

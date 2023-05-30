@@ -1,7 +1,7 @@
 import { switchMap } from 'rxjs';
 import { UserService } from '../../_share/_services/user.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
 import { custonPatternPassword, passwordsMarchValidator } from 'src/app/_share/_custom-validators/custons-validations';
@@ -14,9 +14,9 @@ import { AuthenticationService } from 'src/app/_share/_services/authentication.s
 })
 export class SignUpComponent implements OnInit {
 
-  sigUpForm!: FormGroup;
+  sigUpForm!: UntypedFormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router, private auth: AuthenticationService, private tost: HotToastService, public userService: UserService) {
+  constructor(private fb: UntypedFormBuilder, private router: Router, private auth: AuthenticationService, private tost: HotToastService, public userService: UserService) {
     this.sigUpForm = fb.group({
       nome: ['', { validators: [Validators.required, Validators.minLength(3)], updateOn: 'blur' }],
       email: ['', { validators: [Validators.required, Validators.email], updateOn: 'blur' }],
@@ -32,8 +32,8 @@ export class SignUpComponent implements OnInit {
     this.passwordGroup.get('password')?.getError('custonPatternPassword');
   }
   /**Get do PasswordGroup */
-  get passwordGroup(): FormGroup {
-    return this.sigUpForm.controls['passwordGroup'] as FormGroup;
+  get passwordGroup(): UntypedFormGroup {
+    return this.sigUpForm.controls['passwordGroup'] as UntypedFormGroup;
   }
 
 

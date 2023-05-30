@@ -1,6 +1,6 @@
 import { ICanComponentLeave } from '../../_share/auth-guards/unsave-changesguards.service';
 import { Component, HostListener, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-can-deactivate',
@@ -13,9 +13,9 @@ export class CanDeactivateComponent implements OnInit, ICanComponentLeave {
   onClick(btn: any): any {
     console.log('button', btn, 'number of clicks:');
   }
-  myDeactivate!: FormGroup;
+  myDeactivate!: UntypedFormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: UntypedFormBuilder) {
 
     this.myDeactivate = fb.group({
       name: [''],

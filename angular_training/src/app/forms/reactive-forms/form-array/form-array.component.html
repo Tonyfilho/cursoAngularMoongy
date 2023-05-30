@@ -52,7 +52,7 @@
         <ng-container *ngIf="!myFormArray.dirty; else hasdirty"></ng-container>
         <ng-template #hasdirty>
           <pre>
-                      {{ myFormArray?.value  | json }}
+                      {{ myFormArray.value  | json }}
 
          </pre>
         </ng-template>
