@@ -17,6 +17,7 @@ import { CanActivateComponent } from './can-activate/can-activate.component';
 import { DummyAuthGuard } from '../_share/auth-guards/dummy-auth-guard';
 import { CanDeactivateComponent } from './can-deactivate/can-deactivate.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LazyloadPreloadComponent } from './lazyload-preload/lazyload-preload.component';
 
 
 
@@ -34,7 +35,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NotFoundExempleComponent,
     CanActivateComponent,
     BasicsComponent,
-    CanDeactivateComponent
+    CanDeactivateComponent,
+    LazyloadPreloadComponent
 
   ],
   imports: [
@@ -46,6 +48,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
       { path: 'prog', component: ProgrammaticallyComponent },
       { path: 'basic', component: BasicsComponent },
       { path: 'child', component: ChildComponent },
+      { path: 'preLoad', component: LazyloadPreloadComponent },
       { path: 'canDeactivate-component', component: CanDeactivateComponent, canDeactivate: [UnSaveChangesGuardsService]},
 
       { path: 'parameters', component: ParametersComponent },

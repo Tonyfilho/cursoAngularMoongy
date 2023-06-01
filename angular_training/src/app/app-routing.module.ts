@@ -1,7 +1,7 @@
 import { MyProfileComponent } from './login/my-profile/my-profile/my-profile.component';
 import { ForecastComponent } from './apis/forecast/forecast.component';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { BookComponent } from './apis/books/book/book.component';
 import { BooksComponent } from './apis/books/books.component';
 import { HomeComponent } from './home/home.component';
@@ -68,7 +68,7 @@ const routes: Routes = [
  * são as nossas rotas, com isto evitamos o 404 como erro  */
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules ,useHash: true })],
   exports: [RouterModule],
 })
 export class AppRoutingModule { }
