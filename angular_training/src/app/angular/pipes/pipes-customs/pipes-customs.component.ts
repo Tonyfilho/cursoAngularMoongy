@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PipesService } from '../pipes.service';
+import { PipesService } from './../../pipes/pipes.service';
 
 @Component({
   selector: 'app-pipes-customs',

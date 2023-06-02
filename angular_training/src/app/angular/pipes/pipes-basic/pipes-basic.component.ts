@@ -1,4 +1,4 @@
-import { PipesService } from './../pipes.service';
+import { PipesService } from './../../pipes/pipes.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

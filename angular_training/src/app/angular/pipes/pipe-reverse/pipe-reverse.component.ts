@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription, Observable } from 'rxjs';
-import { PipesService } from '../pipes.service';
+import { PipesService } from './../../pipes/pipes.service';
 import { IServers } from 'src/app/_share/_models/iServices.model';
 
 @Component({

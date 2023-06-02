@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { IServers } from 'src/app/_share/_models/iServices.model';
-import { PipesService } from '../pipes.service';
+import { PipesService } from './../../pipes/pipes.service';
 
 @Component({
   selector: 'app-pipe-sort-by',

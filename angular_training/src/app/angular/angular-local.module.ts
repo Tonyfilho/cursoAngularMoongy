@@ -10,6 +10,7 @@ import { FormsComponent } from './forms/forms.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpResquestLocalModule } from './http-request/http-class.module';
+import { PipesModule } from './pipes/pipes.module';
 
 
 
@@ -29,6 +30,7 @@ import { HttpResquestLocalModule } from './http-request/http-class.module';
     DirectiveModule,
     ShareDataModule,
     FormsLocalModule,
+    PipesModule,
 
 
 
@@ -39,6 +41,7 @@ import { HttpResquestLocalModule } from './http-request/http-class.module';
       { path: 'forms', loadChildren: () => import('./forms/forms-local.module').then(module => module.FormsLocalModule) },
       { path: 'shareData', loadChildren: () => import('./share-data/share-data.module').then(module => module.ShareDataModule) },
       { path: 'http-request', loadChildren: () => import('./http-request/http-class.module').then(module => module.HttpResquestLocalModule) },
+      { path: 'pipes', loadChildren: () => import('./pipes/pipes.module').then(module => module.PipesModule) },
     ])
   ]
 })
