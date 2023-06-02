@@ -1,5 +1,5 @@
 import { Subscription } from 'rxjs';
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild, OnDestroy } from '@angular/core';
+import {  Component,  OnInit,  OnDestroy } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup} from '@angular/forms';
 import { HttpClassService } from '../http-class.service';
 
@@ -10,12 +10,12 @@ import { HttpClassService } from '../http-class.service';
   templateUrl: './error-handling.component.html',
    styleUrls: ['../post/post.component.css']
 })
-export class ErrorHandlingComponent implements OnInit, OnDestroy{
+export class ErrorHandlingComponent implements OnInit{
 
   myFormGroup!: UntypedFormGroup;
   displayStyle = "none";
   localError!: {status: string, statusText: string, name: string};
-  subs!: Subscription;
+
 
 
   constructor(private httpServer: HttpClassService) {
@@ -51,9 +51,7 @@ export class ErrorHandlingComponent implements OnInit, OnDestroy{
     this.displayStyle = "none";
     this.myFormGroup.reset()
   }
-  ngOnDestroy(): void {
-   this.subs.unsubscribe();
-  }
+  
 
 
 }

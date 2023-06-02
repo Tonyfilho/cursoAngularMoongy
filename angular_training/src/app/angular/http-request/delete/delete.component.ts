@@ -1,8 +1,9 @@
-import { HiddenButton } from './../../_share/_models/hidden-button';
+import { HiddenButton } from '../../../_share/_models/hidden-button';
 import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { IdataFireBase } from 'src/app/_share/_models/Idata-Firebase';
 import { HttpClassService } from '../http-class.service';
+
 
 @Component({
   selector: 'app-delete',
@@ -35,5 +36,5 @@ export class DeleteComponent implements OnInit {
   ngOnInit(): void {
   }
 
- 
+
 }

@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Lexend+Peta&family=Roboto:ital,wght@1,300&family=Sansita+Swashed:wght@300&display=swap');
 
+
+/*  ********removendo margens e padding das Rows************* */
+.row>* {
+  margin: 0 !important;
+  padding: 0 !important;
+
+}
+div.row {
+  --bs-gutter-x: 0 !important;
+  --bs-gutter-y: 0 !important;
+}
+
+
+
 .bg-light {
   background-color: transparent !important;
 }
@@ -34,17 +48,6 @@ main {
   box-shadow: 0 0 25px 0.5em #9b9baca9,
     inset 0 0 25px 0.25em #17171aa9,
     inset 0 0 5em 0px #7a52e78f;
-}
-
-/*  ********removendo margens e padding das Rows************* */
-.row>* {
-  margin: 0 !important;
-  padding: 0 !important;
-
-}
-div.row {
-  --bs-gutter-x: 0 !important;
-  --bs-gutter-y: 0 !important;
 }
 
 

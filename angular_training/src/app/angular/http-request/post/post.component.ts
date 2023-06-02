@@ -1,6 +1,7 @@
-import { HttpClassService } from '../http-class.service';
+
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import { HttpClassService } from '../http-class.service';
 
 @Component({
   selector: 'app-post',
