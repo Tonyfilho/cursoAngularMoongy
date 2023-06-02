@@ -19,6 +19,8 @@ import { GetBasicValidatorsComponent } from './reactive-forms/get-basic-validato
 
 
 
+
+
 @NgModule({
   declarations: [
     ReactiveFormsComponent,
@@ -40,7 +42,7 @@ import { GetBasicValidatorsComponent } from './reactive-forms/get-basic-validato
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild([
-      {path: '', component: FormsComponent},
+      {path: 'angular/forms', component: FormsComponent},
       {path:'reactive', component: ReactiveFormsComponent},
       {path:'reactive/formsControl', component: FormControlComponent},
       {path:'reactive/formsGroup', component: FormGroupComponent},
@@ -54,6 +56,7 @@ import { GetBasicValidatorsComponent } from './reactive-forms/get-basic-validato
       {path:'driven/forms-basics', component: TemplateDrivenFormsComponent },
       {path:'driven/validators-forms-basics', component: TemplateDrivenValidatorsFormsBasicComponent},
       {path:'driven/validators-forms-local-variable', component: TemplateDrivenValidatorsLocalVariableComponent},
+
 
     ])
   ]

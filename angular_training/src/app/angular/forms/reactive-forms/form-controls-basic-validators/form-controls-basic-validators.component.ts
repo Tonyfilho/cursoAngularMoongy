@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Observable, debounceTime } from 'rxjs';
 
-import { ssnValidator, ssnValidatorFunc } from '../../../_share/_custom-validators/custons-validations';
+import { ssnValidator, ssnValidatorFunc } from '../../../../_share/_custom-validators/custons-validations';
 
 @Component({
   selector: 'app-form-controls-basic-validators',

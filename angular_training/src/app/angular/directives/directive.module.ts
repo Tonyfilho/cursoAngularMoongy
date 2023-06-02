@@ -1,3 +1,4 @@
+import { AngularComponent } from './../angular.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DirectiveComponent } from './directive.component';
@@ -14,6 +15,8 @@ import { CustomsColorsDirective } from './customs-colors.directive';
 import { CustomsColorsComponent } from './customs-colors/customs-colors.component';
 import { DropdownDirective } from './directive-dropdown.directive';
 import { DirectiveDropdownAdvancedDirective } from './directive-dropdown-advanced.directive';
+import { NotFoundComponent } from 'src/app/not-found/not-found.component';
+import { redirectLoggedInTo } from '@angular/fire/auth-guard';
 
 
 
@@ -38,12 +41,13 @@ import { DirectiveDropdownAdvancedDirective } from './directive-dropdown-advance
   imports: [
     CommonModule,
     RouterModule.forChild([
-      {path: '' ,component:DirectiveComponent},
+      {path: 'angular/directive' ,component:DirectiveComponent},
       {path: 'basic' ,component:BasicHighLightDirectiveComponent},
       {path: 'advanced' ,component:AdvanceDirectiveComponent},
       {path: 'advancedWithHostiListener' ,component:AdvanceDirectiveWithHostlisternerComponent},
       {path: 'advancedWithHostiListenerAndHostBinding' ,component:AdvanceDirectiveWithHostlisternerAndHostBindingComponent},
       {path: 'customsColors' ,component:CustomsColorsComponent},
+
     ])
   ]
 })

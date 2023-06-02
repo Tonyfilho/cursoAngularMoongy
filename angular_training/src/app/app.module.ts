@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AboutComponent } from './_about/about.component';
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { FormsComponent } from './forms/forms.component';
+
 import { LoginComponent } from './login/login/login.component';
 import { SignUpComponent } from './login/sign-up/sign-up.component';
 import { environment } from '../environments/environment';
@@ -31,7 +31,6 @@ import { AngularModule } from './angular/angular.module';
     AppComponent,
     NotFoundComponent,
     AboutComponent,
-    FormsComponent,
     LoginComponent,
     SignUpComponent,
     MyProfileComponent,

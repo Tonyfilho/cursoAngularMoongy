@@ -60,7 +60,7 @@ main {
 }
 
 .reactive-img {
-  background-image: url('../../../assets/background/reactive-forms.jpg') !important;
+  background-image: url('./../../../../assets/background/reactive-forms.jpg') !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: cover !important;

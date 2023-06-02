@@ -14,7 +14,7 @@ import { SignUpComponent } from './login/sign-up/sign-up.component';
  * rotas quando usamos o firebase, Criando PIPES locais
  */
 import { canActivate, redirectLoggedInTo, redirectUnauthorizedTo } from '@angular/fire/auth-guard'
-import { ApisComponent } from './apis/apis.component';
+
 /**Usuario não Autorizado ou não logado Redireciona para Login*/
 const redirectToLogin = () => redirectUnauthorizedTo(['/login']);
 /**Usuario Autorizado ou  logado, Redireciona para Paginas */
@@ -47,7 +47,7 @@ const routes: Routes = [
 
   },
   /*************************************************Carregando LAZYLOAD ROUTE*/
-  { path: 'forms', loadChildren: () => import('./forms/forms-local.module').then(module => module.FormsLocalModule), ...canActivate(redirectToLogin) },
+  // { path: 'forms', loadChildren: () => import('./angular/forms/forms-local.module').then(module => module.FormsLocalModule), ...canActivate(redirectToLogin) },
   { path: 'shareData', loadChildren: () => import('./share-data/share-data.module').then(module => module.ShareDataModule), ...canActivate(redirectToLogin) },
   { path: 'angular', loadChildren: () => import('./angular/angular.module').then(module => module.AngularModule), ...redirectToLogin },
   { path: 'routes', loadChildren: () => import('./routes/routes.module').then(module => module.RoutesModule), ...redirectToLogin },
