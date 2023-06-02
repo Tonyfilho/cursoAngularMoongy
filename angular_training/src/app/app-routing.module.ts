@@ -47,9 +47,9 @@ const routes: Routes = [
 
   },
   /*************************************************Carregando LAZYLOAD ROUTE*/
-  // { path: 'forms', loadChildren: () => import('./angular/forms/forms-local.module').then(module => module.FormsLocalModule), ...canActivate(redirectToLogin) },
-  { path: 'shareData', loadChildren: () => import('./share-data/share-data.module').then(module => module.ShareDataModule), ...canActivate(redirectToLogin) },
-  { path: 'angular', loadChildren: () => import('./angular/angular.module').then(module => module.AngularModule), ...redirectToLogin },
+
+  // { path: 'shareData', loadChildren: () => import('./share-data/share-data.module').then(module => module.ShareDataModule), ...canActivate(redirectToLogin) },
+  { path: 'angular', loadChildren: () => import('./angular/angular-local.module').then(module => module.AngularModule), ...redirectToLogin },
   { path: 'routes', loadChildren: () => import('./routes/routes.module').then(module => module.RoutesModule), ...redirectToLogin },
   { path: 'pipes', loadChildren: () => import('./pipes/pipes.module').then(module => module.PipesModule), ...redirectToLogin },
   { path: 'http-request', loadChildren: () => import('./http-request/http-class.module').then(module => module.HttpResquestModule), ...redirectToLogin },

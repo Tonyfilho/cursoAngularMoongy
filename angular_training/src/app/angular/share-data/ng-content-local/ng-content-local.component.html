@@ -1,6 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="button" class="btn btn-outline-light" routerLink="/angular/shareData">Back ShareData</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
       <app-cockpit (cockPitElementsRed)="onAddServer($event)" (cockPitElementsBlue)="onAddBlueprint($event)" [localLabel]="'NgContent Share Data by Template'"></app-cockpit>
     </div>
   </div>

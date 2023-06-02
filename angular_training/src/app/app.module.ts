@@ -21,7 +21,7 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideStorage, getStorage } from '@angular/fire/storage'
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { provideDatabase, getDatabase } from '@angular/fire/database';
-import { AngularModule } from './angular/angular.module';
+import { AngularModule } from './angular/angular-local.module';
 
 
 

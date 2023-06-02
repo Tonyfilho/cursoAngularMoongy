@@ -42,11 +42,11 @@ import { redirectLoggedInTo } from '@angular/fire/auth-guard';
     CommonModule,
     RouterModule.forChild([
       {path: 'angular/directive' ,component:DirectiveComponent},
-      {path: 'basic' ,component:BasicHighLightDirectiveComponent},
-      {path: 'advanced' ,component:AdvanceDirectiveComponent},
-      {path: 'advancedWithHostiListener' ,component:AdvanceDirectiveWithHostlisternerComponent},
-      {path: 'advancedWithHostiListenerAndHostBinding' ,component:AdvanceDirectiveWithHostlisternerAndHostBindingComponent},
-      {path: 'customsColors' ,component:CustomsColorsComponent},
+      {path: 'angular/basic' ,component:BasicHighLightDirectiveComponent},
+      {path: 'angular/advanced' ,component:AdvanceDirectiveComponent},
+      {path: 'angular/advancedWithHostiListener' ,component:AdvanceDirectiveWithHostlisternerComponent},
+      {path: 'angular/advancedWithHostiListenerAndHostBinding' ,component:AdvanceDirectiveWithHostlisternerAndHostBindingComponent},
+      {path: 'angular/customsColors' ,component:CustomsColorsComponent},
 
     ])
   ]

@@ -1,0 +1,18 @@
+.container {
+  background: linear-gradient(68.15deg, #f3db06 16.62%, #2b6b68 85.61%);
+  height: 100vh;
+}
+
+button {
+  margin: 1% 0.5%;
+}
+
+a {
+  color: #FFF2E7 !important;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f0b686 !important;
+}
+
