@@ -1,13 +1,13 @@
 import { AuthInterceptorService } from './observables-e-RXJS/auth-interceptor.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { AboutComponent } from './about/about.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+
+import { AboutComponent } from './_about/about.component';
+import { AppComponent } from './app.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 import { FormsComponent } from './forms/forms.component';
 import { LoginComponent } from './login/login/login.component';
 import { SignUpComponent } from './login/sign-up/sign-up.component';
@@ -21,6 +21,7 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideStorage, getStorage } from '@angular/fire/storage'
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { provideDatabase, getDatabase } from '@angular/fire/database';
+import { AngularModule } from './angular/angular.module';
 
 
 
@@ -40,6 +41,7 @@ import { provideDatabase, getDatabase } from '@angular/fire/database';
   ],
   imports: [
     BrowserModule,
+    AngularModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,

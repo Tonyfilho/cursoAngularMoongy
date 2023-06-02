@@ -1,10 +1,9 @@
 import { MyProfileComponent } from './login/my-profile/my-profile/my-profile.component';
-import { ForecastComponent } from './apis/forecast/forecast.component';
+
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { BookComponent } from './apis/books/book/book.component';
-import { BooksComponent } from './apis/books/books.component';
-import { HomeComponent } from './home/home.component';
+
+import { HomeComponent } from './_about/home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login/login.component';
 import { SignUpComponent } from './login/sign-up/sign-up.component';
@@ -50,12 +49,12 @@ const routes: Routes = [
   /*************************************************Carregando LAZYLOAD ROUTE*/
   { path: 'forms', loadChildren: () => import('./forms/forms-local.module').then(module => module.FormsLocalModule), ...canActivate(redirectToLogin) },
   { path: 'shareData', loadChildren: () => import('./share-data/share-data.module').then(module => module.ShareDataModule), ...canActivate(redirectToLogin) },
-  { path: 'directive', loadChildren: () => import('./directive/directive.module').then(module => module.DirectiveModule), ...redirectToLogin },
+  { path: 'angular', loadChildren: () => import('./angular/angular.module').then(module => module.AngularModule), ...redirectToLogin },
   { path: 'routes', loadChildren: () => import('./routes/routes.module').then(module => module.RoutesModule), ...redirectToLogin },
   { path: 'pipes', loadChildren: () => import('./pipes/pipes.module').then(module => module.PipesModule), ...redirectToLogin },
   { path: 'http-request', loadChildren: () => import('./http-request/http-class.module').then(module => module.HttpResquestModule), ...redirectToLogin },
   { path: 'rxjs-observables', loadChildren: () => import('./observables-e-RXJS/main-observables.module').then(module => module.ObservablesModule), ...redirectToLogin },
-  { path: 'about', loadChildren: () => import('./about/about.module').then(module => module.AboutModule) },
+  { path: 'about', loadChildren: () => import('./_about/about.module').then(module => module.AboutModule) },
   {
     path: '**', component: NotFoundComponent, ...redirectToLogin, data: { message: "Page not found Message from App-Routing" }
   },
