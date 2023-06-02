@@ -14,6 +14,10 @@ a {
   color: inherit;
 }
 
+a:hover{
+  color: #f0b686 !important;
+}
+
 ul {
   font-family: 'Josefin Sans', sans-serif;
   font-style: normal;

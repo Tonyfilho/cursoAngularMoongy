@@ -8,11 +8,29 @@
   padding: 0% !important;
 }
 
+.bg-light {
+  background: linear-gradient(68.15deg, #2e2e30 16.62%, #040013 85.61%);
+}
+
 span {
   padding-left: 1%;
 }
 
+ul {
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-size: 1.2rem;
+  line-height: 21px;
+  color: #FFF2E7;
+}
 
+a {
+  color: inherit;
+}
+
+a:hover{
+  color: #f0b686 !important;
+}
 
 .image {
   width: 100%;
@@ -22,4 +40,8 @@ span {
   background-size: cover !important;
 
 
+}
+
+.btn-outline-dark {
+  margin-top: 1%;
 }
