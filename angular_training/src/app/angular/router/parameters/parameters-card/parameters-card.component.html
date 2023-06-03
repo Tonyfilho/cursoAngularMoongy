@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="button" class="btn btn-outline-light" routerLink="/angular/routes">Back Routes</button>
+      </div>
+    </div>
+  </div>
+  <div class="row-container">
+    <div class="col-xs-12">
+      <h2>Parameters Card</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div *ngFor="let item of books" class="card-list">
+        <div class="card" style="width: 25rem">
+          <img src="/assets/livros/{{ item.imageUrl }}" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">{{ item.title }}</h5>
+            <p class="card-text">
+              {{ item.description }}
+            </p>
+            <a class="btn btn-primary" [routerLink]="[item.id]">More Information</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="row-container">
+      <div class="col-xs-12">
+        <h2>Explain about the Router with Images</h2>
+      </div>
+    </div>
+    <body class="father-container">
+      <div class="row container2">
+        <div class="col-xs-12">
+          <h3>Template from Parameters-card.Html</h3>
+          <div class="image">
+            <img src="./../../../../assets/img-routes/03_Dynamic_Parameters_HTML.png" alt="Arquivo Html">
+          </div>
+        </div>
+      </div>
+      <div class="row container2">
+        <h3>Mouse over up button in Parameters-card File</h3>
+        <div class="image">
+          <img src="./../../../../assets/img-routes/03_Dynamic_Parameters_Button_HTML.png" alt="Arquivo Html">
+        </div>
+      </div>
+      <div class="row container2">
+        <h3>Routes Module File</h3>
+        <div class="image">
+          <img src="./../../../assets/img-routes/03_Dynamic_Parameters_RouteModuleTS.png" alt="Arquivo Html">
+        </div>
+      </div>
+      <div class="row container2">
+        <h3>Routes Module File</h3>
+        <div class="image">
+          <img src="./../../../assets/img-routes/03_Dynamic_Parameters_RouteModuleTS.png" alt="Arquivo Html">
+        </div>
+      </div>
+      <div class="row container2">
+        <h3>Parameters-Card_Component.html File</h3>
+        <div class="image">
+          <img src="./../../../../assets/img-routes/03_Dynamic_Parameters_CardHTML.png" alt="Arquivo Html">
+        </div>
+      </div>
+    </body>
+  </div>

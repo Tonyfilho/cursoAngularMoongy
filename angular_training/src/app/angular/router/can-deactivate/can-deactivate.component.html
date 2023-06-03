@@ -1,0 +1,66 @@
+<p>can-deactivate works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="button" class="btn btn-outline-light" routerLink="/angular/routes">Back Routes</button>
+      </div>
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-xs-12 ">
+      <form class="form" [formGroup]="myDeactivate" (ngSubmit)="submitForms()">
+        <h2 class="title">CanDeactivate Form Dummy</h2>
+        <label for="name" class="col-sm-10 col-form-label">Name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="name" formControlName="name">
+        </div>
+        <label for="address" class="col-sm-10 col-form-label">Address</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="address" formControlName="address">
+        </div>
+      </form>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="submit" class="btn btn-outline-light" (click)="myDeactivate.reset()">Send Form</button>
+      </div>
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-xs-12">
+      <h2>  Explain about the Can-deactivate with Images </h2>
+    </div>
+  </div>
+  <div class="col-xs-12 picture">
+    <h3>FormsComponent.HTML</h3>
+    <div class="image">
+      <img src="./../../../assets/img-routes/08_CanDeactivateCompomentTEMPLATE.png" alt="Arquivo Html">
+    </div>
+  </div>
+  <div class="col-xs-12 picture">
+    <h3>Template After Click</h3>
+    <div class="image">
+      <img src="./../../../assets/img-routes/08_CanDeactivateCompomentTEMPLATEafter.png" alt="Arquivo Html">
+    </div>
+  </div>
+  <div class="col-xs-12 picture">
+    <h3>CanDeactivateCompoment.TS</h3>
+    <!-- <h3>UnSaveChangesGuard.Service.TS</h3> -->
+    <div class="image">
+      <img src="../../../assets/img-routes/08_CanDeactivateCompomentTS.png" alt="Arquivo Html">
+    </div>
+  </div>
+  <div class="col-xs-12 picture">
+    <h3>RoutesModule.TS</h3>
+    <!-- <h3>UnSaveChangesGuard.Service.TS</h3> -->
+    <div class="image">
+      <img src="../../../assets/img-routes/08_CanDeactivate_RoutesModuleTS.png" alt="Arquivo Html">
+    </div>
+  </div>
+  <div class="col-xs-12 picture">
+    <h3>UnSaveChangesGuard.Service.TS</h3>
+    <div class="image">
+      <img src="../../../assets/img-routes/08_CanDeactivateSERVICES.png" alt="Arquivo Html">
+    </div>
+  </div>
+
+</div>

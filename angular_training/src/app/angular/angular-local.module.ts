@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpResquestLocalModule } from './http-request/http-class.module';
 import { PipesModule } from './pipes/pipes.module';
+import { RoutesLocalModule } from './router/routesLocal.module';
 
 
 
@@ -31,6 +32,7 @@ import { PipesModule } from './pipes/pipes.module';
     ShareDataModule,
     FormsLocalModule,
     PipesModule,
+    RoutesLocalModule,
 
 
 
@@ -42,6 +44,8 @@ import { PipesModule } from './pipes/pipes.module';
       { path: 'shareData', loadChildren: () => import('./share-data/share-data.module').then(module => module.ShareDataModule) },
       { path: 'http-request', loadChildren: () => import('./http-request/http-class.module').then(module => module.HttpResquestLocalModule) },
       { path: 'pipes', loadChildren: () => import('./pipes/pipes.module').then(module => module.PipesModule) },
+      { path: 'ngNew', loadChildren: () => import('./ng-new/ng-new.module').then(module => module.NgNewModule) },
+      { path: 'routes', loadChildren: () => import('./router/routesLocal.module').then(module => module.RoutesLocalModule) }
     ])
   ]
 })

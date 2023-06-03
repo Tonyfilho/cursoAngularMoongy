@@ -1,0 +1,145 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="button" class="btn btn-outline-light" routerLink="/angular/routes">Back Routes</button>
+      </div>
+    </div>
+  </div>
+  <div class="row-container">
+    <div class="col-xs-12">
+      <h2>Query Parameters Card</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div *ngFor="let item of books | async " class="card-list">
+        <div class="card" style="width: 25rem">
+          <img src="/assets/livros/{{ item.imageUrl }}" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">{{ item.title }}</h5>
+            <p class="card-text">
+              {{ item.description }}
+            </p>
+            <a class="btn btn-primary" [routerLink]="[item.id, 'edit']" [queryParams]="{allowEdit: item.id +1 }"
+              [fragment]="'loading'">More
+              Information</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container2">
+    <div class="row-container">
+      <div class="col-xs-12">
+        <h2>Explain about the Query Parameters with Images</h2>
+      </div>
+    </div>
+    <div class="father-container">
+
+      <body class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2 style=> How can you pass Parameters with QueryParameters and fragments.</h2>
+          </div>
+          <div class="col-xs-12 picture">
+            <h3>Route Module.TS</h3>
+            <div class="image">
+              <img src="./../../../assets/img-routes/04_Query_Parameters_Routes.png" alt="Arquivo Html">
+            </div>
+          </div>
+          <div class="col-xs-12 picture">
+            <h3>Template from Params and QueryParameters</h3>
+            <div class="image">
+              <img src="./../../../assets/img-routes/04_Query_Parameters_RoutesHTML.png" alt="Arquivo Html">
+            </div>
+          </div>
+          <div class="col-xs-12 picture">
+            <h3>Parameters.Html</h3>
+            <div class="image">
+              <img src="./../../../assets/img-routes/04_Query_Parameters_RoutesHTML2.png" alt="Arquivo Html">
+            </div>
+          </div>
+          <div class="col-xs-12 picture">
+            <div class="col-xs-12 picture">
+              <h3>Template from QueryParameters</h3>
+              <div class="image">
+                <img src="./../../../assets/img-routes/04_Query_Parameters_Question_marks.png" alt="Arquivo Html">
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 picture">
+            <h3>QueryParameters.Html</h3>
+            <div class="image">
+              <img src="./../../../assets/img-routes/04_Query_Parameters_RoutesHTML3.png" alt="Arquivo Html">
+            </div>
+          </div>
+          <div class="col-xs-12 picture">
+            <div class="col-xs-12 picture">
+              <h3>Template from QueryParameters Fragments</h3>
+              <div class="image">
+                <img src="./../../../assets/img-routes/04_Query_Parameters_FragmentsTemplate.png"
+                  alt="Arquivo Html">
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 picture">
+            <h3>QueryParameters Fragments.Html</h3>
+            <div class="image">
+              <img src="./../../../assets/img-routes/04_Query_Parameters_Fragments.png" alt="Arquivo Html">
+            </div>
+          </div>
+        </div>
+        <div class="row" *ngIf=" books | async as localVar">
+          <div class="col-xs-12">
+            <h2 style=> How can you send QueryParameters and fragments in the TS file.</h2>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <button type="button" class="btn btn-outline-dark" (click)="passByButton(localVar[0].id)">Send Value in
+                File.ts</button>
+            </div>
+          </div>
+          <div class="col-xs-12 picture">
+            <h3>Template from Params and QueryParameters by file.Ts</h3>
+            <div class="image">
+              <img src="./../../../assets/img-routes/04_Query_Parameters_FragmentTemplateButton.png"
+                alt="Arquivo Html">
+            </div>
+          </div>
+          <div class="col-xs-12 picture">
+            <h3>Params and QueryParameters by html.Ts</h3>
+            <div class="image">
+              <img src="./../../../assets/img-routes/04_Query_Parameters_FragmentTemplateButtonHTML.png"
+                alt="Arquivo Html">
+            </div>
+          </div>
+          <div class="col-xs-12 picture">
+            <h3>QueryParameters by file.Ts</h3>
+            <div class="image">
+              <img src="./../../../assets/img-routes/04_Query_Parameters_FragmentTemplateButtonTS.png"
+                alt="Arquivo Html">
+            </div>
+          </div>
+        </div>
+        <div class="row" *ngIf=" books | async as localVar">
+          <div class="col-xs-12">
+            <h2 style=> How can you get QueryParameters and fragments in the TS file.</h2>
+          </div>
+          <div class="col-xs-12 picture">
+            <h3>Template from Params and QueryParametersID</h3>
+            <div class="image">
+              <img src="./../../../assets/img-routes/04_Retriving_Query_Parameters_And_Fragments.png"
+                alt="Arquivo Html">
+            </div>
+          </div>
+          <div class="col-xs-12 picture">
+            <h3>Params and QueryParameters File.Ts</h3>
+            <div class="image">
+              <img src="./../../../assets/img-routes/04_Retriving_Query_Parameters_And_FragmentsInQueryParametersIDCompoment.png"
+                alt="Arquivo Html">
+            </div>
+          </div>
+        </div>
+      </body>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="button" class="btn btn-outline-light" routerLink="/angular/routes/parameters/parameters-card">Back Parameters</button>
+      </div>
+    </div>
+  </div>
+  <div class="row-container">
+    <div class="col-xs-12">
+      <h2>Get Id By Parameters</h2>
+      <!-- ---------------------------------------------------Pipe Async no IF -->
+      <div class="card" *ngIf="( book | async) as localVarBook">
+        <img src="/assets/livros/{{ localVarBook?.imageUrl }}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{ localVarBook?.title }}</h5>
+          <p class="card-text">
+            {{ localVarBook?.description }}
+          </p>
+          <a class="btn btn-primary" routerLink="/angular/routes/parameters/parameters-card">go to Dynamic Parameters</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container2">
+    <div class="row-container">
+      <div class="col-xs-12">
+        <h2>Explain about the Router Id with Images</h2>
+      </div>
+    </div>
+    <body class="father-container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h3>Template from Parameters-id.Html</h3>
+          <div class="image">
+            <img src="./../../../../../assets/img-routes/03_Dynamic_Parameters_IdHTML.png" alt="Arquivo Html">
+          </div>
+        </div>
+        <h3>Routes Module.Ts File</h3>
+        <div class="image">
+          <img src="./../../../assets/img-routes/03_Dynamic_Parameters_RouteModuleTS.png" alt="Arquivo Html">
+        </div>
+        <h3>Parameters-id.Ts File</h3>
+        <div class="image">
+          <img src="./../../../../../assets/img-routes/03_Dynamic_ParametersIdTS.png" alt="Arquivo Html">
+        </div>
+        <h3>Route Module.Ts File With Other Parameters</h3>
+        <div class="image">
+          <img src="./../../../../../assets/img-routes/03_Dynamic_Parameters_RouteModuleTS2.png" alt="Arquivo Html">
+        </div>
+      </div>
+    </body>
+  </div>
+</div>

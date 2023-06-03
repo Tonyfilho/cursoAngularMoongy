@@ -50,8 +50,8 @@ const routes: Routes = [
 
 
   { path: 'angular', loadChildren: () => import('./angular/angular-local.module').then(module => module.AngularLocalModule), ...redirectToLogin },
-  { path: 'routes', loadChildren: () => import('./routes/routes.module').then(module => module.RoutesModule), ...redirectToLogin },
   
+
 
   { path: 'rxjs-observables', loadChildren: () => import('./observables-e-RXJS/main-observables.module').then(module => module.ObservablesModule), ...redirectToLogin },
   { path: 'about', loadChildren: () => import('./_about/about.module').then(module => module.AboutModule) },
